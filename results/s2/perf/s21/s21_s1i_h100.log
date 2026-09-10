@@ -1,0 +1,252 @@
+=== S1i start Wed Sep  9 12:20:46 UTC 2026
+6d86a4f02578d18d5fd2737b395046cc
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== glue prof H=1536 I=8960 (1p5b) T16M_R4S=32
+M=1
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.44}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.56}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.51}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 8.81}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.75}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.89}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 3.08}
+M=16
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.55}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.66}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.76}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 9.01}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.75}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.94}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 3.14}
+M=64
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.59}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.69}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 5.98}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 15.29}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.77}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.96}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 3.26}
+M=256
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 4.77}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 4.94}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 8.2}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 31.13}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.97}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.12}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.89}
+M=2048
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 26.68}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 27.32}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 41.13}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 232.21}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 4.27}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 5.98}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 42.03}
+=== glue prof H=1536 I=8960 (1p5b) T16M_R4S=0
+M=1
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.44}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.57}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.52}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 8.8}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.76}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.89}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 3.08}
+M=16
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.56}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.66}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.75}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 8.99}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.75}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.94}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 3.14}
+M=64
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.59}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.69}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 6.92}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 15.3}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.77}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.96}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 3.25}
+M=256
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 4.79}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 4.95}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 14.94}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 31.09}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.97}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.12}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.89}
+M=2048
+   norm_quant(x)              {'void normquant_k<512, 3>(__nv_bfloat16 c': 26.7}
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 27.34}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 95.04}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 232.32}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 4.27}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 6.0}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 41.98}
+=== glue prof H=3584 I=18944 (7b) T16M_R4S=32
+M=1
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 4.89}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.11}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.96}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 9.74}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.91}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.02}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.47}
+M=16
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 4.93}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.12}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 6.3}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 10.04}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.91}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.1}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.52}
+M=64
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.01}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.27}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 10.42}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 26.21}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.94}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.11}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.63}
+M=256
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 7.14}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 7.61}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 14.94}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 65.66}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 2.75}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.02}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 7.85}
+M=2048
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 45.04}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 48.37}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 94.52}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 383.79}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 7.56}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 12.59}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 78.7}
+=== glue prof H=3584 I=18944 (7b) T16M_R4S=0
+M=1
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 4.88}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.11}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.97}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 9.73}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.91}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.03}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.48}
+M=16
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 4.92}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.11}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 6.31}
+   deq_silu_r4quant           {'void r4_cl_k<true>(int const*, __nv_bflo': 10.05}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.91}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.11}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.51}
+M=64
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.01}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.22}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 9.54}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 26.15}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.94}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.11}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.64}
+M=256
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 7.14}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 7.61}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 22.9}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 65.27}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 2.73}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.05}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 7.93}
+M=2048
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 45.09}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 48.43}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 140.52}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 384.11}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 7.58}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 12.62}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 78.65}
+=== prof 7B p2048 g1 b1 (all on)
+DECODE_PROF lssab b1 total 44.7 ms, 44.659 ms/token
+   20921.7 us    112 calls  747.20 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+    8404.9 us     28 calls  300.17 us/tok/layer  void deqsilu_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long 
+    4423.9 us     84 calls  157.99 us/tok/layer  r4quant_s_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __
+    3585.8 us     28 calls  128.06 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa
+    2725.8 us     56 calls   97.35 us/tok/layer  void normquant_k<512, 7>(__nv_bfloat16 const*, int const*, float const*, float const*, flo
+    2072.9 us     28 calls   74.03 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+    1391.5 us     28 calls   49.70 us/tok/layer  void deqrope_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float
+     380.4 us      1 calls   13.59 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+     291.7 us     28 calls   10.42 us/tok/layer  void rowquant_k<256, 14>(__nv_bfloat16 const*, signed char*, float*, int)
+     103.1 us     28 calls    3.68 us/tok/layer  fg_gather(FgArgs)
+     100.0 us     28 calls    3.57 us/tok/layer  void flash::prepare_varlen_num_blocks_kernel<1, true>(int, int, int, int const*, int const
+      80.2 us     28 calls    2.87 us/tok/layer  fg_aux(FgArgs)
+      30.7 us      1 calls    1.09 us/tok/layer  void dynnorm_k<256, 14>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, int co
+      17.0 us      1 calls    0.61 us/tok/layer  _gumbel_sample_kernel
+=== prof 7B p300 g64 b32 (all on)
+DECODE_PROF lssab b32 total 630.1 ms, 9.845 ms/token
+  119476.4 us   1828 calls   66.67 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+  113021.3 us   5292 calls   63.07 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_64x64_128x6_tn_align16>(cutlass_80
+  101433.6 us    112 calls   56.60 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+   89423.2 us   5376 calls   49.90 us/tok/layer  r4quant_s_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __
+   56636.9 us   1792 calls   31.61 us/tok/layer  void deqsilu_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long 
+   50999.2 us   1764 calls   28.46 us/tok/layer  lsb::lsb_dec8p(lsb::LsbDev)
+   37297.9 us   3584 calls   20.81 us/tok/layer  void normquant_k<512, 7>(__nv_bfloat16 const*, int const*, float const*, float const*, flo
+   21339.1 us   1792 calls   11.91 us/tok/layer  void deqrope_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float
+    8816.7 us     28 calls    4.92 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa
+    5467.0 us   1792 calls    3.05 us/tok/layer  void rowquant_k<256, 14>(__nv_bfloat16 const*, signed char*, float*, int)
+    5421.6 us     64 calls    3.03 us/tok/layer  lsb::lsb_rowmap(lsb::LsbDev, unsigned long long, unsigned long long, unsigned long long, u
+    4487.5 us     28 calls    2.50 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+    3589.8 us   1764 calls    2.00 us/tok/layer  deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int
+    2576.3 us     64 calls    1.44 us/tok/layer  _gumbel_sample_kernel
+LOAD 12:27 19.95 21.50 21.77 single qwen25_7b stock allon
+LOAD 12:28 28.80 24.46 22.82 single qwen25_7b lssab allon
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1i/single_qwen25_7b_allon.json
+S1I qwen25_7b    allon    ttft_p128_b1         stock      9.02 lssab     11.40 ratio 0.791
+S1I qwen25_7b    allon    ttft_p128_b8         stock     26.58 lssab     27.49 ratio 0.967
+S1I qwen25_7b    allon    ttft_p2048_b1        stock     50.18 lssab     49.54 ratio 1.013
+S1I qwen25_7b    allon    ttft_p2048_b8        stock    371.96 lssab    349.88 ratio 1.063
+S1I qwen25_7b    allon    ttft_p8192_b1        stock    206.98 lssab    195.31 ratio 1.060
+S1I qwen25_7b    allon    ttft_p8192_b8        stock   1598.49 lssab   1557.07 ratio 1.027
+S1I qwen25_7b    allon    ttft_p8192_b4        stock    802.80 lssab    778.92 ratio 1.031
+S1I qwen25_7b    allon    ttft_p32640_b1       stock   1109.71 lssab   1127.46 ratio 0.984
+S1I qwen25_7b    allon    prefill_p128_b32     stock     97.10 lssab     90.62 ratio 1.072
+S1I qwen25_7b    allon    decode_b1            stock    164.13 lssab    123.96 ratio 0.755
+S1I qwen25_7b    allon    decode_b8            stock   1281.73 lssab    647.16 ratio 0.505
+S1I qwen25_7b    allon    decode_b32           stock   5038.43 lssab   4030.19 ratio 0.800
+LOAD 12:30 27.91 25.73 23.49 single qwen25_1p5b stock allon
+LOAD 12:31 25.56 25.47 23.54 single qwen25_1p5b lssab allon
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1i/single_qwen25_1p5b_allon.json
+S1I qwen25_1p5b  allon    ttft_p128_b1         stock      4.32 lssab      8.56 ratio 0.505
+S1I qwen25_1p5b  allon    ttft_p128_b8         stock      9.66 lssab     14.44 ratio 0.669
+S1I qwen25_1p5b  allon    ttft_p2048_b1        stock     15.28 lssab     21.05 ratio 0.726
+S1I qwen25_1p5b  allon    ttft_p2048_b8        stock     94.69 lssab    130.71 ratio 0.724
+S1I qwen25_1p5b  allon    ttft_p8192_b1        stock     61.05 lssab     74.92 ratio 0.815
+S1I qwen25_1p5b  allon    ttft_p8192_b8        stock    418.28 lssab    597.22 ratio 0.700
+S1I qwen25_1p5b  allon    ttft_p8192_b4        stock    213.87 lssab    298.48 ratio 0.717
+S1I qwen25_1p5b  allon    ttft_p32640_b1       stock    348.98 lssab    448.96 ratio 0.777
+S1I qwen25_1p5b  allon    prefill_p128_b32     stock     30.00 lssab     38.20 ratio 0.785
+S1I qwen25_1p5b  allon    decode_b1            stock    434.28 lssab    197.61 ratio 0.455
+S1I qwen25_1p5b  allon    decode_b8            stock   3338.60 lssab   1126.17 ratio 0.337
+S1I qwen25_1p5b  allon    decode_b32           stock  12521.81 lssab   6163.02 ratio 0.492
+LOAD 12:32 21.08 24.18 23.24 single qwen25_3b stock allon
+LOAD 12:34 18.60 22.70 22.80 single qwen25_3b lssab allon
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1i/single_qwen25_3b_allon.json
+S1I qwen25_3b    allon    ttft_p128_b1         stock      6.41 lssab     11.14 ratio 0.576
+S1I qwen25_3b    allon    ttft_p128_b8         stock     15.40 lssab     21.09 ratio 0.730
+S1I qwen25_3b    allon    ttft_p2048_b1        stock     25.58 lssab     32.93 ratio 0.777
+S1I qwen25_3b    allon    ttft_p2048_b8        stock    182.33 lssab    212.73 ratio 0.857
+S1I qwen25_3b    allon    ttft_p8192_b1        stock    106.39 lssab    122.89 ratio 0.866
+S1I qwen25_3b    allon    ttft_p8192_b8        stock    797.62 lssab    978.20 ratio 0.815
+S1I qwen25_3b    allon    ttft_p8192_b4        stock    404.25 lssab    487.91 ratio 0.829
+S1I qwen25_3b    allon    ttft_p32640_b1       stock    616.82 lssab    745.07 ratio 0.828
+S1I qwen25_3b    allon    prefill_p128_b32     stock     49.00 lssab     58.56 ratio 0.837
+S1I qwen25_3b    allon    decode_b1            stock    277.61 lssab    145.83 ratio 0.525
+S1I qwen25_3b    allon    decode_b8            stock   2156.89 lssab    808.25 ratio 0.375
+S1I qwen25_3b    allon    decode_b32           stock   8196.43 lssab   4737.19 ratio 0.578
+S1I_DONE Wed Sep  9 12:35:43 UTC 2026

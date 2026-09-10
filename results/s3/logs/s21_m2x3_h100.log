@@ -1,0 +1,19 @@
+mx gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+mx_gemm E=32 N=5760 K=2880 R=4425 PASS diff=0
+mx_gemm E=32 N=2880 K=2880 R=5405 PASS diff=0
+mx_gemm E=4 N=256 K=64 R=103 PASS diff=0
+mx_gemm E=8 N=512 K=4096 R=44 PASS diff=0
+mx_gemm E=32 N=5760 K=2880 R=13 PASS diff=0
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+TIME N=5760 K=2880 R=8192 mx_gemm(mma)       2.5127 ms  (108 TOPS)
+TIME N=5760 K=2880 R=8192 mx_gemv            42.7489 ms  (6 TOPS)
+TIME N=5760 K=2880 R=8192 int8 classic gmm   0.4662 ms  (583 TOPS)
+TIME N=5760 K=2880 R=8 mx_gemv R=8        0.1039 ms
+TIME N=5760 K=2880 R=8 mx_gemm R=8        0.1738 ms
+TIME N=2880 K=2880 R=8192 mx_gemm(mma)       1.2635 ms  (108 TOPS)
+TIME N=2880 K=2880 R=8192 mx_gemv            21.3753 ms  (6 TOPS)
+TIME N=2880 K=2880 R=8192 int8 classic gmm   0.2353 ms  (578 TOPS)
+TIME N=2880 K=2880 R=8 mx_gemv R=8        0.0538 ms
+TIME N=2880 K=2880 R=8 mx_gemm R=8        0.1563 ms
+M2X3_DONE Thu Sep 10 08:50:20 UTC 2026

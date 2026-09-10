@@ -1,0 +1,7 @@
+graph prof rc=0
+GRAPH T=    1 full  0.1113 ms  rowquant=0.1118  +gate/route=0.0729  +r4quant+dispatch=0.0837  +gmm_up+silu=0.1102  +gmm_down+deq=0.1251  +combine (full)=0.1113
+GRAPH T=    8 full  0.1754 ms  rowquant=0.1746  +gate/route=0.0726  +r4quant+dispatch=0.0846  +gmm_up+silu=0.1594  +gmm_down+deq=0.1929  +combine (full)=0.1754
+GRAPH T=   32 full  0.2252 ms  rowquant=0.2257  +gate/route=0.0753  +r4quant+dispatch=0.0851  +gmm_up+silu=0.1920  +gmm_down+deq=0.2446  +combine (full)=0.2252
+GRAPH T=  256 full  0.2892 ms  rowquant=0.2893  +gate/route=0.0967  +r4quant+dispatch=0.1162  +gmm_up+silu=0.2560  +gmm_down+deq=0.3437  +combine (full)=0.2892
+GRAPH T= 2048 full  0.8054 ms  rowquant=0.8052  +gate/route=0.1150  +r4quant+dispatch=0.2169  +gmm_up+silu=0.5380  +gmm_down+deq=0.8159  +combine (full)=0.8054
+M1P3_DONE Thu Sep 10 04:20:43 UTC 2026

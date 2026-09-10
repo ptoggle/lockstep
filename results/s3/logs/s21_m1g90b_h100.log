@@ -1,0 +1,13 @@
+gmm90 rc=0
+T16MOE_GMM90 GATE: 12 PASS / 0 FAIL
+TIME N=1536 K=2048 R=16384 classic_big      0.2378 ms  (433 TOPS)  bad=0
+TIME N=1536 K=2048 R=16384 classic_small    0.2606 ms  (396 TOPS)  bad=0
+TIME N=1536 K=2048 R=16384 sm90_coop128     0.9679 ms  (107 TOPS)  bad=0
+TIME N=1536 K=2048 R=16384 sm90_pingpong64  0.9656 ms  (107 TOPS)  bad=0
+TIME N=1536 K=2048 R=16384 sm90_coop256     1.1631 ms  (89 TOPS)  bad=0
+TIME N=2048 K=768 R=16384 classic_big      0.1508 ms  (342 TOPS)  bad=0
+TIME N=2048 K=768 R=16384 classic_small    0.1607 ms  (321 TOPS)  bad=0
+TIME N=2048 K=768 R=16384 sm90_coop128     0.5524 ms  (93 TOPS)  bad=0
+TIME N=2048 K=768 R=16384 sm90_pingpong64  0.5189 ms  (99 TOPS)  bad=0
+TIME N=2048 K=768 R=16384 sm90_coop256     0.6585 ms  (78 TOPS)  bad=0
+M1G90B_DONE Thu Sep 10 06:04:42 UTC 2026

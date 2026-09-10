@@ -1,0 +1,14 @@
+M2E9 start Thu Sep 10 12:54:03 UTC 2026
+345 MHz, 2619 MHz, 27, 73.42 W
+stock9 rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 0, "grouped": 1, "eager": 0, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 309.09968299589036, "decode_b8_tps": 1574.6468185109484, "decode_b32_tps": 4833.419944676895, "ttft_2048_ms": 36.63134574890137, "ttft_8192_ms": 126.59311294555664, "moe_calls": 0}
+M2E9b start Thu Sep 10 13:32:32 UTC 2026
+345 MHz, 2619 MHz, 27, 73.11 W
+mx9_bk32 rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 189.61758746315783, "decode_b8_tps": 427.61601024454296, "decode_b32_tps": 1220.2947633791016, "ttft_2048_ms": 130.89489936828613, "ttft_8192_ms": 462.37850189208984, "moe_calls": 5016}
+mx9_bk200 rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 189.74076028354156, "decode_b8_tps": 427.22789315063426, "decode_b32_tps": 1219.8122436213646, "ttft_2048_ms": 131.00457191467285, "ttft_8192_ms": 462.67127990722656, "moe_calls": 5016}
+stock9b rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 0, "grouped": 1, "eager": 0, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 307.71531610018917, "decode_b8_tps": 1576.804567811832, "decode_b32_tps": 4842.362477549645, "ttft_2048_ms": 35.546064376831055, "ttft_8192_ms": 128.2329559326172, "moe_calls": 0}
+1980 MHz, 2619 MHz, 35, 129.81 W
+M2E9_DONE Thu Sep 10 13:45:59 UTC 2026

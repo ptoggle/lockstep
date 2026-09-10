@@ -1,0 +1,21 @@
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 54 PASS / 0 FAIL
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+T16MOE_GMM_DEQ GATE: 8 PASS / 0 FAIL
+=== layer 0 NTOK=48
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 48, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.19925546646118164, "t_fused_s": 0.0006489753723144531}
+graph prof rc=0
+GRAPH T=    1 full  0.0658 ms  rowquant=0.0076  gate_route(fused)=0.0194  rq+int_mm+deq+route=0.0721  +r4quant+dispatch=0.0836  +gmm_up+silu=0.1052  +gmm_down+deq=0.1203  full forward=0.0658
+GRAPH T=    8 full  0.1375 ms  rowquant=0.0080  gate_route(fused)=0.0201  rq+int_mm+deq+route=0.0728  +r4quant+dispatch=0.0837  +gmm_up+silu=0.1603  +gmm_down+deq=0.1962  full forward=0.1375
+GRAPH T=   32 full  0.1877 ms  rowquant=0.0082  gate_route(fused)=0.0200  rq+int_mm+deq+route=0.0742  +r4quant+dispatch=0.0836  +gmm_up+silu=0.1923  +gmm_down+deq=0.2441  full forward=0.1877
+GRAPH T=  256 full  0.2600 ms  rowquant=0.0092  gate_route(fused)=0.0276  rq+int_mm+deq+route=0.0972  +r4quant+dispatch=0.1102  +gmm_up+silu=0.2516  +gmm_down+deq=0.3294  full forward=0.2600
+GRAPH T= 2048 full  0.6548 ms  rowquant=0.0181  gate_route(fused)=0.1410  rq+int_mm+deq+route=0.1152  +r4quant+dispatch=0.1694  +gmm_up+silu=0.4924  +gmm_down+deq=0.6968  full forward=0.6548
+bench_g1g_v6 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 48, "mode": "bench", "decode_b1_tps": 170.19930851397714, "decode_b8_tps": 895.3995077871164, "decode_b32_tps": 2785.589181973404, "ttft_2048_ms": 51.55467987060547, "ttft_8192_ms": 192.41046905517578, "moe_calls": 3696}
+ppl_g1_v6 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 48, "mode": "ppl", "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 8.81400582424298, "gen_s": 2.552100896835327, "moe_calls": 1584}
+M1F9_DONE Thu Sep 10 05:07:58 UTC 2026

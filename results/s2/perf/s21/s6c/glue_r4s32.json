@@ -1,0 +1,98 @@
+{
+ "320": {
+  "norm_quant(x)": {
+   "void normquant_k<256, 14>(__nv_bfloat16 ": 9.02
+  },
+  "norm_quant(x+res)": {
+   "void normquant_k<256, 14>(__nv_bfloat16 ": 9.63
+  },
+  "rowquant_pad": {
+   "void rowquant_k<256, 14>(__nv_bfloat16 c": 3.29
+  },
+  "r4quant_pad": {
+   "r4quant_s_k(__nv_bfloat16 const*, signed": 25.74
+  },
+  "r4quant_pad(H)": {
+   "r4quant_s_k(__nv_bfloat16 const*, signed": 5.54
+  },
+  "deq_silu_r4quant": {
+   "deqsilur4_k(int const*, __nv_bfloat16 co": 90.78
+  },
+  "deq_silu(tiled)": {
+   "void deqsilu_t_k<4, 0>(int const*, __nv_": 34.04
+  },
+  "stock rms_norm": {
+   "void vllm::rms_norm_kernel<c10::BFloat16": 2.91
+  },
+  "stock fused_add_rms_norm": {
+   "std::enable_if<(((8)>(0)))&&vllm::_typeC": 3.24
+  },
+  "stock silu_and_mul": {
+   "void vllm::act_and_mul_kernel<c10::BFloa": 11.55
+  }
+ },
+ "1088": {
+  "norm_quant(x)": {
+   "void normquant_k<256, 14>(__nv_bfloat16 ": 22.03
+  },
+  "norm_quant(x+res)": {
+   "void normquant_k<256, 14>(__nv_bfloat16 ": 24.17
+  },
+  "rowquant_pad": {
+   "void rowquant_k<256, 14>(__nv_bfloat16 c": 6.42
+  },
+  "r4quant_pad": {
+   "r4quant_s_k(__nv_bfloat16 const*, signed": 60.03
+  },
+  "r4quant_pad(H)": {
+   "r4quant_s_k(__nv_bfloat16 const*, signed": 12.22
+  },
+  "deq_silu_r4quant": {
+   "deqsilur4_k(int const*, __nv_bfloat16 co": 225.91
+  },
+  "deq_silu(tiled)": {
+   "void deqsilu_t_k<4, 0>(int const*, __nv_": 96.19
+  },
+  "stock rms_norm": {
+   "void vllm::rms_norm_kernel<c10::BFloat16": 5.29
+  },
+  "stock fused_add_rms_norm": {
+   "std::enable_if<(((8)>(0)))&&vllm::_typeC": 7.79
+  },
+  "stock silu_and_mul": {
+   "void vllm::act_and_mul_kernel<c10::BFloa": 43.97
+  }
+ },
+ "2112": {
+  "norm_quant(x)": {
+   "void normquant_k<256, 14>(__nv_bfloat16 ": 38.52
+  },
+  "norm_quant(x+res)": {
+   "void normquant_k<256, 14>(__nv_bfloat16 ": 43.73
+  },
+  "rowquant_pad": {
+   "void rowquant_k<256, 14>(__nv_bfloat16 c": 10.97
+  },
+  "r4quant_pad": {
+   "r4quant_s_k(__nv_bfloat16 const*, signed": 100.35
+  },
+  "r4quant_pad(H)": {
+   "r4quant_s_k(__nv_bfloat16 const*, signed": 19.07
+  },
+  "deq_silu_r4quant": {
+   "deqsilur4_k(int const*, __nv_bfloat16 co": 391.57
+  },
+  "deq_silu(tiled)": {
+   "void deqsilu_t_k<4, 0>(int const*, __nv_": 179.12
+  },
+  "stock rms_norm": {
+   "void vllm::rms_norm_kernel<c10::BFloat16": 8.03
+  },
+  "stock fused_add_rms_norm": {
+   "std::enable_if<(((8)>(0)))&&vllm::_typeC": 12.61
+  },
+  "stock silu_and_mul": {
+   "void vllm::act_and_mul_kernel<c10::BFloa": 81.0
+  }
+ }
+}

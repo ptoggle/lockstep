@@ -1,0 +1,19 @@
+1
+moe rc=0
+--- trace
+LOCKSTEP plugin register() pid=1458251 file=/workspace/p2/lockstep_vllm_plugin.py LOCKSTEP_MOE='1' registered=False
+LOCKSTEP_MOE: install() pid=1458251 patched GPUModelRunner.load_model (grouped=1)
+(EngineCore pid=1458456) LOCKSTEP plugin register() pid=1458456 file=/workspace/p2/lockstep_vllm_plugin.py LOCKSTEP_MOE='1' registered=False
+(EngineCore pid=1458456) LOCKSTEP_MOE: install() pid=1458456 patched GPUModelRunner.load_model (grouped=1)
+(EngineCore pid=1458456) LOCKSTEP_MOE: load_model hook pid=1458456 - arming
+(EngineCore pid=1458456) LOCKSTEP_MOE: armed 48 MoE layers at model load (before compile / capture), grouped=1
+--- markers
+armed_1458456.json
+{"pid": 1458456, "armed_layers": 48, "stats": {"armed_layers": 48, "E": 128, "k": 8, "renorm": true}}
+Successful requests:                     500       
+Request throughput (req/s):              14.57     
+Output token throughput (tok/s):         2961.90   
+Median TTFT (ms):                        11132.66  
+Median TPOT (ms):                        17.29     
+P99 TPOT (ms):                           26.81     
+M1S4_DONE Thu Sep 10 08:47:59 UTC 2026

@@ -1,0 +1,36 @@
+mx gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+TIME N=5760 K=2880 R=256 gemm16 R=256       0.2990 ms
+TIME N=5760 K=2880 R=256 gemm16 WARPSPEC R=256 0.2693 ms
+TIME N=5760 K=2880 R=256 int8 gmm R=256     0.2011 ms
+TIME N=5760 K=2880 R=256 SKEW gemm16        0.3592 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws16          0.3263 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws32          0.3621 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws64          0.4565 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws2-16        0.3313 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws2-32        0.3667 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws2-64        0.4841 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW int8 gmm      0.2021 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 gemm ws32 R=256    0.3329 ms
+TIME N=5760 K=2880 R=256 gemm ws64 R=256    0.4549 ms
+TIME N=5760 K=2880 R=256 gemm ws2-16 R=256  0.2753 ms
+TIME N=5760 K=2880 R=256 gemm ws2-32 R=256  0.3254 ms
+TIME N=5760 K=2880 R=256 gemm ws2-64 R=256  0.4603 ms
+TIME N=2880 K=2880 R=256 gemm16 R=256       0.1780 ms
+TIME N=2880 K=2880 R=256 gemm16 WARPSPEC R=256 0.1656 ms
+TIME N=2880 K=2880 R=256 int8 gmm R=256     0.1038 ms
+TIME N=2880 K=2880 R=256 SKEW gemm16        0.2180 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws16          0.1871 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws32          0.1933 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws64          0.2541 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws2-16        0.1894 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws2-32        0.1946 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws2-64        0.2701 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW int8 gmm      0.1044 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 gemm ws32 R=256    0.1917 ms
+TIME N=2880 K=2880 R=256 gemm ws64 R=256    0.2535 ms
+TIME N=2880 K=2880 R=256 gemm ws2-16 R=256  0.1663 ms
+TIME N=2880 K=2880 R=256 gemm ws2-32 R=256  0.1923 ms
+TIME N=2880 K=2880 R=256 gemm ws2-64 R=256  0.2670 ms
+M2X16_DONE Thu Sep 10 12:19:12 UTC 2026

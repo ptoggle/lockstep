@@ -1,0 +1,28 @@
+61112 Sep  3 22:06 lssa/portable/lssa_lssab_t13b.cu
+06999 Sep  9 13:34 lssa_lssab_t13b.cu
+2f284a39366cf932352ef9c07b8a0615 lssa_lssab_t13b.cu
+a877b7d5109f568ebc058632304a604d lssa/portable/lssa_lssab_t13b.cu
+2f284a39366cf932352ef9c07b8a0615 stage_s2/lssa_lssab_t13b.cu
+shipped .so exports lsb_dec8_run: 1
+=== timing build (top-level source) 14:07
+1657024 Sep  9 14:08 /workspace/p2/lssa_lssab_timing.so
+timing .so exports lsb_dec8_run: 1
+=== PROF=b1_300
+PROF b1_300: step ms (rowmap+prep+dec8, incl. sync) median 0.365 min 0.342  ctas=4 segs=4
+PROF b1_300: per-CTA cycles: wait(cp.async)=610 partials=8302 phase1(chain)=7865 phase2(PV)=4468 prologue=11160 all=37610  chunks/CTA=3.0  timed CTAs=4
+=== PROF=b1_2k
+PROF b1_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.246 min 0.238  ctas=4 segs=4
+PROF b1_2k: per-CTA cycles: wait(cp.async)=3398 partials=47910 phase1(chain)=52098 phase2(PV)=25270 prologue=9354 all=147001  chunks/CTA=17.0  timed CTAs=4
+=== PROF=b8_300
+PROF b8_300: step ms (rowmap+prep+dec8, incl. sync) median 0.228 min 0.210  ctas=32 segs=32
+PROF b8_300: per-CTA cycles: wait(cp.async)=614 partials=8343 phase1(chain)=7898 phase2(PV)=4468 prologue=11239 all=37771  chunks/CTA=3.0  timed CTAs=32
+=== PROF=b32_300
+PROF b32_300: step ms (rowmap+prep+dec8, incl. sync) median 0.245 min 0.223  ctas=128 segs=128
+PROF b32_300: per-CTA cycles: wait(cp.async)=629 partials=8708 phase1(chain)=8172 phase2(PV)=4671 prologue=11217 all=38821  chunks/CTA=3.0  timed CTAs=128
+=== PROF=b32_2k
+PROF b32_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.310 min 0.305  ctas=128 segs=128
+PROF b32_2k: per-CTA cycles: wait(cp.async)=3851 partials=55031 phase1(chain)=62164 phase2(PV)=26394 prologue=10480 all=167692  chunks/CTA=17.0  timed CTAs=128
+=== PROF=b1_32k
+PROF b1_32k: step ms (rowmap+prep+dec8, incl. sync) median 1.250 min 1.236  ctas=4 segs=36
+PROF b1_32k: per-CTA cycles: wait(cp.async)=51678 partials=757269 phase1(chain)=812444 phase2(PV)=381955 prologue=9758 all=2120506  chunks/CTA=257.0  timed CTAs=4
+S4C_DONE Wed Sep  9 14:09:19 UTC 2026

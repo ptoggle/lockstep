@@ -1,0 +1,252 @@
+{
+ "stack": "stock",
+ "cg": "FULL_AND_PIECEWISE",
+ "noinductor": "1",
+ "plen": 4096,
+ "gen": 32,
+ "batch": 64,
+ "total_cuda_ms": 6244.689584999891,
+ "per_token_ms": 195.1465495312466,
+ "kernels": [
+  {
+   "us": 2826003.7,
+   "calls": 448,
+   "us_per_token_layer": 3154.02,
+   "name": "nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_TNN"
+  },
+  {
+   "us": 1666442.7,
+   "calls": 896,
+   "us_per_token_layer": 1859.87,
+   "name": "nvjet_sm90_tst_256x128_64x4_1x2_h_bz_coopA_TNT"
+  },
+  {
+   "us": 634517.7,
+   "calls": 1344,
+   "us_per_token_layer": 708.17,
+   "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::Col"
+  },
+  {
+   "us": 358151.1,
+   "calls": 448,
+   "us_per_token_layer": 399.72,
+   "name": "nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_bias_TNN"
+  },
+  {
+   "us": 279131.3,
+   "calls": 1344,
+   "us_per_token_layer": 311.53,
+   "name": "void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_ke"
+  },
+  {
+   "us": 142906.5,
+   "calls": 2688,
+   "us_per_token_layer": 159.49,
+   "name": "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f"
+  },
+  {
+   "us": 89579.7,
+   "calls": 1344,
+   "us_per_token_layer": 99.98,
+   "name": "void vllm::rotary_embedding_kernel<c10::BFloat16, c10::BFloat16, true>(long const*, c10::B"
+  },
+  {
+   "us": 52975.4,
+   "calls": 532,
+   "us_per_token_layer": 59.12,
+   "name": "nvjet_sm90_tst_320x64_64x4_4x1_v_bz_TNT"
+  },
+  {
+   "us": 49881.7,
+   "calls": 1344,
+   "us_per_token_layer": 55.67,
+   "name": "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheD"
+  },
+  {
+   "us": 24650.3,
+   "calls": 476,
+   "us_per_token_layer": 27.51,
+   "name": "nvjet_sm90_tst_112x64_64x9_2x1_v_bz_splitK_TNN"
+  },
+  {
+   "us": 7555.6,
+   "calls": 20,
+   "us_per_token_layer": 8.43,
+   "name": "nvjet_sm90_tst_384x64_64x3_2x1_v_bz_coopB_TNN"
+  },
+  {
+   "us": 7386.2,
+   "calls": 476,
+   "us_per_token_layer": 8.24,
+   "name": "nvjet_sm90_tst_64x64_64x13_4x1_v_bz_bias_TNT"
+  },
+  {
+   "us": 6815.5,
+   "calls": 28,
+   "us_per_token_layer": 7.61,
+   "name": "nvjet_sm90_tst_256x136_64x4_1x2_h_bz_coopA_TNT"
+  },
+  {
+   "us": 5582.5,
+   "calls": 476,
+   "us_per_token_layer": 6.23,
+   "name": "nvjet_sm90_tst_64x32_64x16_4x2_h_bz_TNT"
+  },
+  {
+   "us": 5377.3,
+   "calls": 56,
+   "us_per_token_layer": 6.0,
+   "name": "nvjet_sm90_tst_192x16_64x8_4x1_v_bz_TNT"
+  },
+  {
+   "us": 5324.8,
+   "calls": 56,
+   "us_per_token_layer": 5.94,
+   "name": "nvjet_sm90_tst_192x40_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 5307.6,
+   "calls": 56,
+   "us_per_token_layer": 5.92,
+   "name": "nvjet_sm90_tst_192x32_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 5297.4,
+   "calls": 56,
+   "us_per_token_layer": 5.91,
+   "name": "nvjet_sm90_tst_192x48_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 5264.9,
+   "calls": 56,
+   "us_per_token_layer": 5.88,
+   "name": "nvjet_sm90_tst_192x8_64x8_4x1_v_bz_TNT"
+  },
+  {
+   "us": 5258.6,
+   "calls": 56,
+   "us_per_token_layer": 5.87,
+   "name": "nvjet_sm90_tst_192x24_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 4338.4,
+   "calls": 56,
+   "us_per_token_layer": 4.84,
+   "name": "nvjet_sm90_tst_128x136_64x6_4x2_h_bz_TNT"
+  },
+  {
+   "us": 3304.8,
+   "calls": 112,
+   "us_per_token_layer": 3.69,
+   "name": "nvjet_sm90_tst_128x16_64x11_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 3169.4,
+   "calls": 896,
+   "us_per_token_layer": 3.54,
+   "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128"
+  },
+  {
+   "us": 2876.9,
+   "calls": 56,
+   "us_per_token_layer": 3.21,
+   "name": "nvjet_sm90_tst_128x56_64x9_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2788.6,
+   "calls": 56,
+   "us_per_token_layer": 3.11,
+   "name": "nvjet_sm90_tst_128x48_64x9_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2783.1,
+   "calls": 56,
+   "us_per_token_layer": 3.11,
+   "name": "nvjet_sm90_tst_128x40_64x10_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2752.6,
+   "calls": 56,
+   "us_per_token_layer": 3.07,
+   "name": "nvjet_sm90_tst_128x32_64x10_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2729.2,
+   "calls": 56,
+   "us_per_token_layer": 3.05,
+   "name": "nvjet_sm90_tst_128x24_64x11_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2646.3,
+   "calls": 56,
+   "us_per_token_layer": 2.95,
+   "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2136.6,
+   "calls": 924,
+   "us_per_token_layer": 2.38,
+   "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16"
+  },
+  {
+   "us": 1852.2,
+   "calls": 1924,
+   "us_per_token_layer": 2.07,
+   "name": "Memset (Device)"
+  },
+  {
+   "us": 1518.8,
+   "calls": 4,
+   "us_per_token_layer": 1.7,
+   "name": "nvjet_sm90_tst_384x56_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1515.2,
+   "calls": 4,
+   "us_per_token_layer": 1.69,
+   "name": "nvjet_sm90_tst_384x48_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1511.2,
+   "calls": 4,
+   "us_per_token_layer": 1.69,
+   "name": "nvjet_sm90_tst_384x32_64x4_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1507.7,
+   "calls": 4,
+   "us_per_token_layer": 1.68,
+   "name": "nvjet_sm90_tst_384x40_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1504.4,
+   "calls": 4,
+   "us_per_token_layer": 1.68,
+   "name": "nvjet_sm90_tst_384x24_64x4_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1493.3,
+   "calls": 91,
+   "us_per_token_layer": 1.67,
+   "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, "
+  },
+  {
+   "us": 1490.3,
+   "calls": 4,
+   "us_per_token_layer": 1.66,
+   "name": "nvjet_sm90_tst_384x16_64x4_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1473.0,
+   "calls": 4,
+   "us_per_token_layer": 1.64,
+   "name": "nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1429.9,
+   "calls": 48,
+   "us_per_token_layer": 1.6,
+   "name": "void vllm::rms_norm_kernel<c10::BFloat16, 8, 2, true>(c10::BFloat16*, c10::BFloat16 const*"
+  }
+ ]
+}

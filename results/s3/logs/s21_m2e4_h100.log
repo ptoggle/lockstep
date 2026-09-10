@@ -1,0 +1,3 @@
+gptoss_mx_bench_fused2 rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 45.27623962017173, "decode_b8_tps": 160.8010452484483, "decode_b32_tps": 450.3523203806686, "ttft_2048_ms": 220.84307670593262, "ttft_8192_ms": 730.6523323059082, "moe_calls": 5016}
+M2E4_DONE Thu Sep 10 09:20:25 UTC 2026

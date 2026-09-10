@@ -1,0 +1,24 @@
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 42 PASS / 0 FAIL
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+=== layer 0 NTOK=48
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 48, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.19277453422546387, "t_fused_s": 0.00039958953857421875}
+=== layer 0 NTOK=1024
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 915, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.2505788803100586, "t_fused_s": 0.0009906291961669922}
+prof rc=0
+T=    1 total    0.146 ms  gate+route=0.061  route=0.003  r4quant=0.010  dispatch=0.008  gmm=0.023  deq_silu_r4quant_g=0.012  gmm=0.015  deq_rows_g=0.006  combine=0.008
+T=    8 total    0.210 ms  gate+route=0.062  route=0.003  r4quant=0.010  dispatch=0.009  gmm=0.060  deq_silu_r4quant_g=0.014  gmm=0.037  deq_rows_g=0.006  combine=0.009
+T=   32 total    0.259 ms  gate+route=0.062  route=0.003  r4quant=0.007  dispatch=0.009  gmm=0.094  deq_silu_r4quant_g=0.015  gmm=0.054  deq_rows_g=0.006  combine=0.009
+T=  256 total    0.378 ms  gate=0.097  route=0.012  r4quant=0.008  dispatch=0.018  gmm=0.122  deq_silu_r4quant_g=0.024  gmm=0.075  deq_rows_g=0.012  combine=0.010
+T= 2048 total    0.801 ms  gate=0.098  route=0.016  r4quant=0.013  dispatch=0.090  gmm=0.223  deq_silu_r4quant_g=0.108  gmm=0.143  deq_rows_g=0.071  combine=0.039
+graph prof rc=0
+GRAPH T=    1 full  0.1074 ms  rowquant=0.1078  +gate/route=0.0722  +r4quant+dispatch=0.0830  +gmm_up+silu=0.1093  +gmm_down+deq=0.1239  +combine (full)=0.1074
+GRAPH T=    8 full  0.1696 ms  rowquant=0.1710  +gate/route=0.0716  +r4quant+dispatch=0.0825  +gmm_up+silu=0.1569  +gmm_down+deq=0.1901  +combine (full)=0.1696
+GRAPH T=   32 full  0.2203 ms  rowquant=0.2185  +gate/route=0.0752  +r4quant+dispatch=0.0843  +gmm_up+silu=0.1923  +gmm_down+deq=0.2424  +combine (full)=0.2203
+GRAPH T=  256 full  0.2756 ms  rowquant=0.2753  +gate/route=0.0974  +r4quant+dispatch=0.1157  +gmm_up+silu=0.2567  +gmm_down+deq=0.3345  +combine (full)=0.2756
+GRAPH T= 2048 full  0.7050 ms  rowquant=0.7043  +gate/route=0.1154  +r4quant+dispatch=0.2177  +gmm_up+silu=0.5396  +gmm_down+deq=0.7475  +combine (full)=0.7050
+M1F5_DONE Thu Sep 10 04:27:51 UTC 2026

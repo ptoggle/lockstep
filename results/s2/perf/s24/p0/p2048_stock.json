@@ -1,0 +1,252 @@
+{
+ "stack": "stock",
+ "cg": "FULL_AND_PIECEWISE",
+ "noinductor": "1",
+ "plen": 2048,
+ "gen": 32,
+ "batch": 64,
+ "total_cuda_ms": 3127.0228720000428,
+ "per_token_ms": 97.71946475000134,
+ "kernels": [
+  {
+   "us": 1409598.6,
+   "calls": 224,
+   "us_per_token_layer": 1573.21,
+   "name": "nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_TNN"
+  },
+  {
+   "us": 831893.1,
+   "calls": 448,
+   "us_per_token_layer": 928.45,
+   "name": "nvjet_sm90_tst_256x128_64x4_1x2_h_bz_coopA_TNT"
+  },
+  {
+   "us": 228843.5,
+   "calls": 1120,
+   "us_per_token_layer": 255.41,
+   "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::Col"
+  },
+  {
+   "us": 178700.8,
+   "calls": 224,
+   "us_per_token_layer": 199.44,
+   "name": "nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_bias_TNN"
+  },
+  {
+   "us": 141953.3,
+   "calls": 1120,
+   "us_per_token_layer": 158.43,
+   "name": "void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_ke"
+  },
+  {
+   "us": 73871.2,
+   "calls": 2240,
+   "us_per_token_layer": 82.45,
+   "name": "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f"
+  },
+  {
+   "us": 70126.7,
+   "calls": 700,
+   "us_per_token_layer": 78.27,
+   "name": "nvjet_sm90_tst_320x64_64x4_4x1_v_bz_TNT"
+  },
+  {
+   "us": 46270.3,
+   "calls": 1120,
+   "us_per_token_layer": 51.64,
+   "name": "void vllm::rotary_embedding_kernel<c10::BFloat16, c10::BFloat16, true>(long const*, c10::B"
+  },
+  {
+   "us": 33500.2,
+   "calls": 644,
+   "us_per_token_layer": 37.39,
+   "name": "nvjet_sm90_tst_112x64_64x9_2x1_v_bz_splitK_TNN"
+  },
+  {
+   "us": 25985.2,
+   "calls": 1120,
+   "us_per_token_layer": 29.0,
+   "name": "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheD"
+  },
+  {
+   "us": 10060.7,
+   "calls": 644,
+   "us_per_token_layer": 11.23,
+   "name": "nvjet_sm90_tst_64x64_64x13_4x1_v_bz_bias_TNT"
+  },
+  {
+   "us": 9445.3,
+   "calls": 25,
+   "us_per_token_layer": 10.54,
+   "name": "nvjet_sm90_tst_384x64_64x3_2x1_v_bz_coopB_TNN"
+  },
+  {
+   "us": 7598.9,
+   "calls": 644,
+   "us_per_token_layer": 8.48,
+   "name": "nvjet_sm90_tst_64x32_64x16_4x2_h_bz_TNT"
+  },
+  {
+   "us": 3617.2,
+   "calls": 28,
+   "us_per_token_layer": 4.04,
+   "name": "nvjet_sm90_tst_192x144_64x5_1x2_h_bz_coopB_TNT"
+  },
+  {
+   "us": 3035.8,
+   "calls": 896,
+   "us_per_token_layer": 3.39,
+   "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128"
+  },
+  {
+   "us": 2883.1,
+   "calls": 56,
+   "us_per_token_layer": 3.22,
+   "name": "nvjet_sm90_tst_128x56_64x9_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 2685.9,
+   "calls": 28,
+   "us_per_token_layer": 3.0,
+   "name": "nvjet_sm90_tst_192x16_64x8_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2670.3,
+   "calls": 28,
+   "us_per_token_layer": 2.98,
+   "name": "nvjet_sm90_tst_192x48_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2662.7,
+   "calls": 28,
+   "us_per_token_layer": 2.97,
+   "name": "nvjet_sm90_tst_192x40_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2655.7,
+   "calls": 28,
+   "us_per_token_layer": 2.96,
+   "name": "nvjet_sm90_tst_192x32_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2636.1,
+   "calls": 28,
+   "us_per_token_layer": 2.94,
+   "name": "nvjet_sm90_tst_192x24_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2615.1,
+   "calls": 28,
+   "us_per_token_layer": 2.92,
+   "name": "nvjet_sm90_tst_192x8_64x8_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2418.4,
+   "calls": 924,
+   "us_per_token_layer": 2.7,
+   "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16"
+  },
+  {
+   "us": 2090.9,
+   "calls": 28,
+   "us_per_token_layer": 2.33,
+   "name": "nvjet_sm90_tst_256x96_64x4_2x1_v_bz_coopA_splitK_TNT"
+  },
+  {
+   "us": 1818.4,
+   "calls": 40,
+   "us_per_token_layer": 2.03,
+   "name": "_gumbel_sample_kernel"
+  },
+  {
+   "us": 1651.9,
+   "calls": 56,
+   "us_per_token_layer": 1.84,
+   "name": "nvjet_sm90_tst_128x16_64x11_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1391.7,
+   "calls": 28,
+   "us_per_token_layer": 1.55,
+   "name": "nvjet_sm90_tst_128x48_64x9_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1388.9,
+   "calls": 28,
+   "us_per_token_layer": 1.55,
+   "name": "nvjet_sm90_tst_128x40_64x10_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1374.3,
+   "calls": 28,
+   "us_per_token_layer": 1.53,
+   "name": "nvjet_sm90_tst_128x32_64x10_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1363.7,
+   "calls": 28,
+   "us_per_token_layer": 1.52,
+   "name": "nvjet_sm90_tst_128x24_64x11_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1304.9,
+   "calls": 28,
+   "us_per_token_layer": 1.46,
+   "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1130.5,
+   "calls": 3,
+   "us_per_token_layer": 1.26,
+   "name": "nvjet_sm90_tst_384x56_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 1093.0,
+   "calls": 80,
+   "us_per_token_layer": 1.22,
+   "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso"
+  },
+  {
+   "us": 991.6,
+   "calls": 992,
+   "us_per_token_layer": 1.11,
+   "name": "Memset (Device)"
+  },
+  {
+   "us": 859.1,
+   "calls": 56,
+   "us_per_token_layer": 0.96,
+   "name": "nvjet_sm90_tst_64x56_64x14_4x1_v_bz_bias_TNT"
+  },
+  {
+   "us": 816.6,
+   "calls": 77,
+   "us_per_token_layer": 0.91,
+   "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, "
+  },
+  {
+   "us": 759.7,
+   "calls": 2,
+   "us_per_token_layer": 0.85,
+   "name": "nvjet_sm90_tst_384x48_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 757.2,
+   "calls": 2,
+   "us_per_token_layer": 0.85,
+   "name": "nvjet_sm90_tst_384x40_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 755.7,
+   "calls": 40,
+   "us_per_token_layer": 0.84,
+   "name": "void vllm::rms_norm_kernel<c10::BFloat16, 8, 2, true>(c10::BFloat16*, c10::BFloat16 const*"
+  },
+  {
+   "us": 752.6,
+   "calls": 2,
+   "us_per_token_layer": 0.84,
+   "name": "nvjet_sm90_tst_384x32_64x4_2x1_v_bz_TNT"
+  }
+ ]
+}

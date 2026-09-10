@@ -1,0 +1,6 @@
+=== S1k start Wed Sep  9 12:41:23 UTC 2026
+1891a0867e02f0a07bc3e102cf68d8f6
+gate rc=1
+T16M_KERNELS FAIL cases=1186 bad=54
+GATE FAILED - stopping
+S1K_DONE (gate fail) Wed Sep  9 12:45:45 UTC 2026

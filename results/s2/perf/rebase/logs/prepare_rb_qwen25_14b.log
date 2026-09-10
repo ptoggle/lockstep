@@ -1,0 +1,99 @@
+/root/v25/lib/python3.11/site-packages/huggingface_hub/constants.py:299: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+LOCKSTEP-ENVELOPE OK {"facts": {"architecture": "Qwen2ForCausalLM", "architectures": ["Qwen2ForCausalLM"], "head_dim": 128, "head_dim_from": "hidden_size // num_attention_heads", "heads": 40, "hidden": 5120, "hidden_act": "silu", "intermediate": 13824, "kv_heads": 8, "layers": 48, "max_model_len": 32768, "max_position": 32768, "model_type": "qwen2", "moe": null, "qk_norm": false, "quantization": null, "rope_theta": null, "rope_type": "default", "tied": false, "torch_dtype": "torch.bfloat16", "tp": 1, "use_sliding_window": false, "vocab": 152064, "window": null}, "model": "Qwen/Qwen2.5-14B-Instruct", "ok": true, "reasons": [], "stage": "prepare"}
+LOCKSTEP-PREPARE model Qwen/Qwen2.5-14B-Instruct: hidden=5120 layers=48 heads=40/8 head_dim=128 vocab=152064 tied=False qk_norm=False rotary_dim=128 window=None rotation=paley1
+LOCKSTEP-PREPARE smoothing {"level": 0, "status": "OFF", "r1": "online", "file": "calib.pt", "sha256": "2fa76f060c574049ed26470155023c5e1eadc5f155c38a9f4fd00291a3eff41f", "windows": 16, "tokens": 16384, "calibrated_for": "outliers"}
+LOCKSTEP-PREPARE outliers {"k": 8, "linears": "qkv,gate_up", "status": "ON", "rule": "the k channels of largest per-channel amax of the linear's input over the calibration windows (stock engine; the norm-fed inputs in the unrotated basis, o_proj and down_proj per rank); their bf16 values bypass the rotation and the int8 quant and enter through the epilogue side path (contract v2.5 section 6.6, v2.5.1 for o_proj / down_proj)"}
+LOCKSTEP-CONFIG (legacy LOCKSTEP_PREFILL arming, NOT applied) {"applied": {}, "contract": "v2.5", "decode_16w": 1, "decode_pipelined": 1, "env_plan": {"LOCKSTEP_DEC8_P": "1", "LOCKSTEP_DEC8_W": "1", "LOCKSTEP_FA3": "1", "LOCKSTEP_FA3_DIR": "/root/fa3_b9vareng/hopper", "LOCKSTEP_FA3_GLUE": "/workspace/p2/lssa_fa3glue.so", "LOCKSTEP_FA3_KERNEL": "b8", "LOCKSTEP_KS": "0", "LOCKSTEP_KSR": "up", "LOCKSTEP_LSSAB_SO": "/workspace/p2/lssa_lssab.so", "LOCKSTEP_PREFILL": "lssab", "LOCKSTEP_SINK": "0", "LOCKSTEP_V2": "1", "T16L_ARM": "1", "T16L_FREE_BF16": "1", "T16M_CPP": "1", "T16M_FUSE": "1"}, "fa3_available": true, "fa3_dir": "/root/fa3_b9vareng/hopper", "fa3_glue": "/workspace/p2/lssa_fa3glue.so", "free_bf16": true, "fuse": true, "home": "/workspace/p2", "home_ok": true, "hw": {"cuda": "13.0", "cuda_visible_devices": null, "device_count": 1, "devices": [{"index": 0, "name": "NVIDIA H100 80GB HBM3", "sm": [9, 0]}], "driver_version": "13.0", "gpu": "NVIDIA H100 80GB HBM3", "p2p": [[true]], "probe": "libcuda", "sm": [9, 0], "torch": "2.11.0+cu130"}, "keq_path": null, "kernel_set": "hopper_exact", "lssab_so": "/workspace/p2/lssa_lssab.so", "manifest_compatible": true, "manifest_dir": null, "manifest_model": null, "manifest_tp": null, "mu_kind": "MU_MID", "nccl_env": {}, "p2p_all_pairs": null, "r4_cluster": true, "reasons": ["home=/workspace/p2 (env LOCKSTEP_HOME)", "kernel_set=hopper_exact: NVIDIA H100 80GB HBM3 is sm 9.0 and /workspace/p2/lssa_fa3glue.so + /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so exist", "contract=v2.5: LSSA-B8 for every row (prompt rows on the FA3 b8 seam, generated rows on lsb_dec8p, DEC8_P=1 DEC8_W=1)", "r4_cluster=True (compiled into t16m_kernels.cu, no env knob)", "no manifest (legacy LOCKSTEP_PREFILL arming); fuse=True free_bf16 from env", "world_size=1 (default)", "tp_reduce_mode=1 unused at world=1; no NCCL environment", "sliding_window_ceiling=None (the backend rule: a window >= max_model_len is no window; read from the vLLM config in LockstepAttentionImpl)", "selftest=strict (default)", "attention=LSSA-B8 (manifest attention.rule absent -> B8)"], "refusals": [], "selftest": "strict", "sliding_window_ceiling": null, "tp_reduce_mode": 1, "user_overrides": {"LOCKSTEP_SINK": {"planned": "0", "user": "1"}}, "world_size": 1, "world_source": "default"}
+LOCKSTEP-T13b: scheduler patched for KB=128 chunk alignment
+LOCKSTEP-T16e: attention-metadata hook installed (token role from InputBatch.is_prefilling_np; host seq_lens; no device sync)
+LOCKSTEP-T2 registered as AttentionBackendEnum.CUSTOM
+[t16l] kernels compiled
+[t16l] custom ops registered: t16l::{linear,norm,norm_res,rope,silu,commit}
+T16M: fused kernels compiled
+T14-PLUGIN: LOCKSTEP backend + T16l full stack (T16m fused glue) registered in pid 19325
+INFO 09-09 03:16:21 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 32768, 'gpu_memory_utilization': 0.55, 'max_num_seqs': 32, 'disable_log_stats': True, 'enforce_eager': True, 'attention_backend': 'CUSTOM', 'model': 'Qwen/Qwen2.5-14B-Instruct'}
+WARNING 09-09 03:16:21 [arg_utils.py:1606] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 09-09 03:16:23 [model.py:619] Resolved architecture: Qwen2ForCausalLM
+INFO 09-09 03:16:23 [model.py:1776] Using max model len 32768
+INFO 09-09 03:16:23 [scheduler.py:252] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 09-09 03:16:23 [vllm.py:1042] Asynchronous scheduling is enabled.
+WARNING 09-09 03:16:23 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 09-09 03:16:23 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 09-09 03:16:23 [kernel.py:292] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 09-09 03:16:23 [vllm.py:1322] Cudagraph is disabled under eager mode
+INFO 09-09 03:16:23 [compilation.py:312] Enabled custom fusions: norm_quant, act_quant
+INFO 09-09 03:16:27 [core.py:114] Initializing a V1 LLM engine (v0.25.1) with config: model='Qwen/Qwen2.5-14B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-14B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen2.5-14B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, moe_backend='auto', linear_backend='auto')
+INFO 09-09 03:16:27 [parallel_state.py:1607] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.20.0.2:42545 backend=nccl
+INFO 09-09 03:16:27 [parallel_state.py:1942] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 09-09 03:16:27 [gpu_worker.py:360] Using V2 Model Runner
+INFO 09-09 03:16:28 [model_runner.py:281] Loading model from scratch...
+INFO 09-09 03:16:28 [cuda.py:416] Using AttentionBackendEnum.CUSTOM backend.
+INFO 09-09 03:16:28 [flash_attn.py:718] Using FlashAttention version 3
+LOCKSTEP-T15: LSSA-B ceiling from vLLM config: nd=16384 nseq=32 nblk=256
+INFO 09-09 03:16:30 [weight_utils.py:849] Filesystem type for checkpoints: XFS. Checkpoint size: 27.51 GiB. Available RAM: 1797.94 GiB.
+INFO 09-09 03:16:30 [weight_utils.py:872] Auto-prefetch is disabled because the filesystem (XFS) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:00<00:03,  1.95it/s]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:00<00:02,  2.07it/s]
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:01<00:02,  2.11it/s]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:01<00:01,  2.13it/s]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:02<00:01,  2.14it/s]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:02<00:00,  2.15it/s]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:03<00:00,  2.10it/s]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:03<00:00,  2.59it/s]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:03<00:00,  2.28it/s]
+
+INFO 09-09 03:16:33 [default_loader.py:430] Loading weights took 3.52 seconds
+INFO 09-09 03:16:34 [model_runner.py:302] Model loading took 27.57 GiB and 5.963417 seconds
+INFO 09-09 03:16:34 [topk_topp_sampler.py:55] Using FlashInfer for top-p & top-k sampling.
+[t16l] armed norms=97 rope=1 linears=192 silu=48 lm_head=1 commit=0  rot=124 lmhead=a15w15 cutlass=True hash=off
+LOCKSTEP-ENVELOPE armed_scan {"norm": {"total": 97, "armed": 97, "gated": true, "classes": {"RMSNorm": [97, 97]}, "unarmed": []}, "rotary": {"total": 1, "armed": 1, "gated": true, "classes": {"RotaryEmbedding": [1, 1]}, "unarmed": []}, "activation": {"total": 48, "armed": 48, "gated": true, "classes": {"SiluAndMul": [48, 48]}, "unarmed": []}, "linear": {"total": 192, "armed": 192, "gated": true, "classes": {"QKVParallelLinear": [48, 48], "RowParallelLinear": [96, 96], "MergedColumnParallelLinear": [48, 48]}, "unarmed": []}, "ok": true}
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 1315840}, "qkv": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 1842176}}
+T16L armed_at_load {"norm": 97, "rope": 1, "linear": 192, "silu": 48, "logits": 1, "commit": 0}
+T16M: fused 48 / 48 decoder layers (minrows=17, capture=False, tp=1)
+T16M fused_at_load {"fused_layers": 48}
+INFO 09-09 03:16:38 [gpu_worker.py:538] Available KV cache memory: 12.97 GiB
+INFO 09-09 03:16:38 [kv_cache_utils.py:2146] GPU KV cache size: 70,800 tokens
+INFO 09-09 03:16:38 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 2.16x
+INFO 09-09 03:16:38 [deep_gemm.py:175] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+INFO 09-09 03:16:38 [deep_gemm.py:202] DeepGEMM PDL enabled on vllm.third_party.deep_gemm.
+INFO 09-09 03:16:38 [kernel_warmup.py:170] Using FlashInfer autotune cache file: /root/.cache/vllm/flashinfer_autotune_cache/0.6.13/90a/fea26d2ead467331fc820908c28b04bc463389531ea466c5e9311d45b672f09f/autotune_configs.json
+2026-09-09 03:16:38,268 - INFO - autotuner.py:651 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+LOCKSTEP-T2 ARMED: contract decode (BHI=26, table (13,15), win=1073741824) impl_count_so_far=48 heads=40 kv=8 dh=128
+LOCKSTEP-T15 LSSA-B ARMED: KB=128 BQ=9 so=/workspace/p2/lssa_lssab.so nsh=40 caps=(16384, 32, 256)
+LOCKSTEP-T16f pass-A scratch: rows=16384 of nd=16384 (nblk=256) -> tmx 671 MB + pacc 1342 MB
+LOCKSTEP-T15 mu ARMED: MU_MID (48, 8, 128) from /workspace/p2/manifests/rb_qwen25_14b/keq.pt  sha=ce9e479abfd3face2ebb4ae96d4128822df40800ffb80276d49c8815fe6a90b1  |mu|max=30.2500
+2026-09-09 03:16:39,011 - INFO - autotuner.py:674 - flashinfer.jit: [Autotuner]: Autotuning process ends
+WARNING 09-09 03:16:39 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.
+INFO 09-09 03:16:39 [cutedsl_warmup.py:97] Skipping CuTeDSL warmup because no compile units were requested.
+LOCKSTEP-T16e LSSA-B8 table: n=7 W_LOC=9 TOP=255 live=1152 len=2176 digest=7a42a785940f557d
+LOCKSTEP-T16e FA3 SEAM armed: fa3=/root/fa3_b9vareng/hopper glue=/workspace/p2/lssa_fa3glue.so ktok=262144 scratch=537 MB caps=(nd=16384 nseq=32 nblk=256)
+LOCKSTEP-T16w LSSA-B9.1 sink: ON (key 0 alone, lssab9_golden)
+LOCKSTEP-T16x LSSA-B9.3 key shift: off
+LOCKSTEP-T16e LSSA-B8 varlen: ON (one launch per wave)
+INFO 09-09 03:16:39 [jit_monitor.py:73] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+INFO 09-09 03:16:39 [core.py:344] init engine (profile, create kv cache, warmup model) took 3.76 s
+T16L exported /workspace/p2/manifests/rb_qwen25_14b/constants.safetensors tensors=1015 bytes=16382470276 sha256=5ff3cea91634020590de2c7dfc67a5b013e97bac4a317d61107cbf445c18ccb8 rank=0 meta=/workspace/p2/manifests/rb_qwen25_14b/export_meta.json (39.7s)
+LOCKSTEP-PREPARE exported by worker RPC: ['constants.safetensors'] (40.5s)
+WARNING 09-09 03:17:33 [jit_monitor.py:129] Triton kernel JIT compilation during inference: _topk_log_softmax_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+LOCKSTEP-SELFTEST wrote /workspace/p2/manifests/rb_qwen25_14b/probe.json: 256 ids, 8 generated, model=Qwen/Qwen2.5-14B-Instruct
+LOCKSTEP-PREPARE probe written by lockstep_selftest.write_probe: 8c837ea9214ce5844002c19b5a35539d2a8f9ef9d2309a5e34558bc01fb1d204
+LOCKSTEP-PREPARE engine released for the op-gate: {"free_bytes": 69273255936, "total_bytes": 85017493504, "free_frac": 0.8148117885025715}
+LOCKSTEP-PREPARE op-gate: /root/v25/bin/python /workspace/p2/t16l_egates.py (T16M_FUSE=0 PLEN=256 CHK_ROWS=256 CHK_LAYERS=0,24,47 GMU=0.55; log /workspace/p2/manifests/rb_qwen25_14b/op_gate.log)
+LOCKSTEP-PREPARE per-op linear_down_proj           n=12   bad=0        elements=15728640
+LOCKSTEP-PREPARE per-op linear_gate_up_proj        n=12   bad=0        elements=84934656
+LOCKSTEP-PREPARE per-op linear_o_proj              n=12   bad=0        elements=15728640
+LOCKSTEP-PREPARE per-op linear_qkv_proj            n=12   bad=0        elements=22020096
+LOCKSTEP-PREPARE per-op rmsnorm                    n=24   bad=0        elements=31457280
+LOCKSTEP-PREPARE per-op rmsnorm_residual           n=20   bad=0        elements=26214400
+LOCKSTEP-PREPARE per-op rope                       n=60   bad=0        elements=94371840
+LOCKSTEP-PREPARE per-op silu                       n=12   bad=0        elements=42467328
+LOCKSTEP-PREPARE stock check {"status": "PASS", "mean_logprob_lockstep": -10.390342962975595, "mean_logprob_stock": -10.378023575801475, "delta": -0.012319387174120067, "tolerance": 0.25, "n": 255}
+LOCKSTEP-PREPARE kernel gate {"status": "PASS", "dims": "5120,7168,13824,40,8", "cases": 1186, "bad": 0}
+LOCKSTEP-PREPARE quality gate {"status": "PASS", "stock": 3.499018799120725, "lockstep": 3.51706948411174, "delta_pct": 0.5158784798627192, "tolerance_pct": 1.0, "windows": 30}
+LOCKSTEP-PREPARE manifest /workspace/p2/manifests/rb_qwen25_14b/lockstep.manifest.json: 1015 constants (5ff3cea916340205), keq da8d8e8577a16631, probe 8c837ea9214ce584, 244s
+LOCKSTEP-PREPARE PASS /workspace/p2/manifests/rb_qwen25_14b
+LSSAB smem_size=192512 bytes (188 KB)

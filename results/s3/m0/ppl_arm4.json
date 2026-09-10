@@ -1,0 +1,12 @@
+{
+ "model": "Qwen/Qwen3-30B-A3B",
+ "armed": true,
+ "arm_mode": 4,
+ "armed_layers": 48,
+ "windows": 30,
+ "wlen": 2048,
+ "tokens": 61410,
+ "ppl": 8.81400582424298,
+ "gen_s": 150.33013558387756,
+ "moe_calls": 1440
+}

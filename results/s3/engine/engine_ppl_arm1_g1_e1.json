@@ -1,0 +1,14 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "armed": 1,
+ "grouped": 1,
+ "eager": 1,
+ "armed_layers": 24,
+ "mode": "ppl",
+ "windows": 30,
+ "wlen": 2048,
+ "tokens": 61410,
+ "ppl": 329.49283843993334,
+ "gen_s": 11.054957389831543,
+ "moe_calls": 792
+}

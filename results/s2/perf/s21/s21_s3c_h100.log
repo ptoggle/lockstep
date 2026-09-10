@@ -1,0 +1,38 @@
+=== S3c start Wed Sep  9 16:29:18 UTC 2026
+8b5e76fbadd9d0b74106f5bb0128cc56
+f45f5c610e505b977631763055128b83
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== profile b8 T16M_LMPREP=1
+       52.8 us/token  111.2/token  mean  0.47 us  void cutlass::Kernel2<cutlass_80_tensoro
+       29.4 us/token   55.1/token  mean  0.53 us  r4quant_k(__nv_bfloat16 const*, signed c
+       25.1 us/token   55.1/token  mean  0.46 us  void normquant_k<512, 7>(__nv_bfloat16 c
+       22.9 us/token   28.0/token  mean  0.82 us  void rowquant_k<256, 14>(__nv_bfloat16 c
+       14.0 us/token   27.6/token  mean  0.51 us  void r4_cl_k<false>(int const*, __nv_bfl
+       13.4 us/token   28.0/token  mean  0.48 us  void deqrope_t_k<4, 8>(int const*, __nv_
+       12.3 us/token   27.6/token  mean  0.45 us  lsb::lsb_dec8p(lsb::LsbDev)
+        9.1 us/token   28.0/token  mean  0.32 us  void deqsilu_t_k<4, 8>(int const*, __nv_
+        8.6 us/token    1.5/token  mean  5.60 us  Memcpy HtoD (Pinned -> Device)
+        8.5 us/token   27.6/token  mean  0.31 us  deq_k(int const*, float const*, float co
+        7.0 us/token    3.0/token  mean  2.35 us  void at::native::unrolled_elementwise_ke
+        6.1 us/token    1.4/token  mean  4.27 us  void flash::prepare_varlen_num_blocks_ke
+=== profile b8 T16M_LMPREP=0
+      132.4 us/token    1.4/token  mean 92.09 us  void flash::prepare_varlen_num_blocks_ke
+      111.4 us/token    7.0/token  mean 15.95 us  void at::native::unrolled_elementwise_ke
+      108.8 us/token   11.0/token  mean  9.90 us  void at::native::vectorized_elementwise_
+       74.4 us/token  111.2/token  mean  0.67 us  void cutlass::Kernel2<cutlass_80_tensoro
+       68.2 us/token    1.0/token  mean 68.15 us  _prepare_pos_seq_lens_kernel
+       66.4 us/token    2.0/token  mean 33.22 us  Memcpy DtoH (Device -> Pinned)
+       51.7 us/token    1.1/token  mean 45.94 us  Memcpy HtoD (Pinned -> Device)
+       50.8 us/token    2.0/token  mean 25.40 us  void at::native::elementwise_kernel<128,
+       48.4 us/token    1.0/token  mean 48.44 us  _combine_sampled_and_draft_tokens_kernel
+       48.4 us/token    1.0/token  mean 48.39 us  _gather_block_tables_kernel
+       45.6 us/token    1.0/token  mean 45.60 us  _post_update_kernel
+       42.8 us/token    3.0/token  mean 14.33 us  void at::native::(anonymous namespace)::
+S3C 7B lmprep=1  p128_b1=0.915  p2048_b1=1.013  dec_b1=0.935  dec_b8=0.921  dec_b32=0.858
+S3C 7B lmprep=0  p128_b1=0.911  p2048_b1=1.022  dec_b1=0.942  dec_b8=0.919  dec_b32=0.852
+=== E6 (7B, lm_prep on)
+e6 full rc=0
+e6 eager rc=0
+E6 full==eager True
+S3C_DONE Wed Sep  9 16:45:18 UTC 2026

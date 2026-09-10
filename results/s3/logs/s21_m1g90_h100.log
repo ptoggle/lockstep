@@ -1,0 +1,21 @@
+gmm90 rc=0
+gmm90 E=128 N=1536 K=2048 sparse R=   193 bad=0 PASS
+gmm90 E=128 N=1536 K=2048 dense  R= 17480 bad=0 PASS
+gmm90 E=128 N=1536 K=2048 empty  R=   258 bad=0 PASS
+gmm90 E=128 N=2048 K=768 sparse R=   194 bad=0 PASS
+gmm90 E=128 N=2048 K=768 dense  R= 18847 bad=0 PASS
+gmm90 E=128 N=2048 K=768 empty  R=   258 bad=0 PASS
+gmm90 E=8 N=1536 K=2048 sparse R=    11 bad=0 PASS
+gmm90 E=8 N=1536 K=2048 dense  R=  1499 bad=0 PASS
+gmm90 E=8 N=1536 K=2048 empty  R=   258 bad=0 PASS
+gmm90 E=64 N=256 K=64 sparse R=   100 bad=0 PASS
+gmm90 E=64 N=256 K=64 dense  R= 10267 bad=0 PASS
+gmm90 E=64 N=256 K=64 empty  R=   258 bad=0 PASS
+T16MOE_GMM90 GATE: 12 PASS / 0 FAIL
+TIME N=1536 K=2048 R=16384 classic_big    0.2456 ms  (420 TOPS)
+TIME N=1536 K=2048 R=16384 classic_small  0.2702 ms  (382 TOPS)
+TIME N=1536 K=2048 R=16384 sm90           0.9741 ms  (106 TOPS)
+TIME N=2048 K=768 R=16384 classic_big    0.1602 ms  (322 TOPS)
+TIME N=2048 K=768 R=16384 classic_small  0.1674 ms  (308 TOPS)
+TIME N=2048 K=768 R=16384 sm90           0.5665 ms  (91 TOPS)
+M1G90_DONE Thu Sep 10 05:41:59 UTC 2026

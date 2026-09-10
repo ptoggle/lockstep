@@ -1,0 +1,74 @@
+=== S1h start Wed Sep  9 11:58:24 UTC 2026
+17396f6b5576c4af83ac8bcf17679c0e
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== probe H=1536 T16M_NRQ_W=0
+M=1     two-launch    8.65 us {'r4quant_k(__nv_bfloat16 cons': 5.03, 'void normquant_k<512, 3>(__n': 3.62} | fused    8.89 us {'normrotquant_cl_k(__nv_bfloa': 8.89} | identical=True
+M=8     two-launch    8.60 us {'r4quant_k(__nv_bfloat16 cons': 5.01, 'void normquant_k<512, 3>(__n': 3.59} | fused    8.92 us {'normrotquant_cl_k(__nv_bfloa': 8.92} | identical=True
+M=16    two-launch    8.73 us {'r4quant_k(__nv_bfloat16 cons': 5.02, 'void normquant_k<512, 3>(__n': 3.71} | fused    9.56 us {'normrotquant_cl_k(__nv_bfloa': 9.56} | identical=True
+M=32    two-launch    8.72 us {'r4quant_k(__nv_bfloat16 cons': 5.06, 'void normquant_k<512, 3>(__n': 3.66} | fused    8.73 us {'r4quant_k(__nv_bfloat16 cons': 5.06, 'void normquant_k<512, 3>
+M=64    two-launch    8.76 us {'r4quant_k(__nv_bfloat16 cons': 5.07, 'void normquant_k<512, 3>(__n': 3.7} | fused    8.76 us {'r4quant_k(__nv_bfloat16 cons': 5.07, 'void normquant_k<512, 3>(
+M=256   two-launch   14.19 us {'r4quant_k(__nv_bfloat16 cons': 9.29, 'void normquant_k<512, 3>(__n': 4.9} | fused   14.20 us {'r4quant_k(__nv_bfloat16 cons': 9.28, 'void normquant_k<512, 3>(
+=== probe H=3584 T16M_NRQ_W=0
+M=1     two-launch   10.65 us {'r4quant_k(__nv_bfloat16 cons': 5.55, 'void normquant_k<512, 7>(__n': 5.09} | fused    8.88 us {'normrotquant_cl_k(__nv_bfloa': 8.88} | identical=True
+M=8     two-launch   10.81 us {'r4quant_k(__nv_bfloat16 cons': 5.6, 'void normquant_k<512, 7>(__n': 5.21} | fused    8.96 us {'normrotquant_cl_k(__nv_bfloa': 8.96} | identical=True
+M=16    two-launch   10.80 us {'r4quant_k(__nv_bfloat16 cons': 5.58, 'void normquant_k<512, 7>(__n': 5.22} | fused    9.56 us {'normrotquant_cl_k(__nv_bfloa': 9.56} | identical=True
+M=32    two-launch   10.88 us {'r4quant_k(__nv_bfloat16 cons': 5.6, 'void normquant_k<512, 7>(__n': 5.28} | fused   10.90 us {'r4quant_k(__nv_bfloat16 cons': 5.61, 'void normquant_k<512, 7>(
+M=64    two-launch   10.96 us {'r4quant_k(__nv_bfloat16 cons': 5.68, 'void normquant_k<512, 7>(__n': 5.28} | fused   10.98 us {'r4quant_k(__nv_bfloat16 cons': 5.69, 'void normquant_k<512, 7>
+M=256   two-launch   18.65 us {'r4quant_k(__nv_bfloat16 cons': 11.18, 'void normquant_k<512, 7>(__n': 7.47} | fused   18.69 us {'r4quant_k(__nv_bfloat16 cons': 11.19, 'void normquant_k<512, 
+=== probe H=8192 T16M_NRQ_W=0
+M=1     two-launch   15.71 us {'void normquant_k<512, 16>(__': 8.47, 'r4quant_k(__nv_bfloat16 cons': 7.25} | fused   10.30 us {'normrotquant_cl_k(__nv_bfloa': 10.3} | identical=True
+M=8     two-launch   15.79 us {'void normquant_k<512, 16>(__': 8.48, 'r4quant_k(__nv_bfloat16 cons': 7.3} | fused   10.34 us {'normrotquant_cl_k(__nv_bfloa': 10.34} | identical=True
+M=16    two-launch   15.80 us {'void normquant_k<512, 16>(__': 8.5, 'r4quant_k(__nv_bfloat16 cons': 7.3} | fused   11.11 us {'normrotquant_cl_k(__nv_bfloa': 11.11} | identical=True
+M=32    two-launch   15.90 us {'void normquant_k<512, 16>(__': 8.55, 'r4quant_k(__nv_bfloat16 cons': 7.35} | fused   15.91 us {'void normquant_k<512, 16>(__': 8.56, 'r4quant_k(__nv_bfloat16 
+M=64    two-launch   16.56 us {'void normquant_k<512, 16>(__': 8.66, 'r4quant_k(__nv_bfloat16 cons': 7.9} | fused   16.60 us {'void normquant_k<512, 16>(__': 8.68, 'r4quant_k(__nv_bfloat16 c
+M=256   two-launch   29.94 us {'r4quant_k(__nv_bfloat16 cons': 16.32, 'void normquant_k<512, 16>(__': 13.63} | fused   30.06 us {'r4quant_k(__nv_bfloat16 cons': 16.38, 'void normquant_k<512,
+LOAD 12:03 19.81 20.09 21.22 single qwen25_1p5b stock cl16pdl1
+LOAD 12:03 20.37 20.20 21.19 single qwen25_1p5b lssab cl16pdl1
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1h/single_qwen25_1p5b_cl16pdl1.json
+S1H qwen25_1p5b  cl16pdl1 ttft_p128_b1         stock      4.32 lssab      8.36 ratio 0.516
+S1H qwen25_1p5b  cl16pdl1 ttft_p128_b8         stock      9.74 lssab     16.85 ratio 0.578
+S1H qwen25_1p5b  cl16pdl1 ttft_p2048_b1        stock     14.73 lssab     25.86 ratio 0.570
+S1H qwen25_1p5b  cl16pdl1 ttft_p2048_b8        stock     95.06 lssab    164.44 ratio 0.578
+S1H qwen25_1p5b  cl16pdl1 ttft_p8192_b1        stock     60.24 lssab     91.81 ratio 0.656
+S1H qwen25_1p5b  cl16pdl1 ttft_p8192_b8        stock    416.47 lssab    730.29 ratio 0.570
+S1H qwen25_1p5b  cl16pdl1 ttft_p8192_b4        stock    211.68 lssab    365.04 ratio 0.580
+S1H qwen25_1p5b  cl16pdl1 ttft_p32640_b1       stock    346.29 lssab    516.48 ratio 0.670
+S1H qwen25_1p5b  cl16pdl1 prefill_p128_b32     stock     30.62 lssab     46.92 ratio 0.653
+S1H qwen25_1p5b  cl16pdl1 decode_b1            stock    434.18 lssab    130.68 ratio 0.301
+S1H qwen25_1p5b  cl16pdl1 decode_b8            stock   3346.54 lssab   1048.84 ratio 0.313
+S1H qwen25_1p5b  cl16pdl1 decode_b32           stock  12529.10 lssab   4006.94 ratio 0.320
+LOAD 12:05 20.27 20.32 21.16 single qwen25_7b stock cl16pdl1
+LOAD 12:06 19.79 20.17 21.04 single qwen25_7b lssab cl16pdl1
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1h/single_qwen25_7b_cl16pdl1.json
+S1H qwen25_7b    cl16pdl1 ttft_p128_b1         stock      9.17 lssab     11.92 ratio 0.769
+S1H qwen25_7b    cl16pdl1 ttft_p128_b8         stock     27.39 lssab     30.17 ratio 0.908
+S1H qwen25_7b    cl16pdl1 ttft_p2048_b1        stock     49.48 lssab     53.64 ratio 0.922
+S1H qwen25_7b    cl16pdl1 ttft_p2048_b8        stock    368.62 lssab    375.87 ratio 0.981
+S1H qwen25_7b    cl16pdl1 ttft_p8192_b1        stock    208.30 lssab    209.41 ratio 0.995
+S1H qwen25_7b    cl16pdl1 ttft_p8192_b8        stock   1600.59 lssab   1669.29 ratio 0.959
+S1H qwen25_7b    cl16pdl1 ttft_p8192_b4        stock    804.91 lssab    835.52 ratio 0.963
+S1H qwen25_7b    cl16pdl1 ttft_p32640_b1       stock   1102.67 lssab   1186.00 ratio 0.930
+S1H qwen25_7b    cl16pdl1 prefill_p128_b32     stock     95.42 lssab     97.75 ratio 0.976
+S1H qwen25_7b    cl16pdl1 decode_b1            stock    164.74 lssab     96.69 ratio 0.587
+S1H qwen25_7b    cl16pdl1 decode_b8            stock   1285.25 lssab    756.77 ratio 0.589
+S1H qwen25_7b    cl16pdl1 decode_b32           stock   5077.09 lssab   2765.97 ratio 0.545
+=== prof 1.5B decode b1 warp+PDL
+DECODE_PROF lssab b1 total 242.3 ms, 3.786 ms/token
+   86791.7 us   7056 calls   48.43 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_64x64_128x6_tn_align16>(cutlass_80
+   60051.3 us   3528 calls   33.51 us/tok/layer  normrotquant_cl_k(__nv_bfloat16 const*, int const*, float const*, float const*, float cons
+   42047.3 us   1764 calls   23.46 us/tok/layer  lsb::lsb_dec8p(lsb::LsbDev)
+   10683.6 us     64 calls    5.96 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+   10640.7 us   1764 calls    5.94 us/tok/layer  void r4_cl_k<false>(int const*, __nv_bfloat16 const*, float const*, float const*, long lon
+    6212.1 us   1764 calls    3.47 us/tok/layer  void deqsilu_t_k<1, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long 
+    5962.9 us   1764 calls    3.33 us/tok/layer  void deqrope_t_k<1, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float
+    2998.4 us   1792 calls    1.67 us/tok/layer  void rowquant_k<256, 6>(__nv_bfloat16 const*, signed char*, float*, int)
+    2795.6 us   1764 calls    1.56 us/tok/layer  deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int
+    2006.9 us    112 calls    1.12 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+    1377.3 us     84 calls    0.77 us/tok/layer  r4quant_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __nv
+    1283.0 us     28 calls    0.72 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+S1H_DONE Wed Sep  9 12:09:06 UTC 2026

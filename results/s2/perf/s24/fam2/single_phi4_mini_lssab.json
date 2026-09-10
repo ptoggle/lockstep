@@ -1,0 +1,92 @@
+{
+ "mode": "graph",
+ "cgmode": "FULL_AND_PIECEWISE",
+ "rows": [
+  {
+   "metric": "ttft_p128_b1",
+   "unit": "ms",
+   "lssab": 8.406199514865875
+  },
+  {
+   "metric": "ttft_p128_b8",
+   "unit": "ms",
+   "lssab": 19.581172615289688
+  },
+  {
+   "metric": "ttft_p2048_b1",
+   "unit": "ms",
+   "lssab": 31.01024404168129
+  },
+  {
+   "metric": "ttft_p2048_b8",
+   "unit": "ms",
+   "lssab": 206.94326609373093
+  },
+  {
+   "metric": "ttft_p8192_b1",
+   "unit": "ms",
+   "lssab": 128.85159626603127
+  },
+  {
+   "metric": "ttft_p8192_b8",
+   "unit": "ms",
+   "lssab": 962.221160531044
+  },
+  {
+   "metric": "ttft_p8192_b4",
+   "unit": "ms",
+   "lssab": 487.2155748307705
+  },
+  {
+   "metric": "ttft_p32640_b1",
+   "unit": "ms",
+   "lssab": 848.1042496860027
+  },
+  {
+   "metric": "prefill_p128_b32",
+   "unit": "ms",
+   "lssab": 58.72150883078575
+  },
+  {
+   "metric": "decode_b1",
+   "unit": "tok/s",
+   "lssab": 235.305118220976
+  },
+  {
+   "metric": "decode_b8",
+   "unit": "tok/s",
+   "lssab": 1762.4767243883496
+  },
+  {
+   "metric": "decode_b32",
+   "unit": "tok/s",
+   "lssab": 6191.669709340976
+  }
+ ],
+ "only": "lssab",
+ "launches_layer_total": 16384,
+ "launches_step_total": 169,
+ "counters": {
+  "tiles": 17874944,
+  "tiles_dead": 0,
+  "ctas": 17874944,
+  "vsh_max": 0,
+  "vsh_violations": 0
+ },
+ "fa3": {
+  "kernel": "b8",
+  "name": "lssab-b8-1launch-varlen-b9sink",
+  "needs_pass_a": false,
+  "per_sequence": true,
+  "dir": "/root/fa3_b9vareng/hopper",
+  "errflags": [
+   0,
+   45781940,
+   -249954304,
+   0
+  ],
+  "seq_launches": 4672,
+  "glue_launches": 14016,
+  "ktok": 262144
+ }
+}

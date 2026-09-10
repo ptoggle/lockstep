@@ -1,0 +1,9 @@
+gptoss_ppl_fused rc=0
+LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=64, grouped=1)
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 24, "mode": "ppl", "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 365.68665819674897, "gen_s": 2.304537773132324, "moe_calls": 792}
+gptoss_bench_stock rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 0, "grouped": 1, "eager": 0, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 309.07254617557413, "decode_b8_tps": 1575.243690954273, "decode_b32_tps": 4826.967948183032, "ttft_2048_ms": 35.03298759460449, "ttft_8192_ms": 124.82261657714844, "moe_calls": 0}
+gptoss_bench_fused rc=0
+LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=64, grouped=1)
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 261.7601149876146, "decode_b8_tps": 1124.5211214558824, "decode_b32_tps": 2043.5164289623438, "ttft_2048_ms": 43.3506965637207, "ttft_8192_ms": 149.7786045074463, "moe_calls": 5016}
+M2E1_DONE Thu Sep 10 07:01:22 UTC 2026

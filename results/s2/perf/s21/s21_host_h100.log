@@ -1,0 +1,33 @@
+=== 7b_stock_b8
+      106.1 us/token   27.6/token  mean  3.85 us  nvjet_sm90_tst_64x8_64x16_2x1_v_bz_split
+       45.5 us/token   29.4/token  mean  1.55 us  Memset (Device)
+       10.1 us/token    1.5/token  mean  6.92 us  Memcpy HtoD (Pinned -> Device)
+        8.8 us/token   27.6/token  mean  0.32 us  void cublasLt::splitKreduce_kernel<32, 1
+        7.6 us/token   56.0/token  mean  0.14 us  std::enable_if<(((8)>(0)))&&vllm::_typeC
+        7.0 us/token    3.0/token  mean  2.33 us  void at::native::unrolled_elementwise_ke
+        5.3 us/token   28.0/token  mean  0.19 us  void cutlass::device_kernel<flash::enabl
+        4.1 us/token   27.6/token  mean  0.15 us  nvjet_sm90_tst_64x8_64x16_4x1_v_bz_TNT
+        3.5 us/token   27.6/token  mean  0.13 us  nvjet_sm90_tst_64x8_64x16_4x1_v_bz_bias_
+        3.4 us/token    1.0/token  mean  3.42 us  void flash::prepare_varlen_num_blocks_ke
+        3.3 us/token    2.3/token  mean  1.43 us  void at::native::vectorized_elementwise_
+        3.2 us/token    0.1/token  mean 33.87 us  _apply_write_kernel
+        3.1 us/token   27.5/token  mean  0.11 us  nvjet_sm90_tst_192x8_64x8_4x1_v_bz_TNT
+        3.0 us/token    2.0/token  mean  1.52 us  void at::native::index_elementwise_kerne
+GAPS stock b8: kernels=25168 busy=433.0 ms gaps(<200us)=15.8 ms over 18869 gaps (mean 0.84 us) host-gaps=1.2 ms; per token: 393 kernels, 6.766 ms busy, 0.247 ms gaps
+HOST stock b8: cuda runtime calls per token:
+      3108.5 us/token     1.0 calls/token  cudaEventSynchronize
+       671.0 us/token     1.0 calls/token  cudaGraphLaunch
+       118.7 us/token    14.1 calls/token  cudaLaunchKernel
+        68.2 us/token     5.1 calls/token  cudaMemcpyAsync
+        22.6 us/token     8.1 calls/token  cudaEventQuery
+        15.7 us/token     6.1 calls/token  cudaEventRecordWithFlags
+        12.2 us/token     1.9 calls/token  cudaMemsetAsync
+         8.7 us/token    12.2 calls/token  cudaStreamIsCapturing
+         6.8 us/token     2.0 calls/token  cudaPointerGetAttributes
+         2.9 us/token     1.0 calls/token  cudaStreamWaitEvent
+         1.9 us/token     0.0 calls/token  cudaDeviceSynchronize
+         0.8 us/token     0.4 calls/token  cudaFuncSetAttribute
+=== 7b_lssab_b8
+Traceback (most recent call last):
+RuntimeError: operator t16mc::lm_prep does not exist
+HOST_DONE Wed Sep  9 16:15:51 UTC 2026

@@ -1,0 +1,97 @@
+=== S2 start Wed Sep  9 12:09:24 UTC 2026
+6d86a4f02578d18d5fd2737b395046cc
+overlay          80G   52G   29G  65% /
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== gemv probe
+GEMV 1.5B qkv      K=1536  N=2048  M=1  int_mm    5.34 us (  589 GB/s)  gemv    3.91 us (  805 GB/s)  equal=True
+GEMV 1.5B qkv      K=1536  N=2048  M=2  int_mm    5.34 us (  589 GB/s)  gemv    4.31 us (  730 GB/s)  equal=True
+GEMV 1.5B qkv      K=1536  N=2048  M=4  int_mm    5.34 us (  589 GB/s)  gemv    5.60 us (  562 GB/s)  equal=True
+GEMV 1.5B qkv      K=1536  N=2048  M=8  int_mm    5.34 us (  589 GB/s)  gemv    9.65 us (  326 GB/s)  equal=True
+GEMV 1.5B qkv      K=1536  N=2048  M=16 int_mm    5.34 us (  589 GB/s)  gemv   14.78 us (  213 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=1  int_mm    5.32 us (  443 GB/s)  gemv    3.90 us (  605 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=2  int_mm    5.32 us (  443 GB/s)  gemv    4.31 us (  547 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=4  int_mm    5.32 us (  443 GB/s)  gemv    5.58 us (  423 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=8  int_mm    5.33 us (  443 GB/s)  gemv    9.71 us (  243 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=16 int_mm    5.32 us (  443 GB/s)  gemv   14.74 us (  160 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=1  int_mm   12.19 us ( 2258 GB/s)  gemv    6.37 us ( 4321 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=2  int_mm   12.19 us ( 2258 GB/s)  gemv    7.25 us ( 3797 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=4  int_mm   12.21 us ( 2254 GB/s)  gemv   12.70 us ( 2167 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=8  int_mm   12.16 us ( 2264 GB/s)  gemv   21.76 us ( 1265 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=16 int_mm   12.19 us ( 2258 GB/s)  gemv   40.51 us (  679 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=1  int_mm   20.00 us (  688 GB/s)  gemv   15.54 us (  886 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=2  int_mm   20.01 us (  688 GB/s)  gemv   17.95 us (  767 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=4  int_mm   19.99 us (  688 GB/s)  gemv   23.71 us (  580 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=8  int_mm   20.00 us (  688 GB/s)  gemv   42.39 us (  325 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=16 int_mm   20.00 us (  688 GB/s)  gemv   60.14 us (  229 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=1  int_mm    9.43 us ( 1751 GB/s)  gemv    7.29 us ( 2265 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=2  int_mm    9.44 us ( 1749 GB/s)  gemv    8.41 us ( 1964 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=4  int_mm    9.45 us ( 1748 GB/s)  gemv   11.30 us ( 1462 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=8  int_mm    9.45 us ( 1748 GB/s)  gemv   20.41 us (  809 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=16 int_mm    9.45 us ( 1748 GB/s)  gemv   32.43 us (  509 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=1  int_mm    9.44 us ( 1361 GB/s)  gemv    7.24 us ( 1774 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=2  int_mm    9.44 us ( 1361 GB/s)  gemv    8.16 us ( 1574 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=4  int_mm    9.43 us ( 1362 GB/s)  gemv   10.75 us ( 1195 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=8  int_mm    9.44 us ( 1361 GB/s)  gemv   18.93 us (  679 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=16 int_mm    9.44 us ( 1361 GB/s)  gemv   27.70 us (  464 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=1  int_mm   51.63 us ( 2630 GB/s)  gemv   55.71 us ( 2437 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=2  int_mm   51.38 us ( 2643 GB/s)  gemv   54.10 us ( 2510 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=4  int_mm   51.23 us ( 2651 GB/s)  gemv   70.49 us ( 1926 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=8  int_mm   51.38 us ( 2643 GB/s)  gemv   94.03 us ( 1444 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=16 int_mm   51.19 us ( 2653 GB/s)  gemv  165.89 us (  819 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=1  int_mm   40.56 us ( 1674 GB/s)  gemv   75.16 us (  903 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=2  int_mm   40.56 us ( 1674 GB/s)  gemv   82.16 us (  826 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=4  int_mm   40.02 us ( 1697 GB/s)  gemv  103.10 us (  659 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=8  int_mm   40.02 us ( 1697 GB/s)  gemv  152.16 us (  446 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=16 int_mm   40.00 us ( 1697 GB/s)  gemv    0.00 us (    0 GB/s)  equal=False
+LOAD 12:14 24.26 21.48 20.99 single qwen25_1p5b stock gemv16
+LOAD 12:15 23.23 21.59 21.05 single qwen25_1p5b lssab gemv16
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s2/single_qwen25_1p5b_gemv16.json
+S2 qwen25_1p5b  gemv16   ttft_p128_b1         stock      4.30 lssab      8.37 ratio 0.514
+S2 qwen25_1p5b  gemv16   ttft_p128_b8         stock      9.74 lssab     15.00 ratio 0.649
+S2 qwen25_1p5b  gemv16   ttft_p2048_b1        stock     15.35 lssab     22.06 ratio 0.696
+S2 qwen25_1p5b  gemv16   ttft_p2048_b8        stock     97.43 lssab    131.42 ratio 0.741
+S2 qwen25_1p5b  gemv16   ttft_p8192_b1        stock     57.84 lssab     75.36 ratio 0.768
+S2 qwen25_1p5b  gemv16   ttft_p8192_b8        stock    416.67 lssab    602.31 ratio 0.692
+S2 qwen25_1p5b  gemv16   ttft_p8192_b4        stock    212.95 lssab    299.85 ratio 0.710
+S2 qwen25_1p5b  gemv16   ttft_p32640_b1       stock    349.09 lssab    451.46 ratio 0.773
+S2 qwen25_1p5b  gemv16   prefill_p128_b32     stock     30.25 lssab     38.94 ratio 0.777
+S2 qwen25_1p5b  gemv16   decode_b1            stock    433.87 lssab    196.69 ratio 0.453
+S2 qwen25_1p5b  gemv16   decode_b8            stock   3355.68 lssab   1088.35 ratio 0.324
+S2 qwen25_1p5b  gemv16   decode_b32           stock  12715.83 lssab   6059.28 ratio 0.477
+LOAD 12:16 21.37 21.30 20.98 single qwen25_7b stock gemv16
+LOAD 12:17 25.05 22.60 21.47 single qwen25_7b lssab gemv16
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s2/single_qwen25_7b_gemv16.json
+S2 qwen25_7b    gemv16   ttft_p128_b1         stock      9.42 lssab     11.40 ratio 0.827
+S2 qwen25_7b    gemv16   ttft_p128_b8         stock     27.33 lssab     27.51 ratio 0.993
+S2 qwen25_7b    gemv16   ttft_p2048_b1        stock     50.06 lssab     49.55 ratio 1.010
+S2 qwen25_7b    gemv16   ttft_p2048_b8        stock    374.96 lssab    349.37 ratio 1.073
+S2 qwen25_7b    gemv16   ttft_p8192_b1        stock    211.16 lssab    194.81 ratio 1.084
+S2 qwen25_7b    gemv16   ttft_p8192_b8        stock   1596.24 lssab   1550.30 ratio 1.030
+S2 qwen25_7b    gemv16   ttft_p8192_b4        stock    804.77 lssab    777.47 ratio 1.035
+S2 qwen25_7b    gemv16   ttft_p32640_b1       stock   1104.19 lssab   1125.17 ratio 0.981
+S2 qwen25_7b    gemv16   prefill_p128_b32     stock     97.34 lssab     90.17 ratio 1.080
+S2 qwen25_7b    gemv16   decode_b1            stock    164.40 lssab    126.55 ratio 0.770
+S2 qwen25_7b    gemv16   decode_b8            stock   1283.36 lssab    649.62 ratio 0.506
+S2 qwen25_7b    gemv16   decode_b32           stock   5046.95 lssab   4024.35 ratio 0.797
+=== prof 1.5B decode b1 gemv+warp+PDL
+DECODE_PROF lssab b1 total 742.1 ms, 11.596 ms/token
+  261252.6 us   7056 calls  145.79 us/tok/layer  void t16mc::gemv_s8_k<1>(signed char const*, signed char const*, int*, int, int, int)
+  141592.6 us   3528 calls   79.01 us/tok/layer  normrotquant_cl_k(__nv_bfloat16 const*, int const*, float const*, float const*, float cons
+  117640.4 us   1764 calls   65.65 us/tok/layer  void deqrope_t_k<1, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float
+   75652.9 us   1764 calls   42.22 us/tok/layer  deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int
+   58151.8 us   1764 calls   32.45 us/tok/layer  void deqsilu_t_k<1, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long 
+   41791.8 us   1764 calls   23.32 us/tok/layer  lsb::lsb_dec8p(lsb::LsbDev)
+   18160.7 us   1764 calls   10.13 us/tok/layer  void r4_cl_k<false>(int const*, __nv_bfloat16 const*, float const*, float const*, long lon
+   10646.3 us     64 calls    5.94 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+    3350.8 us   1792 calls    1.87 us/tok/layer  void rowquant_k<256, 6>(__nv_bfloat16 const*, signed char*, float*, int)
+    2030.7 us    112 calls    1.13 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+    1304.9 us     28 calls    0.73 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+    1027.9 us     64 calls    0.57 us/tok/layer  _gumbel_sample_kernel
+     938.2 us     28 calls    0.52 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa
+     875.3 us    384 calls    0.49 us/tok/layer  void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso
+S2_DONE Wed Sep  9 12:20:10 UTC 2026

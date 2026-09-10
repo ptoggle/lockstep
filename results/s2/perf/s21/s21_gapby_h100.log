@@ -1,0 +1,65 @@
+=== 7b_lssab_b8
+Traceback (most recent call last):
+RuntimeError: operator t16mc::lm_prep does not exist
+=== 7b_stock_b8
+GAPBY stock b8: gap BEFORE each kernel, per token (top 14):
+      112.5 us/token   27.6/token  mean  4.08 us  nvjet_sm90_tst_64x8_64x16_2x1_v_bz_split
+       43.4 us/token   29.4/token  mean  1.48 us  Memset (Device)
+       27.3 us/token   56.0/token  mean  0.49 us  std::enable_if<(((8)>(0)))&&vllm::_typeC
+       24.2 us/token   27.6/token  mean  0.88 us  void cublasLt::splitKreduce_kernel<32, 1
+       15.8 us/token   28.0/token  mean  0.56 us  void cutlass::device_kernel<flash::enabl
+       14.3 us/token   28.0/token  mean  0.51 us  void vllm::reshape_and_cache_flash_kerne
+       13.1 us/token   27.6/token  mean  0.48 us  nvjet_sm90_tst_64x8_64x16_4x1_v_bz_bias_
+       13.0 us/token   27.6/token  mean  0.47 us  nvjet_sm90_tst_64x8_64x16_4x1_v_bz_TNT
+       12.9 us/token   27.6/token  mean  0.47 us  nvjet_sm90_tst_192x8_64x8_4x1_v_bz_TNT
+       10.5 us/token   28.0/token  mean  0.38 us  void vllm::rotary_embedding_kernel<c10::
+        9.8 us/token    1.7/token  mean  5.67 us  Memcpy HtoD (Pinned -> Device)
+        9.1 us/token   28.0/token  mean  0.32 us  void vllm::act_and_mul_kernel<c10::BFloa
+        7.7 us/token    3.0/token  mean  2.59 us  void at::native::unrolled_elementwise_ke
+        4.2 us/token    0.1/token  mean 38.61 us  _apply_write_kernel
+GAPS stock b8: kernels=25168 busy=428.3 ms gaps(<200us)=23.1 ms over 23940 gaps (mean 0.97 us) host-gaps=0.8 ms; per token: 393 kernels, 6.693 ms busy, 0.361 ms gaps
+      2960.3 us/token     1.0 calls/token  cudaEventSynchronize
+       709.3 us/token     1.0 calls/token  cudaGraphLaunch
+       125.1 us/token    14.1 calls/token  cudaLaunchKernel
+        74.3 us/token     5.1 calls/token  cudaMemcpyAsync
+        23.9 us/token     8.1 calls/token  cudaEventQuery
+        15.4 us/token     6.1 calls/token  cudaEventRecordWithFlags
+        13.9 us/token     1.9 calls/token  cudaMemsetAsync
+         8.7 us/token    12.2 calls/token  cudaStreamIsCapturing
+         7.3 us/token     2.0 calls/token  cudaPointerGetAttributes
+         2.8 us/token     1.0 calls/token  cudaStreamWaitEvent
+         2.3 us/token     0.0 calls/token  cudaDeviceSynchronize
+         0.9 us/token     0.4 calls/token  cudaFuncSetAttribute
+=== 7b_lssab_b32
+Traceback (most recent call last):
+RuntimeError: operator t16mc::lm_prep does not exist
+=== 7b_stock_b32
+GAPBY stock b32: gap BEFORE each kernel, per token (top 14):
+       27.4 us/token   56.0/token  mean  0.49 us  std::enable_if<(((8)>(0)))&&vllm::_typeC
+       22.1 us/token   27.6/token  mean  0.80 us  void cublasLt::splitKreduce_kernel<32, 1
+       13.8 us/token   28.0/token  mean  0.49 us  void vllm::reshape_and_cache_flash_kerne
+       13.4 us/token   27.3/token  mean  0.49 us  void cutlass::device_kernel<flash::Flash
+       13.3 us/token   28.0/token  mean  0.47 us  void cutlass::device_kernel<flash::enabl
+       13.2 us/token   27.6/token  mean  0.48 us  nvjet_sm90_tst_64x32_64x16_4x1_v_bz_bias
+       13.1 us/token   27.6/token  mean  0.47 us  nvjet_sm90_tst_64x16_64x16_4x2_h_bz_TNT
+       12.9 us/token   27.6/token  mean  0.47 us  nvjet_sm90_tst_128x32_64x10_4x1_v_bz_spl
+       12.9 us/token   27.6/token  mean  0.47 us  nvjet_sm90_tst_192x32_64x7_4x1_v_bz_TNT
+       12.6 us/token   28.0/token  mean  0.45 us  void vllm::rotary_embedding_kernel<c10::
+        8.8 us/token   28.0/token  mean  0.31 us  void vllm::act_and_mul_kernel<c10::BFloa
+        8.6 us/token    1.5/token  mean  5.59 us  Memcpy HtoD (Pinned -> Device)
+        8.2 us/token    3.0/token  mean  2.76 us  void at::native::unrolled_elementwise_ke
+        5.9 us/token    1.0/token  mean  5.92 us  void flash::prepare_varlen_num_blocks_ke
+GAPS stock b32: kernels=23460 busy=591.0 ms gaps(<200us)=14.9 ms over 23287 gaps (mean 0.64 us) host-gaps=1.4 ms; per token: 366 kernels, 9.234 ms busy, 0.233 ms gaps
+      5182.7 us/token     1.0 calls/token  cudaEventSynchronize
+       579.6 us/token     1.0 calls/token  cudaGraphLaunch
+       122.0 us/token    14.1 calls/token  cudaLaunchKernel
+        67.6 us/token     5.1 calls/token  cudaMemcpyAsync
+        22.8 us/token     8.0 calls/token  cudaEventQuery
+        16.4 us/token     2.8 calls/token  cudaMemsetAsync
+        14.9 us/token     6.1 calls/token  cudaEventRecordWithFlags
+         8.3 us/token    12.2 calls/token  cudaStreamIsCapturing
+         6.7 us/token     2.0 calls/token  cudaPointerGetAttributes
+         2.9 us/token     1.0 calls/token  cudaStreamWaitEvent
+         2.2 us/token     0.0 calls/token  cudaDeviceSynchronize
+         0.9 us/token     0.4 calls/token  cudaFuncSetAttribute
+GAPBY_DONE Wed Sep  9 16:19:32 UTC 2026

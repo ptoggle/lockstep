@@ -1,0 +1,77 @@
+=== glue prof H=1536 I=8960 (1p5b)
+Traceback (most recent call last):
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2774, in _run_ninja_build
+    subprocess.run(
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 2.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/workspace/p2/t16m_glue_prof.py", line 11, in <module>
+    K = T.build_kernels(); T.register_ops()
+        ^^^^^^^^^^^^^^^^^
+  File "/workspace/p2/t16m_stack.py", line 69, in build_kernels
+    K = cpp_extension.load(name="t16m_kernels", sources=[src, os.path.join(HERE, "t16m_tp.cpp")],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 1818, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2268, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2429, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2791, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 't16m_kernels': [1/2] /usr/local/cuda/bin/nvcc -MD -MF t16m_kernels.cuda.o.d -DTORCH_EXTENSION_NAME=t16m_kernel
+FAILED: [code=2] t16m_kernels.cuda.o 
+/usr/local/cuda/bin/nvcc -MD -MF t16m_kernels.cuda.o.d -DTORCH_EXTENSION_NAME=t16m_kernels -DTORCH_API_INCLUDE_EXTENSION_H -I/workspace/p2 -isystem /r
+/workspace/p2/t16m_kernels.cu(1320): error: name followed by "::" must be a class or namespace name
+      cg::cluster_group cl = cg::this_cluster();
+      ^
+/workspace/p2/t16m_kernels.cu(1320): error: expected a ";"
+      cg::cluster_group cl = cg::this_cluster();
+                        ^
+/workspace/p2/t16m_kernels.cu(1321): error: identifier "cl" is undefined
+      const int cr = (int)cl.block_rank();
+                          ^
+3 errors detected in the compilation of "/workspace/p2/t16m_kernels.cu".
+ninja: build stopped: subcommand failed.
+=== glue prof H=3584 I=18944 (7b)
+Traceback (most recent call last):
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2774, in _run_ninja_build
+    subprocess.run(
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 2.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/workspace/p2/t16m_glue_prof.py", line 11, in <module>
+    K = T.build_kernels(); T.register_ops()
+        ^^^^^^^^^^^^^^^^^
+  File "/workspace/p2/t16m_stack.py", line 69, in build_kernels
+    K = cpp_extension.load(name="t16m_kernels", sources=[src, os.path.join(HERE, "t16m_tp.cpp")],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 1818, in load
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2268, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2429, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "/root/v25/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2791, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 't16m_kernels': [1/2] /usr/local/cuda/bin/nvcc -MD -MF t16m_kernels.cuda.o.d -DTORCH_EXTENSION_NAME=t16m_kernel
+FAILED: [code=2] t16m_kernels.cuda.o 
+/usr/local/cuda/bin/nvcc -MD -MF t16m_kernels.cuda.o.d -DTORCH_EXTENSION_NAME=t16m_kernels -DTORCH_API_INCLUDE_EXTENSION_H -I/workspace/p2 -isystem /r
+/workspace/p2/t16m_kernels.cu(1320): error: name followed by "::" must be a class or namespace name
+      cg::cluster_group cl = cg::this_cluster();
+      ^
+/workspace/p2/t16m_kernels.cu(1320): error: expected a ";"
+      cg::cluster_group cl = cg::this_cluster();
+                        ^
+/workspace/p2/t16m_kernels.cu(1321): error: identifier "cl" is undefined
+      const int cr = (int)cl.block_rank();
+                          ^
+3 errors detected in the compilation of "/workspace/p2/t16m_kernels.cu".
+ninja: build stopped: subcommand failed.
+GLUEPROF_DONE Wed Sep  9 03:53:08 UTC 2026

@@ -1,0 +1,17 @@
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 42 PASS / 0 FAIL
+=== layer 0 NTOK=48
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 48, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.18639731407165527, "t_fused_s": 0.0003972053527832031}
+=== layer 0 NTOK=1024
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 915, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.24989867210388184, "t_fused_s": 0.0010476112365722656}
+prof rc=0
+T=    1 total    0.143 ms  gate+route=0.055  route=0.003  r4quant=0.009  dispatch=0.008  gmm=0.023  deq_silu_r4quant_g=0.012  gmm=0.015  deq_rows_g=0.006  combine=0.011
+T=    8 total    0.206 ms  gate+route=0.056  route=0.003  r4quant=0.009  dispatch=0.009  gmm=0.060  deq_silu_r4quant_g=0.014  gmm=0.037  deq_rows_g=0.007  combine=0.012
+T=   32 total    0.257 ms  gate+route=0.056  route=0.003  r4quant=0.007  dispatch=0.009  gmm=0.094  deq_silu_r4quant_g=0.014  gmm=0.054  deq_rows_g=0.008  combine=0.012
+T=  256 total    0.390 ms  gate=0.097  route=0.012  r4quant=0.008  dispatch=0.018  gmm=0.122  deq_silu_r4quant_g=0.024  gmm=0.075  deq_rows_g=0.021  combine=0.014
+T= 2048 total    0.900 ms  gate=0.099  route=0.017  r4quant=0.013  dispatch=0.090  gmm=0.222  deq_silu_r4quant_g=0.108  gmm=0.143  deq_rows_g=0.142  combine=0.067
+M1F3_DONE Thu Sep 10 03:42:45 UTC 2026

@@ -1,0 +1,6 @@
+NVIDIA H100 80GB HBM3 (sm_90, torch 2.11.0+cu130)            local gate PASS         kernel digest 3b8add191c88f3f7  reference 8194b1dce402d219  inputs 90c0b36a5f098aad
+NVIDIA GeForce RTX 4090 (sm_89, torch 2.9.1+cu128)           local gate PASS         kernel digest 3b8add191c88f3f7  reference 8194b1dce402d219  inputs 90c0b36a5f098aad
+NVIDIA RTX PRO 6000 Blackwell Server Edition (sm_120, torch 2.9.1+cu128) local gate PASS         kernel digest 3b8add191c88f3f7  reference 8194b1dce402d219  inputs 90c0b36a5f098aad
+cases 158, output digests 538 per machine, differing across machines: 0
+local-check failures: 0
+VERDICT: IDENTICAL on all machines and every local check passes

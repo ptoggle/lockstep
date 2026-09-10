@@ -1,0 +1,4 @@
+=== S1h start Wed Sep  9 11:05:39 UTC 2026
+d0f9c764a8ae94e32937a70c0b964845
+s21_s1h_h100.sh: line 12: 1161495 Killed                  python t16m_gate.py kernels > $H/t16m_gate_kernels.log 2>&1
+gate rc=137

@@ -1,0 +1,16 @@
+GAPS stock b1: kernels=25168 busy=381.6 ms gaps(<200us)=27.6 ms over 24396 gaps (mean 1.13 us) host-gaps=0.8 ms; per token: 393 kernels, 5.962 ms busy, 0.432 ms gaps
+DECODE_PROF stock b1 total 381.6 ms, 5.962 ms/token
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 921088}, "qkv"
+GAPS lssab b1: kernels=28387 busy=348.5 ms gaps(<200us)=75.9 ms over 28247 gaps (mean 2.69 us) host-gaps=49.5 ms; per token: 443 kernels, 5.445 ms busy, 1.186 ms gaps
+DECODE_PROF lssab b1 total 348.5 ms, 5.445 ms/token
+GAPS stock b8: kernels=25168 busy=429.7 ms gaps(<200us)=23.4 ms over 23903 gaps (mean 0.98 us) host-gaps=0.7 ms; per token: 393 kernels, 6.715 ms busy, 0.366 ms gaps
+DECODE_PROF stock b8 total 429.7 ms, 6.715 ms/token
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 921088}, "qkv"
+GAPS lssab b8: kernels=28387 busy=410.9 ms gaps(<200us)=74.4 ms over 28228 gaps (mean 2.63 us) host-gaps=56.5 ms; per token: 443 kernels, 6.421 ms busy, 1.162 ms gaps
+DECODE_PROF lssab b8 total 410.9 ms, 6.421 ms/token
+GAPS stock b32: kernels=23460 busy=588.5 ms gaps(<200us)=15.4 ms over 23296 gaps (mean 0.66 us) host-gaps=4.2 ms; per token: 366 kernels, 9.195 ms busy, 0.240 ms gaps
+DECODE_PROF stock b32 total 588.5 ms, 9.195 ms/token
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 921088}, "qkv"
+GAPS lssab b32: kernels=28259 busy=583.2 ms gaps(<200us)=67.5 ms over 28098 gaps (mean 2.40 us) host-gaps=79.1 ms; per token: 441 kernels, 9.113 ms busy, 1.055 ms gaps
+DECODE_PROF lssab b32 total 583.2 ms, 9.113 ms/token
+GAPS_DONE Wed Sep  9 15:57:11 UTC 2026

@@ -1,0 +1,47 @@
+=== S1r start Wed Sep  9 15:26:28 UTC 2026
+096c95cc9eaee264a5c9b24de3d5cada
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== 7b T16M_DS8=512
+M=16
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 4.16}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.53}
+M=64
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 7.82}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.65}
+M=128
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 12.05}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 5.0}
+M=256
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 24.75}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 7.82}
+M=2048
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 167.49}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 78.77}
+=== 7b T16M_DS8=100000
+M=16
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 4.18}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.54}
+M=64
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 7.82}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.65}
+M=128
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 12.05}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 5.02}
+M=256
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 24.77}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 8.14}
+M=2048
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 158.01}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 78.68}
+ds=512   ttft_p128_b1         lssab=   10.03 ms
+ds=512   ttft_p128_b8         lssab=   27.34 ms
+ds=512   ttft_p2048_b1        lssab=   48.45 ms
+ds=512   ttft_p2048_b8        lssab=  345.73 ms
+ds=512   prefill_p128_b32     lssab=   88.71 ms
+ds=100000   ttft_p128_b1         lssab=    9.67 ms
+ds=100000   ttft_p128_b8         lssab=   27.47 ms
+ds=100000   ttft_p2048_b1        lssab=   48.89 ms
+ds=100000   ttft_p2048_b8        lssab=  352.65 ms
+ds=100000   prefill_p128_b32     lssab=   90.67 ms
+S1R_DONE Wed Sep  9 15:37:20 UTC 2026

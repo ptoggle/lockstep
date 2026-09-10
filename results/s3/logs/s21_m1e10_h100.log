@@ -1,0 +1,5 @@
+bench_g1g_v4 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 48, "mode": "bench", "decode_b1_tps": 165.01554946254853, "decode_b8_tps": 833.1245261022617, "decode_b32_tps": 2784.6076131395257, "ttft_2048_ms": 51.20086669921875, "ttft_8192_ms": 189.7273063659668, "moe_calls": 3696}
+ppl_g1_v4 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 48, "mode": "ppl", "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 8.81400582424298, "gen_s": 2.4734723567962646, "moe_calls": 1584}
+M1E10_DONE Thu Sep 10 04:46:50 UTC 2026

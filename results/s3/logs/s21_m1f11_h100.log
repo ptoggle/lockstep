@@ -1,0 +1,23 @@
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 54 PASS / 0 FAIL
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+T16MOE_GMM_DEQ GATE: 8 PASS / 0 FAIL
+=== layer 0 NTOK=48
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 48, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.1934974193572998, "t_fused_s": 0.00032591819763183594}
+=== layer 0 NTOK=300
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 300, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.24352550506591797, "t_fused_s": 0.0004184246063232422}
+graph prof rc=0
+GRAPH T=    1 full  0.0608 ms  rowquant=0.0076  gate_route(fused)=0.0196  rq+int_mm+deq+route=0.0717  +r4quant+dispatch=0.0831  +gmm_up+silu=0.1045  +gmm_down+deq=0.1197  full forward=0.0608
+GRAPH T=    8 full  0.1324 ms  rowquant=0.0080  gate_route(fused)=0.0203  rq+int_mm+deq+route=0.0723  +r4quant+dispatch=0.0831  +gmm_up+silu=0.1594  +gmm_down+deq=0.1950  full forward=0.1324
+GRAPH T=   32 full  0.1827 ms  rowquant=0.0086  gate_route(fused)=0.0203  rq+int_mm+deq+route=0.0738  +r4quant+dispatch=0.0835  +gmm_up+silu=0.1898  +gmm_down+deq=0.2425  full forward=0.1827
+GRAPH T=  256 full  0.2584 ms  rowquant=0.0091  gate_route(fused)=0.0295  rq+int_mm+deq+route=0.0972  +r4quant+dispatch=0.1105  +gmm_up+silu=0.2511  +gmm_down+deq=0.3297  full forward=0.2584
+GRAPH T= 2048 full  0.6552 ms  rowquant=0.0182  gate_route(fused)=0.1472  rq+int_mm+deq+route=0.1154  +r4quant+dispatch=0.1689  +gmm_up+silu=0.4898  +gmm_down+deq=0.6961  full forward=0.6552
+bench_g1g_v7 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 48, "mode": "bench", "decode_b1_tps": 177.8901928286388, "decode_b8_tps": 921.0815393909578, "decode_b32_tps": 2811.6350836467805, "ttft_2048_ms": 52.11496353149414, "ttft_8192_ms": 192.23785400390625, "moe_calls": 3696}
+ppl_g1_v7 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 48, "mode": "ppl", "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 8.81400582424298, "gen_s": 2.5732293128967285, "moe_calls": 1584}
+M1F11_DONE Thu Sep 10 05:23:14 UTC 2026

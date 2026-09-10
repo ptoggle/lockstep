@@ -1,0 +1,32 @@
+{
+ "mode": "graph",
+ "cgmode": "FULL_AND_PIECEWISE",
+ "rows": [
+  {
+   "metric": "ttft_p128_b1",
+   "unit": "ms",
+   "stock": 8.927851915359497
+  },
+  {
+   "metric": "ttft_p2048_b1",
+   "unit": "ms",
+   "stock": 49.25172030925751
+  },
+  {
+   "metric": "decode_b1",
+   "unit": "tok/s",
+   "stock": 164.93068563878975
+  },
+  {
+   "metric": "decode_b8",
+   "unit": "tok/s",
+   "stock": 1287.1094081119047
+  },
+  {
+   "metric": "decode_b32",
+   "unit": "tok/s",
+   "stock": 5069.297065150532
+  }
+ ],
+ "only": "stock"
+}

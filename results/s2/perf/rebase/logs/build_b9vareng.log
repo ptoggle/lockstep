@@ -1,0 +1,90 @@
++ export PATH=/usr/local/cuda/bin:/root/v25/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin CUDA_HOME=/usr/local/cuda
++ PATH=/usr/local/cuda/bin:/root/v25/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ CUDA_HOME=/usr/local/cuda
++ TAG=b9vareng
++ BM=128
++ BN=128
++ PA=0
++ shift 4
++ D=/root/fa3_b9vareng
++ rm -rf /root/fa3_b9vareng
++ cp -a /root/fa3_stock /root/fa3_b9vareng
++ cd /root/fa3_b9vareng/hopper
++ rm -rf build flash_attn_3/_C.abi3.so
++ cp /root/lssab_src/lssab.h .
++ LSSAB_BLOCKM=128
++ LSSAB_BLOCKN=128
++ LSSAB_PASSA=0
++ python3 /root/lssab_src/patch_lssab.py
+mainloop stage-1 (types/params) OK
+mainloop stage-2 (mma body) OK
+kernel_sm90 OK
+launch_template OK
+tile_size OK
+flash_api_stable OK
+PATCH_DONE
++ for extra in "$@"
++ LSSAB_BLOCKM=128
++ LSSAB_BLOCKN=128
++ python3 /root/lssab_src/patch_b8x.py
+b8x: lssab.h written (WLOC=9, l=dp4a, rowmax=mnmx, desc=0, envchk=0, noclamp=0)
+b8x: SERIAL fwd_step installed (no intra-warpgroup overlap)
+b8x: mainloop OK (ASCENDING walk)
+b8x: kernel_sm90 OK
+b8x: setup.py -ftz=false appended
+B8X_PATCH_DONE
++ for extra in "$@"
++ LSSAB_BLOCKM=128
++ LSSAB_BLOCKN=128
++ python3 /root/lssab_src/patch_b8eng.py
+B8ENG_PATCH_DONE
++ for extra in "$@"
++ LSSAB_BLOCKM=128
++ LSSAB_BLOCKN=128
++ python3 /root/lssab_src/patch_b8varlen.py
+B8VARLEN_PATCH_DONE
++ for extra in "$@"
++ LSSAB_BLOCKM=128
++ LSSAB_BLOCKN=128
++ python3 /root/lssab_src/patch_b9.py
+b9: V2 one-array form (SERIAL step)
+b9: lssab.h OK
+b9: mainloop OK
+B9_PATCH_DONE
++ export FLASH_ATTENTION_DISABLE_SM80=TRUE FLASH_ATTENTION_DISABLE_FP16=TRUE FLASH_ATTENTION_DISABLE_FP8=TRUE
++ FLASH_ATTENTION_DISABLE_SM80=TRUE
++ FLASH_ATTENTION_DISABLE_FP16=TRUE
++ FLASH_ATTENTION_DISABLE_FP8=TRUE
++ export FLASH_ATTENTION_DISABLE_HDIM64=TRUE FLASH_ATTENTION_DISABLE_HDIM96=TRUE FLASH_ATTENTION_DISABLE_HDIM192=TRUE FLASH_ATTENTION_DISABLE_HDIM256=TRUE
++ FLASH_ATTENTION_DISABLE_HDIM64=TRUE
++ FLASH_ATTENTION_DISABLE_HDIM96=TRUE
++ FLASH_ATTENTION_DISABLE_HDIM192=TRUE
++ FLASH_ATTENTION_DISABLE_HDIM256=TRUE
++ export FLASH_ATTENTION_DISABLE_BACKWARD=TRUE FLASH_ATTENTION_DISABLE_SPLIT=TRUE FLASH_ATTENTION_DISABLE_PAGEDKV=TRUE
++ FLASH_ATTENTION_DISABLE_BACKWARD=TRUE
++ FLASH_ATTENTION_DISABLE_SPLIT=TRUE
++ FLASH_ATTENTION_DISABLE_PAGEDKV=TRUE
++ export FLASH_ATTENTION_DISABLE_SOFTCAP=TRUE FLASH_ATTENTION_DISABLE_PACKGQA=TRUE FLASH_ATTENTION_DISABLE_APPENDKV=TRUE
++ FLASH_ATTENTION_DISABLE_SOFTCAP=TRUE
++ FLASH_ATTENTION_DISABLE_PACKGQA=TRUE
++ FLASH_ATTENTION_DISABLE_APPENDKV=TRUE
++ export FLASH_ATTENTION_DISABLE_LOCAL=TRUE MAX_JOBS=32
++ FLASH_ATTENTION_DISABLE_LOCAL=TRUE
++ MAX_JOBS=32
++ export 'NVCC_APPEND_FLAGS=-Xptxas -v'
++ NVCC_APPEND_FLAGS='-Xptxas -v'
++ /root/v25/bin/python /root/build_patched.py
+
+real	1m21.349s
+user	3m20.637s
+sys	0m13.142s
++ grep -nE error: /root/build_b9vareng.log
++ head -8
++ ls -la /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 8079440 Sep  9 02:36 /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so
++ /root/res.sh /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so
++ grep -o 'LSSAB smem_size=[0-9]* bytes ([0-9]* KB)' /root/build_b9vareng.log
++ head -1
++ touch /root/build_b9vareng.done
++ echo DONE_b9vareng
+DONE_b9vareng

@@ -1,0 +1,6 @@
+=== S1j start Wed Sep  9 12:36:16 UTC 2026
+9db1cff7d07ce051a1517203d0a17057
+gate rc=1
+T16M_KERNELS FAIL cases=1186 bad=58
+GATE FAILED - stopping
+S1J_DONE (gate fail) Wed Sep  9 12:40:48 UTC 2026

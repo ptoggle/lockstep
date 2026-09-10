@@ -1,0 +1,14 @@
+{
+ "model": "Qwen/Qwen3-30B-A3B",
+ "armed": 0,
+ "grouped": 1,
+ "eager": 1,
+ "armed_layers": 0,
+ "mode": "bench",
+ "decode_b1_tps": 33.419233446740165,
+ "decode_b8_tps": 255.29339101601153,
+ "decode_b32_tps": 1005.1831207756609,
+ "ttft_2048_ms": 32.829999923706055,
+ "ttft_8192_ms": 36.24320030212402,
+ "moe_calls": 0
+}

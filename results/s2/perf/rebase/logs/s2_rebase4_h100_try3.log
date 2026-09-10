@@ -1,0 +1,68 @@
+K-GATES: 43 PASS / 0 FAIL
+K9: 10 PASS / 0 FAIL
+=== [02:35:15] SETUP_DONE
+stock rc=0
+-rwxr-xr-x 1 root root 7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 5596912 Sep  9 02:34 /root/flash-attention/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root  7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 11648832 Sep  9 02:57 /workspace/p2/lssa_lssab.so
+=== RE-BASELINE pass 4 (size sweep) start Wed Sep  9 02:58:08 UTC 2026
+LOAD 02:58 11.54 12.33 13.64 start
+/dev/md0        250G   98G  153G  40% /workspace
+=== download Qwen/Qwen2.5-1.5B-Instruct
+space/hf/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306 
+/dev/md0        250G   98G  153G  40% /workspace
+=== prepare rb_qwen25_1p5b: --model Qwen/Qwen2.5-1.5B-Instruct --keq /workspace/p2/keq_qwen25_1p5b.pt --max-model-len 32768
+LOAD 02:58 11.54 12.33 13.64 prepare rb_qwen25_1p5b
+prepare rb_qwen25_1p5b rc=0
+-rw------- 1 root root 2273246428 Sep  9 02:59 /workspace/p2/manifests/rb_qwen25_1p5b/constants.safetensors
+LOCKSTEP-PREPARE per-op rmsnorm_residual           n=20   bad=0        elements=7864320
+LOCKSTEP-PREPARE per-op rope                       n=60   bad=0        elements=27525120
+LOCKSTEP-PREPARE per-op silu                       n=12   bad=0        elements=27525120
+LOCKSTEP-PREPARE stock check {"status": "PASS", "mean_logprob_lockstep": -10.338434009925992, "mean_logprob_stock": -10.335589958639705, "delta": -0.0028440512862868417, "tolerance": 0.25, "n": 255}
+LOCKSTEP-PREPARE kernel gate {"status": "ERROR", "dims": "1536,2048,8960,12,2", "rc": 1}
+LOCKSTEP-PREPARE quality gate {"status": "PASS", "stock": 8.24694827295163, "lockstep": 8.266181347088105, "delta_pct": 0.23321443884345427, "tolerance_pct": 1.0, "windows": 30}
+LOCKSTEP-PREPARE manifest /workspace/p2/manifests/rb_qwen25_1p5b/lockstep.manifest.json: 595 constants (25d49c5227e4cb2e), keq 15f21a2d4dab8fbf, probe 62adee5e5e074cc2, 145s
+LOCKSTEP-PREPARE PASS /workspace/p2/manifests/rb_qwen25_1p5b
+LOAD 03:00 12.12 12.43 13.47 single qwen25_1p5b stock
+LOAD 03:01 12.03 12.40 13.45 single qwen25_1p5b lssab
+lssab arm: NOT ARMED FROM THE MANIFEST - INVALID
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/p2/handover/rebase/single_qwen25_1p5b_stock.json'
+RB_SINGLE_qwen25_1p5b_DONE
+=== download Qwen/Qwen2.5-3B-Instruct
+rkspace/hf/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1 
+/dev/md0        250G  101G  150G  41% /workspace
+=== prepare rb_qwen25_3b: --model Qwen/Qwen2.5-3B-Instruct --max-model-len 32768
+LOAD 03:01 12.02 12.39 13.44 prepare rb_qwen25_3b
+prepare rb_qwen25_3b rc=0
+-rw------- 1 root root 4055911764 Sep  9 03:02 /workspace/p2/manifests/rb_qwen25_3b/constants.safetensors
+LOCKSTEP-PREPARE per-op rmsnorm_residual           n=20   bad=0        elements=10485760
+LOCKSTEP-PREPARE per-op rope                       n=60   bad=0        elements=35389440
+LOCKSTEP-PREPARE per-op silu                       n=12   bad=0        elements=33816576
+LOCKSTEP-PREPARE stock check {"status": "PASS", "mean_logprob_lockstep": -10.407011241538852, "mean_logprob_stock": -10.419120687596939, "delta": 0.012109446058087059, "tolerance": 0.25, "n": 255}
+LOCKSTEP-PREPARE kernel gate {"status": "ERROR", "dims": "2048,2560,11008,16,2", "rc": 1}
+LOCKSTEP-PREPARE quality gate {"status": "PASS", "stock": 7.297836392305741, "lockstep": 7.313109686578728, "delta_pct": 0.20928523814387479, "tolerance_pct": 1.0, "windows": 30}
+LOCKSTEP-PREPARE manifest /workspace/p2/manifests/rb_qwen25_3b/lockstep.manifest.json: 763 constants (58cb9dd630b6caa6), keq 297f7e86bf746c97, probe 16f86912b8c84a3b, 167s
+LOCKSTEP-PREPARE PASS /workspace/p2/manifests/rb_qwen25_3b
+LOAD 03:04 11.89 12.20 13.17 single qwen25_3b stock
+LOAD 03:04 11.98 12.21 13.17 single qwen25_3b lssab
+lssab arm: NOT ARMED FROM THE MANIFEST - INVALID
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/p2/handover/rebase/single_qwen25_3b_stock.json'
+RB_SINGLE_qwen25_3b_DONE
+=== download Qwen/Qwen2.5-14B-Instruct
+kspace/hf/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8 
+/dev/md0        250G  104G  147G  42% /workspace
+=== prepare rb_qwen25_14b: --model Qwen/Qwen2.5-14B-Instruct --keq /workspace/p2/keq_qwen25_14b_instruct.pt --max-model-len 32768 --gmu 0.8
+LOAD 03:04 12.29 12.27 13.18 prepare rb_qwen25_14b
+prepare rb_qwen25_14b rc=1
+ls: cannot access '/workspace/p2/manifests/rb_qwen25_14b/constants.safetensors': No such file or directory
+LOCKSTEP-PREPARE model Qwen/Qwen2.5-14B-Instruct: hidden=5120 layers=48 heads=40/8 head_dim=128 vocab=152064 tied=False qk_norm=False rotary_dim=128 window=None rotation=paley1
+LOCKSTEP-PREPARE smoothing {"level": 0, "status": "OFF", "r1": "online", "file": "calib.pt", "sha256": "3570e6ef2f50a9b69cbb3f09576939a71f6ad1b2a44a0a21d4e942fc9e7df221", "windows": 16, "tokens": 16384, "calibrated_for": "outliers"}
+LOCKSTEP-PREPARE outliers {"k": 8, "linears": "qkv,gate_up", "status": "ON", "rule": "the k channels of largest per-channel amax of the linear's input over the calibration windows (stock engine; the norm-fed inputs in the unrotated basis, o_proj and down_proj per rank); their bf16 values bypass the rotation and the int8 quant and enter through the epilogue side path (contract v2.5 section 6.6, v2.5.1 for o_proj / down_proj)"}
+LOCKSTEP-CONFIG (legacy LOCKSTEP_PREFILL arming, NOT applied) {"applied": {}, "contract": "v2.5", "decode_16w": 1, "decode_pipelined": 1, "env_plan": {"LOCKSTEP_DEC8_P": "1", "LOCKSTEP_DEC8_W": "1", "LOCKSTEP_FA3": "1", "LOCKSTEP_FA3_DIR": "/root/fa3_b9vareng/hopper", "LOCKSTEP_FA3_GLUE": "/workspace/p2/lssa_fa3glue.so", "LOCKSTEP_FA3_KERNEL": "b8", "LOCKSTEP_KS": "0", "LOCKSTEP_KSR": "up", "LOCKSTEP_LSSAB_SO": "/workspace/p2/lssa_lssab.so", "LOCKSTEP_PREFILL": "lssab", "LOCKSTEP_SINK": "0", "LOCKSTEP_V2": "1", "T16L_ARM": "1", "T16L_FREE_BF16": "1", "T16M_CPP": "1", "T16M_FUSE": "1"}, "fa3_available": true, "fa3_dir": "/root/fa3_b9vareng/hopper", "fa3_glue": "/workspace/p2/lssa_fa3glue.so", "free_bf16": true, "fuse": true, "home": "/workspace/p2", "home_ok": true, "hw": {"cuda": "13.0", "cuda_visible_devices": null, "device_count": 1, "devices": [{"index": 0, "name": "NVIDIA H100 80GB HBM3", "sm": [9, 0]}], "driver_version": "13.0", "gpu": "NVIDIA H100 80GB HBM3", "p2p": [[true]], "probe": "libcuda", "sm": [9, 0], "torch": "2.11.0+cu130"}, "keq_path": null, "kernel_set": "hopper_exact", "lssab_so": "/workspace/p2/lssa_lssab.so", "manifest_compatible": true, "manifest_dir": null, "manifest_model": null, "manifest_tp": null, "mu_kind": "MU_MID", "nccl_env": {}, "p2p_all_pairs": null, "r4_cluster": true, "reasons": ["home=/workspace/p2 (env LOCKSTEP_HOME)", "kernel_set=hopper_exact: NVIDIA H100 80GB HBM3 is sm 9.0 and /workspace/p2/lssa_fa3glue.so + /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so exist", "contract=v2.5: LSSA-B8 for every row (prompt rows on the FA3 b8 seam, generated rows on lsb_dec8p, DEC8_P=1 DEC8_W=1)", "r4_cluster=True (compiled into t16m_kernels.cu, no env knob)", "no manifest (legacy LOCKSTEP_PREFILL arming); fuse=True free_bf16 from env", "world_size=1 (default)", "tp_reduce_mode=1 unused at world=1; no NCCL environment", "sliding_window_ceiling=None (the backend rule: a window >= max_model_len is no window; read from the vLLM config in LockstepAttentionImpl)", "selftest=strict (default)", "attention=LSSA-B8 (manifest attention.rule absent -> B8)"], "refusals": [], "selftest": "strict", "sliding_window_ceiling": null, "tp_reduce_mode": 1, "user_overrides": {"LOCKSTEP_SINK": {"planned": "0", "user": "1"}}, "world_size": 1, "world_source": "default"}
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 1315840}, "qkv": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 1842176}}
+[rank0]: Traceback (most recent call last):
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.25 GiB. GPU 0 has a total capacity of 79.18 GiB of which 716.12 MiB is free. Process 537570 has 78.47 GiB memory in use. Of the allocated memory 75.73 GiB is allocated by PyTorch, and 2.01 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+SKIP single qwen25_14b: no constants in /workspace/p2/manifests/rb_qwen25_14b
+LOAD 03:05 12.20 12.28 13.10 end
+RB4_DONE Wed Sep  9 03:05:53 UTC 2026

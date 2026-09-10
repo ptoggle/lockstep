@@ -1,0 +1,58 @@
+K-GATES: 43 PASS / 0 FAIL
+K9: 10 PASS / 0 FAIL
+=== [02:35:15] SETUP_DONE
+stock rc=0
+-rwxr-xr-x 1 root root 7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 5596912 Sep  9 02:34 /root/flash-attention/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root  7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 11562816 Sep  9 02:34 /workspace/p2/lssa_lssab.so
+=== build b9vareng (downloaded toolchain via ninja on PATH) 02:35
+b9vareng rc=0
+system-nvcc lines (must be 0): 0
+-rwxr-xr-x 1 root root 8079440 Sep  9 02:36 /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so
+cp: cannot stat 'stage_s2/*.py': No such file or directory
+=== RE-BASELINE pass 4 (size sweep) start Wed Sep  9 02:36:51 UTC 2026
+LOAD 02:36 17.17 17.42 16.26 start
+/dev/md0        250G  785M  250G   1% /workspace
+=== download Qwen/Qwen2.5-1.5B-Instruct
+s2_rebase4_h100.sh: line 34: hf: command not found 
+/dev/md0        250G  785M  250G   1% /workspace
+=== prepare rb_qwen25_1p5b: --model Qwen/Qwen2.5-1.5B-Instruct --keq /workspace/p2/keq_qwen25_1p5b.pt --max-model-len 32768
+LOAD 02:36 17.17 17.42 16.26 prepare rb_qwen25_1p5b
+prepare rb_qwen25_1p5b rc=1
+ls: cannot access '/workspace/p2/manifests/rb_qwen25_1p5b/constants.safetensors': No such file or directory
+Traceback (most recent call last):
+ModuleNotFoundError: No module named 'transformers'
+SKIP single qwen25_1p5b: no constants in /workspace/p2/manifests/rb_qwen25_1p5b
+=== download Qwen/Qwen2.5-3B-Instruct
+s2_rebase4_h100.sh: line 34: hf: command not found 
+/dev/md0        250G  785M  250G   1% /workspace
+=== prepare rb_qwen25_3b: --model Qwen/Qwen2.5-3B-Instruct --max-model-len 32768
+LOAD 02:37 16.92 17.35 16.25 prepare rb_qwen25_3b
+prepare rb_qwen25_3b rc=1
+ls: cannot access '/workspace/p2/manifests/rb_qwen25_3b/constants.safetensors': No such file or directory
+Traceback (most recent call last):
+ModuleNotFoundError: No module named 'transformers'
+SKIP single qwen25_3b: no constants in /workspace/p2/manifests/rb_qwen25_3b
+=== download Qwen/Qwen2.5-14B-Instruct
+s2_rebase4_h100.sh: line 34: hf: command not found 
+/dev/md0        250G  785M  250G   1% /workspace
+=== prepare rb_qwen25_14b: --model Qwen/Qwen2.5-14B-Instruct --keq /workspace/p2/keq_qwen25_14b_instruct.pt --max-model-len 32768 --gmu 0.8
+LOAD 02:37 16.63 17.27 16.24 prepare rb_qwen25_14b
+prepare rb_qwen25_14b rc=1
+ls: cannot access '/workspace/p2/manifests/rb_qwen25_14b/constants.safetensors': No such file or directory
+Traceback (most recent call last):
+ModuleNotFoundError: No module named 'transformers'
+SKIP single qwen25_14b: no constants in /workspace/p2/manifests/rb_qwen25_14b
+=== download Qwen/Qwen2.5-32B-Instruct
+s2_rebase4_h100.sh: line 34: hf: command not found 
+/dev/md0        250G  785M  250G   1% /workspace
+=== prepare rb_qwen25_32b: --model Qwen/Qwen2.5-32B-Instruct --max-model-len 8192 --max-num-seqs 8 --gmu 0.95
+LOAD 02:37 16.70 17.26 16.25 prepare rb_qwen25_32b
+prepare rb_qwen25_32b rc=1
+ls: cannot access '/workspace/p2/manifests/rb_qwen25_32b/constants.safetensors': No such file or directory
+Traceback (most recent call last):
+ModuleNotFoundError: No module named 'transformers'
+SKIP single qwen25_32b: no constants in /workspace/p2/manifests/rb_qwen25_32b
+LOAD 02:37 15.71 17.02 16.19 end
+RB4_DONE Wed Sep  9 02:37:43 UTC 2026

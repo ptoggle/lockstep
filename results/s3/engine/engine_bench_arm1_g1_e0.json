@@ -1,0 +1,14 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "armed": 1,
+ "grouped": 1,
+ "eager": 0,
+ "armed_layers": 24,
+ "mode": "bench",
+ "decode_b1_tps": 189.74076028354156,
+ "decode_b8_tps": 427.22789315063426,
+ "decode_b32_tps": 1219.8122436213646,
+ "ttft_2048_ms": 131.00457191467285,
+ "ttft_8192_ms": 462.67127990722656,
+ "moe_calls": 5016
+}

@@ -1,0 +1,62 @@
+{
+ "mode": "graph",
+ "cgmode": "FULL_AND_PIECEWISE",
+ "rows": [
+  {
+   "metric": "ttft_p128_b1",
+   "unit": "ms",
+   "lssab": 10.066095739603043
+  },
+  {
+   "metric": "ttft_p2048_b1",
+   "unit": "ms",
+   "lssab": 47.508325427770615
+  },
+  {
+   "metric": "ttft_p8192_b1",
+   "unit": "ms",
+   "lssab": 192.96176731586456
+  },
+  {
+   "metric": "decode_b1",
+   "unit": "tok/s",
+   "lssab": 161.73922009551524
+  },
+  {
+   "metric": "decode_b8",
+   "unit": "tok/s",
+   "lssab": 1211.073950662018
+  },
+  {
+   "metric": "decode_b32",
+   "unit": "tok/s",
+   "lssab": 4283.579659848742
+  }
+ ],
+ "only": "lssab",
+ "launches_layer_total": 6104,
+ "launches_step_total": 69,
+ "counters": {
+  "tiles": 10096128,
+  "tiles_dead": 0,
+  "ctas": 10096128,
+  "vsh_max": 0,
+  "vsh_violations": 0
+ },
+ "fa3": {
+  "kernel": "b8",
+  "name": "lssab-b8-1launch-varlen-b9sink",
+  "needs_pass_a": false,
+  "per_sequence": true,
+  "dir": "/root/fa3_b9vareng/hopper",
+  "errflags": [
+   0,
+   4616560,
+   344907776,
+   0
+  ],
+  "seq_launches": 1288,
+  "glue_launches": 3864,
+  "ktok": 262144
+ }
+}

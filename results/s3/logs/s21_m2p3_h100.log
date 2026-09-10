@@ -1,0 +1,7 @@
+stock rc=0
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "fmt": "chat", "armed": 0, "rot": 0, "armed_layers": 0, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 15.101201550679816, "gen_s": 2.041476249694824, "moe_calls": 0}
+r0 rc=0
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "fmt": "chat", "armed": 1, "rot": 0, "armed_layers": 24, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 16.53856651608609, "gen_s": 21.869158267974854, "moe_calls": 792}
+r64 rc=0
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "fmt": "chat", "armed": 1, "rot": 64, "armed_layers": 24, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 15.531432088158969, "gen_s": 29.083420753479004, "moe_calls": 792}
+M2P3_DONE Thu Sep 10 07:18:15 UTC 2026

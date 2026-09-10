@@ -1,0 +1,44 @@
+S26G start Thu Sep 10 12:34:33 UTC 2026 T16L_NORMF default=1
+s26_gates_h100.sh: line 7: killgpu: command not found
+t16n_test rc=0
+[PASS] N=7168 gain=channel M=1024 residual=False  y diffs 0, residual diffs 0, int8 diffs 0, scale diffs 0, torch/numpy twins differ 0
+[PASS] N=7168 gain=channel M=1024 residual=True  y diffs 0, residual diffs 0, int8 diffs 0, scale diffs 0, torch/numpy twins differ 0
+T16N_GATE PASS cases=160 bad=0
+s26_gates_h100.sh: line 8: killgpu: command not found
+t16m kernels rc=0
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=0 side=1 
+T16M_KERNELS PASS cases=1186 bad=0
+s26_gates_h100.sh: line 9: killgpu: command not found
+t16l_r4_test rc=0
+[PASS] nb=80 N=20480 M=300 had=0  int8 diffs 0, scale diffs 0
+T16L_R4_GATE PASS
+s26_gates_h100.sh: line 10: killgpu: command not found
+qknorm_test rc=0
+[PASS] M=1024 gains=random outliers=True bias=True  int32 route diffs 0, y8 route diffs 0 (of 6291456)
+T16M_QKNORM_GATE PASS cases=48 bad=0
+s26_gates_h100.sh: line 11: killgpu: command not found
+vectors rc=0
+s26_gates_h100.sh: line 14: killgpu: command not found
+xarch gen rc=0
+inputs.npz written: 430 arrays, sha256 of the file af8935225283df14
+s26_gates_h100.sh: line 15: killgpu: command not found
+xarch run rc=0
+XARCH26 h100merge NVIDIA H100 80GB HBM3 sm_90 local gate PASS | 158 cases, 538 output digests | kernel digest aea3318f27bc7b043ebc0d66 | reference digest 6a26383d7dc83bbf23ae6b18
+Traceback (most recent call last):
+  File "/workspace/p2/xarch/xarch26/compare.py", line 8, in <module>
+    base = D[files[0]]
+             ~~~~~^^^
+IndexError: list index out of range
+s26_gates_h100.sh: line 18: killgpu: command not found
+moe_m1_gate rc=0
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+T16MOE_GMM_DEQ GATE: 8 PASS / 0 FAIL
+T16M_ADDENDUM_EPILOGUE GATE: 8 PASS / 0 FAIL
+T16MOE_ADDENDUM_GATE_R1 GATE: 20 PASS / 0 FAIL
+s26_gates_h100.sh: line 19: killgpu: command not found
+moe_mx_gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+s26_gates_h100.sh: line 20: killgpu: command not found
+S26G_DONE Thu Sep 10 12:51:27 UTC 2026

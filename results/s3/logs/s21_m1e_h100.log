@@ -1,0 +1,22 @@
+ppl_g1 rc=1
+MOE_ENGINE armed=1 layers=48 E=128 k=8 renorm=True grouped=1 eager=1
+[rank0]: Traceback (most recent call last):
+[rank0]:     raise AttributeError(
+[rank0]: AttributeError: '_OpNamespace' 't16moe' object has no attribute 'route'
+bench_stock rc=0
+MOE_ENGINE armed=0 layers=0 E=128 k=8 renorm=True grouped=1 eager=1
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 0, "grouped": 1, "eager": 1, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 33.419233446740165, "decode_b8_tps": 255.29339101601153, "decode_b32_tps": 1005.1831207756609, "ttft_2048_ms": 32.829999923706055, "ttft_8192_ms": 36.24320030212402, "moe_calls": 0}
+bench_g1e rc=1
+MOE_ENGINE armed=1 layers=48 E=128 k=8 renorm=True grouped=1 eager=1
+[rank0]: Traceback (most recent call last):
+[rank0]:     raise AttributeError(
+[rank0]: AttributeError: '_OpNamespace' 't16moe' object has no attribute 'route'
+bench_stockg rc=0
+MOE_ENGINE armed=0 layers=0 E=128 k=8 renorm=True grouped=1 eager=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 0, "grouped": 1, "eager": 0, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 210.71705258026591, "decode_b8_tps": 889.5222175139663, "decode_b32_tps": 2231.2858641184616, "ttft_2048_ms": 13.14234733581543, "ttft_8192_ms": 16.545534133911133, "moe_calls": 0}
+bench_g1g rc=1
+MOE_ENGINE armed=1 layers=48 E=128 k=8 renorm=True grouped=1 eager=0
+[rank0]: Traceback (most recent call last):
+[rank0]:     raise AttributeError(
+[rank0]: AttributeError: '_OpNamespace' 't16moe' object has no attribute 'route'
+M1E_DONE Thu Sep 10 02:21:15 UTC 2026

@@ -1,0 +1,252 @@
+{
+ "stack": "lssab",
+ "cg": "FULL_AND_PIECEWISE",
+ "noinductor": "1",
+ "plen": 128,
+ "gen": 64,
+ "batch": 64,
+ "total_cuda_ms": 597.8963359999991,
+ "per_token_ms": 9.342130249999986,
+ "kernels": [
+  {
+   "us": 128586.0,
+   "calls": 1828,
+   "us_per_token_layer": 71.76,
+   "name": "void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8"
+  },
+  {
+   "us": 117391.8,
+   "calls": 5292,
+   "us_per_token_layer": 65.51,
+   "name": "void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_64x64_128x6_tn_align16>(cutlass_80"
+  },
+  {
+   "us": 82625.8,
+   "calls": 112,
+   "us_per_token_layer": 46.11,
+   "name": "void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::"
+  },
+  {
+   "us": 63042.3,
+   "calls": 1792,
+   "us_per_token_layer": 35.18,
+   "name": "void deqsilu_t_k<4, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long "
+  },
+  {
+   "us": 60028.3,
+   "calls": 1764,
+   "us_per_token_layer": 33.5,
+   "name": "lsb::lsb_dec8p(lsb::LsbDev)"
+  },
+  {
+   "us": 58563.0,
+   "calls": 5320,
+   "us_per_token_layer": 32.68,
+   "name": "r4quant_s_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __"
+  },
+  {
+   "us": 23488.4,
+   "calls": 3528,
+   "us_per_token_layer": 13.11,
+   "name": "void normquant_k<512, 7>(__nv_bfloat16 const*, int const*, float const*, float const*, flo"
+  },
+  {
+   "us": 15954.6,
+   "calls": 1792,
+   "us_per_token_layer": 8.9,
+   "name": "void deqrope_t_k<4, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float"
+  },
+  {
+   "us": 8909.9,
+   "calls": 64,
+   "us_per_token_layer": 4.97,
+   "name": "lsb::lsb_rowmap(lsb::LsbDev, unsigned long long, unsigned long long, unsigned long long, u"
+  },
+  {
+   "us": 6644.4,
+   "calls": 56,
+   "us_per_token_layer": 3.71,
+   "name": "void normquant_k<256, 14>(__nv_bfloat16 const*, int const*, float const*, float const*, fl"
+  },
+  {
+   "us": 5493.4,
+   "calls": 1792,
+   "us_per_token_layer": 3.07,
+   "name": "void rowquant_k<256, 14>(__nv_bfloat16 const*, signed char*, float*, int)"
+  },
+  {
+   "us": 4644.2,
+   "calls": 28,
+   "us_per_token_layer": 2.59,
+   "name": "void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa"
+  },
+  {
+   "us": 4327.8,
+   "calls": 64,
+   "us_per_token_layer": 2.42,
+   "name": "lmcomb_k(int const*, int const*, int const*, int const*, int, int, int, int, int, long lon"
+  },
+  {
+   "us": 3854.9,
+   "calls": 1764,
+   "us_per_token_layer": 2.15,
+   "name": "deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int"
+  },
+  {
+   "us": 3640.1,
+   "calls": 56,
+   "us_per_token_layer": 2.03,
+   "name": "r4quant_w_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __"
+  },
+  {
+   "us": 2378.8,
+   "calls": 28,
+   "us_per_token_layer": 1.33,
+   "name": "lsb::lsb_prep(lsb::LsbDev)"
+  },
+  {
+   "us": 2055.4,
+   "calls": 128,
+   "us_per_token_layer": 1.15,
+   "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso"
+  },
+  {
+   "us": 1406.4,
+   "calls": 64,
+   "us_per_token_layer": 0.78,
+   "name": "_gumbel_sample_kernel"
+  },
+  {
+   "us": 503.0,
+   "calls": 64,
+   "us_per_token_layer": 0.28,
+   "name": "void dynnorm_k<256, 14>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, int co"
+  },
+  {
+   "us": 310.4,
+   "calls": 64,
+   "us_per_token_layer": 0.17,
+   "name": "_get_num_sampled_and_rejected_kernel"
+  },
+  {
+   "us": 309.8,
+   "calls": 64,
+   "us_per_token_layer": 0.17,
+   "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps<f"
+  },
+  {
+   "us": 306.0,
+   "calls": 64,
+   "us_per_token_layer": 0.17,
+   "name": "_combine_sampled_and_draft_tokens_kernel"
+  },
+  {
+   "us": 289.2,
+   "calls": 128,
+   "us_per_token_layer": 0.16,
+   "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, "
+  },
+  {
+   "us": 281.9,
+   "calls": 128,
+   "us_per_token_layer": 0.16,
+   "name": "Memcpy DtoH (Device -> Pinned)"
+  },
+  {
+   "us": 280.1,
+   "calls": 128,
+   "us_per_token_layer": 0.16,
+   "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native:"
+  },
+  {
+   "us": 278.3,
+   "calls": 64,
+   "us_per_token_layer": 0.16,
+   "name": "void t16mc::lm_prep_k<__nv_bfloat16>(__nv_bfloat16 const*, signed char*, float*, int, int,"
+  },
+  {
+   "us": 251.2,
+   "calls": 64,
+   "us_per_token_layer": 0.14,
+   "name": "_gather_block_tables_kernel"
+  },
+  {
+   "us": 249.7,
+   "calls": 28,
+   "us_per_token_layer": 0.14,
+   "name": "fg_gather(FgArgs)"
+  },
+  {
+   "us": 231.7,
+   "calls": 64,
+   "us_per_token_layer": 0.13,
+   "name": "_post_update_kernel"
+  },
+  {
+   "us": 210.6,
+   "calls": 191,
+   "us_per_token_layer": 0.12,
+   "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array"
+  },
+  {
+   "us": 206.4,
+   "calls": 64,
+   "us_per_token_layer": 0.12,
+   "name": "_compute_slot_mappings_kernel"
+  },
+  {
+   "us": 176.9,
+   "calls": 136,
+   "us_per_token_layer": 0.1,
+   "name": "Memcpy HtoD (Pinned -> Device)"
+  },
+  {
+   "us": 127.3,
+   "calls": 28,
+   "us_per_token_layer": 0.07,
+   "name": "void flash::prepare_varlen_num_blocks_kernel<4, true>(int, int, int, int const*, int const"
+  },
+  {
+   "us": 125.5,
+   "calls": 64,
+   "us_per_token_layer": 0.07,
+   "name": "void flash::prepare_varlen_num_blocks_kernel<4, false>(int, int, int, int const*, int cons"
+  },
+  {
+   "us": 123.5,
+   "calls": 64,
+   "us_per_token_layer": 0.07,
+   "name": "void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_scatter_gath"
+  },
+  {
+   "us": 93.9,
+   "calls": 64,
+   "us_per_token_layer": 0.05,
+   "name": "_prepare_pos_seq_lens_kernel"
+  },
+  {
+   "us": 93.4,
+   "calls": 63,
+   "us_per_token_layer": 0.05,
+   "name": "memcpy32_post"
+  },
+  {
+   "us": 93.1,
+   "calls": 28,
+   "us_per_token_layer": 0.05,
+   "name": "fg_aux(FgArgs)"
+  },
+  {
+   "us": 85.4,
+   "calls": 64,
+   "us_per_token_layer": 0.05,
+   "name": "Memcpy DtoD (Device -> Device)"
+  },
+  {
+   "us": 63.0,
+   "calls": 64,
+   "us_per_token_layer": 0.04,
+   "name": "void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arange_cuda_out"
+  }
+ ]
+}

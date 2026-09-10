@@ -1,0 +1,115 @@
+=== S1a start Wed Sep  9 03:53:42 UTC 2026
+1c54a8bb9ff8aab8c397c37abdc4ee9c t16m_kernels.cu
+a35e24365a0f50889ebc6688922cde4f t16m_stack.py
+=== build + gate (t16m_gate kernels)
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+P2 cases passing: 600
+prepare 3B rc=0
+LOCKSTEP-PREPARE quality gate {"status": "PASS", "stock": 7.297836392305741, "lockstep": 7.313109686578728, "delta_pct": 0.20928523814387479
+LOCKSTEP-PREPARE PASS /root/manifests/rb_qwen25_3b
+LOAD 04:01 21.48 21.30 23.27 single qwen25_1p5b stock cl16
+LOAD 04:02 23.73 22.00 23.41 single qwen25_1p5b lssab cl16
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1a/single_qwen25_1p5b_cl16.json
+S1A qwen25_1p5b  cl16   ttft_p128_b1         stock      5.07 lssab      8.28 ratio 0.612
+S1A qwen25_1p5b  cl16   ttft_p128_b8         stock     10.23 lssab     18.47 ratio 0.554
+S1A qwen25_1p5b  cl16   ttft_p2048_b1        stock     15.78 lssab     29.65 ratio 0.532
+S1A qwen25_1p5b  cl16   ttft_p2048_b8        stock     94.25 lssab    187.43 ratio 0.503
+S1A qwen25_1p5b  cl16   ttft_p8192_b1        stock     59.67 lssab    103.05 ratio 0.579
+S1A qwen25_1p5b  cl16   ttft_p8192_b8        stock    415.99 lssab    822.53 ratio 0.506
+S1A qwen25_1p5b  cl16   ttft_p8192_b4        stock    212.82 lssab    407.89 ratio 0.522
+S1A qwen25_1p5b  cl16   ttft_p32640_b1       stock    349.25 lssab    562.74 ratio 0.621
+S1A qwen25_1p5b  cl16   prefill_p128_b32     stock     30.86 lssab     52.06 ratio 0.593
+S1A qwen25_1p5b  cl16   decode_b1            stock    434.53 lssab    221.97 ratio 0.511
+S1A qwen25_1p5b  cl16   decode_b8            stock   3353.80 lssab   1728.50 ratio 0.515
+S1A qwen25_1p5b  cl16   decode_b32           stock  12609.85 lssab   6350.93 ratio 0.504
+LOAD 04:03 24.95 22.79 23.58 single qwen25_1p5b stock cl0
+LOAD 04:04 25.77 23.29 23.71 single qwen25_1p5b lssab cl0
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1a/single_qwen25_1p5b_cl0.json
+S1A qwen25_1p5b  cl0    ttft_p128_b1         stock      4.37 lssab      8.31 ratio 0.526
+S1A qwen25_1p5b  cl0    ttft_p128_b8         stock      9.53 lssab     18.73 ratio 0.509
+S1A qwen25_1p5b  cl0    ttft_p2048_b1        stock     15.04 lssab     29.13 ratio 0.516
+S1A qwen25_1p5b  cl0    ttft_p2048_b8        stock     94.71 lssab    185.71 ratio 0.510
+S1A qwen25_1p5b  cl0    ttft_p8192_b1        stock     60.57 lssab    102.49 ratio 0.591
+S1A qwen25_1p5b  cl0    ttft_p8192_b8        stock    418.02 lssab    819.08 ratio 0.510
+S1A qwen25_1p5b  cl0    ttft_p8192_b4        stock    211.69 lssab    406.91 ratio 0.520
+S1A qwen25_1p5b  cl0    ttft_p32640_b1       stock    345.74 lssab    559.55 ratio 0.618
+S1A qwen25_1p5b  cl0    prefill_p128_b32     stock     31.07 lssab     51.99 ratio 0.598
+S1A qwen25_1p5b  cl0    decode_b1            stock    434.32 lssab    207.97 ratio 0.479
+S1A qwen25_1p5b  cl0    decode_b8            stock   3355.20 lssab   1732.48 ratio 0.516
+S1A qwen25_1p5b  cl0    decode_b32           stock  12553.84 lssab   6224.74 ratio 0.496
+LOAD 04:05 23.55 23.24 23.67 single qwen25_7b stock cl16
+LOAD 04:06 19.70 22.06 23.22 single qwen25_7b lssab cl16
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1a/single_qwen25_7b_cl16.json
+S1A qwen25_7b    cl16   ttft_p128_b1         stock      9.45 lssab     11.23 ratio 0.842
+S1A qwen25_7b    cl16   ttft_p128_b8         stock     25.52 lssab     32.58 ratio 0.783
+S1A qwen25_7b    cl16   ttft_p2048_b1        stock     49.01 lssab     58.42 ratio 0.839
+S1A qwen25_7b    cl16   ttft_p2048_b8        stock    372.50 lssab    422.82 ratio 0.881
+S1A qwen25_7b    cl16   ttft_p8192_b1        stock    210.65 lssab    230.92 ratio 0.912
+S1A qwen25_7b    cl16   ttft_p8192_b8        stock   1592.44 lssab   1843.73 ratio 0.864
+S1A qwen25_7b    cl16   ttft_p8192_b4        stock    806.00 lssab    922.39 ratio 0.874
+S1A qwen25_7b    cl16   ttft_p32640_b1       stock   1096.47 lssab   1272.63 ratio 0.862
+S1A qwen25_7b    cl16   prefill_p128_b32     stock     96.44 lssab    108.73 ratio 0.887
+S1A qwen25_7b    cl16   decode_b1            stock    164.69 lssab    148.60 ratio 0.902
+S1A qwen25_7b    cl16   decode_b8            stock   1285.65 lssab   1164.68 ratio 0.906
+S1A qwen25_7b    cl16   decode_b32           stock   5058.38 lssab   4147.09 ratio 0.820
+LOAD 04:08 20.42 21.87 23.03 single qwen25_7b stock cl0
+LOAD 04:09 22.09 22.45 23.16 single qwen25_7b lssab cl0
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1a/single_qwen25_7b_cl0.json
+S1A qwen25_7b    cl0    ttft_p128_b1         stock      9.44 lssab     11.25 ratio 0.840
+S1A qwen25_7b    cl0    ttft_p128_b8         stock     25.79 lssab     33.16 ratio 0.778
+S1A qwen25_7b    cl0    ttft_p2048_b1        stock     49.47 lssab     58.66 ratio 0.843
+S1A qwen25_7b    cl0    ttft_p2048_b8        stock    372.08 lssab    419.14 ratio 0.888
+S1A qwen25_7b    cl0    ttft_p8192_b1        stock    209.78 lssab    231.04 ratio 0.908
+S1A qwen25_7b    cl0    ttft_p8192_b8        stock   1590.47 lssab   1843.69 ratio 0.863
+S1A qwen25_7b    cl0    ttft_p8192_b4        stock    800.74 lssab    921.68 ratio 0.869
+S1A qwen25_7b    cl0    ttft_p32640_b1       stock   1102.89 lssab   1271.19 ratio 0.868
+S1A qwen25_7b    cl0    prefill_p128_b32     stock     96.53 lssab    109.26 ratio 0.884
+S1A qwen25_7b    cl0    decode_b1            stock    164.78 lssab    150.12 ratio 0.911
+S1A qwen25_7b    cl0    decode_b8            stock   1278.88 lssab   1198.64 ratio 0.937
+S1A qwen25_7b    cl0    decode_b32           stock   5068.87 lssab   4276.11 ratio 0.844
+LOAD 04:11 29.02 24.07 23.62 single qwen25_3b stock cl16
+LOAD 04:12 30.97 26.23 24.43 single qwen25_3b lssab cl16
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+armed_from_manifest OK
+WROTE /workspace/p2/handover/s1a/single_qwen25_3b_cl16.json
+S1A qwen25_3b    cl16   ttft_p128_b1         stock      6.08 lssab     10.40 ratio 0.585
+S1A qwen25_3b    cl16   ttft_p128_b8         stock     14.59 lssab     25.48 ratio 0.573
+S1A qwen25_3b    cl16   ttft_p2048_b1        stock     25.79 lssab     42.14 ratio 0.612
+S1A qwen25_3b    cl16   ttft_p2048_b8        stock    181.12 lssab    287.58 ratio 0.630
+S1A qwen25_3b    cl16   ttft_p8192_b1        stock    108.32 lssab    160.03 ratio 0.677
+S1A qwen25_3b    cl16   ttft_p8192_b8        stock    792.04 lssab   1276.17 ratio 0.621
+S1A qwen25_3b    cl16   ttft_p8192_b4        stock    402.40 lssab    637.49 ratio 0.631
+S1A qwen25_3b    cl16   ttft_p32640_b1       stock    610.63 lssab    894.86 ratio 0.682
+S1A qwen25_3b    cl16   prefill_p128_b32     stock     49.64 lssab     76.80 ratio 0.646
+S1A qwen25_3b    cl16   decode_b1            stock    277.36 lssab    170.57 ratio 0.615
+S1A qwen25_3b    cl16   decode_b8            stock   2156.14 lssab   1336.48 ratio 0.620
+S1A qwen25_3b    cl16   decode_b32           stock   8188.05 lssab   4871.39 ratio 0.595
+DECODE_PROF lssab b1 total 217.7 ms, 3.402 ms/token
+   86400.2 us   7056 calls   48.21 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_64x64_128x6_tn_align16>(cutlass_80
+   41787.0 us   1764 calls   23.32 us/tok/layer  lsb::lsb_dec8p(lsb::LsbDev)
+   18153.5 us   3612 calls   10.13 us/tok/layer  r4quant_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __nv
+   14568.5 us   3584 calls    8.13 us/tok/layer  void normquant_k<512, 3>(__nv_bfloat16 const*, int const*, float const*, float const*, flo
+   10689.4 us     64 calls    5.97 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+    9279.3 us   1792 calls    5.18 us/tok/layer  deqrope_k(int const*, __nv_bfloat16 const*, float const*, float const*, float const*, long
+    9162.7 us   1764 calls    5.11 us/tok/layer  void r4_cl_k<false>(int const*, __nv_bfloat16 const*, float const*, float const*, long lon
+    7880.0 us   1792 calls    4.40 us/tok/layer  deqsilu_k(int const*, __nv_bfloat16 const*, float const*, float const*, long long const*, 
+    5062.4 us   3528 calls    2.82 us/tok/layer  deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int
+    2804.6 us   1792 calls    1.57 us/tok/layer  void rowquant_k<256, 6>(__nv_bfloat16 const*, signed char*, float*, int)
+    2005.4 us    112 calls    1.12 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+    1307.2 us     28 calls    0.73 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+    1238.4 us     64 calls    0.69 us/tok/layer  _gumbel_sample_kernel
+     911.2 us     28 calls    0.51 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa
+     866.3 us    384 calls    0.48 us/tok/layer  void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso
+     504.4 us    192 calls    0.28 us/tok/layer  void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native:
+     318.4 us     64 calls    0.18 us/tok/layer  lsb::lsb_rowmap(lsb::LsbDev, unsigned long long, unsigned long long, unsigned long long, u
+     293.9 us    128 calls    0.16 us/tok/layer  Memcpy DtoH (Device -> Pinned)
+S1A_DONE Wed Sep  9 04:14:53 UTC 2026

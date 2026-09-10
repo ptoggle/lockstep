@@ -1,0 +1,38 @@
+graph check rc=0
+T=   1 normal    graph==eager True
+T=   1 zeros     graph==eager True
+T=   1 nan_rows  graph==eager True
+T=   1 inf_rows  graph==eager True
+T=   1 big       graph==eager True
+T=   2 normal    graph==eager True
+T=   2 zeros     graph==eager True
+T=   2 nan_rows  graph==eager True
+T=   2 inf_rows  graph==eager True
+T=   2 big       graph==eager True
+T=   8 normal    graph==eager True
+T=   8 zeros     graph==eager True
+T=   8 nan_rows  graph==eager True
+T=   8 inf_rows  graph==eager True
+T=   8 big       graph==eager True
+T=  32 normal    graph==eager True
+T=  32 zeros     graph==eager True
+T=  32 nan_rows  graph==eager True
+T=  32 inf_rows  graph==eager True
+T=  32 big       graph==eager True
+T=  64 normal    graph==eager True
+T=  64 zeros     graph==eager True
+T=  64 nan_rows  graph==eager True
+T=  64 inf_rows  graph==eager True
+T=  64 big       graph==eager True
+T= 256 normal    graph==eager True
+T= 256 zeros     graph==eager True
+T= 256 nan_rows  graph==eager True
+T= 256 inf_rows  graph==eager True
+T= 256 big       graph==eager True
+T= 512 normal    graph==eager True
+T= 512 zeros     graph==eager True
+T= 512 nan_rows  graph==eager True
+T= 512 inf_rows  graph==eager True
+T= 512 big       graph==eager True
+MOE_GRAPH_CHECK {"1": {"normal": true, "zeros": true, "nan_rows": true, "inf_rows": true, "big": true}, "2": {"normal": true, "zeros": true, "nan_rows": true, "inf_rows": true, "big": true}, "8": {"normal": true, "zeros": true, "nan_rows": true, "inf_rows": true, "big": true}, "32": {"normal": true,
+M1G4_DONE Thu Sep 10 02:48:54 UTC 2026

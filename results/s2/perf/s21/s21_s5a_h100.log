@@ -1,0 +1,24 @@
+=== S5a start Wed Sep  9 14:17:19 UTC 2026
+a643008b470112bdc58875a058c3f1ca
+1648832 Sep  9 14:18 /workspace/p2/lssa_lssab_t16y.so
+=== rig LSB_GATE_P=1
+T16N GATE: 21 PASS / 0 FAIL
+=== rig LSB_GATE_P=1 LSB_GATE_ONLY=g8
+T16N GATE: 2 PASS / 0 FAIL
+=== rig LSB_GATE_P=0 LSB_GATE_W=1
+T16N GATE: 21 PASS / 0 FAIL
+=== rig LSB_GATE_P=0 LSB_GATE_W=0
+T16N GATE: 21 PASS / 0 FAIL
+T16N GATE: 2 PASS / 0 FAIL
+=== E1 / E4v2 (7B, the T16y .so)
+spin rc=0
+check rc=0
+[PASS] E1(B9.1, mu ON) PROMPT rows vs lssab9_torch[sink](mu)    rows=151200 bad=0 maxdiff=0.000e+00 (18 sequence-steps)
+[PASS] E4v2(mu ON) GENERATED rows vs lssab9_torch[sink](mu) [contract v2 target] rows=29736 bad=0 maxdiff=0.000e+00 (1062 sequence-steps)
+=== E2-style: chunked prefill == single (MNBT 512 vs 8192), 7B
+e2 mnbt=512 rc=0
+e2 mnbt=8192 rc=0
+E2 chunked==single ids: True
+S5A qwen25_7b    t16y   p128_b1=0.877  p128_b8=0.994  p2048_b1=1.016  p2048_b8=1.072  p8192_b1=1.079  p8192_b8=1.027  p8192_b4=1.039  p32640_b1=0.986  prefill_p128_b32=1.081  dec_b1=0.945  dec_b8=0.903  dec_b32=0.822
+S5A qwen25_7b    base   p128_b1=0.825  p128_b8=0.949  p2048_b1=0.992  p2048_b8=1.078  p8192_b1=1.082  p8192_b8=1.025  p8192_b4=1.028  p32640_b1=0.987  prefill_p128_b32=1.078  dec_b1=0.929  dec_b8=0.891  dec_b32=0.824
+S5A_DONE Wed Sep  9 14:43:42 UTC 2026

@@ -1,0 +1,5 @@
+=== layer 0
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 915, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.24399757385253906, "t_fused_s": 0.01486349105834961}
+=== layer 24
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 24, "T": 915, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.2515561580657959, "t_fused_s": 0.014626502990722656}
+M1G2B_DONE Thu Sep 10 02:01:13 UTC 2026

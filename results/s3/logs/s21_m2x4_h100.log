@@ -1,0 +1,9 @@
+L0 mx n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 48, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.40728235244750977, "t_fused_s": 310.489310503006}
+L0 mx n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 1024, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.4242260456085205, "t_fused_s": 1.7133128643035889}
+L12 mx n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 12, "T": 48, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.27710533142089844, "t_fused_s": 1.0843558311462402}
+L12 mx n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 12, "T": 1024, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.37966251373291016, "t_fused_s": 0.7523901462554932}
+M2X4_DONE Thu Sep 10 08:58:31 UTC 2026

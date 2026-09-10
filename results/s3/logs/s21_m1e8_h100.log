@@ -1,0 +1,9 @@
+ppl_g1_v2 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 48, "mode": "ppl", "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 8.81400582424298, "gen_s": 205.98369479179382, "moe_calls": 1440}
+s21_m1e8_h100.sh: line 8: 1400448 Aborted                 env "$@" MODEL=Qwen/Qwen3-30B-A3B timeout 4000 python moe_engine.py > $H/engine_$tag.log 2>&1
+bench_g1g_v2 rc=134
+[rank0]: torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+[rank0]:[W910 04:00:48.218820050 CUDAEvent.h:57] Warning: CUDA warning: an illegal memory access was encountered (function ~CUDAEvent)
+bench_stockg_v2 rc=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 0, "grouped": 1, "eager": 0, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 203.93557808840586, "decode_b8_tps": 889.4948606169579, "decode_b32_tps": 2222.7599130607027, "ttft_2048_ms": 44.83389854431152, "ttft_8192_ms": 168.88022422790527, "moe_calls": 0}
+M1E8_DONE Thu Sep 10 04:02:34 UTC 2026

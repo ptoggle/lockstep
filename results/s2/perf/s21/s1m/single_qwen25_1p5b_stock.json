@@ -1,0 +1,67 @@
+{
+ "mode": "graph",
+ "cgmode": "FULL_AND_PIECEWISE",
+ "rows": [
+  {
+   "metric": "ttft_p128_b1",
+   "unit": "ms",
+   "stock": 4.218105226755142
+  },
+  {
+   "metric": "ttft_p128_b8",
+   "unit": "ms",
+   "stock": 9.451836347579956
+  },
+  {
+   "metric": "ttft_p2048_b1",
+   "unit": "ms",
+   "stock": 14.388162642717361
+  },
+  {
+   "metric": "ttft_p2048_b8",
+   "unit": "ms",
+   "stock": 95.3870490193367
+  },
+  {
+   "metric": "ttft_p8192_b1",
+   "unit": "ms",
+   "stock": 60.921475291252136
+  },
+  {
+   "metric": "ttft_p8192_b8",
+   "unit": "ms",
+   "stock": 419.69095170497894
+  },
+  {
+   "metric": "ttft_p8192_b4",
+   "unit": "ms",
+   "stock": 213.71115371584892
+  },
+  {
+   "metric": "ttft_p32640_b1",
+   "unit": "ms",
+   "stock": 351.8688678741455
+  },
+  {
+   "metric": "prefill_p128_b32",
+   "unit": "ms",
+   "stock": 30.395176261663437
+  },
+  {
+   "metric": "decode_b1",
+   "unit": "tok/s",
+   "stock": 433.08855068396804
+  },
+  {
+   "metric": "decode_b8",
+   "unit": "tok/s",
+   "stock": 3343.819432100966
+  },
+  {
+   "metric": "decode_b32",
+   "unit": "tok/s",
+   "stock": 12523.282743162315
+  }
+ ],
+ "only": "stock"
+}

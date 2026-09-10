@@ -1,0 +1,17 @@
+gmm gate rc=0
+T16MOE_GMM GATE: 64 PASS / 0 FAIL
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 54 PASS / 0 FAIL
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+T16MOE_GMM_DEQ GATE: 8 PASS / 0 FAIL
+graph prof rc=0
+GRAPH T=    1 full  0.0657 ms  rowquant=0.0076  gate_route(fused)=0.0194  rq+int_mm+deq+route=0.0727  +r4quant+dispatch=0.0841  +gmm_up+silu=0.1051  +gmm_down+deq=0.1202  full forward=0.0657
+GRAPH T=    8 full  0.1392 ms  rowquant=0.0080  gate_route(fused)=0.0201  rq+int_mm+deq+route=0.0726  +r4quant+dispatch=0.0836  +gmm_up+silu=0.1599  +gmm_down+deq=0.1975  full forward=0.1392
+GRAPH T=   32 full  0.1844 ms  rowquant=0.0084  gate_route(fused)=0.0204  rq+int_mm+deq+route=0.0759  +r4quant+dispatch=0.0852  +gmm_up+silu=0.1926  +gmm_down+deq=0.2437  full forward=0.1844
+GRAPH T=  256 full  0.2597 ms  rowquant=0.0092  gate_route(fused)=0.0276  rq+int_mm+deq+route=0.0973  +r4quant+dispatch=0.1107  +gmm_up+silu=0.2507  +gmm_down+deq=0.3292  full forward=0.2597
+GRAPH T= 2048 full  0.6544 ms  rowquant=0.0182  gate_route(fused)=0.1408  rq+int_mm+deq+route=0.1151  +r4quant+dispatch=0.1697  +gmm_up+silu=0.4914  +gmm_down+deq=0.6961  full forward=0.6544
+M1F10_DONE Thu Sep 10 05:13:32 UTC 2026

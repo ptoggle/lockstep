@@ -1,0 +1,84 @@
+{
+ "stack": "stock",
+ "model": "/workspace/p2/qwen1m_dense",
+ "maxlen": 270336,
+ "mnbt": 8192,
+ "gmu": 0.9,
+ "eager": false,
+ "cgmode": "FULL_AND_PIECEWISE",
+ "boot_s": 16.4,
+ "kv_cache_tokens": "1,038,240",
+ "kv_cache_gib": "55.45",
+ "max_concurrency": "Maximum concurrency for 270,336 tokens per request: 3.84x",
+ "rows": [
+  {
+   "metric": "ttft_p32768_b1",
+   "plen": 32768,
+   "ttft_ms": 1106.6900491714478,
+   "samples": [
+    1098.88,
+    1106.69,
+    1107.31
+   ],
+   "attn_total_ms": 407.35574462264776,
+   "attn_fwd_ms": 401.08892863988876,
+   "kv_update_ms": 6.266815982758999,
+   "attn_calls": 112,
+   "nonattn_ms": 699.3343045488
+  },
+  {
+   "metric": "ttft_p65536_b1",
+   "plen": 65536,
+   "ttft_ms": 2947.1162855625153,
+   "samples": [
+    2947.66,
+    2947.12,
+    2943.2
+   ],
+   "attn_total_ms": 1571.2482542283833,
+   "attn_fwd_ms": 1558.7163182497025,
+   "kv_update_ms": 12.531935978680849,
+   "attn_calls": 224,
+   "nonattn_ms": 1375.868031334132
+  },
+  {
+   "metric": "ttft_p131072_b1",
+   "plen": 131072,
+   "ttft_ms": 8790.075466036797,
+   "samples": [
+    8787.59,
+    8807.15,
+    8790.08
+   ],
+   "attn_total_ms": 6110.696515701711,
+   "attn_fwd_ms": 6085.871747672558,
+   "kv_update_ms": 24.824768029153347,
+   "attn_calls": 448,
+   "nonattn_ms": 2679.3789503350854
+  },
+  {
+   "metric": "ttft_p262144_b1",
+   "plen": 262144,
+   "ttft_ms": 29392.57349073887,
+   "samples": [
+    29411.57,
+    29392.57,
+    29389.58
+   ],
+   "attn_total_ms": 24140.018276121467,
+   "attn_fwd_ms": 24090.748740136623,
+   "kv_update_ms": 49.26953598484397,
+   "attn_calls": 896,
+   "nonattn_ms": 5252.555214617401
+  },
+  {
+   "metric": "decode_p131072_b1",
+   "plen": 131072,
+   "bs": 1,
+   "tok_s": 168.3041193559989,
+   "ngen1": 32,
+   "ngen2": 40,
+   "method": "slope (prefill cancelled)"
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+r0 rc=0
+MOE_ARM2 layers=24 rot=0
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "armed": 1, "rot": 0, "armed_layers": 24, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 345.89956408936183, "gen_s": 21.083710432052612, "moe_calls": 792}
+r64 rc=0
+MOE_ARM2 layers=24 rot=64
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "armed": 1, "rot": 64, "armed_layers": 24, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 365.68665819674897, "gen_s": 28.112169981002808, "moe_calls": 792}
+M2P2_DONE Thu Sep 10 06:34:55 UTC 2026

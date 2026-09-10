@@ -1,0 +1,252 @@
+{
+ "stack": "stock",
+ "cg": "FULL_AND_PIECEWISE",
+ "noinductor": "1",
+ "plen": 1024,
+ "gen": 96,
+ "batch": 64,
+ "total_cuda_ms": 2131.132755000014,
+ "per_token_ms": 22.199299531250148,
+ "kernels": [
+  {
+   "us": 701273.1,
+   "calls": 112,
+   "us_per_token_layer": 260.89,
+   "name": "nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_TNN"
+  },
+  {
+   "us": 413564.3,
+   "calls": 224,
+   "us_per_token_layer": 153.86,
+   "name": "nvjet_sm90_tst_256x128_64x4_1x2_h_bz_coopA_TNT"
+  },
+  {
+   "us": 253093.5,
+   "calls": 2548,
+   "us_per_token_layer": 94.16,
+   "name": "nvjet_sm90_tst_320x64_64x4_4x1_v_bz_TNT"
+  },
+  {
+   "us": 204305.2,
+   "calls": 2800,
+   "us_per_token_layer": 76.01,
+   "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::Col"
+  },
+  {
+   "us": 131401.2,
+   "calls": 2548,
+   "us_per_token_layer": 48.88,
+   "name": "nvjet_sm90_tst_112x64_64x9_2x1_v_bz_splitK_TNN"
+  },
+  {
+   "us": 88815.8,
+   "calls": 112,
+   "us_per_token_layer": 33.04,
+   "name": "nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_bias_TNN"
+  },
+  {
+   "us": 81545.5,
+   "calls": 2800,
+   "us_per_token_layer": 30.34,
+   "name": "void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_ke"
+  },
+  {
+   "us": 48384.2,
+   "calls": 5600,
+   "us_per_token_layer": 18.0,
+   "name": "std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f"
+  },
+  {
+   "us": 39077.4,
+   "calls": 2548,
+   "us_per_token_layer": 14.54,
+   "name": "nvjet_sm90_tst_64x64_64x13_4x1_v_bz_bias_TNT"
+  },
+  {
+   "us": 35015.8,
+   "calls": 93,
+   "us_per_token_layer": 13.03,
+   "name": "nvjet_sm90_tst_384x64_64x3_2x1_v_bz_coopB_TNN"
+  },
+  {
+   "us": 30293.2,
+   "calls": 2800,
+   "us_per_token_layer": 11.27,
+   "name": "void vllm::rotary_embedding_kernel<c10::BFloat16, c10::BFloat16, true>(long const*, c10::B"
+  },
+  {
+   "us": 29111.1,
+   "calls": 2548,
+   "us_per_token_layer": 10.83,
+   "name": "nvjet_sm90_tst_64x32_64x16_4x2_h_bz_TNT"
+  },
+  {
+   "us": 18211.7,
+   "calls": 2800,
+   "us_per_token_layer": 6.78,
+   "name": "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheD"
+  },
+  {
+   "us": 8154.5,
+   "calls": 2688,
+   "us_per_token_layer": 3.03,
+   "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128"
+  },
+  {
+   "us": 6489.8,
+   "calls": 2688,
+   "us_per_token_layer": 2.41,
+   "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16"
+  },
+  {
+   "us": 4781.0,
+   "calls": 100,
+   "us_per_token_layer": 1.78,
+   "name": "_gumbel_sample_kernel"
+  },
+  {
+   "us": 2994.9,
+   "calls": 200,
+   "us_per_token_layer": 1.11,
+   "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso"
+  },
+  {
+   "us": 2813.3,
+   "calls": 28,
+   "us_per_token_layer": 1.05,
+   "name": "nvjet_sm90_tst_192x80_64x6_1x2_h_bz_TNT"
+  },
+  {
+   "us": 2659.0,
+   "calls": 28,
+   "us_per_token_layer": 0.99,
+   "name": "nvjet_sm90_tst_192x40_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2635.4,
+   "calls": 28,
+   "us_per_token_layer": 0.98,
+   "name": "nvjet_sm90_tst_192x48_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2630.9,
+   "calls": 28,
+   "us_per_token_layer": 0.98,
+   "name": "nvjet_sm90_tst_192x24_64x7_4x1_v_bz_TNT"
+  },
+  {
+   "us": 2613.9,
+   "calls": 28,
+   "us_per_token_layer": 0.97,
+   "name": "nvjet_sm90_tst_192x8_64x8_4x1_v_bz_TNT"
+  },
+  {
+   "us": 1611.9,
+   "calls": 28,
+   "us_per_token_layer": 0.6,
+   "name": "nvjet_sm90_tst_192x80_64x6_4x2_h_bz_splitK_TNT"
+  },
+  {
+   "us": 1390.4,
+   "calls": 28,
+   "us_per_token_layer": 0.52,
+   "name": "nvjet_sm90_tst_128x48_64x9_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1388.1,
+   "calls": 28,
+   "us_per_token_layer": 0.52,
+   "name": "nvjet_sm90_tst_128x40_64x10_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1361.6,
+   "calls": 28,
+   "us_per_token_layer": 0.51,
+   "name": "nvjet_sm90_tst_128x24_64x11_4x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 1304.9,
+   "calls": 28,
+   "us_per_token_layer": 0.49,
+   "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_TNT"
+  },
+  {
+   "us": 758.0,
+   "calls": 2,
+   "us_per_token_layer": 0.28,
+   "name": "nvjet_sm90_tst_384x48_64x3_2x1_v_bz_TNT"
+  },
+  {
+   "us": 724.9,
+   "calls": 198,
+   "us_per_token_layer": 0.27,
+   "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, "
+  },
+  {
+   "us": 599.4,
+   "calls": 100,
+   "us_per_token_layer": 0.22,
+   "name": "_get_num_sampled_and_rejected_kernel"
+  },
+  {
+   "us": 599.1,
+   "calls": 100,
+   "us_per_token_layer": 0.22,
+   "name": "_combine_sampled_and_draft_tokens_kernel"
+  },
+  {
+   "us": 591.9,
+   "calls": 604,
+   "us_per_token_layer": 0.22,
+   "name": "Memset (Device)"
+  },
+  {
+   "us": 565.5,
+   "calls": 100,
+   "us_per_token_layer": 0.21,
+   "name": "void vllm::rms_norm_kernel<c10::BFloat16, 8, 2, true>(c10::BFloat16*, c10::BFloat16 const*"
+  },
+  {
+   "us": 556.1,
+   "calls": 100,
+   "us_per_token_layer": 0.21,
+   "name": "_gather_block_tables_kernel"
+  },
+  {
+   "us": 554.5,
+   "calls": 28,
+   "us_per_token_layer": 0.21,
+   "name": "nvjet_sm90_tst_128x56_64x9_4x1_v_bz_bias_TNT"
+  },
+  {
+   "us": 476.2,
+   "calls": 100,
+   "us_per_token_layer": 0.18,
+   "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps<f"
+  },
+  {
+   "us": 463.6,
+   "calls": 200,
+   "us_per_token_layer": 0.17,
+   "name": "Memcpy DtoH (Device -> Pinned)"
+  },
+  {
+   "us": 444.8,
+   "calls": 201,
+   "us_per_token_layer": 0.17,
+   "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native:"
+  },
+  {
+   "us": 424.5,
+   "calls": 28,
+   "us_per_token_layer": 0.16,
+   "name": "nvjet_sm90_tst_64x40_64x16_4x1_v_bz_bias_TNT"
+  },
+  {
+   "us": 420.7,
+   "calls": 28,
+   "us_per_token_layer": 0.16,
+   "name": "nvjet_sm90_tst_64x48_64x15_4x1_v_bz_bias_TNT"
+  }
+ ]
+}

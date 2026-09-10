@@ -1,0 +1,12 @@
+gmm gate rc=1
+RuntimeError: CUDA error: CUBLAS_STATUS_NOT_SUPPORTED when calling cublasLtMatmul with transpose_mat1 0 transpose_mat2 0 m 256 n 17 k 64 mat1_ld 256 mat2_ld 64 result_ld 256 abType 3 cType 10 computeType 72 scaleType 10
+t16m kernels gate rc=0
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=0 side=1 
+T16M_KERNELS PASS cases=1186 bad=0
+=== grouped layer 0
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 915, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.25007057189941406, "t_fused_s": 0.0023488998413085938}
+=== grouped layer 24
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 24, "T": 915, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.2575721740722656, "t_fused_s": 0.0015625953674316406}
+M1B_DONE Thu Sep 10 02:10:22 UTC 2026

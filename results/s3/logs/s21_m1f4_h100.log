@@ -1,0 +1,13 @@
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 42 PASS / 0 FAIL
+prof rc=0
+T=    1 total    0.150 ms  gate+route=0.061  route=0.003  r4quant=0.009  dispatch=0.008  gmm=0.023  deq_silu_r4quant_g=0.012  gmm=0.015  deq_rows_g=0.006  combine=0.011
+T=    8 total    0.214 ms  gate+route=0.063  route=0.003  r4quant=0.009  dispatch=0.009  gmm=0.060  deq_silu_r4quant_g=0.014  gmm=0.037  deq_rows_g=0.007  combine=0.012
+T=   32 total    0.265 ms  gate+route=0.063  route=0.003  r4quant=0.007  dispatch=0.009  gmm=0.095  deq_silu_r4quant_g=0.015  gmm=0.054  deq_rows_g=0.008  combine=0.012
+T=  256 total    0.394 ms  gate=0.098  route=0.012  r4quant=0.008  dispatch=0.018  gmm=0.122  deq_silu_r4quant_g=0.024  gmm=0.076  deq_rows_g=0.021  combine=0.014
+T= 2048 total    0.906 ms  gate=0.099  route=0.017  r4quant=0.013  dispatch=0.091  gmm=0.225  deq_silu_r4quant_g=0.109  gmm=0.144  deq_rows_g=0.143  combine=0.066
+M1F4_DONE Thu Sep 10 04:07:33 UTC 2026

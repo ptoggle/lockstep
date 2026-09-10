@@ -1,0 +1,17 @@
+L0 rot0 rc=0
+WEIGHTS E=32 H=2880 I=2880 W13 (32, 5760, 2880) W2 (32, 2880, 2880)
+CAPTURED T=1024 H=2880
+MOE_M2 {"model": "openai/gpt-oss-20b", "layer": 0, "T": 1024, "E": 32, "H": 2880, "I": 2880, "k": 4, "rot": 0, "gpu_eq_cpu": true, "routing_agree_vs_stock": 0.955078125, "rel_ours_vs_stock": 0.04011928981352377, "rel_bf16dequant_vs_stock": 0.0035093036000408973, "rel_ours_vs_bf16dequant": 0.04001761427718821, "t_gpu_s": 0.08873414993286133, "t_cpu_s": 67.00661969184875}
+L0 rot64 rc=0
+WEIGHTS E=32 H=2880 I=2880 W13 (32, 5760, 2880) W2 (32, 2880, 2880)
+CAPTURED T=1024 H=2880
+MOE_M2 {"model": "openai/gpt-oss-20b", "layer": 0, "T": 1024, "E": 32, "H": 2880, "I": 2880, "k": 4, "rot": 64, "gpu_eq_cpu": true, "routing_agree_vs_stock": 0.955078125, "rel_ours_vs_stock": 0.021936277029958658, "rel_bf16dequant_vs_stock": 0.0035093036000408973, "rel_ours_vs_bf16dequant": 0.021830037197892022, "t_gpu_s": 0.11623215675354004, "t_cpu_s": 67.11639666557312}
+L12 rot0 rc=0
+WEIGHTS E=32 H=2880 I=2880 W13 (32, 5760, 2880) W2 (32, 2880, 2880)
+CAPTURED T=1024 H=2880
+MOE_M2 {"model": "openai/gpt-oss-20b", "layer": 12, "T": 1024, "E": 32, "H": 2880, "I": 2880, "k": 4, "rot": 0, "gpu_eq_cpu": true, "routing_agree_vs_stock": 0.9775390625, "rel_ours_vs_stock": 0.045610516518323006, "rel_bf16dequant_vs_stock": 0.0033481079489388684, "rel_ours_vs_bf16dequant": 0.045600126035061396, "t_gpu_s": 0.10811972618103027, "t_cpu_s": 63.72864127159119}
+L12 rot64 rc=0
+WEIGHTS E=32 H=2880 I=2880 W13 (32, 5760, 2880) W2 (32, 2880, 2880)
+CAPTURED T=1024 H=2880
+MOE_M2 {"model": "openai/gpt-oss-20b", "layer": 12, "T": 1024, "E": 32, "H": 2880, "I": 2880, "k": 4, "rot": 64, "gpu_eq_cpu": true, "routing_agree_vs_stock": 0.9775390625, "rel_ours_vs_stock": 0.029252689069340695, "rel_bf16dequant_vs_stock": 0.0033481079489388684, "rel_ours_vs_bf16dequant": 0.029234959407343233, "t_gpu_s": 0.12112998962402344, "t_cpu_s": 64.02299213409424}
+M2C0_DONE Thu Sep 10 05:59:23 UTC 2026

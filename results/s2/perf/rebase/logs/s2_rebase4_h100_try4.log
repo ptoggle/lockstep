@@ -1,0 +1,117 @@
+K-GATES: 43 PASS / 0 FAIL
+K9: 10 PASS / 0 FAIL
+=== [02:35:15] SETUP_DONE
+stock rc=0
+-rwxr-xr-x 1 root root 7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 5596912 Sep  9 02:34 /root/flash-attention/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root  7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 11648832 Sep  9 02:57 /workspace/p2/lssa_lssab.so
+=== RE-BASELINE pass 4 (size sweep) start Wed Sep  9 03:09:14 UTC 2026
+LOAD 03:09 11.59 11.92 12.79 start
+/dev/md0        250G  104G  147G  42% /workspace
+=== download Qwen/Qwen2.5-1.5B-Instruct
+space/hf/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306 
+/dev/md0        250G  104G  147G  42% /workspace
+=== prepare rb_qwen25_1p5b: already there
+LOAD 03:09 11.62 11.92 12.79 single qwen25_1p5b stock
+  ttft_p128_b1         stock=    5.05 ms
+  ttft_p128_b8         stock=   10.81 ms
+  ttft_p2048_b1        stock=   13.90 ms
+  ttft_p2048_b8        stock=   91.24 ms
+  ttft_p8192_b1        stock=   54.38 ms
+  ttft_p8192_b8        stock=  414.41 ms
+  ttft_p8192_b4        stock=  209.66 ms
+  ttft_p32640_b1       stock=  365.14 ms
+  prefill_p128_b32     stock=   27.22 ms
+  decode_b1            stock=   419.9 t/s
+  decode_b8            stock=  3268.2 t/s
+  decode_b32           stock= 12314.9 t/s
+LOAD 03:10 12.01 11.99 12.77 single qwen25_1p5b lssab
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+  ttft_p128_b1         lssab=    8.41 ms
+  ttft_p128_b8         lssab=   18.17 ms
+  ttft_p2048_b1        lssab=   28.31 ms
+  ttft_p2048_b8        lssab=  186.25 ms
+  ttft_p8192_b1        lssab=  102.48 ms
+  ttft_p8192_b8        lssab=  815.81 ms
+  ttft_p8192_b4        lssab=  407.41 ms
+  ttft_p32640_b1       lssab=  557.42 ms
+  prefill_p128_b32     lssab=   51.89 ms
+  decode_b1            lssab=   212.6 t/s
+  decode_b8            lssab=  1643.8 t/s
+  decode_b32           lssab=  5969.3 t/s
+lssab arm: armed_from_manifest OK
+WROTE /workspace/p2/handover/rebase/single_qwen25_1p5b.json
+RB_SINGLE_qwen25_1p5b_DONE
+=== download Qwen/Qwen2.5-3B-Instruct
+rkspace/hf/hub/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1 
+/dev/md0        250G  104G  147G  42% /workspace
+=== prepare rb_qwen25_3b: already there
+LOAD 03:11 12.02 12.01 12.72 single qwen25_3b stock
+  ttft_p128_b1         stock=    6.23 ms
+  ttft_p128_b8         stock=   14.53 ms
+  ttft_p2048_b1        stock=   24.50 ms
+  ttft_p2048_b8        stock=  179.79 ms
+  ttft_p8192_b1        stock=  107.42 ms
+  ttft_p8192_b8        stock=  794.31 ms
+  ttft_p8192_b4        stock=  403.90 ms
+  ttft_p32640_b1       stock=  614.60 ms
+  prefill_p128_b32     stock=   48.14 ms
+  decode_b1            stock=   268.1 t/s
+  decode_b8            stock=  2092.6 t/s
+  decode_b32           stock=  8052.0 t/s
+LOAD 03:12 12.30 12.08 12.70 single qwen25_3b lssab
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+  ttft_p128_b1         lssab=   10.51 ms
+  ttft_p128_b8         lssab=   25.30 ms
+  ttft_p2048_b1        lssab=   41.40 ms
+  ttft_p2048_b8        lssab=  289.04 ms
+  ttft_p8192_b1        lssab=  160.61 ms
+  ttft_p8192_b8        lssab= 1281.94 ms
+  ttft_p8192_b4        lssab=  639.28 ms
+  ttft_p32640_b1       lssab=  897.82 ms
+  prefill_p128_b32     lssab=   77.53 ms
+  decode_b1            lssab=   164.6 t/s
+  decode_b8            lssab=  1280.6 t/s
+  decode_b32           lssab=  4681.1 t/s
+lssab arm: armed_from_manifest OK
+WROTE /workspace/p2/handover/rebase/single_qwen25_3b.json
+RB_SINGLE_qwen25_3b_DONE
+=== download Qwen/Qwen2.5-14B-Instruct
+kspace/hf/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8 
+/dev/md0        250G  104G  147G  42% /workspace
+=== prepare rb_qwen25_14b: --model Qwen/Qwen2.5-14B-Instruct --keq /workspace/p2/keq_qwen25_14b_instruct.pt --max-model-len 32768 --gmu 0.45
+LOAD 03:13 12.56 12.17 12.68 prepare rb_qwen25_14b
+prepare rb_qwen25_14b rc=1
+ls: cannot access '/workspace/p2/manifests/rb_qwen25_14b/constants.safetensors': No such file or directory
+LOCKSTEP-PREPARE model Qwen/Qwen2.5-14B-Instruct: hidden=5120 layers=48 heads=40/8 head_dim=128 vocab=152064 tied=False qk_norm=False rotary_dim=128 window=None rotation=paley1
+Traceback (most recent call last):
+    raise RuntimeError("lockstep_calibrate.py failed (rc=%d, log %s)" % (r.returncode, log))
+RuntimeError: lockstep_calibrate.py failed (rc=1, log /workspace/p2/manifests/rb_qwen25_14b/calibrate.log)
+SKIP single qwen25_14b: no constants in /workspace/p2/manifests/rb_qwen25_14b
+LOAD 03:14 12.35 12.19 12.66 end
+RB-SINGLE qwen25_1p5b            ttft_p128_b1         stock      5.05 lssab      8.41 ratio 0.600
+RB-SINGLE qwen25_1p5b            ttft_p128_b8         stock     10.81 lssab     18.17 ratio 0.595
+RB-SINGLE qwen25_1p5b            ttft_p2048_b1        stock     13.90 lssab     28.31 ratio 0.491
+RB-SINGLE qwen25_1p5b            ttft_p2048_b8        stock     91.24 lssab    186.25 ratio 0.490
+RB-SINGLE qwen25_1p5b            ttft_p8192_b1        stock     54.38 lssab    102.48 ratio 0.531
+RB-SINGLE qwen25_1p5b            ttft_p8192_b8        stock    414.41 lssab    815.81 ratio 0.508
+RB-SINGLE qwen25_1p5b            ttft_p8192_b4        stock    209.66 lssab    407.41 ratio 0.515
+RB-SINGLE qwen25_1p5b            ttft_p32640_b1       stock    365.14 lssab    557.42 ratio 0.655
+RB-SINGLE qwen25_1p5b            prefill_p128_b32     stock     27.22 lssab     51.89 ratio 0.525
+RB-SINGLE qwen25_1p5b            decode_b1            stock    419.92 lssab    212.60 ratio 0.506
+RB-SINGLE qwen25_1p5b            decode_b8            stock   3268.17 lssab   1643.77 ratio 0.503
+RB-SINGLE qwen25_1p5b            decode_b32           stock  12314.94 lssab   5969.32 ratio 0.485
+RB-SINGLE qwen25_3b              ttft_p128_b1         stock      6.23 lssab     10.51 ratio 0.592
+RB-SINGLE qwen25_3b              ttft_p128_b8         stock     14.53 lssab     25.30 ratio 0.574
+RB-SINGLE qwen25_3b              ttft_p2048_b1        stock     24.50 lssab     41.40 ratio 0.592
+RB-SINGLE qwen25_3b              ttft_p2048_b8        stock    179.79 lssab    289.04 ratio 0.622
+RB-SINGLE qwen25_3b              ttft_p8192_b1        stock    107.42 lssab    160.61 ratio 0.669
+RB-SINGLE qwen25_3b              ttft_p8192_b8        stock    794.31 lssab   1281.94 ratio 0.620
+RB-SINGLE qwen25_3b              ttft_p8192_b4        stock    403.90 lssab    639.28 ratio 0.632
+RB-SINGLE qwen25_3b              ttft_p32640_b1       stock    614.60 lssab    897.82 ratio 0.685
+RB-SINGLE qwen25_3b              prefill_p128_b32     stock     48.14 lssab     77.53 ratio 0.621
+RB-SINGLE qwen25_3b              decode_b1            stock    268.12 lssab    164.60 ratio 0.614
+RB-SINGLE qwen25_3b              decode_b8            stock   2092.60 lssab   1280.55 ratio 0.612
+RB-SINGLE qwen25_3b              decode_b32           stock   8052.02 lssab   4681.05 ratio 0.581
+RB4_DONE Wed Sep  9 03:14:26 UTC 2026

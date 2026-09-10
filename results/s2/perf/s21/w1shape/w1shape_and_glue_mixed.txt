@@ -1,0 +1,73 @@
+W1SHAPES top torch ops by GPU time (ms, count, op, input shapes, call site):
+      57.1 ms x1533   aten::copy_              [[64, 152064], [64, 152064], []]
+      51.6 ms x657    aten::add                [[64, 152064], [64, 152064], []]
+      50.3 ms x1314   aten::to                 [[64, 152064], [], [], [], []]
+      50.3 ms x1314   aten::_to_copy           [[64, 152064], [], [], [], [], [], []]
+      46.8 ms x876    aten::__lshift__         [[64, 152064], []]
+       7.6 ms x219    aten::mul                [[64, 152064], [1, 152064]]
+       7.4 ms x219    aten::mul                [[64, 152064], [64, 1]]
+       7.2 ms x196    aten::copy_              [[63, 152064], [63, 152064], []]
+       6.5 ms x84     aten::add                [[63, 152064], [63, 152064], []]
+       6.3 ms x168    aten::to                 [[63, 152064], [], [], [], []]
+       6.3 ms x168    aten::_to_copy           [[63, 152064], [], [], [], [], [], []]
+       5.9 ms x112    aten::__lshift__         [[63, 152064], []]
+       3.6 ms x147    aten::copy_              [[44, 152064], [44, 152064], []]
+       3.5 ms x63     aten::add                [[44, 152064], [44, 152064], []]
+       3.3 ms x126    aten::to                 [[44, 152064], [], [], [], []]
+       3.3 ms x126    aten::_to_copy           [[44, 152064], [], [], [], [], [], []]
+       3.1 ms x84     aten::__lshift__         [[44, 152064], []]
+       2.8 ms x98     aten::copy_              [[50, 152064], [50, 152064], []]
+       2.6 ms x42     aten::add                [[50, 152064], [50, 152064], []]
+       2.5 ms x154    aten::copy_              [[30, 152064], [30, 152064], []]
+       2.5 ms x147    aten::copy_              [[31, 152064], [31, 152064], []]
+       2.5 ms x66     aten::add                [[30, 152064], [30, 152064], []]
+       2.5 ms x84     aten::to                 [[50, 152064], [], [], [], []]
+       2.5 ms x84     aten::_to_copy           [[50, 152064], [], [], [], [], [], []]
+       2.5 ms x63     aten::add                [[31, 152064], [31, 152064], []]
+       2.4 ms x56     aten::__lshift__         [[50, 152064], []]
+       2.3 ms x132    aten::to                 [[30, 152064], [], [], [], []]
+       2.3 ms x132    aten::_to_copy           [[30, 152064], [], [], [], [], [], []]
+       2.3 ms x1095   aten::to                 [[64, 3584], [], [], [], []]
+       2.3 ms x876    aten::copy_              [[64, 3584], [64, 3584], []]
+LSSAB smem_size=192512 bytes (188 KB)
+[rank0]:[W909 17:43:08.130094683 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+M=64
+   norm_quant(x)              {'void normquant_k<512, 7>(__nv_bfloat16 c': 4.98}
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.22}
+   rowquant_pad               {'void rowquant_k<256, 14>(__nv_bfloat16 c': 2.16}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 13.79}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 26.42}
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 10.81}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 1.96}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.13}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.65}
+M=320
+   norm_quant(x)              {'void normquant_k<256, 14>(__nv_bfloat16 ': 9.17}
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 9.81}
+   rowquant_pad               {'void rowquant_k<256, 14>(__nv_bfloat16 c': 3.3}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 25.95}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 90.13}
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 33.96}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 2.88}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.31}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 11.46}
+M=1088
+   norm_quant(x)              {'void normquant_k<256, 14>(__nv_bfloat16 ': 22.14}
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 24.0}
+   rowquant_pad               {'void rowquant_k<256, 14>(__nv_bfloat16 c': 6.46}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 60.29}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 225.33}
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 96.65}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 5.31}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 8.01}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 44.3}
+M=2112
+   norm_quant(x)              {'void normquant_k<256, 14>(__nv_bfloat16 ': 38.85}
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 43.97}
+   rowquant_pad               {'void rowquant_k<256, 14>(__nv_bfloat16 c': 11.07}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 100.76}
+   deq_silu_r4quant           {'deqsilur4_k(int const*, __nv_bfloat16 co': 390.09}
+   deq_silu(tiled)            {'void deqsilu_t_k<4, 0>(int const*, __nv_': 180.04}
+   stock rms_norm             {'void vllm::rms_norm_kernel<c10::BFloat16': 8.01}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 12.71}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 81.03}

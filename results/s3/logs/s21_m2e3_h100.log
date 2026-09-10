@@ -1,0 +1,11 @@
+gptoss_mx_ppl_fused rc=0
+LOCKSTEP_MOE: install() pid=1453183 patched GPUModelRunner.load_model (grouped=1)
+LOCKSTEP_MOE: load_model hook pid=1453183 - arming
+LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=64, mx=1, grouped=1)
+mx ref raw rc=0
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "fmt": "raw", "armed": 1, "rot": 0, "mx": 1, "armed_layers": 24, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 329.49283843993334, "gen_s": 213.99853229522705, "moe_calls": 792}
+gptoss_mx_bench_fused rc=0
+LOCKSTEP_MOE: install() pid=1454962 patched GPUModelRunner.load_model (grouped=1)
+LOCKSTEP_MOE: load_model hook pid=1454962 - arming
+LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=64, mx=1, grouped=1)
+M2E3_DONE Thu Sep 10 08:23:23 UTC 2026

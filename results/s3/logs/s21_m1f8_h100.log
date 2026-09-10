@@ -1,0 +1,19 @@
+gmm gate rc=0
+T16MOE_GMM GATE: 64 PASS / 0 FAIL
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 54 PASS / 0 FAIL
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+=== layer 0 NTOK=300
+MOE_M1 {"model": "Qwen/Qwen3-30B-A3B", "layer": 0, "T": 300, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.2529296875, "t_fused_s": 0.00054168701171875}
+graph prof rc=0
+GRAPH T=    1 full  0.0693 ms  rowquant=0.0076  gate_route(fused)=0.0194  rq+int_mm+deq+route=0.0726  +r4quant+dispatch=0.0841  +gmm_up+silu=0.1056  +gmm_down+deq=0.1214  full forward=0.0693
+GRAPH T=    8 full  0.1431 ms  rowquant=0.0080  gate_route(fused)=0.0202  rq+int_mm+deq+route=0.0731  +r4quant+dispatch=0.0826  +gmm_up+silu=0.1613  +gmm_down+deq=0.2003  full forward=0.1431
+GRAPH T=   32 full  0.1845 ms  rowquant=0.0083  gate_route(fused)=0.0202  rq+int_mm+deq+route=0.0744  +r4quant+dispatch=0.0834  +gmm_up+silu=0.1918  +gmm_down+deq=0.2433  full forward=0.1845
+GRAPH T=  256 full  0.2598 ms  rowquant=0.0092  gate_route(fused)=0.0276  rq+int_mm+deq+route=0.0972  +r4quant+dispatch=0.1104  +gmm_up+silu=0.2513  +gmm_down+deq=0.3292  full forward=0.2598
+GRAPH T=  512 full  0.3301 ms  rowquant=0.0103  gate_route(fused)=0.0448  rq+int_mm+deq+route=0.0997  +r4quant+dispatch=0.1173  +gmm_up+silu=0.2886  +gmm_down+deq=0.3830  full forward=0.3301
+GRAPH T= 2048 full  0.6571 ms  rowquant=0.0179  gate_route(fused)=0.1416  rq+int_mm+deq+route=0.1150  +r4quant+dispatch=0.1710  +gmm_up+silu=0.4928  +gmm_down+deq=0.6989  full forward=0.6571
+M1F8_DONE Thu Sep 10 04:52:34 UTC 2026

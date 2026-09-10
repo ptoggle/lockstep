@@ -1,0 +1,608 @@
+{
+ "version": "contract-vectors-v2.6 (float norm)",
+ "torch": "2.11.0+cu130",
+ "vectors": {
+  "act_quant.q": {
+   "dtype": "int8",
+   "shape": [
+    5,
+    512
+   ],
+   "sha256": "d3ddeb02843c548d4ff033ef59cad3b4f676051d8dc7377e3690e014f15b9dc2",
+   "head": [
+    22,
+    -16,
+    35,
+    -39,
+    -2,
+    37
+   ],
+   "note": "clamp(rn_even(x / asc), +-127), asc = max(|x|, 1e-8) / 127 (one divide each)"
+  },
+  "act_quant.asc": {
+   "dtype": "float32",
+   "shape": [
+    5
+   ],
+   "sha256": "51e566525341711ba1882466f4dac9901beb8915c1a68d6b229e606fe0683d61",
+   "head": [
+    0.06988188624382019,
+    0.08513779193162918,
+    0.08070866018533707,
+    0.07135827094316483,
+    0.07283464819192886
+   ],
+   "note": ""
+  },
+  "weight_quant.w8": {
+   "dtype": "int8",
+   "shape": [
+    96,
+    512
+   ],
+   "sha256": "1eba95d3117b13433e7f3d4b142209c695457c8531cf50bf3bb68b8334013366",
+   "head": [
+    -11,
+    32,
+    1,
+    -59,
+    15,
+    -28
+   ],
+   "note": ""
+  },
+  "weight_quant.ws": {
+   "dtype": "float32",
+   "shape": [
+    96
+   ],
+   "sha256": "585b1001feae3777f722155670c113d5c562e186028f0c0b89df824e8ec40ba1",
+   "head": [
+    0.0012380044208839536,
+    0.0011072835186496377,
+    0.001253383350558579,
+    0.001276451745070517,
+    0.0010611466132104397,
+    0.0012303149560466409
+   ],
+   "note": ""
+  },
+  "linear.v2_1.no_bias": {
+   "dtype": "bfloat16",
+   "shape": [
+    5,
+    96
+   ],
+   "sha256": "a85c3b4122eb92ba53aae8ef0c101498dbd0598e40805d59811fb0f1809f4680",
+   "head": [
+    2.234375,
+    -3.78125,
+    2.1875,
+    -2.953125,
+    -4.09375,
+    3.21875
+   ],
+   "note": "bf16((fl32(acc) * ws[n]) * asc[m])"
+  },
+  "linear.v2_1.bias": {
+   "dtype": "bfloat16",
+   "shape": [
+    5,
+    96
+   ],
+   "sha256": "6b9b7da1f307acff26655de33f78a2a27d2ee32d884ba4157e33c8a4e1e83067",
+   "head": [
+    2.1875,
+    -3.703125,
+    2.4375,
+    -2.953125,
+    -4.0,
+    3.296875
+   ],
+   "note": "bf16(fl32(y8) + bias[n]): a second rounding"
+  },
+  "outlier.oidx": {
+   "dtype": "int32",
+   "shape": [
+    3
+   ],
+   "sha256": "dc9cf8caaeb6f699397fc176571851cd8ee0ed575089d1d3813886b58a3f1964",
+   "head": [
+    17,
+    300,
+    511
+   ],
+   "note": "the declared channels, ascending int32 (a published constant)"
+  },
+  "outlier.wo": {
+   "dtype": "bfloat16",
+   "shape": [
+    96,
+    3
+   ],
+   "sha256": "723ffb28825fa09cc8ea0760708fa39f749bba11e33e0da2f19ce2b33c88bb13",
+   "head": [
+    0.078125,
+    -0.016357421875,
+    -0.1416015625,
+    0.06689453125,
+    0.053466796875,
+    0.099609375
+   ],
+   "note": "bf16 of the folded weight's outlier columns [N, k]"
+  },
+  "outlier.w8": {
+   "dtype": "int8",
+   "shape": [
+    96,
+    512
+   ],
+   "sha256": "b9c4518660c419e4c55486e5ad0f923c311eee074f0207dd93444f92db4ee2dc",
+   "head": [
+    -11,
+    -21,
+    37,
+    78,
+    65,
+    23
+   ],
+   "note": "the int8 weight of the block-rotated weight with the outlier columns zeroed"
+  },
+  "outlier.ho": {
+   "dtype": "bfloat16",
+   "shape": [
+    5,
+    3
+   ],
+   "sha256": "42fbb3936d1f66631156e5080740365887ddedeb676123770660b78fbb894634",
+   "head": [
+    -636.0,
+    -99.0,
+    3.75,
+    -636.0,
+    -186.0,
+    0.51171875
+   ],
+   "note": "the row's outlier values, exact bf16"
+  },
+  "outlier.side": {
+   "dtype": "float32",
+   "shape": [
+    5,
+    96
+   ],
+   "sha256": "98ffa213508c06516f98dc8560d7f0fd184e86cb54f0388c1650068bebe0d724",
+   "head": [
+    -48.59912109375,
+    -47.464599609375,
+    2.867431640625,
+    82.1165771484375,
+    -70.02685546875,
+    -25.486083984375
+   ],
+   "note": "sum_k fl32(ho[m,k]) * fl32(wo[n,k]), sequential binary32 adds"
+  },
+  "linear.v2_5.outliers.no_bias": {
+   "dtype": "bfloat16",
+   "shape": [
+    5,
+    96
+   ],
+   "sha256": "07d8234174b1f396735820a7d1e4ebc7860664f01c17166414ebf0f0eb15d812",
+   "head": [
+    -54.5,
+    -44.75,
+    -2.96875,
+    81.0,
+    -72.0,
+    -20.25
+   ],
+   "note": "bf16(fl32(bf16((fl32(acc)*ws)*asc)) + side)"
+  },
+  "linear.v2_5.outliers.bias": {
+   "dtype": "bfloat16",
+   "shape": [
+    5,
+    96
+   ],
+   "sha256": "01cadb9a6fcc321538101d293003bbc036ac85d1d9cd5fffd10d68353947bf92",
+   "head": [
+    -54.5,
+    -44.75,
+    -2.71875,
+    81.0,
+    -72.0,
+    -20.125
+   ],
+   "note": "then bf16(fl32(y) + bias[n])"
+  },
+  "outlier.norot.w8": {
+   "dtype": "int8",
+   "shape": [
+    96,
+    512
+   ],
+   "sha256": "184b2b3c26152d7f1020a67fe66957c39f4502c0fb57a2e90023ac73aba86dc4",
+   "head": [
+    -48,
+    -33,
+    -17,
+    86,
+    -71,
+    -12
+   ],
+   "note": "the int8 weight with the outlier columns zeroed, no rotation"
+  },
+  "linear.v2_5_1.outliers_norot.no_bias": {
+   "dtype": "bfloat16",
+   "shape": [
+    5,
+    96
+   ],
+   "sha256": "38832360227cab16ee8a45c5da8eb15fb8222add0978d9db358c786faf9543be",
+   "head": [
+    -54.75,
+    -44.75,
+    -2.90625,
+    81.0,
+    -72.0,
+    -20.25
+   ],
+   "note": "o_proj: rowquant of the masked row (no butterfly), the same side path"
+  },
+  "rmsnorm.gain1.N512": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    512
+   ],
+   "sha256": "070eba962f294dd296f798361a431b916efea6c8e2f9748be7be6c764bfbda1d",
+   "head": [
+    -0.66796875,
+    -1.5703125,
+    0.80078125,
+    0.796875,
+    1.3515625,
+    -1.125
+   ],
+   "note": "SPEC 15 integer norm, per-row pow2 scale, rsqrt table"
+  },
+  "rmsnorm.gain.N512": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    512
+   ],
+   "sha256": "338112e19aacab067d54488773f89335df3c79a5cb6be76aec9a9f9aa9e059e9",
+   "head": [
+    -0.66796875,
+    -1.703125,
+    0.6796875,
+    0.93359375,
+    1.3828125,
+    -0.94140625
+   ],
+   "note": ""
+  },
+  "rmsnorm.gain1.N128": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    128
+   ],
+   "sha256": "062ac9cf5335c3f7e937a3cfe25947854b7797132f4deaa5f6ce9c906cbba18b",
+   "head": [
+    -1.625,
+    -0.70703125,
+    -0.236328125,
+    -0.8046875,
+    0.248046875,
+    1.5703125
+   ],
+   "note": "SPEC 15 integer norm, per-row pow2 scale, rsqrt table"
+  },
+  "rmsnorm.gain.N128": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    128
+   ],
+   "sha256": "51ab29943a73276e89ec69524b797716362085d1e8907876373ded5ddd7da600",
+   "head": [
+    -1.90625,
+    -0.6796875,
+    -0.263671875,
+    -0.78515625,
+    0.25,
+    1.4609375
+   ],
+   "note": ""
+  },
+  "rope.q.rd128": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    256
+   ],
+   "sha256": "bc0eda0420d9c4c82227f3bbd9ead02086639aed7c3cdda09a4221777be9b99b",
+   "head": [
+    -0.97265625,
+    0.2734375,
+    0.30078125,
+    1.3828125,
+    -0.10791015625,
+    -0.5390625
+   ],
+   "note": "3 correctly rounded fp32 ops, one bf16 rounding"
+  },
+  "rope.k.rd128": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    128
+   ],
+   "sha256": "c4aacf366fa79dddf484e18ecfa72ab9ba265a5dd347d6af6adc1917c0766315",
+   "head": [
+    0.515625,
+    -0.035400390625,
+    -1.1640625,
+    -1.1328125,
+    0.5703125,
+    -0.1318359375
+   ],
+   "note": ""
+  },
+  "rope.q.rd96": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    256
+   ],
+   "sha256": "9051b65b8321b75a5c1d3918343d30365fc67f054f169f0a4672b84b054dd625",
+   "head": [
+    -0.97265625,
+    0.2734375,
+    0.30078125,
+    1.3828125,
+    -0.10791015625,
+    -0.5390625
+   ],
+   "note": "3 correctly rounded fp32 ops, one bf16 rounding"
+  },
+  "rope.k.rd96": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    128
+   ],
+   "sha256": "6b70f2ddcd0342b3a78ce1946001bf9f0241a8b4a5deefbaed64bf7ec1b0ac45",
+   "head": [
+    0.515625,
+    -0.035400390625,
+    -1.1640625,
+    -1.1328125,
+    0.5703125,
+    -0.1318359375
+   ],
+   "note": ""
+  },
+  "silu": {
+   "dtype": "float32",
+   "shape": [
+    7,
+    256
+   ],
+   "sha256": "ff205f636230561d9e3d3e5718bb4c3866bbee81d7e80baf13de08b3fe596178",
+   "head": [
+    -0.06714505702257156,
+    1.5749807357788086,
+    1.9668262004852295,
+    -0.13549412786960602,
+    -0.002756875939667225,
+    5.382092475891113
+   ],
+   "note": "ten declared fp32 steps, 8192-entry frac table; binary32 in and out"
+  },
+  "silu_mul": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    256
+   ],
+   "sha256": "5e06626e1a20f6aba9accb3826f70f94dc1b1c4784ec449b5f632053395915a0",
+   "head": [
+    0.08251953125,
+    10.3125,
+    0.73828125,
+    -0.609375,
+    -0.0191650390625,
+    -4.28125
+   ],
+   "note": "bf16( fl32( silu(gate) ) * up )"
+  },
+  "r4.block256": {
+   "dtype": "float32",
+   "shape": [
+    3,
+    256
+   ],
+   "sha256": "52807a8cdb5d0a861548524fdcaa8fb6239943188dc3cf1ecdfee4721a8cda05",
+   "head": [
+    0.7488269805908203,
+    1.1711044311523438,
+    0.6967182159423828,
+    0.24723052978515625,
+    -1.1341991424560547,
+    1.9246597290039062
+   ],
+   "note": "stage order: pairs at distance 1, 2, 4, ..., 128; each stage one fp32 add/sub; then exact 2^-4"
+  },
+  "rmsnorm.eps1e-5.N512": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    512
+   ],
+   "sha256": "32e6e0b701491044202a3c71accbaf88e37d49eddc0963dab0bdff234955994f",
+   "head": [
+    -1.1953125,
+    0.0869140625,
+    -1.015625,
+    -0.9296875,
+    0.232421875,
+    -0.1767578125
+   ],
+   "note": "ss += floor(fl64(N*eps) * 4^e), e capped at norm_ecap(N*eps); the rows have mean square ~ eps"
+  },
+  "rmsnorm.eps1e-6.subeps.N512": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    512
+   ],
+   "sha256": "a169485f8675185de2481773b730c96e5a22ec62af0eae386bc71b2ef3ec1cce",
+   "head": [
+    -0.00017261505126953125,
+    0.0020751953125,
+    0.0,
+    0.0,
+    -0.00086212158203125,
+    0.00103759765625
+   ],
+   "note": "rows far below eps: e hits the cap, the eps term dominates ss"
+  },
+  "rmsnorm.eps1e-5.N128": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    128
+   ],
+   "sha256": "ad22273d05277a78e23f74647c251b36c8c598730eb607998bd934175f7ed2af",
+   "head": [
+    0.380859375,
+    -0.2578125,
+    -0.5390625,
+    0.419921875,
+    -0.84765625,
+    0.59765625
+   ],
+   "note": "ss += floor(fl64(N*eps) * 4^e), e capped at norm_ecap(N*eps); the rows have mean square ~ eps"
+  },
+  "rmsnorm.eps1e-6.subeps.N128": {
+   "dtype": "bfloat16",
+   "shape": [
+    7,
+    128
+   ],
+   "sha256": "37e9192d417ef6745761b6c873063b02678082a419edf682efc959376269f57f",
+   "head": [
+    0.000518798828125,
+    8.630752563476562e-05,
+    0.00164031982421875,
+    0.0012054443359375,
+    0.00086212158203125,
+    0.0007781982421875
+   ],
+   "note": "rows far below eps: e hits the cap, the eps term dominates ss"
+  },
+  "norm_float.N4096.out": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    4096
+   ],
+   "sha256": "25d8cd7a4c870763acb0d0e18f7d72f72d5116846623c2101ddd37a5ecd6746f",
+   "head": [
+    0.036865234375,
+    -0.4375,
+    1.75,
+    -0.3515625,
+    0.298828125,
+    -0.6015625
+   ],
+   "note": "contract 2.6: fp32 sum of fl32(x^2) in the index-pinned tree (8-element chains, largest-power-of-two split), S = fl32(S + fl32(N*eps)), rs = fl32(fl32(sqrt N) / fl32(sqrt S)) (IEEE sqrt and division, no table), out = bf16(fl32(fl32(x * rs) * g))"
+  },
+  "norm_float.N4096.S": {
+   "dtype": "float32",
+   "shape": [
+    6
+   ],
+   "sha256": "fb9ec7b464a45b8c180d34ff2b2aa860c85e1b04f88c5ae7d3d9e416c161eb6a",
+   "head": [
+    16822.91015625,
+    0.0,
+    16319.083984375,
+    4.014759184186329e-35,
+    15964.5078125,
+    16175.18359375
+   ],
+   "note": "the pinned-tree fp32 sum of squares itself"
+  },
+  "norm_float.N3072.out": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    3072
+   ],
+   "sha256": "a77502c32deeb4ade91dc1f47a20f931f9d1f0c6c687639fc525979c3ae06c29",
+   "head": [
+    0.162109375,
+    0.65625,
+    -0.474609375,
+    -0.75390625,
+    0.87109375,
+    -0.1201171875
+   ],
+   "note": "contract 2.6: fp32 sum of fl32(x^2) in the index-pinned tree (8-element chains, largest-power-of-two split), S = fl32(S + fl32(N*eps)), rs = fl32(fl32(sqrt N) / fl32(sqrt S)) (IEEE sqrt and division, no table), out = bf16(fl32(fl32(x * rs) * g))"
+  },
+  "norm_float.N3072.S": {
+   "dtype": "float32",
+   "shape": [
+    6
+   ],
+   "sha256": "88e58e850950a9205a593c374a39eab245a74057927a6ae8720cdb1b85c2a758",
+   "head": [
+    12028.607421875,
+    0.0,
+    11839.158203125,
+    3.0177086640330813e-35,
+    11900.943359375,
+    12202.0703125
+   ],
+   "note": "the pinned-tree fp32 sum of squares itself"
+  },
+  "norm_float.N128.out": {
+   "dtype": "bfloat16",
+   "shape": [
+    6,
+    128
+   ],
+   "sha256": "054a7e7b5725ab6933a4b630c27518537bc64653eadfb35e057b5c4017e1b221",
+   "head": [
+    1.875,
+    0.7109375,
+    0.296875,
+    -0.84375,
+    -1.078125,
+    0.19140625
+   ],
+   "note": "contract 2.6: fp32 sum of fl32(x^2) in the index-pinned tree (8-element chains, largest-power-of-two split), S = fl32(S + fl32(N*eps)), rs = fl32(fl32(sqrt N) / fl32(sqrt S)) (IEEE sqrt and division, no table), out = bf16(fl32(fl32(x * rs) * g))"
+  },
+  "norm_float.N128.S": {
+   "dtype": "float32",
+   "shape": [
+    6
+   ],
+   "sha256": "5a16b59b367afec13d21785e2fb676385fb76c8923a3ad91ff41dc2fc6a7e1bf",
+   "head": [
+    397.7337951660156,
+    0.0,
+    378.86279296875,
+    1.302619788773428e-36,
+    524.815673828125,
+    452.38397216796875
+   ],
+   "note": "the pinned-tree fp32 sum of squares itself"
+  }
+ }
+}

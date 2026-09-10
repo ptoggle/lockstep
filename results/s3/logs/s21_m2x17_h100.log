@@ -1,0 +1,81 @@
+M2X17 start Thu Sep 10 12:51:57 UTC 2026
+s21_m2x17_h100.sh: line 7: killgpu: command not found
+mx gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+TIME N=5760 K=2880 R=8192 mx_gemm(mma)       2.9838 ms  (91 TOPS)
+TIME N=5760 K=2880 R=8192 mx_gemm2(pipe128)  2.9328 ms  (93 TOPS)
+TIME N=5760 K=2880 R=8192 int8 classic gmm   0.4625 ms  (588 TOPS)
+TIME N=5760 K=2880 R=256 gemv2 R=256        1.8140 ms
+TIME N=5760 K=2880 R=256 gemm16 R=256       0.3098 ms
+TIME N=5760 K=2880 R=256 gemm16b64 R=256    0.3616 ms
+TIME N=5760 K=2880 R=256 gemm16c128 R=256   0.4525 ms
+TIME N=5760 K=2880 R=256 gemm16 4stage R=256 0.3096 ms
+TIME N=5760 K=2880 R=256 gemm16 8stage R=256 0.3250 ms
+TIME N=5760 K=2880 R=256 gemm16 WARPSPEC R=256 0.2749 ms
+TIME N=5760 K=2880 R=256 gemm128 R=256      1.1886 ms
+TIME N=5760 K=2880 R=256 int8 gmm R=256     0.2006 ms
+TIME N=5760 K=2880 R=256 SKEW gemm16        0.3547 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws16          0.3215 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws32          0.3642 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws64          0.4636 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws2-16        0.3243 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws2-32        0.3648 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws2-64        0.4869 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW int8 gmm      0.2018 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 gemm ws32 R=256    0.3350 ms
+TIME N=5760 K=2880 R=256 gemm ws64 R=256    0.4627 ms
+TIME N=5760 K=2880 R=256 gemm ws2-16 R=256  0.2790 ms
+TIME N=5760 K=2880 R=256 gemm ws2-32 R=256  0.3369 ms
+TIME N=5760 K=2880 R=256 gemm ws2-64 R=256  0.4734 ms
+ABL N=5760 K=2880 R=256 abl full         0.3094 ms
+ABL N=5760 K=2880 R=256 abl no-unpack    0.2218 ms
+ABL N=5760 K=2880 R=256 abl no-fp32step  0.2230 ms
+ABL N=5760 K=2880 R=256 abl no-mma       0.2785 ms
+ABL N=5760 K=2880 R=256 abl loads-only   0.1198 ms
+TIME N=5760 K=2880 R=4 gemv2 8lane R=4    0.0513 ms
+TIME N=5760 K=2880 R=4 gemv2 32lane R=4   0.0931 ms
+TIME N=5760 K=2880 R=4 gemm16 R=4         0.1507 ms
+TIME N=5760 K=2880 R=8 mx_gemv R=8        0.0889 ms
+TIME N=5760 K=2880 R=8 mx_gemv2 R=8       0.0997 ms
+TIME N=5760 K=2880 R=8 gemv2 32lane R=8   0.2218 ms
+TIME N=5760 K=2880 R=8 gemm16 R=8         0.1674 ms
+TIME N=2880 K=2880 R=8192 mx_gemm(mma)       1.5219 ms  (89 TOPS)
+TIME N=2880 K=2880 R=8192 mx_gemm2(pipe128)  1.4733 ms  (92 TOPS)
+TIME N=2880 K=2880 R=8192 int8 classic gmm   0.2292 ms  (593 TOPS)
+TIME N=2880 K=2880 R=256 gemv2 R=256        0.8843 ms
+TIME N=2880 K=2880 R=256 gemm16 R=256       0.1823 ms
+TIME N=2880 K=2880 R=256 gemm16b64 R=256    0.2224 ms
+TIME N=2880 K=2880 R=256 gemm16c128 R=256   0.2609 ms
+TIME N=2880 K=2880 R=256 gemm16 4stage R=256 0.1844 ms
+TIME N=2880 K=2880 R=256 gemm16 8stage R=256 0.2070 ms
+TIME N=2880 K=2880 R=256 gemm16 WARPSPEC R=256 0.1662 ms
+TIME N=2880 K=2880 R=256 gemm128 R=256      0.6298 ms
+TIME N=2880 K=2880 R=256 int8 gmm R=256     0.1039 ms
+TIME N=2880 K=2880 R=256 SKEW gemm16        0.2207 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws16          0.1873 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws32          0.1955 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws64          0.2601 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws2-16        0.1867 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws2-32        0.1941 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws2-64        0.2548 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW int8 gmm      0.1043 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 gemm ws32 R=256    0.1932 ms
+TIME N=2880 K=2880 R=256 gemm ws64 R=256    0.2585 ms
+TIME N=2880 K=2880 R=256 gemm ws2-16 R=256  0.1637 ms
+TIME N=2880 K=2880 R=256 gemm ws2-32 R=256  0.1921 ms
+TIME N=2880 K=2880 R=256 gemm ws2-64 R=256  0.2514 ms
+ABL N=2880 K=2880 R=256 abl full         0.1834 ms
+ABL N=2880 K=2880 R=256 abl no-unpack    0.1269 ms
+ABL N=2880 K=2880 R=256 abl no-fp32step  0.1690 ms
+ABL N=2880 K=2880 R=256 abl no-mma       0.1773 ms
+ABL N=2880 K=2880 R=256 abl loads-only   0.0936 ms
+TIME N=2880 K=2880 R=4 gemv2 8lane R=4    0.0321 ms
+TIME N=2880 K=2880 R=4 gemv2 32lane R=4   0.0479 ms
+TIME N=2880 K=2880 R=4 gemm16 R=4         0.1454 ms
+TIME N=2880 K=2880 R=8 mx_gemv R=8        0.0559 ms
+TIME N=2880 K=2880 R=8 mx_gemv2 R=8       0.0507 ms
+TIME N=2880 K=2880 R=8 gemv2 32lane R=8   0.0910 ms
+TIME N=2880 K=2880 R=8 gemm16 R=8         0.1269 ms
+s21_m2x17_h100.sh: line 8: killgpu: command not found
+M2X17_DONE Thu Sep 10 12:53:43 UTC 2026

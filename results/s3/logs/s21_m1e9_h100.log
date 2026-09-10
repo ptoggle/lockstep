@@ -1,0 +1,11 @@
+bench_g1g_v3 rc=0
+WARNING 09-10 04:08:13 [arg_utils.py:1606] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+MOE_ENGINE_ARM layers=48 at load (before compile / capture)
+WARNING 09-10 04:13:39 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 48, "mode": "bench", "decode_b1_tps": 126.01568227962491, "decode_b8_tps": 780.6140336751643, "decode_b32_tps": 2360.725471576711, "ttft_2048_ms": 60.567378997802734, "ttft_8192_ms": 231.2910556793213, "moe_calls": 3696}
+ppl_g1_v3 rc=0
+WARNING 09-10 04:14:51 [arg_utils.py:1606] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+WARNING 09-10 04:14:52 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 09-10 04:14:52 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+MOE_ENGINE_ARM layers=48 at load (before compile / capture)
+M1E9_DONE Thu Sep 10 04:15:34 UTC 2026

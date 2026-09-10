@@ -1,0 +1,15 @@
+g1g blocking rc=1
+[rank0]:   File "/usr/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 98, in collective_rpc
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/serial_utils.py", line 510, in run_method
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/worker/worker_base.py", line 351, in execute_model
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 1015, in execute_model
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4353, in execute_model
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 3807, in _model_forward
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/compilation/cuda_graph.py", line 360, in __call__
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/torch/cuda/graphs.py", line 139, in replay
+[rank0]: torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+[rank0]: Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+M1E3_DONE Thu Sep 10 02:44:12 UTC 2026

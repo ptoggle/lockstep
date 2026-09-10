@@ -1,0 +1,9 @@
+r0 rc=1
+MOE_ARM2 layers=24 rot=0
+[rank0]: Traceback (most recent call last):
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.47 GiB. GPU 0 has a total capacity of 79.18 GiB of which 966.19 MiB is free. Including non-PyTorch memory, this process has 78.23 GiB memory in use. Of the allocated memory 75.67 GiB is allocated by PyTorch, and 1.83 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CU
+r64 rc=1
+MOE_ARM2 layers=24 rot=64
+[rank0]: Traceback (most recent call last):
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.47 GiB. GPU 0 has a total capacity of 79.18 GiB of which 2.43 GiB is free. Including non-PyTorch memory, this process has 76.74 GiB memory in use. Of the allocated memory 75.76 GiB is allocated by PyTorch, and 257.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CU
+M2P1_DONE Thu Sep 10 06:11:39 UTC 2026

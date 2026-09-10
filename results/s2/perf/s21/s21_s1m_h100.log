@@ -1,0 +1,62 @@
+=== S1m start Wed Sep  9 13:34:32 UTC 2026
+1befe6d6f328308e26132bc528a499e2
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== E1 / E4v2 (7B, kept defaults)
+spin rc=0
+check rc=0
+[PASS] E1(B9.1, mu ON) PROMPT rows vs lssab9_torch[sink](mu)    rows=151200 bad=0 maxdiff=0.000e+00 (18 sequence-steps)
+[PASS] E4v2(mu ON) GENERATED rows vs lssab9_torch[sink](mu) [contract v2 target] rows=29736 bad=0 maxdiff=0.000e+00 (1062 sequence-steps)
+=== E6 (7B)
+e6 full rc=0
+e6 eager rc=0
+E6 full==eager True
+LOAD 13:43 36.10 27.69 25.50 single qwen25_7b stock
+LOAD 13:45 19.79 24.62 24.62 single qwen25_7b lssab
+S1M qwen25_7b    ttft_p128_b1         stock      9.36 lssab     11.18 ratio 0.837
+S1M qwen25_7b    ttft_p128_b8         stock     26.25 lssab     26.97 ratio 0.974
+S1M qwen25_7b    ttft_p2048_b1        stock     49.75 lssab     49.14 ratio 1.012
+S1M qwen25_7b    ttft_p2048_b8        stock    370.87 lssab    349.12 ratio 1.062
+S1M qwen25_7b    ttft_p8192_b1        stock    210.48 lssab    194.53 ratio 1.082
+S1M qwen25_7b    ttft_p8192_b8        stock   1601.98 lssab   1552.93 ratio 1.032
+S1M qwen25_7b    ttft_p8192_b4        stock    804.96 lssab    778.15 ratio 1.034
+S1M qwen25_7b    ttft_p32640_b1       stock   1103.91 lssab   1123.33 ratio 0.983
+S1M qwen25_7b    prefill_p128_b32     stock     95.53 lssab     90.24 ratio 1.059
+S1M qwen25_7b    decode_b1            stock    163.73 lssab    157.52 ratio 0.962
+S1M qwen25_7b    decode_b8            stock   1282.78 lssab   1161.13 ratio 0.905
+S1M qwen25_7b    decode_b32           stock   5052.11 lssab   4189.51 ratio 0.829
+LOAD 13:47 18.38 21.94 23.59 single qwen25_1p5b stock
+LOAD 13:48 22.45 22.83 23.81 single qwen25_1p5b lssab
+S1M qwen25_1p5b  ttft_p128_b1         stock      4.22 lssab      8.02 ratio 0.526
+S1M qwen25_1p5b  ttft_p128_b8         stock      9.45 lssab     14.62 ratio 0.646
+S1M qwen25_1p5b  ttft_p2048_b1        stock     14.39 lssab     21.40 ratio 0.672
+S1M qwen25_1p5b  ttft_p2048_b8        stock     95.39 lssab    127.40 ratio 0.749
+S1M qwen25_1p5b  ttft_p8192_b1        stock     60.92 lssab     73.50 ratio 0.829
+S1M qwen25_1p5b  ttft_p8192_b8        stock    419.69 lssab    579.87 ratio 0.724
+S1M qwen25_1p5b  ttft_p8192_b4        stock    213.71 lssab    291.63 ratio 0.733
+S1M qwen25_1p5b  ttft_p32640_b1       stock    351.87 lssab    496.59 ratio 0.709
+S1M qwen25_1p5b  prefill_p128_b32     stock     30.40 lssab     37.02 ratio 0.821
+S1M qwen25_1p5b  decode_b1            stock    433.09 lssab    256.75 ratio 0.593
+S1M qwen25_1p5b  decode_b8            stock   3343.82 lssab   1704.71 ratio 0.510
+S1M qwen25_1p5b  decode_b32           stock  12523.28 lssab   6231.83 ratio 0.498
+LOAD 13:49 22.17 22.77 23.71 single qwen25_3b stock
+LOAD 13:50 30.58 25.42 24.57 single qwen25_3b lssab
+S1M qwen25_3b    ttft_p128_b1         stock      6.66 lssab     10.51 ratio 0.633
+S1M qwen25_3b    ttft_p128_b8         stock     14.86 lssab     21.66 ratio 0.686
+S1M qwen25_3b    ttft_p2048_b1        stock     26.24 lssab     33.40 ratio 0.786
+S1M qwen25_3b    ttft_p2048_b8        stock    178.75 lssab    209.58 ratio 0.853
+S1M qwen25_3b    ttft_p8192_b1        stock    106.58 lssab    121.25 ratio 0.879
+S1M qwen25_3b    ttft_p8192_b8        stock    800.16 lssab    966.28 ratio 0.828
+S1M qwen25_3b    ttft_p8192_b4        stock    406.68 lssab    479.53 ratio 0.848
+S1M qwen25_3b    ttft_p32640_b1       stock    616.42 lssab    738.54 ratio 0.835
+S1M qwen25_3b    prefill_p128_b32     stock     49.52 lssab     58.38 ratio 0.848
+S1M qwen25_3b    decode_b1            stock    276.17 lssab    192.48 ratio 0.697
+S1M qwen25_3b    decode_b8            stock   2144.43 lssab   1296.04 ratio 0.604
+S1M qwen25_3b    decode_b32           stock   8119.89 lssab   4769.36 ratio 0.587
+=== serving 7B W1/W2/W3
+LOAD 13:52 20.76 23.91 24.15 serve 7B stock
+LOAD 13:56 15.50 19.95 22.55 serve 7B lssab
+S1M serve w1_rinf  stock   5159.8 lssab   4037.1 ratio 0.782
+S1M serve w2       stock   8131.3 lssab   6287.4 ratio 0.773
+S1M serve w3       stock    581.9 lssab    513.1 ratio 0.882
+S1M_DONE Wed Sep  9 14:00:26 UTC 2026

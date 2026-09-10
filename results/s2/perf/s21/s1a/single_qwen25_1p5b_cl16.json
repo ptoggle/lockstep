@@ -1,0 +1,120 @@
+{
+ "mode": "graph",
+ "cgmode": "FULL_AND_PIECEWISE",
+ "rows": [
+  {
+   "metric": "ttft_p128_b1",
+   "unit": "ms",
+   "stock": 5.067128688097,
+   "lssab": 8.278917521238327,
+   "ratio_stock_over_ours": 0.6120520798882266
+  },
+  {
+   "metric": "ttft_p128_b8",
+   "unit": "ms",
+   "stock": 10.232996195554733,
+   "lssab": 18.470115959644318,
+   "ratio_stock_over_ours": 0.5540298836191926
+  },
+  {
+   "metric": "ttft_p2048_b1",
+   "unit": "ms",
+   "stock": 15.783730894327164,
+   "lssab": 29.65446189045906,
+   "ratio_stock_over_ours": 0.5322548408610771
+  },
+  {
+   "metric": "ttft_p2048_b8",
+   "unit": "ms",
+   "stock": 94.24720332026482,
+   "lssab": 187.43421509861946,
+   "ratio_stock_over_ours": 0.5028281697163784
+  },
+  {
+   "metric": "ttft_p8192_b1",
+   "unit": "ms",
+   "stock": 59.66576933860779,
+   "lssab": 103.05371135473251,
+   "ratio_stock_over_ours": 0.5789773949355951
+  },
+  {
+   "metric": "ttft_p8192_b8",
+   "unit": "ms",
+   "stock": 415.9870147705078,
+   "lssab": 822.5280344486237,
+   "ratio_stock_over_ours": 0.5057420505422189
+  },
+  {
+   "metric": "ttft_p8192_b4",
+   "unit": "ms",
+   "stock": 212.82163634896278,
+   "lssab": 407.8919067978859,
+   "ratio_stock_over_ours": 0.5217598898190883
+  },
+  {
+   "metric": "ttft_p32640_b1",
+   "unit": "ms",
+   "stock": 349.25098344683647,
+   "lssab": 562.7428777515888,
+   "ratio_stock_over_ours": 0.6206226631285879
+  },
+  {
+   "metric": "prefill_p128_b32",
+   "unit": "ms",
+   "stock": 30.85808828473091,
+   "lssab": 52.062250673770905,
+   "ratio_stock_over_ours": 0.5927152185196883
+  },
+  {
+   "metric": "decode_b1",
+   "unit": "tok/s",
+   "stock": 434.53081441249685,
+   "lssab": 221.96686729409925,
+   "ratio_ours_over_stock": 0.5108196241369151
+  },
+  {
+   "metric": "decode_b8",
+   "unit": "tok/s",
+   "stock": 3353.802960189519,
+   "lssab": 1728.4979919631558,
+   "ratio_ours_over_stock": 0.5153844791959634
+  },
+  {
+   "metric": "decode_b32",
+   "unit": "tok/s",
+   "stock": 12609.851432200638,
+   "lssab": 6350.928111251955,
+   "ratio_ours_over_stock": 0.503648131415265
+  }
+ ],
+ "only": null,
+ "merged_from": [
+  "/workspace/p2/handover/s1a/single_qwen25_1p5b_cl16_stock.json",
+  "/workspace/p2/handover/s1a/single_qwen25_1p5b_cl16_lssab.json"
+ ],
+ "launches_layer_total": 14504,
+ "launches_step_total": 169,
+ "counters": {
+  "tiles": 7332864,
+  "tiles_dead": 0,
+  "ctas": 7332864,
+  "vsh_max": 0,
+  "vsh_violations": 0
+ },
+ "fa3": {
+  "kernel": "b8",
+  "name": "lssab-b8-1launch-varlen-b9sink",
+  "needs_pass_a": false,
+  "per_sequence": true,
+  "dir": "/root/fa3_b9vareng/hopper",
+  "errflags": [
+   0,
+   25325380,
+   964386816,
+   0
+  ],
+  "seq_launches": 4088,
+  "glue_launches": 12264,
+  "ktok": 262144
+ }
+}

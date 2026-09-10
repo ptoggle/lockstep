@@ -1,0 +1,55 @@
+=== H=1536 T16M_NRQ_CL=16
+NRQ_PROBE H=1536 KO=8 T16M_NRQ_CL=16
+M=1     two-launch    8.26 us {'r4quant_k(__nv_bfloat16 cons': 4.72, 'void normquant_k<512, 3>(__n': 3.55} | fused    8.84 us {'normrotquant_cl_k(__nv_bfloa': 8.84} | identical=True
+M=8     two-launch    8.27 us {'r4quant_k(__nv_bfloat16 cons': 4.73, 'void normquant_k<512, 3>(__n': 3.53} | fused    8.89 us {'normrotquant_cl_k(__nv_bfloa': 8.89} | identical=True
+M=16    two-launch    8.40 us {'r4quant_k(__nv_bfloat16 cons': 4.74, 'void normquant_k<512, 3>(__n': 3.66} | fused    9.49 us {'normrotquant_cl_k(__nv_bfloa': 9.49} | identical=True
+M=32    two-launch    8.38 us {'r4quant_k(__nv_bfloat16 cons': 4.78, 'void normquant_k<512, 3>(__n': 3.6} | fused    9.13 us {'void normrotquant_k<8>(__nv_': 9.13} | identical=True
+M=64    two-launch    8.45 us {'r4quant_k(__nv_bfloat16 cons': 4.81, 'void normquant_k<512, 3>(__n': 3.64} | fused   10.09 us {'void normrotquant_k<8>(__nv_': 10.09} | identical=True
+M=256   two-launch   13.89 us {'r4quant_k(__nv_bfloat16 cons': 9.0, 'void normquant_k<512, 3>(__n': 4.89} | fused   20.59 us {'void normrotquant_k<8>(__nv_': 20.59} | identical=True
+M=2048  two-launch   91.72 us {'r4quant_k(__nv_bfloat16 cons': 64.33, 'void normquant_k<512, 3>(__n': 27.39} | fused  131.19 us {'void normrotquant_k<8>(__nv_': 131.19} | identical=True
+=== H=1536 T16M_NRQ_CL=4096
+NRQ_PROBE H=1536 KO=8 T16M_NRQ_CL=4096
+M=1     two-launch    8.27 us {'r4quant_k(__nv_bfloat16 cons': 4.72, 'void normquant_k<512, 3>(__n': 3.55} | fused    8.84 us {'normrotquant_cl_k(__nv_bfloa': 8.84} | identical=True
+M=8     two-launch    8.27 us {'r4quant_k(__nv_bfloat16 cons': 4.73, 'void normquant_k<512, 3>(__n': 3.53} | fused    8.88 us {'normrotquant_cl_k(__nv_bfloa': 8.88} | identical=True
+M=16    two-launch    8.39 us {'r4quant_k(__nv_bfloat16 cons': 4.74, 'void normquant_k<512, 3>(__n': 3.65} | fused    9.49 us {'normrotquant_cl_k(__nv_bfloa': 9.49} | identical=True
+M=32    two-launch    8.39 us {'r4quant_k(__nv_bfloat16 cons': 4.78, 'void normquant_k<512, 3>(__n': 3.61} | fused   12.96 us {'normrotquant_cl_k(__nv_bfloa': 12.96} | identical=True
+M=64    two-launch    8.46 us {'r4quant_k(__nv_bfloat16 cons': 4.81, 'void normquant_k<512, 3>(__n': 3.65} | fused   17.67 us {'normrotquant_cl_k(__nv_bfloa': 17.67} | identical=True
+M=256   two-launch   13.90 us {'r4quant_k(__nv_bfloat16 cons': 9.01, 'void normquant_k<512, 3>(__n': 4.89} | fused   49.89 us {'normrotquant_cl_k(__nv_bfloa': 49.89} | identical=True
+M=2048  two-launch   91.72 us {'r4quant_k(__nv_bfloat16 cons': 64.34, 'void normquant_k<512, 3>(__n': 27.38} | fused  338.73 us {'normrotquant_cl_k(__nv_bfloa': 338.73} | identical=True
+=== H=1536 T16M_NRQ_CL=0
+NRQ_PROBE H=1536 KO=8 T16M_NRQ_CL=0
+M=1     two-launch    8.27 us {'r4quant_k(__nv_bfloat16 cons': 4.71, 'void normquant_k<512, 3>(__n': 3.55} | fused    9.11 us {'void normrotquant_k<8>(__nv_': 9.11} | identical=True
+M=8     two-launch    8.25 us {'r4quant_k(__nv_bfloat16 cons': 4.73, 'void normquant_k<512, 3>(__n': 3.53} | fused    9.05 us {'void normrotquant_k<8>(__nv_': 9.05} | identical=True
+M=16    two-launch    8.40 us {'r4quant_k(__nv_bfloat16 cons': 4.75, 'void normquant_k<512, 3>(__n': 3.65} | fused    9.05 us {'void normrotquant_k<8>(__nv_': 9.05} | identical=True
+M=32    two-launch    8.41 us {'r4quant_k(__nv_bfloat16 cons': 4.78, 'void normquant_k<512, 3>(__n': 3.63} | fused    9.07 us {'void normrotquant_k<8>(__nv_': 9.07} | identical=True
+M=64    two-launch    8.47 us {'r4quant_k(__nv_bfloat16 cons': 4.81, 'void normquant_k<512, 3>(__n': 3.66} | fused   10.17 us {'void normrotquant_k<8>(__nv_': 10.17} | identical=True
+M=256   two-launch   13.93 us {'r4quant_k(__nv_bfloat16 cons': 9.02, 'void normquant_k<512, 3>(__n': 4.9} | fused   20.60 us {'void normrotquant_k<8>(__nv_': 20.6} | identical=True
+M=2048  two-launch   91.76 us {'r4quant_k(__nv_bfloat16 cons': 64.36, 'void normquant_k<512, 3>(__n': 27.4} | fused  130.94 us {'void normrotquant_k<8>(__nv_': 130.94} | identical=True
+=== H=3584 T16M_NRQ_CL=16
+NRQ_PROBE H=3584 KO=8 T16M_NRQ_CL=16
+M=1     two-launch   10.18 us {'r4quant_k(__nv_bfloat16 cons': 5.26, 'void normquant_k<512, 7>(__n': 4.92} | fused    8.79 us {'normrotquant_cl_k(__nv_bfloa': 8.79} | identical=True
+M=8     two-launch   10.26 us {'r4quant_k(__nv_bfloat16 cons': 5.31, 'void normquant_k<512, 7>(__n': 4.95} | fused    8.86 us {'normrotquant_cl_k(__nv_bfloa': 8.86} | identical=True
+M=16    two-launch   10.25 us {'r4quant_k(__nv_bfloat16 cons': 5.29, 'void normquant_k<512, 7>(__n': 4.96} | fused    9.49 us {'normrotquant_cl_k(__nv_bfloa': 9.49} | identical=True
+M=32    two-launch   10.36 us {'r4quant_k(__nv_bfloat16 cons': 5.32, 'void normquant_k<512, 7>(__n': 5.04} | fused   10.44 us {'void normrotquant_k<8>(__nv_': 10.44} | identical=True
+M=64    two-launch   10.54 us {'r4quant_k(__nv_bfloat16 cons': 5.52, 'void normquant_k<512, 7>(__n': 5.03} | fused   11.36 us {'void normrotquant_k<8>(__nv_': 11.36} | identical=True
+M=256   two-launch   18.37 us {'r4quant_k(__nv_bfloat16 cons': 10.92, 'void normquant_k<512, 7>(__n': 7.45} | fused   23.97 us {'void normrotquant_k<8>(__nv_': 23.97} | identical=True
+M=2048  two-launch  121.37 us {'r4quant_k(__nv_bfloat16 cons': 74.17, 'void normquant_k<512, 7>(__n': 47.2} | fused  166.57 us {'void normrotquant_k<8>(__nv_': 166.57} | identical=True
+=== H=3584 T16M_NRQ_CL=4096
+NRQ_PROBE H=3584 KO=8 T16M_NRQ_CL=4096
+M=1     two-launch   10.19 us {'r4quant_k(__nv_bfloat16 cons': 5.26, 'void normquant_k<512, 7>(__n': 4.92} | fused    8.80 us {'normrotquant_cl_k(__nv_bfloa': 8.8} | identical=True
+M=8     two-launch   10.25 us {'r4quant_k(__nv_bfloat16 cons': 5.31, 'void normquant_k<512, 7>(__n': 4.94} | fused    8.85 us {'normrotquant_cl_k(__nv_bfloa': 8.85} | identical=True
+M=16    two-launch   10.23 us {'r4quant_k(__nv_bfloat16 cons': 5.28, 'void normquant_k<512, 7>(__n': 4.95} | fused    9.49 us {'normrotquant_cl_k(__nv_bfloa': 9.49} | identical=True
+M=32    two-launch   10.35 us {'r4quant_k(__nv_bfloat16 cons': 5.32, 'void normquant_k<512, 7>(__n': 5.02} | fused   13.29 us {'normrotquant_cl_k(__nv_bfloa': 13.29} | identical=True
+M=64    two-launch   10.49 us {'r4quant_k(__nv_bfloat16 cons': 5.45, 'void normquant_k<512, 7>(__n': 5.04} | fused   18.51 us {'normrotquant_cl_k(__nv_bfloa': 18.51} | identical=True
+M=256   two-launch   18.39 us {'r4quant_k(__nv_bfloat16 cons': 10.93, 'void normquant_k<512, 7>(__n': 7.47} | fused   53.44 us {'normrotquant_cl_k(__nv_bfloa': 53.44} | identical=True
+M=2048  two-launch  121.35 us {'r4quant_k(__nv_bfloat16 cons': 74.17, 'void normquant_k<512, 7>(__n': 47.18} | fused  372.05 us {'normrotquant_cl_k(__nv_bfloa': 372.05} | identical=True
+=== H=3584 T16M_NRQ_CL=0
+NRQ_PROBE H=3584 KO=8 T16M_NRQ_CL=0
+M=1     two-launch   10.19 us {'r4quant_k(__nv_bfloat16 cons': 5.26, 'void normquant_k<512, 7>(__n': 4.93} | fused   10.32 us {'void normrotquant_k<8>(__nv_': 10.32} | identical=True
+M=8     two-launch   10.27 us {'r4quant_k(__nv_bfloat16 cons': 5.31, 'void normquant_k<512, 7>(__n': 4.96} | fused   10.32 us {'void normrotquant_k<8>(__nv_': 10.32} | identical=True
+M=16    two-launch   10.23 us {'r4quant_k(__nv_bfloat16 cons': 5.29, 'void normquant_k<512, 7>(__n': 4.95} | fused   10.35 us {'void normrotquant_k<8>(__nv_': 10.35} | identical=True
+M=32    two-launch   10.36 us {'r4quant_k(__nv_bfloat16 cons': 5.32, 'void normquant_k<512, 7>(__n': 5.04} | fused   10.37 us {'void normrotquant_k<8>(__nv_': 10.37} | identical=True
+M=64    two-launch   10.52 us {'r4quant_k(__nv_bfloat16 cons': 5.48, 'void normquant_k<512, 7>(__n': 5.04} | fused   11.35 us {'void normrotquant_k<8>(__nv_': 11.35} | identical=True
+M=256   two-launch   18.39 us {'r4quant_k(__nv_bfloat16 cons': 10.93, 'void normquant_k<512, 7>(__n': 7.46} | fused   24.14 us {'void normrotquant_k<8>(__nv_': 24.14} | identical=True
+M=2048  two-launch  121.34 us {'r4quant_k(__nv_bfloat16 cons': 74.18, 'void normquant_k<512, 7>(__n': 47.16} | fused  166.18 us {'void normrotquant_k<8>(__nv_': 166.18} | identical=True
+NRQPROBE_DONE Wed Sep  9 04:15:53 UTC 2026

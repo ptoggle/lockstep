@@ -1,0 +1,17 @@
+{
+ "model": "Qwen/Qwen3-30B-A3B",
+ "layer": 24,
+ "T": 915,
+ "H": 2048,
+ "E": 128,
+ "k": 8,
+ "renormalize": true,
+ "ref_gpu_eq_cpu": true,
+ "routing_set_agreement": 0.7431693989071039,
+ "routing_top1_agreement": 0.9573770491803278,
+ "routing_overlap": 0.9663934426229508,
+ "out_rel_l2_vs_stock": 0.12489162385463715,
+ "out_max_abs_vs_stock": 0.533203125,
+ "t_ref_gpu_s": 0.18944239616394043,
+ "t_ref_cpu_s": 30.228015899658203
+}

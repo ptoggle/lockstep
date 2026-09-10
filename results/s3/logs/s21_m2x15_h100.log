@@ -1,0 +1,24 @@
+mx gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+TIME N=5760 K=2880 R=256 gemm16 R=256       0.2967 ms
+TIME N=5760 K=2880 R=256 gemm16 WARPSPEC R=256 0.2691 ms
+TIME N=5760 K=2880 R=256 int8 gmm R=256     0.2009 ms
+TIME N=5760 K=2880 R=256 SKEW gemm16        0.3589 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws16          0.3261 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws32          0.3618 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW ws64          0.4560 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 SKEW int8 gmm      0.2027 ms  (max rows/expert 61)
+TIME N=5760 K=2880 R=256 gemm ws32 R=256    0.3330 ms
+TIME N=5760 K=2880 R=256 gemm ws64 R=256    0.4544 ms
+TIME N=2880 K=2880 R=256 gemm16 R=256       0.1800 ms
+TIME N=2880 K=2880 R=256 gemm16 WARPSPEC R=256 0.1660 ms
+TIME N=2880 K=2880 R=256 int8 gmm R=256     0.1044 ms
+TIME N=2880 K=2880 R=256 SKEW gemm16        0.2177 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws16          0.1867 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws32          0.1934 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW ws64          0.2538 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 SKEW int8 gmm      0.1046 ms  (max rows/expert 61)
+TIME N=2880 K=2880 R=256 gemm ws32 R=256    0.1914 ms
+TIME N=2880 K=2880 R=256 gemm ws64 R=256    0.2535 ms
+M2X15_DONE Thu Sep 10 11:18:15 UTC 2026

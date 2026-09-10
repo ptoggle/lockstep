@@ -1,0 +1,10 @@
+=== S1g start Wed Sep  9 04:22:34 UTC 2026
+d2f98e2cc3849711ffcbe602d5563aef
+gate rc=1
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 139.
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 't16l_kernels': [1/2] /usr/local/cuda/bin/nvcc -MD -MF t16l_kernels.cuda.o.d -DTORCH_EXTENSION_NAME=t16l_kernels -DTORCH_API_INCLUDE_EXTENSION_H -I/workspace/p2 
+FAILED: [code=139] t16l_kernels.cuda.o 
+GATE FAILED - stopping
+S1G_DONE (gate fail) Wed Sep  9 04:23:34 UTC 2026

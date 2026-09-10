@@ -1,0 +1,22 @@
+gmm gate rc=0
+T16MOE_GMM GATE: 48 PASS / 0 FAIL
+ppl_g1 rc=0
+MOE_ENGINE armed=1 layers=48 E=128 k=8 renorm=True grouped=1 eager=1
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 48, "mode": "ppl", "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 8.81400582424298, "gen_s": 195.19376921653748, "moe_calls": 1440}
+bench_stockg rc=0
+MOE_ENGINE armed=0 layers=0 E=128 k=8 renorm=True grouped=1 eager=0
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 0, "grouped": 1, "eager": 0, "armed_layers": 0, "mode": "bench", "decode_b1_tps": 203.65132276216076, "decode_b8_tps": 889.940241145597, "decode_b32_tps": 2222.7698347653036, "ttft_2048_ms": 44.88396644592285, "ttft_8192_ms": 168.7912940979004, "moe_calls": 0}
+s21_m1e2_h100.sh: line 9: 1382899 Aborted                 env "$@" MODEL=Qwen/Qwen3-30B-A3B timeout 4000 python moe_engine.py > $H/engine_$tag.log 2>&1
+bench_g1g rc=134
+MOE_ENGINE armed=1 layers=48 E=128 k=8 renorm=True grouped=1 eager=0
+[rank0]: Traceback (most recent call last):
+[rank0]: torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+[rank0]: Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+bench_g1e rc=0
+MOE_ENGINE armed=1 layers=48 E=128 k=8 renorm=True grouped=1 eager=1
+MOE_ENGINE_RES {"model": "Qwen/Qwen3-30B-A3B", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 48, "mode": "bench", "decode_b1_tps": 30.020014352681645, "decode_b8_tps": 238.66577182528277, "decode_b32_tps": 928.4769861472395, "ttft_2048_ms": 106.5058708190918, "ttft_8192_ms": 377.6106834411621, "moe_calls": 221760}
+prof rc=1
+Traceback (most recent call last):
+    raise AttributeError(
+AttributeError: '_OpNamespace' 't16moe' object has no attribute 'route'
+M1E2_DONE Thu Sep 10 02:38:23 UTC 2026

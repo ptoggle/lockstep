@@ -1,0 +1,1190 @@
+[t16l] kernels compiled
+T16M: fused kernels compiled
+T16M_GATE shape qwen7b: H=3584 NQKV=4608 D=18944 HQ=28 KVH=4
+  [PASS] norm_quant M=1 res=0 qdiv=1 
+  [PASS] norm_quant M=1 res=1 qdiv=1 
+  [PASS] rowquant_pad M=1 qdiv=1 
+  [PASS] t16mc.rowquant_pad M=1 qdiv=1 
+  [PASS] t16mc.norm_quant M=1 qdiv=1 
+  [PASS] deq_rows o/down M=1 bias=0 
+  [PASS] deq_rows o/down M=1 bias=1 
+  [PASS] deq_norm_quant M=1 bias=0 qdiv=1 
+  [PASS] deq_norm_quant M=1 bias=1 qdiv=1 
+  [PASS] deq_rows qkv M=1 bias=0 
+  [PASS] deq_rows qkv M=1 bias=1 
+  [PASS] deq_rope M=1 
+  [PASS] deq_rope(y8) M=1 
+  [PASS] deq_rope(y8+bias) M=1 
+  [PASS] deq_rows gate_up M=1 bias=0 
+  [PASS] deq_rows gate_up M=1 bias=1 
+  [PASS] deq_silu(wide) M=1 
+  [PASS] r4quant_pad M=1 had=1 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=1 had=1 
+  [PASS] deq_silu_r4quant M=1 had=1 qdiv=1 
+  [PASS] deq_silu(wide) M=1 
+  [PASS] r4quant_pad M=1 had=0 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=1 had=0 
+  [PASS] deq_silu_r4quant M=1 had=0 qdiv=1 
+  [PASS] norm_quant M=1 res=0 qdiv=0 
+  [PASS] norm_quant M=1 res=1 qdiv=0 
+  [PASS] rowquant_pad M=1 qdiv=0 
+  [PASS] t16mc.rowquant_pad M=1 qdiv=0 
+  [PASS] t16mc.norm_quant M=1 qdiv=0 
+  [PASS] deq_rows o/down M=1 bias=0 
+  [PASS] deq_rows o/down M=1 bias=1 
+  [PASS] deq_norm_quant M=1 bias=0 qdiv=0 
+  [PASS] deq_norm_quant M=1 bias=1 qdiv=0 
+  [PASS] deq_rows qkv M=1 bias=0 
+  [PASS] deq_rows qkv M=1 bias=1 
+  [PASS] deq_rope M=1 
+  [PASS] deq_rope(y8) M=1 
+  [PASS] deq_rope(y8+bias) M=1 
+  [PASS] deq_rows gate_up M=1 bias=0 
+  [PASS] deq_rows gate_up M=1 bias=1 
+  [PASS] deq_silu(wide) M=1 
+  [PASS] r4quant_pad M=1 had=1 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=1 had=1 
+  [PASS] deq_silu_r4quant M=1 had=1 qdiv=0 
+  [PASS] deq_silu(wide) M=1 
+  [PASS] r4quant_pad M=1 had=0 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=1 had=0 
+  [PASS] deq_silu_r4quant M=1 had=0 qdiv=0 
+  [PASS] norm_quant M=3 res=0 qdiv=1 
+  [PASS] norm_quant M=3 res=1 qdiv=1 
+  [PASS] rowquant_pad M=3 qdiv=1 
+  [PASS] t16mc.rowquant_pad M=3 qdiv=1 
+  [PASS] t16mc.norm_quant M=3 qdiv=1 
+  [PASS] deq_rows o/down M=3 bias=0 
+  [PASS] deq_rows o/down M=3 bias=1 
+  [PASS] deq_norm_quant M=3 bias=0 qdiv=1 
+  [PASS] deq_norm_quant M=3 bias=1 qdiv=1 
+  [PASS] deq_rows qkv M=3 bias=0 
+  [PASS] deq_rows qkv M=3 bias=1 
+  [PASS] deq_rope M=3 
+  [PASS] deq_rope(y8) M=3 
+  [PASS] deq_rope(y8+bias) M=3 
+  [PASS] deq_rows gate_up M=3 bias=0 
+  [PASS] deq_rows gate_up M=3 bias=1 
+  [PASS] deq_silu(wide) M=3 
+  [PASS] r4quant_pad M=3 had=1 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=3 had=1 
+  [PASS] deq_silu_r4quant M=3 had=1 qdiv=1 
+  [PASS] deq_silu(wide) M=3 
+  [PASS] r4quant_pad M=3 had=0 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=3 had=0 
+  [PASS] deq_silu_r4quant M=3 had=0 qdiv=1 
+  [PASS] norm_quant M=3 res=0 qdiv=0 
+  [PASS] norm_quant M=3 res=1 qdiv=0 
+  [PASS] rowquant_pad M=3 qdiv=0 
+  [PASS] t16mc.rowquant_pad M=3 qdiv=0 
+  [PASS] t16mc.norm_quant M=3 qdiv=0 
+  [PASS] deq_rows o/down M=3 bias=0 
+  [PASS] deq_rows o/down M=3 bias=1 
+  [PASS] deq_norm_quant M=3 bias=0 qdiv=0 
+  [PASS] deq_norm_quant M=3 bias=1 qdiv=0 
+  [PASS] deq_rows qkv M=3 bias=0 
+  [PASS] deq_rows qkv M=3 bias=1 
+  [PASS] deq_rope M=3 
+  [PASS] deq_rope(y8) M=3 
+  [PASS] deq_rope(y8+bias) M=3 
+  [PASS] deq_rows gate_up M=3 bias=0 
+  [PASS] deq_rows gate_up M=3 bias=1 
+  [PASS] deq_silu(wide) M=3 
+  [PASS] r4quant_pad M=3 had=1 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=3 had=1 
+  [PASS] deq_silu_r4quant M=3 had=1 qdiv=0 
+  [PASS] deq_silu(wide) M=3 
+  [PASS] r4quant_pad M=3 had=0 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=3 had=0 
+  [PASS] deq_silu_r4quant M=3 had=0 qdiv=0 
+  [PASS] norm_quant M=17 res=0 qdiv=1 
+  [PASS] norm_quant M=17 res=1 qdiv=1 
+  [PASS] rowquant_pad M=17 qdiv=1 
+  [PASS] t16mc.rowquant_pad M=17 qdiv=1 
+  [PASS] t16mc.norm_quant M=17 qdiv=1 
+  [PASS] deq_rows o/down M=17 bias=0 
+  [PASS] deq_rows o/down M=17 bias=1 
+  [PASS] deq_norm_quant M=17 bias=0 qdiv=1 
+  [PASS] deq_norm_quant M=17 bias=1 qdiv=1 
+  [PASS] deq_rows qkv M=17 bias=0 
+  [PASS] deq_rows qkv M=17 bias=1 
+  [PASS] deq_rope M=17 
+  [PASS] deq_rope(y8) M=17 
+  [PASS] deq_rope(y8+bias) M=17 
+  [PASS] deq_rows gate_up M=17 bias=0 
+  [PASS] deq_rows gate_up M=17 bias=1 
+  [PASS] deq_silu(wide) M=17 
+  [PASS] r4quant_pad M=17 had=1 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=17 had=1 
+  [PASS] deq_silu_r4quant M=17 had=1 qdiv=1 
+  [PASS] deq_silu(wide) M=17 
+  [PASS] r4quant_pad M=17 had=0 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=17 had=0 
+  [PASS] deq_silu_r4quant M=17 had=0 qdiv=1 
+  [PASS] norm_quant M=17 res=0 qdiv=0 
+  [PASS] norm_quant M=17 res=1 qdiv=0 
+  [PASS] rowquant_pad M=17 qdiv=0 
+  [PASS] t16mc.rowquant_pad M=17 qdiv=0 
+  [PASS] t16mc.norm_quant M=17 qdiv=0 
+  [PASS] deq_rows o/down M=17 bias=0 
+  [PASS] deq_rows o/down M=17 bias=1 
+  [PASS] deq_norm_quant M=17 bias=0 qdiv=0 
+  [PASS] deq_norm_quant M=17 bias=1 qdiv=0 
+  [PASS] deq_rows qkv M=17 bias=0 
+  [PASS] deq_rows qkv M=17 bias=1 
+  [PASS] deq_rope M=17 
+  [PASS] deq_rope(y8) M=17 
+  [PASS] deq_rope(y8+bias) M=17 
+  [PASS] deq_rows gate_up M=17 bias=0 
+  [PASS] deq_rows gate_up M=17 bias=1 
+  [PASS] deq_silu(wide) M=17 
+  [PASS] r4quant_pad M=17 had=1 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=17 had=1 
+  [PASS] deq_silu_r4quant M=17 had=1 qdiv=0 
+  [PASS] deq_silu(wide) M=17 
+  [PASS] r4quant_pad M=17 had=0 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=17 had=0 
+  [PASS] deq_silu_r4quant M=17 had=0 qdiv=0 
+  [PASS] norm_quant M=64 res=0 qdiv=1 
+  [PASS] norm_quant M=64 res=1 qdiv=1 
+  [PASS] rowquant_pad M=64 qdiv=1 
+  [PASS] t16mc.rowquant_pad M=64 qdiv=1 
+  [PASS] t16mc.norm_quant M=64 qdiv=1 
+  [PASS] deq_rows o/down M=64 bias=0 
+  [PASS] deq_rows o/down M=64 bias=1 
+  [PASS] deq_norm_quant M=64 bias=0 qdiv=1 
+  [PASS] deq_norm_quant M=64 bias=1 qdiv=1 
+  [PASS] deq_rows qkv M=64 bias=0 
+  [PASS] deq_rows qkv M=64 bias=1 
+  [PASS] deq_rope M=64 
+  [PASS] deq_rope(y8) M=64 
+  [PASS] deq_rope(y8+bias) M=64 
+  [PASS] deq_rows gate_up M=64 bias=0 
+  [PASS] deq_rows gate_up M=64 bias=1 
+  [PASS] deq_silu(wide) M=64 
+  [PASS] r4quant_pad M=64 had=1 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=64 had=1 
+  [PASS] deq_silu_r4quant M=64 had=1 qdiv=1 
+  [PASS] deq_silu(wide) M=64 
+  [PASS] r4quant_pad M=64 had=0 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=64 had=0 
+  [PASS] deq_silu_r4quant M=64 had=0 qdiv=1 
+  [PASS] norm_quant M=64 res=0 qdiv=0 
+  [PASS] norm_quant M=64 res=1 qdiv=0 
+  [PASS] rowquant_pad M=64 qdiv=0 
+  [PASS] t16mc.rowquant_pad M=64 qdiv=0 
+  [PASS] t16mc.norm_quant M=64 qdiv=0 
+  [PASS] deq_rows o/down M=64 bias=0 
+  [PASS] deq_rows o/down M=64 bias=1 
+  [PASS] deq_norm_quant M=64 bias=0 qdiv=0 
+  [PASS] deq_norm_quant M=64 bias=1 qdiv=0 
+  [PASS] deq_rows qkv M=64 bias=0 
+  [PASS] deq_rows qkv M=64 bias=1 
+  [PASS] deq_rope M=64 
+  [PASS] deq_rope(y8) M=64 
+  [PASS] deq_rope(y8+bias) M=64 
+  [PASS] deq_rows gate_up M=64 bias=0 
+  [PASS] deq_rows gate_up M=64 bias=1 
+  [PASS] deq_silu(wide) M=64 
+  [PASS] r4quant_pad M=64 had=1 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=64 had=1 
+  [PASS] deq_silu_r4quant M=64 had=1 qdiv=0 
+  [PASS] deq_silu(wide) M=64 
+  [PASS] r4quant_pad M=64 had=0 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=64 had=0 
+  [PASS] deq_silu_r4quant M=64 had=0 qdiv=0 
+  [PASS] norm_quant M=300 res=0 qdiv=1 
+  [PASS] norm_quant M=300 res=1 qdiv=1 
+  [PASS] rowquant_pad M=300 qdiv=1 
+  [PASS] t16mc.rowquant_pad M=300 qdiv=1 
+  [PASS] t16mc.norm_quant M=300 qdiv=1 
+  [PASS] deq_rows o/down M=300 bias=0 
+  [PASS] deq_rows o/down M=300 bias=1 
+  [PASS] deq_norm_quant M=300 bias=0 qdiv=1 
+  [PASS] deq_norm_quant M=300 bias=1 qdiv=1 
+  [PASS] deq_rows qkv M=300 bias=0 
+  [PASS] deq_rows qkv M=300 bias=1 
+  [PASS] deq_rope M=300 
+  [PASS] deq_rope(y8) M=300 
+  [PASS] deq_rope(y8+bias) M=300 
+  [PASS] deq_rows gate_up M=300 bias=0 
+  [PASS] deq_rows gate_up M=300 bias=1 
+  [PASS] deq_silu(wide) M=300 
+  [PASS] r4quant_pad M=300 had=1 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=300 had=1 
+  [PASS] deq_silu_r4quant M=300 had=1 qdiv=1 
+  [PASS] deq_silu(wide) M=300 
+  [PASS] r4quant_pad M=300 had=0 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=300 had=0 
+  [PASS] deq_silu_r4quant M=300 had=0 qdiv=1 
+  [PASS] norm_quant M=300 res=0 qdiv=0 
+  [PASS] norm_quant M=300 res=1 qdiv=0 
+  [PASS] rowquant_pad M=300 qdiv=0 
+  [PASS] t16mc.rowquant_pad M=300 qdiv=0 
+  [PASS] t16mc.norm_quant M=300 qdiv=0 
+  [PASS] deq_rows o/down M=300 bias=0 
+  [PASS] deq_rows o/down M=300 bias=1 
+  [PASS] deq_norm_quant M=300 bias=0 qdiv=0 
+  [PASS] deq_norm_quant M=300 bias=1 qdiv=0 
+  [PASS] deq_rows qkv M=300 bias=0 
+  [PASS] deq_rows qkv M=300 bias=1 
+  [PASS] deq_rope M=300 
+  [PASS] deq_rope(y8) M=300 
+  [PASS] deq_rope(y8+bias) M=300 
+  [PASS] deq_rows gate_up M=300 bias=0 
+  [PASS] deq_rows gate_up M=300 bias=1 
+  [PASS] deq_silu(wide) M=300 
+  [PASS] r4quant_pad M=300 had=1 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=300 had=1 
+  [PASS] deq_silu_r4quant M=300 had=1 qdiv=0 
+  [PASS] deq_silu(wide) M=300 
+  [PASS] r4quant_pad M=300 had=0 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=300 had=0 
+  [PASS] deq_silu_r4quant M=300 had=0 qdiv=0 
+  [PASS] norm_quant M=1024 res=0 qdiv=1 
+  [PASS] norm_quant M=1024 res=1 qdiv=1 
+  [PASS] rowquant_pad M=1024 qdiv=1 
+  [PASS] t16mc.rowquant_pad M=1024 qdiv=1 
+  [PASS] t16mc.norm_quant M=1024 qdiv=1 
+  [PASS] deq_rows o/down M=1024 bias=0 
+  [PASS] deq_rows o/down M=1024 bias=1 
+  [PASS] deq_norm_quant M=1024 bias=0 qdiv=1 
+  [PASS] deq_norm_quant M=1024 bias=1 qdiv=1 
+  [PASS] deq_rows qkv M=1024 bias=0 
+  [PASS] deq_rows qkv M=1024 bias=1 
+  [PASS] deq_rope M=1024 
+  [PASS] deq_rope(y8) M=1024 
+  [PASS] deq_rope(y8+bias) M=1024 
+  [PASS] deq_rows gate_up M=1024 bias=0 
+  [PASS] deq_rows gate_up M=1024 bias=1 
+  [PASS] deq_silu(wide) M=1024 
+  [PASS] r4quant_pad M=1024 had=1 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=1024 had=1 
+  [PASS] deq_silu_r4quant M=1024 had=1 qdiv=1 
+  [PASS] deq_silu(wide) M=1024 
+  [PASS] r4quant_pad M=1024 had=0 qdiv=1 
+  [PASS] deq_silu_r4quant(y8) M=1024 had=0 
+  [PASS] deq_silu_r4quant M=1024 had=0 qdiv=1 
+  [PASS] norm_quant M=1024 res=0 qdiv=0 
+  [PASS] norm_quant M=1024 res=1 qdiv=0 
+  [PASS] rowquant_pad M=1024 qdiv=0 
+  [PASS] t16mc.rowquant_pad M=1024 qdiv=0 
+  [PASS] t16mc.norm_quant M=1024 qdiv=0 
+  [PASS] deq_rows o/down M=1024 bias=0 
+  [PASS] deq_rows o/down M=1024 bias=1 
+  [PASS] deq_norm_quant M=1024 bias=0 qdiv=0 
+  [PASS] deq_norm_quant M=1024 bias=1 qdiv=0 
+  [PASS] deq_rows qkv M=1024 bias=0 
+  [PASS] deq_rows qkv M=1024 bias=1 
+  [PASS] deq_rope M=1024 
+  [PASS] deq_rope(y8) M=1024 
+  [PASS] deq_rope(y8+bias) M=1024 
+  [PASS] deq_rows gate_up M=1024 bias=0 
+  [PASS] deq_rows gate_up M=1024 bias=1 
+  [PASS] deq_silu(wide) M=1024 
+  [PASS] r4quant_pad M=1024 had=1 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=1024 had=1 
+  [PASS] deq_silu_r4quant M=1024 had=1 qdiv=0 
+  [PASS] deq_silu(wide) M=1024 
+  [PASS] r4quant_pad M=1024 had=0 qdiv=0 
+  [PASS] deq_silu_r4quant(y8) M=1024 had=0 
+  [PASS] deq_silu_r4quant M=1024 had=0 qdiv=0 
+  [PASS] t16l.rowquant K=896 M=1 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=896 M=1 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=896 M=1 vs torch quantize_rows_int8 
+  [PASS] t16l.rowquant K=896 M=33 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=896 M=33 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=896 M=33 vs torch quantize_rows_int8 
+  [PASS] t16l.rowquant K=2048 M=1 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=2048 M=1 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=2048 M=1 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=2048 M=1 
+  [PASS] t16l.rowquant K=2048 M=33 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=2048 M=33 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=2048 M=33 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=2048 M=33 
+  [PASS] t16l.rowquant K=4864 M=1 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=4864 M=1 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=4864 M=1 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=4864 M=1 
+  [PASS] t16l.rowquant K=4864 M=33 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=4864 M=33 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=4864 M=33 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=4864 M=33 
+  [PASS] t16l.rowquant K=8192 M=1 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=8192 M=1 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=8192 M=1 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=8192 M=1 
+  [PASS] t16l.rowquant K=8192 M=33 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=8192 M=33 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=8192 M=33 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=8192 M=33 
+  [PASS] t16l.rowquant K=5120 M=1 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=5120 M=1 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=5120 M=1 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=5120 M=1 
+  [PASS] t16l.rowquant K=5120 M=33 vs torch quantize_rows_int8 
+  [PASS] t16m.rowquant_pad K=5120 M=33 vs torch quantize_rows_int8 
+  [PASS] t16mc.rowquant_pad K=5120 M=33 vs torch quantize_rows_int8 
+  [PASS] norm_quant N=5120 M=33 
+  [PASS] tp_rank_sum ws=2 M=1 
+  [PASS] tp_rank_sum ws=2 M=300 
+  [PASS] tp_rank_sum ws=4 M=1 
+  [PASS] tp_rank_sum ws=4 M=300 
+  [PASS] norm_quant ties M=5 
+  [PASS] deq_silu_r4quant ties M=5 
+  [PASS] norm_quant ties M=40 
+  [PASS] deq_silu_r4quant ties M=40 
+  [PASS] r4quant_outl M=1 
+  [PASS] t16mc.r4quant_outl M=1 
+  [PASS] r4quant_outl vs torch M=1 
+  [PASS] t16l.deq side qkv M=1 bias=0 vs torch 
+  [PASS] deq_rope side M=1 bias=0 
+  [PASS] deq_rope(y8) side M=1 bias=0 
+  [PASS] t16l.deq side qkv M=1 bias=1 vs torch 
+  [PASS] deq_rope side M=1 bias=1 
+  [PASS] deq_rope(y8) side M=1 bias=1 
+  [PASS] t16l.deq side gate_up M=1 bias=0 vs torch 
+  [PASS] deq_silu side M=1 
+  [PASS] deq_silu_r4quant side M=1 
+  [PASS] t16l.deq side gate_up M=1 bias=1 vs torch 
+  [PASS] r4quant_outl M=17 
+  [PASS] t16mc.r4quant_outl M=17 
+  [PASS] r4quant_outl vs torch M=17 
+  [PASS] t16l.deq side qkv M=17 bias=0 vs torch 
+  [PASS] deq_rope side M=17 bias=0 
+  [PASS] deq_rope(y8) side M=17 bias=0 
+  [PASS] t16l.deq side qkv M=17 bias=1 vs torch 
+  [PASS] deq_rope side M=17 bias=1 
+  [PASS] deq_rope(y8) side M=17 bias=1 
+  [PASS] t16l.deq side gate_up M=17 bias=0 vs torch 
+  [PASS] deq_silu side M=17 
+  [PASS] deq_silu_r4quant side M=17 
+  [PASS] t16l.deq side gate_up M=17 bias=1 vs torch 
+  [PASS] r4quant_outl M=300 
+  [PASS] t16mc.r4quant_outl M=300 
+  [PASS] r4quant_outl vs torch M=300 
+  [PASS] t16l.deq side qkv M=300 bias=0 vs torch 
+  [PASS] deq_rope side M=300 bias=0 
+  [PASS] deq_rope(y8) side M=300 bias=0 
+  [PASS] t16l.deq side qkv M=300 bias=1 vs torch 
+  [PASS] deq_rope side M=300 bias=1 
+  [PASS] deq_rope(y8) side M=300 bias=1 
+  [PASS] t16l.deq side gate_up M=300 bias=0 vs torch 
+  [PASS] deq_silu side M=300 
+  [PASS] deq_silu_r4quant side M=300 
+  [PASS] t16l.deq side gate_up M=300 bias=1 vs torch 
+  [PASS] rowquant_outl K=3584 M=1 
+  [PASS] t16mc.rowquant_outl K=3584 M=1 
+  [PASS] rowquant_outl vs torch K=3584 M=1 
+  [PASS] rowquant_outl K=896 M=1 
+  [PASS] t16mc.rowquant_outl K=896 M=1 
+  [PASS] rowquant_outl vs torch K=896 M=1 
+  [PASS] deq_rows side M=1 bias=0 
+  [PASS] deq_norm_quant side M=1 bias=0 
+  [PASS] deq_rows side M=1 bias=1 
+  [PASS] deq_norm_quant side M=1 bias=1 
+  [PASS] r4quant_outl down M=1 
+  [PASS] rowquant_outl K=3584 M=17 
+  [PASS] t16mc.rowquant_outl K=3584 M=17 
+  [PASS] rowquant_outl vs torch K=3584 M=17 
+  [PASS] rowquant_outl K=896 M=17 
+  [PASS] t16mc.rowquant_outl K=896 M=17 
+  [PASS] rowquant_outl vs torch K=896 M=17 
+  [PASS] deq_rows side M=17 bias=0 
+  [PASS] deq_norm_quant side M=17 bias=0 
+  [PASS] deq_rows side M=17 bias=1 
+  [PASS] deq_norm_quant side M=17 bias=1 
+  [PASS] r4quant_outl down M=17 
+  [PASS] rowquant_outl K=3584 M=300 
+  [PASS] t16mc.rowquant_outl K=3584 M=300 
+  [PASS] rowquant_outl vs torch K=3584 M=300 
+  [PASS] rowquant_outl K=896 M=300 
+  [PASS] t16mc.rowquant_outl K=896 M=300 
+  [PASS] rowquant_outl vs torch K=896 M=300 
+  [PASS] deq_rows side M=300 bias=0 
+  [PASS] deq_norm_quant side M=300 bias=0 
+  [PASS] deq_rows side M=300 bias=1 
+  [PASS] deq_norm_quant side M=300 bias=1 
+  [PASS] r4quant_outl down M=300 
+  [PASS] routes agree qkv M=1 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_qkv M=1 route=int_mm 
+  [PASS] t16mc.lin_qkv M=1 route=int_mm == python op 
+  [PASS] lin_qkv M=1 route=cutlass 
+  [PASS] t16mc.lin_qkv M=1 route=cutlass == python op 
+  [PASS] routes agree o M=1 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_o M=1 route=int_mm 
+  [PASS] t16mc.lin_o M=1 route=int_mm == python op 
+  [PASS] lin_o M=1 route=cutlass 
+  [PASS] t16mc.lin_o M=1 route=cutlass == python op 
+  [PASS] routes agree gate_up M=1 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_gate_up M=1 route=int_mm 
+  [PASS] t16mc.lin_gate_up M=1 route=int_mm == python op 
+  [PASS] lin_gate_up M=1 route=cutlass 
+  [PASS] t16mc.lin_gate_up M=1 route=cutlass == python op 
+  [PASS] routes agree down M=1 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_down M=1 route=int_mm 
+  [PASS] t16mc.lin_down M=1 route=int_mm == python op 
+  [PASS] lin_down M=1 route=cutlass 
+  [PASS] t16mc.lin_down M=1 route=cutlass == python op 
+  [PASS] routes agree qkv M=40 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_qkv M=40 route=int_mm 
+  [PASS] t16mc.lin_qkv M=40 route=int_mm == python op 
+  [PASS] lin_qkv M=40 route=cutlass 
+  [PASS] t16mc.lin_qkv M=40 route=cutlass == python op 
+  [PASS] routes agree o M=40 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_o M=40 route=int_mm 
+  [PASS] t16mc.lin_o M=40 route=int_mm == python op 
+  [PASS] lin_o M=40 route=cutlass 
+  [PASS] t16mc.lin_o M=40 route=cutlass == python op 
+  [PASS] routes agree gate_up M=40 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_gate_up M=40 route=int_mm 
+  [PASS] t16mc.lin_gate_up M=40 route=int_mm == python op 
+  [PASS] lin_gate_up M=40 route=cutlass 
+  [PASS] t16mc.lin_gate_up M=40 route=cutlass == python op 
+  [PASS] routes agree down M=40 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_down M=40 route=int_mm 
+  [PASS] t16mc.lin_down M=40 route=int_mm == python op 
+  [PASS] lin_down M=40 route=cutlass 
+  [PASS] t16mc.lin_down M=40 route=cutlass == python op 
+  [PASS] routes agree qkv M=300 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_qkv M=300 route=int_mm 
+  [PASS] t16mc.lin_qkv M=300 route=int_mm == python op 
+  [PASS] lin_qkv M=300 route=cutlass 
+  [PASS] t16mc.lin_qkv M=300 route=cutlass == python op 
+  [PASS] routes agree o M=300 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_o M=300 route=int_mm 
+  [PASS] t16mc.lin_o M=300 route=int_mm == python op 
+  [PASS] lin_o M=300 route=cutlass 
+  [PASS] t16mc.lin_o M=300 route=cutlass == python op 
+  [PASS] routes agree gate_up M=300 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_gate_up M=300 route=int_mm 
+  [PASS] t16mc.lin_gate_up M=300 route=int_mm == python op 
+  [PASS] lin_gate_up M=300 route=cutlass 
+  [PASS] t16mc.lin_gate_up M=300 route=cutlass == python op 
+  [PASS] routes agree down M=300 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_down M=300 route=int_mm 
+  [PASS] t16mc.lin_down M=300 route=int_mm == python op 
+  [PASS] lin_down M=300 route=cutlass 
+  [PASS] t16mc.lin_down M=300 route=cutlass == python op 
+  [PASS] routes agree qkv M=2048 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_qkv M=2048 route=int_mm 
+  [PASS] t16mc.lin_qkv M=2048 route=int_mm == python op 
+  [PASS] lin_qkv M=2048 route=cutlass 
+  [PASS] t16mc.lin_qkv M=2048 route=cutlass == python op 
+  [PASS] routes agree o M=2048 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_o M=2048 route=int_mm 
+  [PASS] t16mc.lin_o M=2048 route=int_mm == python op 
+  [PASS] lin_o M=2048 route=cutlass 
+  [PASS] t16mc.lin_o M=2048 route=cutlass == python op 
+  [PASS] routes agree gate_up M=2048 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_gate_up M=2048 route=int_mm 
+  [PASS] t16mc.lin_gate_up M=2048 route=int_mm == python op 
+  [PASS] lin_gate_up M=2048 route=cutlass 
+  [PASS] t16mc.lin_gate_up M=2048 route=cutlass == python op 
+  [PASS] routes agree down M=2048 (int_mm+deq == cutlass epilogue) 
+  [PASS] lin_down M=2048 route=int_mm 
+  [PASS] t16mc.lin_down M=2048 route=int_mm == python op 
+  [PASS] lin_down M=2048 route=cutlass 
+  [PASS] t16mc.lin_down M=2048 route=cutlass == python op 
+  [PASS] lm_combine a8 M=1 
+  [PASS] lm_combine a8 M=1 ncols=1000 
+  [PASS] lm_combine a8 M=1 stacked 
+  [PASS] lm_combine a8 M=1 stacked ncols=1000 
+  [PASS] lm_combine a8 M=1 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=1 ties 
+  [PASS] lm_combine a8 M=1 ties ncols=1000 
+  [PASS] lm_combine a8 M=1 ties stacked 
+  [PASS] lm_combine a8 M=1 ties stacked ncols=1000 
+  [PASS] lm_combine a8 M=1 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=3 
+  [PASS] lm_combine a8 M=3 ncols=1000 
+  [PASS] lm_combine a8 M=3 stacked 
+  [PASS] lm_combine a8 M=3 stacked ncols=1000 
+  [PASS] lm_combine a8 M=3 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=3 ties 
+  [PASS] lm_combine a8 M=3 ties ncols=1000 
+  [PASS] lm_combine a8 M=3 ties stacked 
+  [PASS] lm_combine a8 M=3 ties stacked ncols=1000 
+  [PASS] lm_combine a8 M=3 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=17 
+  [PASS] lm_combine a8 M=17 ncols=1000 
+  [PASS] lm_combine a8 M=17 stacked 
+  [PASS] lm_combine a8 M=17 stacked ncols=1000 
+  [PASS] lm_combine a8 M=17 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=17 ties 
+  [PASS] lm_combine a8 M=17 ties ncols=1000 
+  [PASS] lm_combine a8 M=17 ties stacked 
+  [PASS] lm_combine a8 M=17 ties stacked ncols=1000 
+  [PASS] lm_combine a8 M=17 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=64 
+  [PASS] lm_combine a8 M=64 ncols=1000 
+  [PASS] lm_combine a8 M=64 stacked 
+  [PASS] lm_combine a8 M=64 stacked ncols=1000 
+  [PASS] lm_combine a8 M=64 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=64 ties 
+  [PASS] lm_combine a8 M=64 ties ncols=1000 
+  [PASS] lm_combine a8 M=64 ties stacked 
+  [PASS] lm_combine a8 M=64 ties stacked ncols=1000 
+  [PASS] lm_combine a8 M=64 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=300 
+  [PASS] lm_combine a8 M=300 ncols=1000 
+  [PASS] lm_combine a8 M=300 stacked 
+  [PASS] lm_combine a8 M=300 stacked ncols=1000 
+  [PASS] lm_combine a8 M=300 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a8 M=300 ties 
+  [PASS] lm_combine a8 M=300 ties ncols=1000 
+  [PASS] lm_combine a8 M=300 ties stacked 
+  [PASS] lm_combine a8 M=300 ties stacked ncols=1000 
+  [PASS] lm_combine a8 M=300 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=1 
+  [PASS] lm_combine a15w15 M=1 ncols=1000 
+  [PASS] lm_combine a15w15 M=1 stacked 
+  [PASS] lm_combine a15w15 M=1 stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=1 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=1 ties 
+  [PASS] lm_combine a15w15 M=1 ties ncols=1000 
+  [PASS] lm_combine a15w15 M=1 ties stacked 
+  [PASS] lm_combine a15w15 M=1 ties stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=1 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=3 
+  [PASS] lm_combine a15w15 M=3 ncols=1000 
+  [PASS] lm_combine a15w15 M=3 stacked 
+  [PASS] lm_combine a15w15 M=3 stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=3 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=3 ties 
+  [PASS] lm_combine a15w15 M=3 ties ncols=1000 
+  [PASS] lm_combine a15w15 M=3 ties stacked 
+  [PASS] lm_combine a15w15 M=3 ties stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=3 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=17 
+  [PASS] lm_combine a15w15 M=17 ncols=1000 
+  [PASS] lm_combine a15w15 M=17 stacked 
+  [PASS] lm_combine a15w15 M=17 stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=17 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=17 ties 
+  [PASS] lm_combine a15w15 M=17 ties ncols=1000 
+  [PASS] lm_combine a15w15 M=17 ties stacked 
+  [PASS] lm_combine a15w15 M=17 ties stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=17 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=64 
+  [PASS] lm_combine a15w15 M=64 ncols=1000 
+  [PASS] lm_combine a15w15 M=64 stacked 
+  [PASS] lm_combine a15w15 M=64 stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=64 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=64 ties 
+  [PASS] lm_combine a15w15 M=64 ties ncols=1000 
+  [PASS] lm_combine a15w15 M=64 ties stacked 
+  [PASS] lm_combine a15w15 M=64 ties stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=64 ties torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=300 
+  [PASS] lm_combine a15w15 M=300 ncols=1000 
+  [PASS] lm_combine a15w15 M=300 stacked 
+  [PASS] lm_combine a15w15 M=300 stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=300 torch path unchanged by the stacked layout 
+  [PASS] lm_combine a15w15 M=300 ties 
+  [PASS] lm_combine a15w15 M=300 ties ncols=1000 
+  [PASS] lm_combine a15w15 M=300 ties stacked 
+  [PASS] lm_combine a15w15 M=300 ties stacked ncols=1000 
+  [PASS] lm_combine a15w15 M=300 ties torch path unchanged by the stacked layout 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=1 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=7 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=64 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3072 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3072 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3072 M=300 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=0 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=1 ko=0 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=1 ko=0 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=8 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=1 ko=8 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=1 ko=8 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=1 ko=32 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=1 ko=32 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=1 ko=32 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=0 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=7 ko=0 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=7 ko=0 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=8 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=7 ko=8 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=7 ko=8 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=7 ko=32 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=7 ko=32 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=7 ko=32 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=0 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=64 ko=0 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=64 ko=0 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=8 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=64 ko=8 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=64 ko=8 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=64 ko=32 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=64 ko=32 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=64 ko=32 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=0 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=300 ko=0 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=300 ko=0 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=8 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=300 ko=8 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=300 ko=8 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=3584 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=3584 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=3584 M=300 ko=32 bias=0 side=1 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=300 ko=32 mcut=int_mm 
+  [PASS] P2 t16mc.lin_norm_rot_quant N=3584 M=300 ko=32 mcut=cutlass 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=1 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=7 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=64 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=4096 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=4096 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=4096 M=300 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=1 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=1 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=7 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=7 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=64 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=64 ko=32 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=0 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=0 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=0 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=0 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=0 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=0 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=0 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=0 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=8 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=8 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=8 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=8 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=8 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=8 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=8 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=8 bias=0 side=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=32 res=0 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=32 res=0 qdiv=0 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=32 res=1 qdiv=1 
+  [PASS] P2 norm_rot_quant N=8192 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 t16mc.norm_rot_quant N=8192 M=300 ko=32 res=1 qdiv=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=0 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=1 side=0 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=1 side=1 
+  [PASS] P2 deq_norm_rot_quant N=8192 M=300 ko=32 bias=0 side=1 
+T16M_KERNELS PASS cases=1186 bad=0

@@ -1,0 +1,7 @@
+Lockstep - bit-exact, verifiable transformer inference
+Copyright 2026 Perica Glavas, Maksym Yakovenko, Logan Allen and the Lockstep contributors
+
+Code (reference/, tools/, formal/, conformance/*.py): Apache License, Version 2.0 (LICENSE).
+Paper (paper/): Creative Commons Attribution 4.0 International (LICENSES/CC-BY-4.0.txt).
+Conformance vectors, digests and measured results (conformance/*.json, results/): CC0 1.0 Universal (LICENSES/CC0-1.0.txt).
+Contract 2.6, the cross-architecture kit and the fused head norm were contributed by Maksym Yakovenko; the Lean formalisation (formal/) by Logan Allen.

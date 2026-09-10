@@ -1,0 +1,22 @@
+name: verify
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install numpy torch --index-url https://download.pytorch.org/whl/cpu
+      - run: make selftest
+      - run: make vectors
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with: { auto-config: false, build: true, test: false }
+      - run: lake exe lockstep-formal check
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: python tools/verify_lean_artifacts.py conformance/lean_contract_artifacts.json && python tools/verify_lean_artifacts.py --negative conformance/lean_contract_artifacts.json

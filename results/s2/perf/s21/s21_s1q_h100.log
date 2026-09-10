@@ -1,0 +1,11 @@
+=== S1q start Wed Sep  9 15:10:02 UTC 2026
+f2e6346563c86e35135d59431ad77786
+518ee8c73077d149d30e04ae71f00a86
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+S1Q qwen25_3b p128_b1=0.676  p128_b8=0.749  p2048_b1=0.800  p2048_b8=0.891  p8192_b1=0.886  p8192_b8=0.843  p8192_b4=0.860  p32640_b1=0.842  prefill_p128_b32=0.860  dec_b1=0.668  dec_b8=0.591  dec_b32=0.570
+=== serving 7B W1/W2/W3 (kept set + T16y)
+S1Q serve w1_rinf  stock   5370.6 lssab   4069.1 ratio 0.758
+S1Q serve w2       stock   8339.0 lssab   6579.3 ratio 0.789
+S1Q serve w3       stock    583.5 lssab    524.1 ratio 0.898
+S1Q_DONE Wed Sep  9 15:26:00 UTC 2026

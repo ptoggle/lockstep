@@ -1,0 +1,183 @@
+/root/v25/lib/python3.11/site-packages/huggingface_hub/constants.py:299: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+LOCKSTEP-ENVELOPE OK {"facts": {"architecture": "Qwen2ForCausalLM", "architectures": ["Qwen2ForCausalLM"], "head_dim": 128, "head_dim_from": "hidden_size // num_attention_heads", "heads": 40, "hidden": 5120, "hidden_act": "silu", "intermediate": 27648, "kv_heads": 8, "layers": 64, "max_model_len": 8192, "max_position": 32768, "model_type": "qwen2", "moe": null, "qk_norm": false, "quantization": null, "rope_theta": null, "rope_type": "default", "tied": false, "torch_dtype": "torch.bfloat16", "tp": 1, "use_sliding_window": false, "vocab": 152064, "window": null}, "model": "Qwen/Qwen2.5-32B-Instruct", "ok": true, "reasons": [], "stage": "prepare"}
+LOCKSTEP-PREPARE model Qwen/Qwen2.5-32B-Instruct: hidden=5120 layers=64 heads=40/8 head_dim=128 vocab=152064 tied=False qk_norm=False rotary_dim=128 window=None rotation=paley1
+LOCKSTEP-PREPARE keq: /root/v25/bin/python /workspace/p2/k_equalize.py --model Qwen/Qwen2.5-32B-Instruct --out /workspace/p2/manifests/rb_qwen25_32b/keq.pt
+/root/v25/lib/python3.11/site-packages/huggingface_hub/constants.py:299: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/771 [00:00<?, ?it/s]Loading weights:   0%|          | 1/771 [00:00<03:44,  3.43it/s]Loading weights:   1%|          | 6/771 [00:00<00:42, 18.11it/s]Loading weights:   2%|▏         | 16/771 [00:00<00:17, 43.13it/s]Loading weights:   4%|▍         | 29/771 [00:00<00:11, 65.77it/s]Loading weights:   5%|▌         | 40/771 [00:00<00:10, 72.31it/s]Loading weights:   7%|▋         | 52/771 [00:00<00:08, 85.33it/s]Loading weights:   8%|▊         | 62/771 [00:00<00:08, 87.09it/s]Loading weights:   9%|▉         | 72/771 [00:01<00:08, 78.65it/s]Loading weights:  11%|█         | 81/771 [00:01<00:09, 71.42it/s]Loading weights:  12%|█▏        | 90/771 [00:01<00:09, 71.36it/s]Loading weights:  13%|█▎        | 99/771 [00:01<00:08, 75.68it/s]Loading weights:  15%|█▍        | 113/771 [00:01<00:08, 82.09it/s]Loading weights:  16%|█▌        | 124/771 [00:01<00:07, 83.43it/s]Loading weights:  18%|█▊        | 136/771 [00:01<00:06, 91.95it/s]Loading weights:  19%|█▉        | 146/771 [00:02<00:06, 89.29it/s]Loading weights:  20%|██        | 156/771 [00:02<00:07, 82.73it/s]Loading weights:  21%|██▏       | 165/771 [00:02<00:07, 76.96it/s]Loading weights:  22%|██▏       | 173/771 [00:02<00:08, 69.25it/s]Loading weights:  24%|██▍       | 185/771 [00:02<00:07, 77.87it/s]Loading weights:  26%|██▌       | 197/771 [00:02<00:07, 78.69it/s]Loading weights:  27%|██▋       | 208/771 [00:02<00:07, 79.21it/s]Loading weights:  28%|██▊       | 219/771 [00:02<00:07, 77.25it/s]Loading weights:  30%|███       | 233/771 [00:03<00:06, 85.40it/s]Loading weights:  32%|███▏      | 244/771 [00:03<00:06, 81.26it/s]Loading weights:  33%|███▎      | 257/771 [00:03<00:06, 85.45it/s]Loading weights:  35%|███▍      | 268/771 [00:03<00:05, 90.54it/s]Loading weights:  36%|███▋      | 280/771 [00:03<00:05, 91.42it/s]Loading weights:  38%|███▊      | 292/771 [00:03<00:06, 79.04it/s]Loading weights:  40%|███▉      | 305/771 [00:03<00:05, 82.69it/s]Loading weights:  41%|████      | 316/771 [00:04<00:05, 85.84it/s]Loading weights:  42%|████▏     | 325/771 [00:04<00:05, 86.80it/s]Loading weights:  43%|████▎     | 334/771 [00:04<00:05, 78.06it/s]Loading weights:  44%|████▍     | 343/771 [00:04<00:06, 70.28it/s]Loading weights:  46%|████▌     | 354/771 [00:04<00:05, 74.91it/s]Loading weights:  47%|████▋     | 364/771 [00:04<00:05, 78.21it/s]Loading weights:  49%|████▉     | 376/771 [00:04<00:04, 85.71it/s]Loading weights:  50%|█████     | 386/771 [00:04<00:04, 89.35it/s]Loading weights:  51%|█████▏    | 396/771 [00:05<00:04, 84.89it/s]Loading weights:  53%|█████▎    | 405/771 [00:05<00:04, 79.60it/s]Loading weights:  54%|█████▎    | 414/771 [00:05<00:05, 70.29it/s]Loading weights:  55%|█████▌    | 425/771 [00:05<00:04, 76.53it/s]Loading weights:  56%|█████▋    | 435/771 [00:05<00:04, 79.07it/s]Loading weights:  58%|█████▊    | 444/771 [00:05<00:04, 81.41it/s]Loading weights:  59%|█████▉    | 453/771 [00:05<00:04, 73.94it/s]Loading weights:  60%|█████▉    | 461/771 [00:05<00:04, 72.30it/s]Loading weights:  61%|██████    | 472/771 [00:06<00:03, 78.45it/s]Loading weights:  62%|██████▏   | 480/771 [00:06<00:03, 75.19it/s]Loading weights:  63%|██████▎   | 488/771 [00:06<00:03, 71.53it/s]Loading weights:  64%|██████▍   | 497/771 [00:06<00:03, 75.50it/s]Loading weights:  66%|██████▌   | 508/771 [00:06<00:03, 66.66it/s]Loading weights:  68%|██████▊   | 521/771 [00:06<00:03, 78.35it/s]Loading weights:  69%|██████▉   | 532/771 [00:06<00:03, 74.52it/s]Loading weights:  71%|███████   | 544/771 [00:07<00:02, 81.74it/s]Loading weights:  72%|███████▏  | 553/771 [00:07<00:02, 80.58it/s]Loading weights:  73%|███████▎  | 562/771 [00:07<00:02, 76.98it/s]Loading weights:  74%|███████▍  | 570/771 [00:07<00:02, 67.97it/s]Loading weights:  75%|███████▌  | 581/771 [00:07<00:02, 74.90it/s]Loading weights:  77%|███████▋  | 592/771 [00:07<00:02, 71.72it/s]Loading weights:  78%|███████▊  | 603/771 [00:07<00:02, 69.13it/s]Loading weights:  80%|███████▉  | 615/771 [00:08<00:02, 77.13it/s]Loading weights:  81%|████████▏ | 628/771 [00:08<00:01, 73.90it/s]Loading weights:  83%|████████▎ | 640/771 [00:08<00:01, 83.61it/s]Loading weights:  84%|████████▍ | 649/771 [00:08<00:01, 82.79it/s]Loading weights:  85%|████████▌ | 658/771 [00:08<00:01, 75.44it/s]Loading weights:  86%|████████▋ | 666/771 [00:08<00:01, 69.83it/s]Loading weights:  88%|████████▊ | 676/771 [00:08<00:01, 74.10it/s]Loading weights:  89%|████████▉ | 688/771 [00:09<00:01, 75.44it/s]Loading weights:  91%|█████████ | 699/771 [00:09<00:00, 73.64it/s]Loading weights:  92%|█████████▏| 712/771 [00:09<00:00, 84.23it/s]Loading weights:  94%|█████████▎| 721/771 [00:09<00:00, 81.33it/s]Loading weights:  95%|█████████▍| 730/771 [00:09<00:00, 72.16it/s]Loading weights:  96%|█████████▌| 738/771 [00:09<00:00, 69.48it/s]Loading weights:  97%|█████████▋| 750/771 [00:09<00:00, 73.51it/s]Loading weights:  99%|█████████▉| 762/771 [00:09<00:00, 77.31it/s]Loading weights: 100%|██████████| 771/771 [00:09<00:00, 77.16it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (298938 > 131072). Running this sequence through the model will result in indexing errors
+K-preparation written: /workspace/p2/manifests/rb_qwen25_32b/keq.pt
+transform sha256: 1dafb13c699694ed5494bda203f69a0a9bab84fec8148abc5df6e9c7cde3d256
+canonical artifact sha256 (/workspace/p2/manifests/rb_qwen25_32b/keq.pt.bin): f0972f405c052e92960267d19c3b0f1f08ac04a8cfc5ff7157096de8eb6184a5
+  layer  0  K_amax   19.391 -> mean-centered   7.318 (1.39 bits)  mid-centered   6.641 (1.54 bits)  top-mu chans [51, 115, 48, 60]
+  layer  1  K_amax    7.457 -> mean-centered   6.829 (0.11 bits)  mid-centered   6.619 (0.17 bits)  top-mu chans [94, 35, 37, 52]
+  layer  2  K_amax   11.207 -> mean-centered  10.139 (0.21 bits)  mid-centered   9.611 (0.32 bits)  top-mu chans [113, 111, 117, 51]
+  layer  3  K_amax   11.430 -> mean-centered   8.547 (0.42 bits)  mid-centered   7.791 (0.54 bits)  top-mu chans [48, 112, 102, 106]
+  layer  4  K_amax   11.406 -> mean-centered   7.402 (0.66 bits)  mid-centered   7.059 (0.72 bits)  top-mu chans [113, 49, 116, 41]
+  layer  5  K_amax   12.773 -> mean-centered  10.461 (0.29 bits)  mid-centered   7.049 (0.85 bits)  top-mu chans [122, 59, 58, 61]
+  layer  6  K_amax   12.586 -> mean-centered  10.375 (0.28 bits)  mid-centered   6.539 (0.94 bits)  top-mu chans [119, 55, 63, 60]
+  layer  7  K_amax   12.727 -> mean-centered  10.400 (0.29 bits)  mid-centered   7.168 (0.83 bits)  top-mu chans [118, 54, 27, 34]
+  layer  8  K_amax   12.531 -> mean-centered  10.431 (0.27 bits)  mid-centered   7.089 (0.82 bits)  top-mu chans [60, 50, 59, 123]
+  layer  9  K_amax   13.836 -> mean-centered  11.244 (0.30 bits)  mid-centered   7.021 (0.98 bits)  top-mu chans [50, 126, 62, 34]
+  layer 10  K_amax   13.352 -> mean-centered  10.640 (0.32 bits)  mid-centered   6.898 (0.95 bits)  top-mu chans [53, 117, 125, 97]
+  layer 11  K_amax   14.500 -> mean-centered  12.717 (0.18 bits)  mid-centered   8.047 (0.83 bits)  top-mu chans [116, 52, 44, 92]
+  layer 12  K_amax   12.672 -> mean-centered  10.244 (0.31 bits)  mid-centered   6.990 (0.85 bits)  top-mu chans [56, 61, 120, 126]
+  layer 13  K_amax   13.461 -> mean-centered  11.143 (0.28 bits)  mid-centered   7.679 (0.81 bits)  top-mu chans [52, 116, 30, 94]
+  layer 14  K_amax   12.078 -> mean-centered  10.202 (0.24 bits)  mid-centered   6.806 (0.81 bits)  top-mu chans [117, 53, 26, 99]
+  layer 15  K_amax   13.930 -> mean-centered  11.225 (0.30 bits)  mid-centered   7.472 (0.89 bits)  top-mu chans [120, 56, 95, 38]
+  layer 16  K_amax   13.602 -> mean-centered  11.551 (0.22 bits)  mid-centered   7.664 (0.82 bits)  top-mu chans [53, 117, 43, 92]
+  layer 17  K_amax   12.617 -> mean-centered  10.698 (0.24 bits)  mid-centered   7.166 (0.82 bits)  top-mu chans [120, 56, 37, 93]
+  layer 18  K_amax   12.516 -> mean-centered  10.405 (0.26 bits)  mid-centered   7.910 (0.66 bits)  top-mu chans [125, 50, 30, 114]
+  layer 19  K_amax   12.641 -> mean-centered  10.283 (0.29 bits)  mid-centered   6.886 (0.86 bits)  top-mu chans [60, 47, 36, 124]
+  layer 20  K_amax   12.172 -> mean-centered  11.132 (0.11 bits)  mid-centered   7.669 (0.66 bits)  top-mu chans [114, 126, 62, 50]
+  layer 21  K_amax   12.344 -> mean-centered  10.511 (0.23 bits)  mid-centered   7.188 (0.78 bits)  top-mu chans [120, 56, 113, 49]
+  layer 22  K_amax   12.164 -> mean-centered  10.391 (0.21 bits)  mid-centered   7.669 (0.65 bits)  top-mu chans [116, 52, 101, 45]
+  layer 23  K_amax   13.984 -> mean-centered  10.839 (0.34 bits)  mid-centered   7.920 (0.78 bits)  top-mu chans [42, 113, 61, 125]
+  layer 24  K_amax   11.664 -> mean-centered  10.486 (0.15 bits)  mid-centered   7.920 (0.55 bits)  top-mu chans [124, 33, 63, 91]
+  layer 25  K_amax   13.438 -> mean-centered  10.930 (0.29 bits)  mid-centered   8.430 (0.67 bits)  top-mu chans [33, 39, 46, 97]
+  layer 26  K_amax   12.516 -> mean-centered  12.178 (0.04 bits)  mid-centered   8.277 (0.59 bits)  top-mu chans [51, 126, 35, 41]
+  layer 27  K_amax   12.320 -> mean-centered  12.338 (-0.01 bits)  mid-centered   8.385 (0.55 bits)  top-mu chans [55, 119, 47, 111]
+  layer 28  K_amax   13.383 -> mean-centered  10.706 (0.32 bits)  mid-centered   8.014 (0.72 bits)  top-mu chans [50, 62, 43, 97]
+  layer 29  K_amax   14.688 -> mean-centered  11.661 (0.26 bits)  mid-centered   9.298 (0.60 bits)  top-mu chans [115, 107, 61, 103]
+  layer 30  K_amax   16.297 -> mean-centered  12.329 (0.34 bits)  mid-centered   9.479 (0.72 bits)  top-mu chans [118, 106, 63, 54]
+  layer 31  K_amax   15.328 -> mean-centered  11.151 (0.46 bits)  mid-centered   8.705 (0.81 bits)  top-mu chans [114, 40, 32, 62]
+  layer 32  K_amax   13.531 -> mean-centered  10.892 (0.30 bits)  mid-centered   7.804 (0.78 bits)  top-mu chans [53, 117, 43, 92]
+  layer 33  K_amax   13.836 -> mean-centered  10.852 (0.36 bits)  mid-centered   8.043 (0.78 bits)  top-mu chans [120, 56, 37, 29]
+  layer 34  K_amax   13.727 -> mean-centered  11.293 (0.27 bits)  mid-centered   9.365 (0.55 bits)  top-mu chans [125, 50, 61, 30]
+  layer 35  K_amax   14.125 -> mean-centered  11.400 (0.32 bits)  mid-centered   8.842 (0.69 bits)  top-mu chans [60, 47, 36, 124]
+  layer 36  K_amax   13.688 -> mean-centered  12.153 (0.15 bits)  mid-centered   8.995 (0.60 bits)  top-mu chans [126, 114, 62, 100]
+  layer 37  K_amax   14.320 -> mean-centered  11.634 (0.29 bits)  mid-centered   8.914 (0.69 bits)  top-mu chans [49, 120, 56, 107]
+  layer 38  K_amax   16.836 -> mean-centered  13.428 (0.30 bits)  mid-centered  10.920 (0.60 bits)  top-mu chans [116, 45, 52, 101]
+  layer 39  K_amax   15.914 -> mean-centered  10.698 (0.51 bits)  mid-centered   9.177 (0.73 bits)  top-mu chans [42, 113, 34, 61]
+  layer 40  K_amax   13.852 -> mean-centered  11.804 (0.22 bits)  mid-centered  10.219 (0.44 bits)  top-mu chans [58, 104, 111, 60]
+  layer 41  K_amax   16.508 -> mean-centered  12.239 (0.42 bits)  mid-centered  10.771 (0.61 bits)  top-mu chans [46, 39, 33, 92]
+  layer 42  K_amax   14.469 -> mean-centered  11.725 (0.31 bits)  mid-centered   9.337 (0.64 bits)  top-mu chans [51, 41, 126, 35]
+  layer 43  K_amax   14.516 -> mean-centered  11.890 (0.26 bits)  mid-centered   9.614 (0.56 bits)  top-mu chans [119, 55, 47, 36]
+  layer 44  K_amax   14.945 -> mean-centered  11.046 (0.41 bits)  mid-centered   8.867 (0.73 bits)  top-mu chans [50, 43, 62, 63]
+  layer 45  K_amax   16.562 -> mean-centered  11.800 (0.38 bits)  mid-centered  10.209 (0.61 bits)  top-mu chans [115, 107, 34, 61]
+  layer 46  K_amax   17.844 -> mean-centered  12.389 (0.44 bits)  mid-centered  10.352 (0.71 bits)  top-mu chans [118, 106, 63, 33]
+  layer 47  K_amax   17.664 -> mean-centered  11.941 (0.53 bits)  mid-centered   9.855 (0.81 bits)  top-mu chans [114, 40, 32, 124]
+  layer 48  K_amax   13.336 -> mean-centered  11.774 (0.18 bits)  mid-centered   9.479 (0.50 bits)  top-mu chans [120, 45, 97, 101]
+  layer 49  K_amax   15.438 -> mean-centered  12.274 (0.28 bits)  mid-centered  10.188 (0.56 bits)  top-mu chans [126, 62, 63, 112]
+  layer 50  K_amax   12.461 -> mean-centered  11.044 (0.16 bits)  mid-centered   9.316 (0.41 bits)  top-mu chans [48, 63, 121, 108]
+  layer 51  K_amax   15.203 -> mean-centered  12.643 (0.26 bits)  mid-centered   9.475 (0.68 bits)  top-mu chans [63, 127, 113, 125]
+  layer 52  K_amax   16.812 -> mean-centered  11.973 (0.47 bits)  mid-centered   9.918 (0.75 bits)  top-mu chans [127, 63, 48, 94]
+  layer 53  K_amax   13.672 -> mean-centered  11.392 (0.26 bits)  mid-centered   8.937 (0.62 bits)  top-mu chans [49, 123, 103, 97]
+  layer 54  K_amax   14.891 -> mean-centered  12.075 (0.29 bits)  mid-centered   9.570 (0.62 bits)  top-mu chans [109, 59, 97, 103]
+  layer 55  K_amax   14.344 -> mean-centered  11.426 (0.33 bits)  mid-centered   9.086 (0.65 bits)  top-mu chans [48, 62, 33, 103]
+  layer 56  K_amax   12.180 -> mean-centered  10.366 (0.21 bits)  mid-centered   8.664 (0.47 bits)  top-mu chans [47, 58, 127, 41]
+  layer 57  K_amax   12.859 -> mean-centered  11.127 (0.18 bits)  mid-centered   8.306 (0.61 bits)  top-mu chans [125, 61, 112, 59]
+  layer 58  K_amax   11.844 -> mean-centered  10.213 (0.21 bits)  mid-centered   8.349 (0.50 bits)  top-mu chans [46, 104, 33, 58]
+  layer 59  K_amax   13.992 -> mean-centered  11.282 (0.30 bits)  mid-centered   9.117 (0.59 bits)  top-mu chans [123, 60, 36, 121]
+  layer 60  K_amax   12.562 -> mean-centered  10.888 (0.21 bits)  mid-centered   8.673 (0.54 bits)  top-mu chans [50, 108, 33, 116]
+  layer 61  K_amax   15.055 -> mean-centered  11.083 (0.44 bits)  mid-centered   9.340 (0.69 bits)  top-mu chans [61, 125, 49, 57]
+  layer 62  K_amax   17.742 -> mean-centered  13.138 (0.39 bits)  mid-centered  10.609 (0.70 bits)  top-mu chans [119, 55, 106, 50]
+  layer 63  K_amax   17.078 -> mean-centered  10.169 (0.76 bits)  mid-centered   8.605 (0.99 bits)  top-mu chans [53, 124, 63, 47]
+LOCKSTEP-PREPARE smoothing {"level": 0, "status": "OFF", "r1": "online", "file": "calib.pt", "sha256": "774f4cc37f19415972a1582918628d2e00c22023beaee0744147e52132e39509", "windows": 16, "tokens": 16384, "calibrated_for": "outliers"}
+LOCKSTEP-PREPARE outliers {"k": 8, "linears": "qkv,gate_up", "status": "ON", "rule": "the k channels of largest per-channel amax of the linear's input over the calibration windows (stock engine; the norm-fed inputs in the unrotated basis, o_proj and down_proj per rank); their bf16 values bypass the rotation and the int8 quant and enter through the epilogue side path (contract v2.5 section 6.6, v2.5.1 for o_proj / down_proj)"}
+LOCKSTEP-CONFIG (legacy LOCKSTEP_PREFILL arming, NOT applied) {"applied": {}, "contract": "v2.5", "decode_16w": 1, "decode_pipelined": 1, "env_plan": {"LOCKSTEP_DEC8_P": "1", "LOCKSTEP_DEC8_W": "1", "LOCKSTEP_FA3": "1", "LOCKSTEP_FA3_DIR": "/root/fa3_b9vareng/hopper", "LOCKSTEP_FA3_GLUE": "/workspace/p2/lssa_fa3glue.so", "LOCKSTEP_FA3_KERNEL": "b8", "LOCKSTEP_KS": "0", "LOCKSTEP_KSR": "up", "LOCKSTEP_LSSAB_SO": "/workspace/p2/lssa_lssab.so", "LOCKSTEP_PREFILL": "lssab", "LOCKSTEP_SINK": "0", "LOCKSTEP_V2": "1", "T16L_ARM": "1", "T16L_FREE_BF16": "1", "T16M_CPP": "1", "T16M_FUSE": "1"}, "fa3_available": true, "fa3_dir": "/root/fa3_b9vareng/hopper", "fa3_glue": "/workspace/p2/lssa_fa3glue.so", "free_bf16": true, "fuse": true, "home": "/workspace/p2", "home_ok": true, "hw": {"cuda": "13.0", "cuda_visible_devices": null, "device_count": 1, "devices": [{"index": 0, "name": "NVIDIA H100 80GB HBM3", "sm": [9, 0]}], "driver_version": "13.0", "gpu": "NVIDIA H100 80GB HBM3", "p2p": [[true]], "probe": "libcuda", "sm": [9, 0], "torch": "2.11.0+cu130"}, "keq_path": null, "kernel_set": "hopper_exact", "lssab_so": "/workspace/p2/lssa_lssab.so", "manifest_compatible": true, "manifest_dir": null, "manifest_model": null, "manifest_tp": null, "mu_kind": "MU_MID", "nccl_env": {}, "p2p_all_pairs": null, "r4_cluster": true, "reasons": ["home=/workspace/p2 (env LOCKSTEP_HOME)", "kernel_set=hopper_exact: NVIDIA H100 80GB HBM3 is sm 9.0 and /workspace/p2/lssa_fa3glue.so + /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so exist", "contract=v2.5: LSSA-B8 for every row (prompt rows on the FA3 b8 seam, generated rows on lsb_dec8p, DEC8_P=1 DEC8_W=1)", "r4_cluster=True (compiled into t16m_kernels.cu, no env knob)", "no manifest (legacy LOCKSTEP_PREFILL arming); fuse=True free_bf16 from env", "world_size=1 (default)", "tp_reduce_mode=1 unused at world=1; no NCCL environment", "sliding_window_ceiling=None (the backend rule: a window >= max_model_len is no window; read from the vLLM config in LockstepAttentionImpl)", "selftest=strict (default)", "attention=LSSA-B8 (manifest attention.rule absent -> B8)"], "refusals": [], "selftest": "strict", "sliding_window_ceiling": null, "tp_reduce_mode": 1, "user_overrides": {"LOCKSTEP_SINK": {"planned": "0", "user": "1"}}, "world_size": 1, "world_source": "default"}
+LOCKSTEP-T13b: scheduler patched for KB=128 chunk alignment
+LOCKSTEP-T16e: attention-metadata hook installed (token role from InputBatch.is_prefilling_np; host seq_lens; no device sync)
+LOCKSTEP-T2 registered as AttentionBackendEnum.CUSTOM
+[t16l] kernels compiled
+[t16l] custom ops registered: t16l::{linear,norm,norm_res,rope,silu,commit}
+T16M: fused kernels compiled
+T14-PLUGIN: LOCKSTEP backend + T16l full stack (T16m fused glue) registered in pid 6869
+INFO 09-09 02:52:32 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 8192, 'gpu_memory_utilization': 0.95, 'max_num_seqs': 8, 'disable_log_stats': True, 'enforce_eager': True, 'attention_backend': 'CUSTOM', 'model': 'Qwen/Qwen2.5-32B-Instruct'}
+WARNING 09-09 02:52:32 [arg_utils.py:1606] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 09-09 02:52:34 [model.py:619] Resolved architecture: Qwen2ForCausalLM
+INFO 09-09 02:52:34 [model.py:1776] Using max model len 8192
+INFO 09-09 02:52:34 [scheduler.py:252] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 09-09 02:52:34 [vllm.py:1042] Asynchronous scheduling is enabled.
+WARNING 09-09 02:52:34 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 09-09 02:52:34 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 09-09 02:52:34 [kernel.py:292] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 09-09 02:52:34 [vllm.py:1322] Cudagraph is disabled under eager mode
+INFO 09-09 02:52:34 [compilation.py:312] Enabled custom fusions: norm_quant, act_quant
+INFO 09-09 02:52:38 [core.py:114] Initializing a V1 LLM engine (v0.25.1) with config: model='Qwen/Qwen2.5-32B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-32B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen2.5-32B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, moe_backend='auto', linear_backend='auto')
+INFO 09-09 02:52:38 [parallel_state.py:1607] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.20.0.2:54991 backend=nccl
+INFO 09-09 02:52:38 [parallel_state.py:1942] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 09-09 02:52:38 [gpu_worker.py:360] Using V2 Model Runner
+INFO 09-09 02:52:39 [model_runner.py:281] Loading model from scratch...
+INFO 09-09 02:52:39 [cuda.py:416] Using AttentionBackendEnum.CUSTOM backend.
+INFO 09-09 02:52:39 [flash_attn.py:718] Using FlashAttention version 3
+LOCKSTEP-T15: LSSA-B ceiling from vLLM config: nd=16384 nseq=8 nblk=64
+INFO 09-09 02:52:41 [weight_utils.py:849] Filesystem type for checkpoints: XFS. Checkpoint size: 61.03 GiB. Available RAM: 1795.48 GiB.
+INFO 09-09 02:52:41 [weight_utils.py:872] Auto-prefetch is disabled because the filesystem (XFS) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/17 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   6% Completed | 1/17 [00:00<00:07,  2.24it/s]
+Loading safetensors checkpoint shards:  12% Completed | 2/17 [00:00<00:06,  2.28it/s]
+Loading safetensors checkpoint shards:  18% Completed | 3/17 [00:01<00:06,  2.27it/s]
+Loading safetensors checkpoint shards:  24% Completed | 4/17 [00:01<00:05,  2.29it/s]
+Loading safetensors checkpoint shards:  29% Completed | 5/17 [00:02<00:05,  2.31it/s]
+Loading safetensors checkpoint shards:  35% Completed | 6/17 [00:02<00:04,  2.30it/s]
+Loading safetensors checkpoint shards:  41% Completed | 7/17 [00:03<00:04,  2.31it/s]
+Loading safetensors checkpoint shards:  47% Completed | 8/17 [00:03<00:03,  2.31it/s]
+Loading safetensors checkpoint shards:  53% Completed | 9/17 [00:03<00:03,  2.33it/s]
+Loading safetensors checkpoint shards:  59% Completed | 10/17 [00:04<00:03,  2.32it/s]
+Loading safetensors checkpoint shards:  65% Completed | 11/17 [00:04<00:02,  2.32it/s]
+Loading safetensors checkpoint shards:  71% Completed | 12/17 [00:05<00:02,  2.34it/s]
+Loading safetensors checkpoint shards:  76% Completed | 13/17 [00:05<00:01,  2.34it/s]
+Loading safetensors checkpoint shards:  82% Completed | 14/17 [00:06<00:01,  2.34it/s]
+Loading safetensors checkpoint shards:  88% Completed | 15/17 [00:06<00:00,  2.32it/s]
+Loading safetensors checkpoint shards:  94% Completed | 16/17 [00:06<00:00,  2.33it/s]
+Loading safetensors checkpoint shards: 100% Completed | 17/17 [00:07<00:00,  2.50it/s]
+Loading safetensors checkpoint shards: 100% Completed | 17/17 [00:07<00:00,  2.35it/s]
+
+INFO 09-09 02:52:48 [default_loader.py:430] Loading weights took 7.24 seconds
+INFO 09-09 02:52:49 [model_runner.py:302] Model loading took 61.04 GiB and 9.758636 seconds
+INFO 09-09 02:52:49 [topk_topp_sampler.py:55] Using FlashInfer for top-p & top-k sampling.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/p2/lockstep_prepare.py", line 951, in <module>
+[rank0]:     sys.exit(main())
+[rank0]:              ^^^^^^
+[rank0]:   File "/workspace/p2/lockstep_prepare.py", line 753, in main
+[rank0]:     llm, load_s = build_engine(args)
+[rank0]:                   ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/p2/lockstep_prepare.py", line 277, in build_engine
+[rank0]:     llm = LLM(model=args.model, attention_backend="CUSTOM", dtype="bfloat16", enforce_eager=True,
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 349, in __init__
+[rank0]:     self.llm_engine = LLMEngine.from_engine_args(
+[rank0]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/engine/llm_engine.py", line 179, in from_engine_args
+[rank0]:     return cls(
+[rank0]:            ^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/engine/llm_engine.py", line 105, in __init__
+[rank0]:     self.engine_core = EngineCoreClient.make_client(
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/engine/core_client.py", line 105, in make_client
+[rank0]:     return InprocClient(vllm_config, executor_class, log_stats)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/engine/core_client.py", line 287, in __init__
+[rank0]:     self.engine_core = EngineCore(*args, **kwargs)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 123, in __init__
+[rank0]:     self.model_executor = executor_class(vllm_config)
+[rank0]:                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/tracing/otel.py", line 178, in sync_wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 109, in __init__
+[rank0]:     self._init_executor()
+[rank0]:   File "/root/v25/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 68, in _init_executor
+[rank0]:     self.driver_worker.load_model()
+[rank0]:   File "/workspace/p2/t16m_stack.py", line 843, in hook
+[rank0]:     out = orig(self, *a, **kw)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/p2/t16l_stack.py", line 1147, in hook
+[rank0]:     counts = arm_model(m)
+[rank0]:              ^^^^^^^^^^^^
+[rank0]:   File "/workspace/p2/t16l_stack.py", line 1042, in arm_model
+[rank0]:     W8, ws = quantize_weight_int8(w.data)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/p2/t16l_stack.py", line 227, in quantize_weight_int8
+[rank0]:     W8 = torch.clamp(torch.round(Wf / ws[:, None]), -127, 127).to(torch.int8).contiguous()
+[rank0]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.05 GiB. GPU 0 has a total capacity of 79.18 GiB of which 734.12 MiB is free. Process 516068 has 78.45 GiB memory in use. Of the allocated memory 75.59 GiB is allocated by PyTorch, and 2.13 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+[rank0]:[W909 02:52:51.902067180 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

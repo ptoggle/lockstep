@@ -1,0 +1,33 @@
+timing build imma0 rc=0
+timing build imma2 rc=0
+=== imma0 PROF=b64_128
+PROF b64_128: step ms (rowmap+prep+dec8, incl. sync) median 0.623 min 0.619  ctas=256 segs=256
+PROF b64_128: per-CTA cycles: wait(cp.async)=522 partials=6647 phase1(chain)=5446 phase2(PV)=3977 prologue=13297 all=35193  chunks/CTA=2.0  timed CTAs=256
+=== imma0 PROF=b64_256
+PROF b64_256: step ms (rowmap+prep+dec8, incl. sync) median 0.636 min 0.633  ctas=256 segs=256
+PROF b64_256: per-CTA cycles: wait(cp.async)=770 partials=10334 phase1(chain)=9530 phase2(PV)=6015 prologue=12581 all=45054  chunks/CTA=3.0  timed CTAs=256
+=== imma0 PROF=b64_512
+PROF b64_512: step ms (rowmap+prep+dec8, incl. sync) median 0.658 min 0.649  ctas=256 segs=256
+PROF b64_512: per-CTA cycles: wait(cp.async)=2311 partials=18743 phase1(chain)=18284 phase2(PV)=10185 prologue=11094 all=67823  chunks/CTA=5.0  timed CTAs=256
+=== imma0 PROF=b1_300
+PROF b1_300: step ms (rowmap+prep+dec8, incl. sync) median 0.196 min 0.185  ctas=4 segs=4
+PROF b1_300: per-CTA cycles: wait(cp.async)=612 partials=8277 phase1(chain)=7888 phase2(PV)=4465 prologue=11142 all=37618  chunks/CTA=3.0  timed CTAs=4
+=== imma0 PROF=b32_2k
+PROF b32_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.429 min 0.411  ctas=128 segs=128
+PROF b32_2k: per-CTA cycles: wait(cp.async)=3988 partials=55108 phase1(chain)=62160 phase2(PV)=26403 prologue=10167 all=167532  chunks/CTA=17.0  timed CTAs=128
+=== imma2 PROF=b64_128
+PROF b64_128: step ms (rowmap+prep+dec8, incl. sync) median 0.625 min 0.621  ctas=256 segs=256
+PROF b64_128: per-CTA cycles: wait(cp.async)=509 partials=6639 phase1(chain)=5415 phase2(PV)=3992 prologue=13552 all=35322  chunks/CTA=2.0  timed CTAs=256
+=== imma2 PROF=b64_256
+PROF b64_256: step ms (rowmap+prep+dec8, incl. sync) median 0.641 min 0.637  ctas=256 segs=256
+PROF b64_256: per-CTA cycles: wait(cp.async)=766 partials=10259 phase1(chain)=9450 phase2(PV)=5991 prologue=12873 all=45163  chunks/CTA=3.0  timed CTAs=256
+=== imma2 PROF=b64_512
+PROF b64_512: step ms (rowmap+prep+dec8, incl. sync) median 0.793 min 0.653  ctas=256 segs=256
+PROF b64_512: per-CTA cycles: wait(cp.async)=1614 partials=17907 phase1(chain)=18065 phase2(PV)=9830 prologue=18398 all=72818  chunks/CTA=5.0  timed CTAs=256
+=== imma2 PROF=b1_300
+PROF b1_300: step ms (rowmap+prep+dec8, incl. sync) median 0.213 min 0.197  ctas=4 segs=4
+PROF b1_300: per-CTA cycles: wait(cp.async)=612 partials=8274 phase1(chain)=7908 phase2(PV)=4471 prologue=11126 all=37549  chunks/CTA=3.0  timed CTAs=4
+=== imma2 PROF=b32_2k
+PROF b32_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.395 min 0.391  ctas=128 segs=128
+PROF b32_2k: per-CTA cycles: wait(cp.async)=4004 partials=55111 phase1(chain)=62121 phase2(PV)=26391 prologue=10535 all=167874  chunks/CTA=17.0  timed CTAs=128
+S7T_DONE Wed Sep  9 21:01:54 UTC 2026

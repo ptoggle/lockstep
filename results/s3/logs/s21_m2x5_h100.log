@@ -1,0 +1,30 @@
+mx gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+mx_gemm E=32 N=5760 K=2880 R=4425 PASS diff=0
+mx_gemm E=32 N=2880 K=2880 R=5405 PASS diff=0
+mx_gemm E=4 N=256 K=64 R=103 PASS diff=0
+mx_gemm E=8 N=512 K=4096 R=44 PASS diff=0
+mx_gemm E=32 N=5760 K=2880 R=13 PASS diff=0
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+TIME N=5760 K=2880 R=8192 mx_gemm(mma)       2.4758 ms  (110 TOPS)
+TIME N=5760 K=2880 R=8192 mx_gemm2(pipe128)  5.3373 ms  (51 TOPS)
+TIME N=5760 K=2880 R=8192 int8 classic gmm   0.4625 ms  (588 TOPS)
+TIME N=5760 K=2880 R=256 gemv2 R=256        2.1519 ms
+TIME N=5760 K=2880 R=256 gemm16 R=256       0.3945 ms
+TIME N=5760 K=2880 R=256 gemm128 R=256      2.1631 ms
+TIME N=5760 K=2880 R=256 int8 gmm R=256     0.1996 ms
+TIME N=5760 K=2880 R=8 mx_gemv R=8        0.1030 ms
+TIME N=5760 K=2880 R=8 mx_gemv2 R=8       0.1105 ms
+TIME N=5760 K=2880 R=8 gemm16 R=8         0.1950 ms
+TIME N=2880 K=2880 R=8192 mx_gemm(mma)       1.2505 ms  (109 TOPS)
+TIME N=2880 K=2880 R=8192 mx_gemm2(pipe128)  2.6804 ms  (51 TOPS)
+TIME N=2880 K=2880 R=8192 int8 classic gmm   0.2281 ms  (596 TOPS)
+TIME N=2880 K=2880 R=256 gemv2 R=256        1.1381 ms
+TIME N=2880 K=2880 R=256 gemm16 R=256       0.2385 ms
+TIME N=2880 K=2880 R=256 gemm128 R=256      1.1995 ms
+TIME N=2880 K=2880 R=256 int8 gmm R=256     0.1041 ms
+TIME N=2880 K=2880 R=8 mx_gemv R=8        0.0751 ms
+TIME N=2880 K=2880 R=8 mx_gemv2 R=8       0.0660 ms
+L0 mx n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 48, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.40310001373291016, "t_fused_s": 205.472393989563}
+M2X5_DONE Thu Sep 10 09:26:37 UTC 2026

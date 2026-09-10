@@ -1,0 +1,21 @@
+=== S3d start Wed Sep  9 16:46:22 UTC 2026
+8b5e76fbadd9d0b74106f5bb0128cc56
+f45f5c610e505b977631763055128b83
+gate(pdl) rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== E1 / E4v2 under PDL=1 (7B)
+spin rc=0
+check rc=0
+[PASS] E1(B9.1, mu ON) PROMPT rows vs lssab9_torch[sink](mu)    rows=151200 bad=0 maxdiff=0.000e+00 (18 sequence-steps)
+[PASS] E4v2(mu ON) GENERATED rows vs lssab9_torch[sink](mu) [contract v2 target] rows=29736 bad=0 maxdiff=0.000e+00 (1062 sequence-steps)
+=== E6 under PDL=1 (7B)
+e6 full rc=0
+e6 eager rc=0
+E6 full==eager True
+S3D qwen25_7b    lmprep+pdl0  p128_b1=0.891  p2048_b1=1.020  p8192_b1=1.076  dec_b1=0.941  dec_b8=0.929  dec_b32=0.854
+S3D qwen25_7b    lmprep+pdl1  p128_b1=0.871  p2048_b1=1.032  p8192_b1=1.090  dec_b1=0.983  dec_b8=0.943  dec_b32=0.847
+S3D qwen25_3b    lmprep+pdl0  p128_b1=0.725  p2048_b1=0.797  p8192_b1=0.855  dec_b1=0.706  dec_b8=0.623  dec_b32=0.627
+S3D qwen25_3b    lmprep+pdl1  p128_b1=0.701  p2048_b1=0.803  p8192_b1=0.876  dec_b1=0.738  dec_b8=0.618  dec_b32=0.597
+S3D qwen25_1p5b  lmprep+pdl0  p128_b1=0.613  p2048_b1=0.725  p8192_b1=0.736  dec_b1=0.561  dec_b8=0.521  dec_b32=0.525
+S3D qwen25_1p5b  lmprep+pdl1  p128_b1=0.599  p2048_b1=0.745  p8192_b1=0.763  dec_b1=0.618  dec_b8=0.520  dec_b32=0.503
+S3D_DONE Wed Sep  9 17:09:42 UTC 2026

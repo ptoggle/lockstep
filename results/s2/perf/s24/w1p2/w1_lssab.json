@@ -1,0 +1,223 @@
+{
+ "stack": "lssab",
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "requests": 128,
+ "prompt_tokens": 12594,
+ "output_tokens": 25070,
+ "wall_s": 5.473792143166065,
+ "gpu_ms": 3931.4587830000414,
+ "categories_ms": {
+  "decode kernel (lsb_dec8*)": 605.537876000013,
+  "seam glue (gather/plan/rowmap/prep/compact)": 95.8182130000001,
+  "attention (FA3: stock, or the LSSA-B8 seam for prompt rows)": 50.67408799999174,
+  "linears int8 (cuBLASLt sm80 CUTLASS via _int_mm, vLLM cutlass_3x)": 2084.250410000014,
+  "linears bf16 (cuBLAS nvjet)": 0.0,
+  "fused stack kernels (t16m)": 989.713518000005,
+  "norm/rope/act (stock)": 0.0,
+  "sampling / misc torch": 26.408602000014803,
+  "memcpy/memset": 5.671830999999257,
+  "other": 73.38424500000282
+ },
+ "top_kernels": [
+  {
+   "ms": 979.32,
+   "count": 14346,
+   "name": "void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_80_tensorop_i16832gemm_s8_128x6"
+  },
+  {
+   "ms": 904.61,
+   "count": 41496,
+   "name": "void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_64x64_128x6_tn_align16>(cutlass_80_tensorop_i16832gemm_s8_64x64_"
+  },
+  {
+   "ms": 605.54,
+   "count": 14364,
+   "name": "lsb::lsb_dec8p(lsb::LsbDev)"
+  },
+  {
+   "ms": 351.04,
+   "count": 37212,
+   "name": "r4quant_s_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __nv_bfloat16*)"
+  },
+  {
+   "ms": 236.65,
+   "count": 14364,
+   "name": "void deqsilu_t_k<4, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long long const*, __nv_bfloat16*, l"
+  },
+  {
+   "ms": 194.05,
+   "count": 2016,
+   "name": "void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::c3x::ScaledEpilogue, cute::tup"
+  },
+  {
+   "ms": 183.96,
+   "count": 28112,
+   "name": "void normquant_k<512, 7>(__nv_bfloat16 const*, int const*, float const*, float const*, float const*, __nv_bfloat16 const"
+  },
+  {
+   "ms": 89.95,
+   "count": 14364,
+   "name": "void deqrope_t_k<4, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float const*, long long const*, flo"
+  },
+  {
+   "ms": 51.81,
+   "count": 514,
+   "name": "lsb::lsb_rowmap(lsb::LsbDev, unsigned long long, unsigned long long, unsigned long long, unsigned long long, int, long l"
+  },
+  {
+   "ms": 45.56,
+   "count": 1120,
+   "name": "void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<c"
+  },
+  {
+   "ms": 41.08,
+   "count": 14392,
+   "name": "void rowquant_k<256, 14>(__nv_bfloat16 const*, signed char*, float*, int)"
+  },
+  {
+   "ms": 37.82,
+   "count": 1120,
+   "name": "lsb::lsb_prep(lsb::LsbDev)"
+  },
+  {
+   "ms": 29.83,
+   "count": 4536,
+   "name": "r4quant_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __nv_bfloat16*)"
+  },
+  {
+   "ms": 29.58,
+   "count": 13832,
+   "name": "deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int, __nv_bfloat16 const*, __nv_b"
+  },
+  {
+   "ms": 26.66,
+   "count": 514,
+   "name": "lmcomb_k(int const*, int const*, int const*, int const*, int, int, int, int, int, long long, long long, long long, long "
+  },
+  {
+   "ms": 23.67,
+   "count": 514,
+   "name": "_gumbel_sample_kernel"
+  },
+  {
+   "ms": 15.37,
+   "count": 672,
+   "name": "void normquant_k<256, 14>(__nv_bfloat16 const*, int const*, float const*, float const*, float const*, __nv_bfloat16 cons"
+  },
+  {
+   "ms": 11.98,
+   "count": 514,
+   "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}:"
+  },
+  {
+   "ms": 8.81,
+   "count": 672,
+   "name": "r4quant_w_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __nv_bfloat16*)"
+  },
+  {
+   "ms": 6.27,
+   "count": 224,
+   "name": "void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::c3x::ScaledEpilogue, cute::tup"
+  },
+  {
+   "ms": 6.19,
+   "count": 1120,
+   "name": "fg_gather(FgArgs)"
+  },
+  {
+   "ms": 5.48,
+   "count": 756,
+   "name": "void r4_cl_k<false>(int const*, __nv_bfloat16 const*, float const*, float const*, long long const*, signed char*, float*"
+  },
+  {
+   "ms": 4.07,
+   "count": 1120,
+   "name": "void flash::prepare_varlen_num_blocks_kernel<1, true>(int, int, int, int const*, int const*, int const*, int const*, int"
+  },
+  {
+   "ms": 3.24,
+   "count": 514,
+   "name": "void dynnorm_k<256, 14>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, int const*, int const*, float, __nv_"
+  },
+  {
+   "ms": 3.19,
+   "count": 1120,
+   "name": "fg_aux(FgArgs)"
+  },
+  {
+   "ms": 2.68,
+   "count": 514,
+   "name": "_gather_block_tables_kernel"
+  },
+  {
+   "ms": 2.6,
+   "count": 571,
+   "name": "_apply_write_kernel"
+  },
+  {
+   "ms": 2.48,
+   "count": 514,
+   "name": "_combine_sampled_and_draft_tokens_kernel"
+  },
+  {
+   "ms": 2.46,
+   "count": 514,
+   "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, "
+  },
+  {
+   "ms": 2.43,
+   "count": 514,
+   "name": "_get_num_sampled_and_rejected_kernel"
+  },
+  {
+   "ms": 2.36,
+   "count": 1028,
+   "name": "Memcpy DtoH (Device -> Pinned)"
+  },
+  {
+   "ms": 2.16,
+   "count": 514,
+   "name": "void t16mc::lm_prep_k<__nv_bfloat16>(__nv_bfloat16 const*, signed char*, float*, int, int, int, float)"
+  },
+  {
+   "ms": 2.0,
+   "count": 1001,
+   "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)"
+  },
+  {
+   "ms": 1.96,
+   "count": 1623,
+   "name": "Memcpy HtoD (Pinned -> Device)"
+  },
+  {
+   "ms": 1.86,
+   "count": 514,
+   "name": "_post_update_kernel"
+  },
+  {
+   "ms": 1.64,
+   "count": 1502,
+   "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native"
+  },
+  {
+   "ms": 1.39,
+   "count": 514,
+   "name": "_compute_slot_mappings_kernel"
+  },
+  {
+   "ms": 1.28,
+   "count": 514,
+   "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native:"
+  },
+  {
+   "ms": 1.03,
+   "count": 514,
+   "name": "void at::native::_scatter_gather_elementwise_kernel<128, 8, at::native::_cuda_scatter_gather_internal_kernel<false, at::"
+  },
+  {
+   "ms": 1.02,
+   "count": 514,
+   "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native:"
+  }
+ ]
+}

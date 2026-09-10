@@ -1,0 +1,13 @@
+L0 mx n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 48, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.4202103614807129, "t_fused_s": 327.5569677352905}
+bench rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 190.33504079272157, "decode_b8_tps": 524.1533785756197, "decode_b32_tps": 1521.2391290122434, "ttft_2048_ms": 107.04398155212402, "ttft_8192_ms": 375.7004737854004, "moe_calls": 5016}
+served moe rc=0
+(EngineCore pid=1487849) LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=0, mx=1, grouped=1)
+Successful requests:                     500       
+Request throughput (req/s):              10.32     
+Output token throughput (tok/s):         2060.45   
+Median TTFT (ms):                        15707.72  
+Median TPOT (ms):                        25.40     
+P99 TPOT (ms):                           38.99     
+M2E6_DONE Thu Sep 10 10:57:37 UTC 2026

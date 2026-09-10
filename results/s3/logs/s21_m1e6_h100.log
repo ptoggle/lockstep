@@ -1,0 +1,5 @@
+s21_m1e6_h100.sh: line 8: 1393718 Aborted                 env "$@" MODE=bench ARM=1 GROUPED=1 EAGER=0 GMU=0.85 MODEL=Qwen/Qwen3-30B-A3B timeout 3000 python moe_engine.py > $H/engine_$tag.log 2>&1
+g1_split2 rc=134
+[rank0]: torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+[rank0]:[W910 03:35:38.160977986 CUDAEvent.h:57] Warning: CUDA warning: an illegal memory access was encountered (function ~CUDAEvent)
+M1E6_DONE Thu Sep 10 03:35:44 UTC 2026

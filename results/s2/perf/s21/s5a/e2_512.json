@@ -1,0 +1,93 @@
+{
+ "stack": "lssab",
+ "fs": false,
+ "mnbt": 512,
+ "eager": true,
+ "cgmode": null,
+ "plen": 1000,
+ "nprompt": 2,
+ "gen": 8,
+ "boot_s": 32.48514008522034,
+ "ids": [
+  [
+   198,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338
+  ],
+  [
+   198,
+   220,
+   16,
+   13,
+   220,
+   14880,
+   44063,
+   104120
+  ]
+ ],
+ "ids_repeat": [
+  [
+   198,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338
+  ],
+  [
+   198,
+   220,
+   16,
+   13,
+   220,
+   14880,
+   44063,
+   104120
+  ]
+ ],
+ "ids_alone": [
+  [
+   198,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338,
+   9338
+  ],
+  [
+   198,
+   220,
+   16,
+   13,
+   220,
+   14880,
+   44063,
+   104120
+  ]
+ ],
+ "self_consistent": true,
+ "alone_eq_batched": true,
+ "counters": {
+  "tiles": 12992,
+  "tiles_dead": 0,
+  "ctas": 12992,
+  "vsh_max": 0,
+  "vsh_violations": 0,
+  "shadow_exhausted": 0,
+  "shadow_evicted": 0,
+  "prep_grid_short": 0,
+  "prep_incr_same": 7803,
+  "prep_incr_requant": 485
+ },
+ "launches_layer": 4732,
+ "launches_step": 45
+}

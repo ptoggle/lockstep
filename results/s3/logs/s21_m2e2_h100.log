@@ -1,0 +1,5 @@
+gptoss_bench_fused2 rc=0
+LOCKSTEP_MOE: install() pid=1445075 patched GPUModelRunner.load_model (grouped=1)
+LOCKSTEP_MOE: load_model hook pid=1445075 - arming
+LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=64, mx=0, grouped=1)
+M2E2_DONE Thu Sep 10 07:35:22 UTC 2026

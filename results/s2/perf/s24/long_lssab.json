@@ -1,0 +1,76 @@
+{
+ "stack": "lssab",
+ "model": "/workspace/p2/qwen1m_dense",
+ "maxlen": 270336,
+ "mnbt": 8192,
+ "gmu": 0.9,
+ "eager": false,
+ "cgmode": "FULL_AND_PIECEWISE",
+ "boot_s": 20.2,
+ "kv_cache_tokens": "1,035,632",
+ "kv_cache_gib": "55.31",
+ "max_concurrency": "Maximum concurrency for 270,336 tokens per request: 3.83x",
+ "rows": [
+  {
+   "metric": "ttft_p32768_b1",
+   "plen": 32768,
+   "ttft_ms": 1120.7483522593975,
+   "samples": [
+    1120.21,
+    1120.75,
+    1129.41
+   ]
+  },
+  {
+   "metric": "ttft_p65536_b1",
+   "plen": 65536,
+   "ttft_ms": 3177.510190755129,
+   "samples": [
+    3177.34,
+    3182.89,
+    3177.51
+   ]
+  },
+  {
+   "metric": "ttft_p131072_b1",
+   "plen": 131072,
+   "ttft_ms": 10062.284708023071,
+   "samples": [
+    10061.32,
+    10063.43,
+    10062.28
+   ]
+  },
+  {
+   "metric": "ttft_p262144_b1",
+   "plen": 262144,
+   "ttft_ms": 34921.71398550272,
+   "samples": [
+    34905.72,
+    34921.71,
+    34929.0
+   ]
+  },
+  {
+   "metric": "decode_p131072_b1",
+   "plen": 131072,
+   "bs": 1,
+   "tok_s": 127.09341149839864,
+   "ngen1": 32,
+   "ngen2": 40,
+   "method": "slope (prefill cancelled)"
+  }
+ ],
+ "fa3": {
+  "name": "lssab-b8-1launch-varlen-b9sink",
+  "errflags": [
+   0,
+   1003819024,
+   -878641152,
+   0
+  ],
+  "ktok": 262144,
+  "varlen": true,
+  "seq_launches": 11564
+ }
+}

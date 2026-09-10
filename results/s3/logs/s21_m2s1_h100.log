@@ -1,0 +1,24 @@
+stock rc=0
+Successful requests:                     500       
+Request throughput (req/s):              19.15     
+Output token throughput (tok/s):         3820.86   
+Median TTFT (ms):                        14246.38  
+Median TPOT (ms):                        8.91      
+P99 TPOT (ms):                           113.26    
+moe rc=0
+--- trace
+LOCKSTEP plugin register() pid=1463812 file=/workspace/p2/lockstep_vllm_plugin.py LOCKSTEP_MOE='1' registered=False
+LOCKSTEP_MOE: install() pid=1463812 patched GPUModelRunner.load_model (grouped=1)
+(EngineCore pid=1464169) LOCKSTEP plugin register() pid=1464169 file=/workspace/p2/lockstep_vllm_plugin.py LOCKSTEP_MOE='1' registered=False
+(EngineCore pid=1464169) LOCKSTEP_MOE: install() pid=1464169 patched GPUModelRunner.load_model (grouped=1)
+(EngineCore pid=1464169) LOCKSTEP_MOE: load_model hook pid=1464169 - arming
+(EngineCore pid=1464169) LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=0, mx=1, grouped=1)
+--- markers
+armed_1464169.json
+Successful requests:                     500       
+Request throughput (req/s):              3.08      
+Output token throughput (tok/s):         615.55    
+Median TTFT (ms):                        49590.40  
+Median TPOT (ms):                        83.91     
+P99 TPOT (ms):                           101.85    
+M2S1_DONE Thu Sep 10 09:10:31 UTC 2026

@@ -1,0 +1,54 @@
+mx gate rc=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+mx_gemm E=32 N=5760 K=2880 R=4425 PASS diff=0
+mx_gemm E=32 N=2880 K=2880 R=5405 PASS diff=0
+mx_gemm E=4 N=256 K=64 R=103 PASS diff=0
+mx_gemm E=8 N=512 K=4096 R=44 PASS diff=0
+mx_gemm E=32 N=5760 K=2880 R=13 PASS diff=0
+T16MOE_MX_GEMM GATE: 5 PASS / 0 FAIL
+TIME N=5760 K=2880 R=8192 mx_gemm(mma)       2.3534 ms  (115 TOPS)
+TIME N=5760 K=2880 R=8192 mx_gemm2(pipe128)  4.2837 ms  (63 TOPS)
+TIME N=5760 K=2880 R=8192 int8 classic gmm   0.4620 ms  (588 TOPS)
+TIME N=5760 K=2880 R=256 gemv2 R=256        1.9659 ms
+TIME N=5760 K=2880 R=256 gemm16 R=256       0.3561 ms
+TIME N=5760 K=2880 R=256 gemm128 R=256      1.7481 ms
+TIME N=5760 K=2880 R=256 int8 gmm R=256     0.1997 ms
+TIME N=5760 K=2880 R=8 mx_gemv R=8        0.0925 ms
+TIME N=5760 K=2880 R=8 mx_gemv2 R=8       0.1056 ms
+TIME N=5760 K=2880 R=8 gemm16 R=8         0.2011 ms
+TIME N=2880 K=2880 R=8192 mx_gemm(mma)       1.1962 ms  (114 TOPS)
+TIME N=2880 K=2880 R=8192 mx_gemm2(pipe128)  2.1477 ms  (63 TOPS)
+TIME N=2880 K=2880 R=8192 int8 classic gmm   0.2287 ms  (594 TOPS)
+TIME N=2880 K=2880 R=256 gemv2 R=256        0.9923 ms
+TIME N=2880 K=2880 R=256 gemm16 R=256       0.2105 ms
+TIME N=2880 K=2880 R=256 gemm128 R=256      0.9417 ms
+TIME N=2880 K=2880 R=256 int8 gmm R=256     0.1046 ms
+TIME N=2880 K=2880 R=8 mx_gemv R=8        0.0720 ms
+TIME N=2880 K=2880 R=8 mx_gemv2 R=8       0.0594 ms
+TIME N=2880 K=2880 R=8 gemm16 R=8         0.1694 ms
+L0 mx n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 48, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.4231288433074951, "t_fused_s": 238.93968677520752}
+L0 mx n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 1024, "rot": 0, "mx": 1, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.4399757385253906, "t_fused_s": 1.422079086303711}
+mx prof rc=0
+MXPROF T=   1 R=    4 full 0.1438 ms | gate_route 0.0105 dispatch 0.0053 up(gemv2) 0.0521 act 0.0073 down 0.0342 combine 0.0047 | up alternatives: gemv2=0.0517 gemm16=0.1857 gemm128=0.3180
+MXPROF T=   8 R=   32 full 0.4142 ms | gate_route 0.0104 dispatch 0.0052 up(gemv2) 0.3023 act 0.0074 down 0.1655 combine 0.0048 | up alternatives: gemv2=0.3020 gemm16=0.2090 gemm128=0.9401
+MXPROF T=  32 R=  128 full 0.5254 ms | gate_route 0.0106 dispatch 0.0053 up(gemm2) 0.2918 act 0.0075 down 0.2069 combine 0.0047 | up alternatives: gemv2=1.0088 gemm16=0.2918 gemm128=1.4553
+MXPROF T=  64 R=  256 full 0.5687 ms | gate_route 0.0110 dispatch 0.0059 up(gemm2) 0.3267 act 0.0088 down 0.2134 combine 0.0050 | up alternatives: gemv2=1.9598 gemm16=0.3269 gemm128=1.5456
+MXPROF T= 256 R= 1024 full 2.5290 ms | gate_route 0.0178 dispatch 0.0108 up(gemm2) 1.5281 act 0.0242 down 0.9118 combine 0.0049 | up alternatives: gemv2=7.4451 gemm16=0.7968 gemm128=1.5745
+MXPREFIX T=   1 forward 0.1396 | gate_route=0.0104 +idx64=0.0123 +dispatch=0.0163 +mx up=0.0807 +act=0.0854 +contig=0.0856 +mx down=0.1363 +combine=0.1396
+MXPREFIX T=   8 forward 0.4124 | gate_route=0.0102 +idx64=0.0120 +dispatch=0.0163 +mx up=0.2207 +act=0.2263 +contig=0.2269 +mx down=0.4094 +combine=0.4069
+MXPREFIX T=  32 forward 0.5360 | gate_route=0.0109 +idx64=0.0125 +dispatch=0.0167 +mx up=0.3150 +act=0.3220 +contig=0.3224 +mx down=0.5302 +combine=0.5356
+MXPREFIX T=  64 forward 0.6282 | gate_route=0.0110 +idx64=0.0130 +dispatch=0.0188 +mx up=0.4023 +act=0.4102 +contig=0.4104 +mx down=0.6209 +combine=0.6266
+MXPREFIX T= 256 forward 2.6980 | gate_route=0.0186 +idx64=0.0214 +dispatch=0.0318 +mx up=1.8080 +act=1.7836 +contig=1.7770 +mx down=2.6909 +combine=2.6973
+bench rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 187.62604442319602, "decode_b8_tps": 620.9277665397912, "decode_b32_tps": 1934.7824886436244, "ttft_2048_ms": 181.03647232055664, "ttft_8192_ms": 604.4557094573975, "moe_calls": 5016}
+served moe rc=0
+(EngineCore pid=1480551) LOCKSTEP_MOE: armed 24 GPT-OSS MoE layers at model load (blk=0, mx=1, grouped=1)
+Successful requests:                     500       
+Request throughput (req/s):              10.18     
+Output token throughput (tok/s):         2030.70   
+Median TTFT (ms):                        18186.30  
+Median TPOT (ms):                        27.59     
+P99 TPOT (ms):                           71.34     
+M2X8_DONE Thu Sep 10 10:28:17 UTC 2026

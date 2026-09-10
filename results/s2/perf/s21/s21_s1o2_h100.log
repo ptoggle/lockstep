@@ -1,0 +1,61 @@
+=== 7b T16M_NQ256=256 T16M_R4S=32
+rc=0
+M=64
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.22}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 10.48}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 9.52}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.12}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.65}
+M=128
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.31}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 10.56}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 13.67}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.27}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 5.02}
+M=256
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 7.87}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 15.01}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 27.72}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.02}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 7.86}
+=== 7b T16M_NQ256=64 T16M_R4S=32
+rc=0
+M=64
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 5.68}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 10.49}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 9.53}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.12}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.65}
+M=128
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 5.87}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 10.56}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 13.6}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.31}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 5.0}
+M=256
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 7.73}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 15.01}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 27.78}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.05}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 7.82}
+=== 7b T16M_NQ256=256 T16M_R4S=256
+rc=0
+M=64
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.2}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 9.63}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 9.5}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.13}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 4.66}
+M=128
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.3}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 12.64}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 13.64}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.26}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 5.02}
+M=256
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 7.81}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 14.99}
+   deq_silu(tiled)            {'void deqsilu_t_k<8, 0>(int const*, __nv_': 27.93}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.05}
+   stock silu_and_mul         {'void vllm::act_and_mul_kernel<c10::BFloa': 7.84}
+S1O2_DONE Wed Sep  9 15:05:58 UTC 2026

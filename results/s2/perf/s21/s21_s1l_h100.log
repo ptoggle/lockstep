@@ -1,0 +1,82 @@
+=== S1l start Wed Sep  9 13:24:11 UTC 2026
+430ff5b8d5f43f352276a6ed46bf28e1
+=== norm_quant H=1536 T16M_NQ256=64
+M=16
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.69}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.83}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.97}
+M=64
+   norm_quant(x+res)          {'void normquant_k<256, 6>(__nv_bfloat16 c': 3.9}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 6.93}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.97}
+M=256
+   norm_quant(x+res)          {'void normquant_k<256, 6>(__nv_bfloat16 c': 4.92}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 8.22}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.1}
+M=2048
+   norm_quant(x+res)          {'void normquant_k<256, 6>(__nv_bfloat16 c': 20.43}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 41.18}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 6.01}
+=== norm_quant H=3584 T16M_NQ256=64
+M=16
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.18}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 6.35}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.11}
+M=64
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 5.75}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 9.9}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.11}
+M=256
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 7.69}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 14.99}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.03}
+M=2048
+   norm_quant(x+res)          {'void normquant_k<256, 14>(__nv_bfloat16 ': 42.97}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 95.05}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 12.7}
+=== norm_quant H=1536 T16M_NQ256=0
+M=16
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.69}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 5.8}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.96}
+M=64
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 3.7}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 6.96}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 1.96}
+M=256
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 4.97}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 8.23}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.1}
+M=2048
+   norm_quant(x+res)          {'void normquant_k<512, 3>(__nv_bfloat16 c': 27.54}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 41.2}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 6.0}
+=== norm_quant H=3584 T16M_NQ256=0
+M=16
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.2}
+   r4quant_pad                {'void r4_cl_k<false>(int const*, __nv_bfl': 6.41}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.12}
+M=64
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 5.26}
+   r4quant_pad                {'r4quant_k(__nv_bfloat16 const*, signed c': 9.85}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 2.12}
+M=256
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 7.6}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 15.0}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 3.01}
+M=2048
+   norm_quant(x+res)          {'void normquant_k<512, 7>(__nv_bfloat16 c': 48.66}
+   r4quant_pad                {'r4quant_s_k(__nv_bfloat16 const*, signed': 95.06}
+   stock fused_add_rms_norm   {'std::enable_if<(((8)>(0)))&&vllm::_typeC': 12.69}
+=== E1 / E4v2 on the 7B manifest (every kept kernel on)
+spin rc=0
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_sc
+T16L armed_from_manifest {"norm": 57, "rope": 1, "linear": 112, "silu": 28, "logits": 1, "commit": 0}
+check rc=0
+[PASS] E1(B9.1, mu ON) PROMPT rows vs lssab9_torch[sink](mu)    rows=151200 bad=0 maxdiff=0.000e+00 (18 sequence-steps)
+[PASS] E4v2(mu ON) GENERATED rows vs lssab9_torch[sink](mu) [contract v2 target] rows=29736 bad=0 maxdiff=0.000e+00 (1062 sequence-steps)
+=== E6 full graphs == eager (7B)
+e6 full rc=0
+e6 eager rc=0
+E6 full==eager True -> PASS
+S1L_DONE Wed Sep  9 13:34:07 UTC 2026

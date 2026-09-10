@@ -1,0 +1,7 @@
+timer_mx rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 88.91329316643868, "decode_b32_tps": 1074.6824398054398, "moe_calls": 3144}
+LOCKSTEP_MOE_TIMER {"1": {"calls": 1488, "mean_ms": 0.18489664405484327, "min_ms": 0.1810240000486374}, "32": {"calls": 1512, "mean_ms": 0.8806570581168183, "min_ms": 0.747871994972229}, "128": {"calls": 48, "mean_ms": 1.0142495974898338, "min_ms": 0.7960960268974304}, "4096": {"calls": 48, "mean_ms": 8.806913614273071, "min_ms": 8.71225643157959}, "16384": {"calls": 48, "mean_ms": 33.8255708694458, "min_ms": 33.74921417236328}}
+timer_int8 rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 1, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 91.44641212220314, "decode_b32_tps": 2324.2812645268687, "moe_calls": 3144}
+LOCKSTEP_MOE_TIMER {"1": {"calls": 1488, "mean_ms": 0.12499911408096352, "min_ms": 0.12163200229406357}, "32": {"calls": 1512, "mean_ms": 0.30966027081012726, "min_ms": 0.254720002412796}, "128": {"calls": 48, "mean_ms": 0.3491759993135929, "min_ms": 0.29286399483680725}, "4096": {"calls": 48, "mean_ms": 2.291032779216766, "min_ms": 2.218111991882324}, "16384": {"calls": 48, "mean_ms": 8.470674443244935, "min_ms": 8.352031707763672}}
+M2E7_DONE Thu Sep 10 11:13:24 UTC 2026

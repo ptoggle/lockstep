@@ -1,0 +1,10 @@
+=== S1h start Wed Sep  9 10:31:49 UTC 2026
+31db242a9501376d3e2f559d2a4dcf18
+gate rc=1
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 2.
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 't16m_kernels': [1/2] /usr/local/cuda/bin/nvcc -MD -MF t16m_kernels.cuda.o.d -DTORCH_EXTENSION_NAME=t16m_kernels -DTORCH_API_INCLUDE_EXTENSION_H -I/workspace/p2 
+/workspace/p2/t16m_kernels.cu(2353): error: identifier "gemv_s8" is undefined
+FAILED: [code=2] t16m_kernels.cuda.o 
+GATE FAILED - stopping
+S1H_DONE (gate fail) Wed Sep  9 10:33:58 UTC 2026

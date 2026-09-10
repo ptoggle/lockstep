@@ -1,0 +1,73 @@
+=== 7b_stock_p128_g1_b1
+DECODE_PROF stock b1 total 6.6 ms, 6.623 ms/token
+    2764.2 us     28 calls   98.72 us/tok/layer  nvjet_sm90_tst_144x128_64x6_2x1_v_bz_TNN
+    1513.9 us     28 calls   54.07 us/tok/layer  nvjet_sm90_tst_112x128_64x7_2x1_v_bz_splitK_TNN
+     460.1 us     28 calls   16.43 us/tok/layer  nvjet_sm90_tst_72x64_64x12_1x2_h_bz_bias_TNN
+     364.5 us      1 calls   13.02 us/tok/layer  nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT
+     364.5 us     28 calls   13.02 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::Col
+     361.6 us     28 calls   12.92 us/tok/layer  nvjet_sm90_tst_64x64_64x13_4x2_h_bz_TNT
+     176.0 us     28 calls    6.29 us/tok/layer  void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_ke
+     152.9 us     56 calls    5.46 us/tok/layer  std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f
+     111.6 us     28 calls    3.98 us/tok/layer  void vllm::rotary_embedding_kernel<c10::BFloat16, c10::BFloat16, true>(long const*, c10::B
+     101.7 us     28 calls    3.63 us/tok/layer  void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+      89.9 us     28 calls    3.21 us/tok/layer  void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128
+      78.1 us     28 calls    2.79 us/tok/layer  void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheD
+      15.3 us      4 calls    0.55 us/tok/layer  _apply_write_kernel
+       8.0 us      3 calls    0.29 us/tok/layer  void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native:
+       6.0 us      1 calls    0.21 us/tok/layer  _gumbel_sample_kernel
+       5.2 us      2 calls    0.19 us/tok/layer  void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso
+=== 7b_lssab_p128_g1_b1
+DECODE_PROF lssab b1 total 8.5 ms, 8.477 ms/token
+    3135.0 us    112 calls  111.97 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+    1318.1 us     28 calls   47.07 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+     863.7 us     28 calls   30.85 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa
+     775.5 us     56 calls   27.70 us/tok/layer  void normquant_k<256, 14>(__nv_bfloat16 const*, int const*, float const*, float const*, fl
+     669.8 us     28 calls   23.92 us/tok/layer  void deqsilu_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long 
+     596.4 us     84 calls   21.30 us/tok/layer  r4quant_s_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __
+     376.2 us      1 calls   13.44 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+     254.4 us     28 calls    9.09 us/tok/layer  void deqrope_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float
+     103.7 us     28 calls    3.70 us/tok/layer  void flash::prepare_varlen_num_blocks_kernel<1, true>(int, int, int, int const*, int const
+      81.5 us     28 calls    2.91 us/tok/layer  fg_gather(FgArgs)
+      80.6 us     28 calls    2.88 us/tok/layer  void rowquant_k<256, 14>(__nv_bfloat16 const*, signed char*, float*, int)
+      78.8 us     28 calls    2.81 us/tok/layer  fg_aux(FgArgs)
+      23.8 us      1 calls    0.85 us/tok/layer  _gumbel_sample_kernel
+      16.4 us      4 calls    0.59 us/tok/layer  _apply_write_kernel
+      13.9 us      6 calls    0.49 us/tok/layer  void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::Tenso
+       7.5 us      3 calls    0.27 us/tok/layer  void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native:
+=== 7b_stock_p300_g64_b8
+DECODE_PROF stock b8 total 429.4 ms, 6.709 ms/token
+  167163.2 us   1764 calls   93.28 us/tok/layer  nvjet_sm90_tst_192x8_64x8_4x1_v_bz_TNT
+   84266.0 us   1764 calls   47.02 us/tok/layer  nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_TNT
+   25388.5 us   1764 calls   14.17 us/tok/layer  nvjet_sm90_tst_64x8_64x16_4x1_v_bz_bias_TNT
+   23338.2 us     64 calls   13.02 us/tok/layer  nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT
+   22655.6 us     28 calls   12.64 us/tok/layer  nvjet_sm90_tst_256x160_64x4_2x1_v_bz_coopA_TNT
+   19672.7 us   1764 calls   10.98 us/tok/layer  nvjet_sm90_tst_64x8_64x16_4x1_v_bz_TNT
+   19122.2 us   1792 calls   10.67 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::Col
+   14493.8 us     56 calls    8.09 us/tok/layer  nvjet_sm90_tst_192x192_64x4_2x1_v_bz_coopB_TNN
+   11928.2 us   1792 calls    6.66 us/tok/layer  void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_ke
+    9696.7 us   3584 calls    5.41 us/tok/layer  std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::BFloat16>::exists, void>::type vllm::f
+    7105.1 us   1764 calls    3.96 us/tok/layer  void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<8>, cute::C<128
+    6103.3 us   1792 calls    3.41 us/tok/layer  void vllm::rotary_embedding_kernel<c10::BFloat16, c10::BFloat16, true>(long const*, c10::B
+    4757.3 us   1764 calls    2.65 us/tok/layer  void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16
+    4416.9 us   1792 calls    2.46 us/tok/layer  void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheD
+    2805.5 us     28 calls    1.57 us/tok/layer  nvjet_sm90_tst_128x224_64x4_2x1_v_bz_coopA_bias_TNT
+    1550.6 us   1884 calls    0.87 us/tok/layer  Memset (Device)
+=== 7b_lssab_p300_g64_b8
+DECODE_PROF lssab b8 total 418.4 ms, 6.538 ms/token
+  115128.8 us   1828 calls   64.25 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_128x64_128x3_tn_align16>(cutlass_8
+  110298.1 us   5292 calls   61.55 us/tok/layer  void cutlass::Kernel2<cutlass_80_tensorop_i16832gemm_s8_64x64_128x6_tn_align16>(cutlass_80
+   42051.3 us   1764 calls   23.47 us/tok/layer  lsb::lsb_dec8p(lsb::LsbDev)
+   30926.3 us    112 calls   17.26 us/tok/layer  void cutlass::device_kernel<vllm::cutlass_3x_gemm<signed char, cutlass::bfloat16_t, vllm::
+   24089.6 us   3528 calls   13.44 us/tok/layer  void normquant_k<512, 7>(__nv_bfloat16 const*, int const*, float const*, float const*, flo
+   22993.6 us   1792 calls   12.83 us/tok/layer  void deqsilu_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, long 
+   19657.3 us   3528 calls   10.97 us/tok/layer  r4quant_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __nv
+   12946.8 us   1792 calls    7.22 us/tok/layer  void deqrope_t_k<8, 8>(int const*, __nv_bfloat16 const*, float const*, float const*, float
+   10662.3 us   1764 calls    5.95 us/tok/layer  void r4_cl_k<false>(int const*, __nv_bfloat16 const*, float const*, float const*, long lon
+    4851.0 us     84 calls    2.71 us/tok/layer  r4quant_s_k(__nv_bfloat16 const*, signed char*, float*, int, int, int, int const*, int, __
+    4138.1 us   1792 calls    2.31 us/tok/layer  void rowquant_k<256, 14>(__nv_bfloat16 const*, signed char*, float*, int)
+    3227.3 us   1764 calls    1.80 us/tok/layer  deq_k(int const*, float const*, float const*, float const*, __nv_bfloat16*, long long, int
+    2944.9 us     56 calls    1.64 us/tok/layer  void normquant_k<256, 14>(__nv_bfloat16 const*, int const*, float const*, float const*, fl
+    2690.3 us     28 calls    1.50 us/tok/layer  void cutlass::device_kernel<flash::enable_sm90<flash::FlashAttnFwdSm90<flash::CollectiveMa
+    2237.4 us     28 calls    1.25 us/tok/layer  lsb::lsb_prep(lsb::LsbDev)
+    1557.4 us     64 calls    0.87 us/tok/layer  lsb::lsb_rowmap(lsb::LsbDev, unsigned long long, unsigned long long, unsigned long long, u
+P128_DONE Wed Sep  9 14:12:40 UTC 2026

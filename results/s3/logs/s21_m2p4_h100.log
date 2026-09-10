@@ -1,0 +1,4 @@
+mx rc=0
+MOE_ARM2 layers=24 rot=0 mx=1
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "fmt": "chat", "armed": 1, "rot": 0, "mx": 1, "armed_layers": 24, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 14.79047558525601, "gen_s": 223.3178882598877, "moe_calls": 792}
+M2P4_DONE Thu Sep 10 07:53:32 UTC 2026

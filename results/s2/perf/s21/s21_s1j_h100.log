@@ -1,0 +1,62 @@
+=== S1j start Wed Sep  9 12:56:49 UTC 2026
+430ff5b8d5f43f352276a6ed46bf28e1
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== gemv v2 probe
+GEMV 1.5B qkv      K=1536  N=2048  M=1  int_mm    5.35 us (  588 GB/s)  gemv    2.65 us ( 1187 GB/s)  equal=True
+GEMV 1.5B qkv      K=1536  N=2048  M=2  int_mm    5.34 us (  589 GB/s)  gemv    2.95 us ( 1066 GB/s)  equal=True
+GEMV 1.5B qkv      K=1536  N=2048  M=4  int_mm    5.35 us (  588 GB/s)  gemv    4.01 us (  784 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=1  int_mm    5.34 us (  442 GB/s)  gemv    2.57 us (  918 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=2  int_mm    5.32 us (  443 GB/s)  gemv    2.84 us (  831 GB/s)  equal=True
+GEMV 1.5B o        K=1536  N=1536  M=4  int_mm    5.33 us (  443 GB/s)  gemv    3.97 us (  594 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=1  int_mm   12.24 us ( 2249 GB/s)  gemv    6.25 us ( 4404 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=2  int_mm   12.21 us ( 2254 GB/s)  gemv    7.02 us ( 3921 GB/s)  equal=True
+GEMV 1.5B gate_up  K=1536  N=17920 M=4  int_mm   12.20 us ( 2256 GB/s)  gemv   10.13 us ( 2717 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=1  int_mm   20.02 us (  687 GB/s)  gemv    6.33 us ( 2174 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=2  int_mm   20.02 us (  687 GB/s)  gemv    8.70 us ( 1582 GB/s)  equal=True
+GEMV 1.5B down     K=8960  N=1536  M=4  int_mm   20.01 us (  688 GB/s)  gemv   14.91 us (  923 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=1  int_mm    9.46 us ( 1746 GB/s)  gemv    6.58 us ( 2510 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=2  int_mm    9.46 us ( 1746 GB/s)  gemv    6.41 us ( 2576 GB/s)  equal=True
+GEMV 7B   qkv      K=3584  N=4608  M=4  int_mm    9.48 us ( 1742 GB/s)  gemv    8.95 us ( 1845 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=1  int_mm    9.49 us ( 1354 GB/s)  gemv    4.53 us ( 2836 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=2  int_mm    9.49 us ( 1354 GB/s)  gemv    5.55 us ( 2314 GB/s)  equal=True
+GEMV 7B   o        K=3584  N=3584  M=4  int_mm    9.50 us ( 1352 GB/s)  gemv    7.53 us ( 1706 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=1  int_mm   52.11 us ( 2606 GB/s)  gemv   52.99 us ( 2563 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=2  int_mm   51.44 us ( 2640 GB/s)  gemv   51.62 us ( 2631 GB/s)  equal=True
+GEMV 7B   gate_up  K=3584  N=37888 M=4  int_mm   51.28 us ( 2648 GB/s)  gemv   56.37 us ( 2409 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=1  int_mm   40.39 us ( 1681 GB/s)  gemv   35.61 us ( 1907 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=2  int_mm   40.40 us ( 1681 GB/s)  gemv   48.19 us ( 1409 GB/s)  equal=True
+GEMV 7B   down     K=18944 N=3584  M=4  int_mm   40.35 us ( 1683 GB/s)  gemv   59.09 us ( 1149 GB/s)  equal=True
+LOAD 13:02 24.57 21.22 21.82 single qwen25_7b stock
+LOAD 13:03 25.11 22.18 22.09 single qwen25_7b lssab base
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_7b    base         p128_b1=0.745  p2048_b1=0.992  p2048_b8=1.067  p8192_b1=1.091  p32640_b1=0.984  dec_b1=0.930  dec_b8=0.907  dec_b32=0.836
+LOAD 13:06 26.09 24.17 22.89 single qwen25_7b lssab pdl
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_7b    pdl          p128_b1=0.718  p2048_b1=1.015  p2048_b8=1.068  p8192_b1=1.093  p32640_b1=0.983  dec_b1=0.930  dec_b8=0.892  dec_b32=0.822
+LOAD 13:08 24.54 24.99 23.41 single qwen25_7b lssab cl
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_7b    cl           p128_b1=0.762  p2048_b1=1.002  p2048_b8=1.069  p8192_b1=1.089  p32640_b1=0.984  dec_b1=0.884  dec_b8=0.861  dec_b32=0.815
+LOAD 13:10 20.95 23.51 23.06 single qwen25_7b lssab gemv
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_7b    gemv         p128_b1=0.802  p2048_b1=1.030  p2048_b8=1.066  p8192_b1=1.097  p32640_b1=0.984  dec_b1=0.968  dec_b8=0.916  dec_b32=0.839
+LOAD 13:12 24.27 23.78 23.19 single qwen25_7b lssab pdl_cl_gemv
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_7b    pdl_cl_gemv  p128_b1=0.759  p2048_b1=1.014  p2048_b8=1.062  p8192_b1=1.097  p32640_b1=0.985  dec_b1=0.918  dec_b8=0.853  dec_b32=0.824
+LOAD 13:14 26.05 24.38 23.47 single qwen25_1p5b stock
+LOAD 13:15 27.23 25.08 23.76 single qwen25_1p5b lssab base
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_1p5b  base         p128_b1=0.522  p2048_b1=0.699  p2048_b8=0.748  p8192_b1=0.817  p32640_b1=0.797  dec_b1=0.516  dec_b8=0.503  dec_b32=0.497
+LOAD 13:16 27.02 25.44 24.00 single qwen25_1p5b lssab pdl
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_1p5b  pdl          p128_b1=0.499  p2048_b1=0.704  p2048_b8=0.751  p8192_b1=0.827  p32640_b1=0.799  dec_b1=0.493  dec_b8=0.499  dec_b32=0.479
+LOAD 13:18 27.80 26.38 24.50 single qwen25_1p5b lssab cl
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_1p5b  cl           p128_b1=0.524  p2048_b1=0.697  p2048_b8=0.746  p8192_b1=0.826  p32640_b1=0.792  dec_b1=0.473  dec_b8=0.470  dec_b32=0.495
+LOAD 13:19 25.24 25.85 24.51 single qwen25_1p5b lssab gemv
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_1p5b  gemv         p128_b1=0.560  p2048_b1=0.761  p2048_b8=0.772  p8192_b1=0.853  p32640_b1=0.806  dec_b1=0.586  dec_b8=0.506  dec_b32=0.491
+LOAD 13:21 34.31 28.49 25.57 single qwen25_1p5b lssab pdl_cl_gemv
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+S1J qwen25_1p5b  pdl_cl_gemv  p128_b1=0.535  p2048_b1=0.709  p2048_b8=0.752  p8192_b1=0.824  p32640_b1=0.795  dec_b1=0.529  dec_b8=0.454  dec_b32=0.487
+S1J_DONE Wed Sep  9 13:23:27 UTC 2026

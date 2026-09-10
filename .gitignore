@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.lake/
+conformance/xarch26/inputs.npz
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.xdv
+.venv/

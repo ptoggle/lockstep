@@ -1,0 +1,6 @@
+target alone rc=0
+ncu rc=1
+==PROF== Connected to process 1485571 (/usr/bin/python3.11)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling pe
+==PROF== Disconnected from process 1485571
+M2N1_DONE Thu Sep 10 10:43:50 UTC 2026

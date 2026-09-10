@@ -1,0 +1,12 @@
+[
+ {
+  "gate": "E1(B9.1, mu ON) PROMPT rows vs lssab9_torch[sink](mu)",
+  "pass": true,
+  "detail": "rows=151200 bad=0 maxdiff=0.000e+00 (18 sequence-steps)"
+ },
+ {
+  "gate": "E4v2(mu ON) GENERATED rows vs lssab9_torch[sink](mu) [contract v2 target]",
+  "pass": true,
+  "detail": "rows=29736 bad=0 maxdiff=0.000e+00 (1062 sequence-steps)"
+ }
+]

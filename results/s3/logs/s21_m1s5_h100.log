@@ -1,0 +1,17 @@
+stock rc=0
+markers: 0
+Successful requests:                     500       
+Request throughput (req/s):              10.97     
+Output token throughput (tok/s):         2230.18   
+Median TTFT (ms):                        15044.60  
+Median TPOT (ms):                        23.83     
+P99 TPOT (ms):                           30.88     
+moe rc=0
+markers: 1
+Successful requests:                     500       
+Request throughput (req/s):              14.54     
+Output token throughput (tok/s):         2956.28   
+Median TTFT (ms):                        11025.82  
+Median TPOT (ms):                        17.33     
+P99 TPOT (ms):                           22.93     
+M1S5_DONE Thu Sep 10 09:35:17 UTC 2026

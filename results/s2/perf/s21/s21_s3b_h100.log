@@ -1,0 +1,12 @@
+=== S3b start Wed Sep  9 15:57:32 UTC 2026
+80143f2f89283c4f5abebd2a4727734b
+gate rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+=== the gate under T16M_PDL=1 (the same kernels launched with the attribute)
+gate(pdl) rc=0
+T16M_KERNELS PASS cases=1186 bad=0
+S3B qwen25_7b    pdl0  p128_b1=0.892  p2048_b1=0.996  dec_b1=0.934  dec_b8=0.922  dec_b32=0.840
+S3B qwen25_7b    pdl1  p128_b1=0.873  p2048_b1=1.011  dec_b1=0.977  dec_b8=0.931  dec_b32=0.850
+S3B qwen25_1p5b  pdl0  p128_b1=0.591  p2048_b1=0.689  dec_b1=0.576  dec_b8=0.513  dec_b32=0.529
+S3B qwen25_1p5b  pdl1  p128_b1=0.571  p2048_b1=0.692  dec_b1=0.616  dec_b8=0.521  dec_b32=0.506
+S3B_DONE Wed Sep  9 16:11:13 UTC 2026

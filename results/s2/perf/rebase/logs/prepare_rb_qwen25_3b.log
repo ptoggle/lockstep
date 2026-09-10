@@ -1,0 +1,139 @@
+/root/v25/lib/python3.11/site-packages/huggingface_hub/constants.py:299: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+LOCKSTEP-ENVELOPE OK {"facts": {"architecture": "Qwen2ForCausalLM", "architectures": ["Qwen2ForCausalLM"], "head_dim": 128, "head_dim_from": "hidden_size // num_attention_heads", "heads": 16, "hidden": 2048, "hidden_act": "silu", "intermediate": 11008, "kv_heads": 2, "layers": 36, "max_model_len": 32768, "max_position": 32768, "model_type": "qwen2", "moe": null, "qk_norm": false, "quantization": null, "rope_theta": null, "rope_type": "default", "tied": true, "torch_dtype": "torch.bfloat16", "tp": 1, "use_sliding_window": false, "vocab": 151936, "window": null}, "model": "Qwen/Qwen2.5-3B-Instruct", "ok": true, "reasons": [], "stage": "prepare"}
+LOCKSTEP-PREPARE model Qwen/Qwen2.5-3B-Instruct: hidden=2048 layers=36 heads=16/2 head_dim=128 vocab=151936 tied=True qk_norm=False rotary_dim=128 window=None rotation=sylvester
+LOCKSTEP-PREPARE keq: /root/v25/bin/python /workspace/p2/k_equalize.py --model Qwen/Qwen2.5-3B-Instruct --out /workspace/p2/manifests/rb_qwen25_3b/keq.pt
+/root/v25/lib/python3.11/site-packages/huggingface_hub/constants.py:299: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   9%|▉         | 41/434 [00:00<00:01, 386.91it/s]Loading weights:  19%|█▊        | 81/434 [00:00<00:00, 391.59it/s]Loading weights:  28%|██▊       | 121/434 [00:00<00:00, 392.47it/s]Loading weights:  37%|███▋      | 161/434 [00:00<00:00, 359.06it/s]Loading weights:  46%|████▋     | 201/434 [00:00<00:00, 369.00it/s]Loading weights:  56%|█████▌    | 241/434 [00:00<00:00, 368.52it/s]Loading weights:  65%|██████▍   | 280/434 [00:00<00:00, 366.56it/s]Loading weights:  73%|███████▎  | 317/434 [00:00<00:00, 357.04it/s]Loading weights:  82%|████████▏ | 357/434 [00:00<00:00, 369.12it/s]Loading weights:  91%|█████████ | 395/434 [00:01<00:00, 372.19it/s]Loading weights: 100%|█████████▉| 433/434 [00:01<00:00, 374.14it/s]Loading weights: 100%|██████████| 434/434 [00:01<00:00, 372.32it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (298938 > 131072). Running this sequence through the model will result in indexing errors
+K-preparation written: /workspace/p2/manifests/rb_qwen25_3b/keq.pt
+transform sha256: dd3e7e965765d74adcb83883149d9772ba91853996e9570d716b997ab8a3413d
+canonical artifact sha256 (/workspace/p2/manifests/rb_qwen25_3b/keq.pt.bin): 9d5692dc2ce6a3957b75e509b620ecee5cc2dedced33db5e708beff852972c79
+  layer  0  K_amax   92.750 -> mean-centered   9.205 (3.35 bits)  mid-centered   8.203 (3.50 bits)  top-mu chans [127, 125, 123, 62]
+  layer  1  K_amax   25.875 -> mean-centered  10.987 (1.04 bits)  mid-centered  10.672 (1.09 bits)  top-mu chans [114, 109, 38, 54]
+  layer  2  K_amax   17.156 -> mean-centered   8.538 (1.00 bits)  mid-centered   8.211 (1.05 bits)  top-mu chans [112, 48, 100, 55]
+  layer  3  K_amax   11.844 -> mean-centered   7.962 (0.56 bits)  mid-centered   7.031 (0.74 bits)  top-mu chans [122, 49, 58, 126]
+  layer  4  K_amax   10.812 -> mean-centered  10.153 (0.12 bits)  mid-centered   7.207 (0.58 bits)  top-mu chans [54, 118, 58, 51]
+  layer  5  K_amax   14.438 -> mean-centered  12.113 (0.25 bits)  mid-centered   9.598 (0.62 bits)  top-mu chans [115, 110, 54, 94]
+  layer  6  K_amax   12.156 -> mean-centered   9.822 (0.31 bits)  mid-centered   6.664 (0.88 bits)  top-mu chans [118, 54, 40, 49]
+  layer  7  K_amax   13.031 -> mean-centered   8.752 (0.57 bits)  mid-centered   7.022 (0.89 bits)  top-mu chans [56, 49, 107, 120]
+  layer  8  K_amax   14.250 -> mean-centered  10.071 (0.51 bits)  mid-centered   7.640 (0.89 bits)  top-mu chans [117, 41, 53, 96]
+  layer  9  K_amax   12.344 -> mean-centered  11.555 (0.08 bits)  mid-centered   7.130 (0.78 bits)  top-mu chans [118, 54, 96, 105]
+  layer 10  K_amax   14.188 -> mean-centered   9.882 (0.53 bits)  mid-centered   7.165 (0.99 bits)  top-mu chans [56, 44, 120, 102]
+  layer 11  K_amax   14.625 -> mean-centered  11.452 (0.35 bits)  mid-centered   7.397 (0.98 bits)  top-mu chans [116, 100, 42, 31]
+  layer 12  K_amax   14.156 -> mean-centered   9.962 (0.51 bits)  mid-centered   7.285 (0.96 bits)  top-mu chans [62, 49, 38, 93]
+  layer 13  K_amax   16.125 -> mean-centered  12.141 (0.46 bits)  mid-centered   8.580 (0.91 bits)  top-mu chans [56, 59, 61, 35]
+  layer 14  K_amax   16.000 -> mean-centered  11.566 (0.48 bits)  mid-centered   8.414 (0.93 bits)  top-mu chans [56, 50, 41, 58]
+  layer 15  K_amax   13.625 -> mean-centered  10.341 (0.40 bits)  mid-centered   7.397 (0.87 bits)  top-mu chans [116, 44, 125, 52]
+  layer 16  K_amax   17.594 -> mean-centered  18.734 (-0.10 bits)  mid-centered  12.492 (0.49 bits)  top-mu chans [119, 60, 42, 48]
+  layer 17  K_amax   13.500 -> mean-centered  12.389 (0.12 bits)  mid-centered   9.766 (0.46 bits)  top-mu chans [121, 50, 100, 105]
+  layer 18  K_amax   26.125 -> mean-centered  10.083 (1.31 bits)  mid-centered   8.141 (1.62 bits)  top-mu chans [127, 51, 104, 35]
+  layer 19  K_amax   17.500 -> mean-centered  10.289 (0.72 bits)  mid-centered   9.344 (0.85 bits)  top-mu chans [63, 60, 123, 44]
+  layer 20  K_amax   18.500 -> mean-centered  10.689 (0.78 bits)  mid-centered   9.531 (0.97 bits)  top-mu chans [46, 41, 101, 99]
+  layer 21  K_amax   19.125 -> mean-centered  13.962 (0.46 bits)  mid-centered  13.406 (0.52 bits)  top-mu chans [63, 112, 44, 102]
+  layer 22  K_amax   15.906 -> mean-centered  12.728 (0.32 bits)  mid-centered  11.227 (0.50 bits)  top-mu chans [111, 106, 126, 37]
+  layer 23  K_amax   14.656 -> mean-centered  10.088 (0.55 bits)  mid-centered   9.164 (0.69 bits)  top-mu chans [56, 112, 107, 34]
+  layer 24  K_amax   12.219 -> mean-centered  11.776 (0.05 bits)  mid-centered   9.246 (0.43 bits)  top-mu chans [107, 51, 62, 126]
+  layer 25  K_amax   10.531 -> mean-centered   9.740 (0.11 bits)  mid-centered   8.391 (0.33 bits)  top-mu chans [46, 41, 111, 97]
+  layer 26  K_amax   13.406 -> mean-centered  11.505 (0.22 bits)  mid-centered   9.727 (0.49 bits)  top-mu chans [51, 102, 46, 97]
+  layer 27  K_amax   29.562 -> mean-centered  12.055 (1.13 bits)  mid-centered  11.062 (1.25 bits)  top-mu chans [47, 42, 63, 60]
+  layer 28  K_amax   13.969 -> mean-centered  12.265 (0.19 bits)  mid-centered   9.797 (0.53 bits)  top-mu chans [116, 41, 33, 91]
+  layer 29  K_amax   20.094 -> mean-centered  10.533 (0.79 bits)  mid-centered   8.438 (1.13 bits)  top-mu chans [113, 107, 38, 96]
+  layer 30  K_amax   11.469 -> mean-centered   8.724 (0.40 bits)  mid-centered   7.367 (0.63 bits)  top-mu chans [119, 46, 97, 37]
+  layer 31  K_amax   13.500 -> mean-centered  10.311 (0.39 bits)  mid-centered   9.352 (0.53 bits)  top-mu chans [118, 47, 104, 40]
+  layer 32  K_amax   12.688 -> mean-centered  11.000 (0.19 bits)  mid-centered   9.727 (0.37 bits)  top-mu chans [127, 46, 105, 35]
+  layer 33  K_amax   10.250 -> mean-centered   9.220 (0.15 bits)  mid-centered   8.922 (0.20 bits)  top-mu chans [112, 42, 109, 122]
+  layer 34  K_amax   14.625 -> mean-centered   9.095 (0.68 bits)  mid-centered   7.527 (0.95 bits)  top-mu chans [59, 112, 61, 124]
+  layer 35  K_amax   16.344 -> mean-centered  10.708 (0.62 bits)  mid-centered   8.863 (0.89 bits)  top-mu chans [114, 127, 63, 126]
+LOCKSTEP-PREPARE smoothing {"level": 0, "status": "OFF", "r1": "online", "file": "calib.pt", "sha256": "84834fadc859c656c95c67256c0717de4f7dfdcfb7e15c3f7325e41386524c28", "windows": 16, "tokens": 16384, "calibrated_for": "outliers"}
+LOCKSTEP-PREPARE outliers {"k": 8, "linears": "qkv,gate_up", "status": "ON", "rule": "the k channels of largest per-channel amax of the linear's input over the calibration windows (stock engine; the norm-fed inputs in the unrotated basis, o_proj and down_proj per rank); their bf16 values bypass the rotation and the int8 quant and enter through the epilogue side path (contract v2.5 section 6.6, v2.5.1 for o_proj / down_proj)"}
+LOCKSTEP-CONFIG (legacy LOCKSTEP_PREFILL arming, NOT applied) {"applied": {}, "contract": "v2.5", "decode_16w": 1, "decode_pipelined": 1, "env_plan": {"LOCKSTEP_DEC8_P": "1", "LOCKSTEP_DEC8_W": "1", "LOCKSTEP_FA3": "1", "LOCKSTEP_FA3_DIR": "/root/fa3_b9vareng/hopper", "LOCKSTEP_FA3_GLUE": "/workspace/p2/lssa_fa3glue.so", "LOCKSTEP_FA3_KERNEL": "b8", "LOCKSTEP_KS": "0", "LOCKSTEP_KSR": "up", "LOCKSTEP_LSSAB_SO": "/workspace/p2/lssa_lssab.so", "LOCKSTEP_PREFILL": "lssab", "LOCKSTEP_SINK": "0", "LOCKSTEP_V2": "1", "T16L_ARM": "1", "T16L_FREE_BF16": "1", "T16M_CPP": "1", "T16M_FUSE": "1"}, "fa3_available": true, "fa3_dir": "/root/fa3_b9vareng/hopper", "fa3_glue": "/workspace/p2/lssa_fa3glue.so", "free_bf16": true, "fuse": true, "home": "/workspace/p2", "home_ok": true, "hw": {"cuda": "13.0", "cuda_visible_devices": null, "device_count": 1, "devices": [{"index": 0, "name": "NVIDIA H100 80GB HBM3", "sm": [9, 0]}], "driver_version": "13.0", "gpu": "NVIDIA H100 80GB HBM3", "p2p": [[true]], "probe": "libcuda", "sm": [9, 0], "torch": "2.11.0+cu130"}, "keq_path": null, "kernel_set": "hopper_exact", "lssab_so": "/workspace/p2/lssa_lssab.so", "manifest_compatible": true, "manifest_dir": null, "manifest_model": null, "manifest_tp": null, "mu_kind": "MU_MID", "nccl_env": {}, "p2p_all_pairs": null, "r4_cluster": true, "reasons": ["home=/workspace/p2 (env LOCKSTEP_HOME)", "kernel_set=hopper_exact: NVIDIA H100 80GB HBM3 is sm 9.0 and /workspace/p2/lssa_fa3glue.so + /root/fa3_b9vareng/hopper/flash_attn_3/_C.abi3.so exist", "contract=v2.5: LSSA-B8 for every row (prompt rows on the FA3 b8 seam, generated rows on lsb_dec8p, DEC8_P=1 DEC8_W=1)", "r4_cluster=True (compiled into t16m_kernels.cu, no env knob)", "no manifest (legacy LOCKSTEP_PREFILL arming); fuse=True free_bf16 from env", "world_size=1 (default)", "tp_reduce_mode=1 unused at world=1; no NCCL environment", "sliding_window_ceiling=None (the backend rule: a window >= max_model_len is no window; read from the vLLM config in LockstepAttentionImpl)", "selftest=strict (default)", "attention=LSSA-B8 (manifest attention.rule absent -> B8)"], "refusals": [], "selftest": "strict", "sliding_window_ceiling": null, "tp_reduce_mode": 1, "user_overrides": {"LOCKSTEP_SINK": {"planned": "0", "user": "1"}}, "world_size": 1, "world_source": "default"}
+LOCKSTEP-T13b: scheduler patched for KB=128 chunk alignment
+LOCKSTEP-T16e: attention-metadata hook installed (token role from InputBatch.is_prefilling_np; host seq_lens; no device sync)
+LOCKSTEP-T2 registered as AttentionBackendEnum.CUSTOM
+[t16l] kernels compiled
+[t16l] custom ops registered: t16l::{linear,norm,norm_res,rope,silu,commit}
+T16M: fused kernels compiled
+T14-PLUGIN: LOCKSTEP backend + T16l full stack (T16m fused glue) registered in pid 11708
+INFO 09-09 03:01:54 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 32768, 'gpu_memory_utilization': 0.6, 'max_num_seqs': 32, 'disable_log_stats': True, 'enforce_eager': True, 'attention_backend': 'CUSTOM', 'model': 'Qwen/Qwen2.5-3B-Instruct'}
+WARNING 09-09 03:01:54 [arg_utils.py:1606] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 09-09 03:01:56 [model.py:619] Resolved architecture: Qwen2ForCausalLM
+INFO 09-09 03:01:56 [model.py:1776] Using max model len 32768
+INFO 09-09 03:01:56 [scheduler.py:252] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 09-09 03:01:56 [vllm.py:1042] Asynchronous scheduling is enabled.
+WARNING 09-09 03:01:56 [vllm.py:1096] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 09-09 03:01:56 [vllm.py:1144] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 09-09 03:01:56 [kernel.py:292] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 09-09 03:01:56 [vllm.py:1322] Cudagraph is disabled under eager mode
+INFO 09-09 03:01:56 [compilation.py:312] Enabled custom fusions: norm_quant, act_quant
+INFO 09-09 03:02:00 [core.py:114] Initializing a V1 LLM engine (v0.25.1) with config: model='Qwen/Qwen2.5-3B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-3B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen2.5-3B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, moe_backend='auto', linear_backend='auto')
+INFO 09-09 03:02:00 [parallel_state.py:1607] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.20.0.2:56911 backend=nccl
+INFO 09-09 03:02:00 [parallel_state.py:1942] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 09-09 03:02:00 [gpu_worker.py:360] Using V2 Model Runner
+INFO 09-09 03:02:01 [model_runner.py:281] Loading model from scratch...
+INFO 09-09 03:02:01 [cuda.py:416] Using AttentionBackendEnum.CUSTOM backend.
+INFO 09-09 03:02:01 [flash_attn.py:718] Using FlashAttention version 3
+LOCKSTEP-T15: LSSA-B ceiling from vLLM config: nd=16384 nseq=32 nblk=256
+INFO 09-09 03:02:02 [weight_utils.py:849] Filesystem type for checkpoints: XFS. Checkpoint size: 5.75 GiB. Available RAM: 1802.55 GiB.
+INFO 09-09 03:02:02 [weight_utils.py:872] Auto-prefetch is disabled because the filesystem (XFS) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.63it/s]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  2.23it/s]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  2.11it/s]
+
+INFO 09-09 03:02:03 [default_loader.py:430] Loading weights took 0.95 seconds
+INFO 09-09 03:02:03 [model_runner.py:302] Model loading took 5.79 GiB and 3.056244 seconds
+INFO 09-09 03:02:04 [topk_topp_sampler.py:55] Using FlashInfer for top-p & top-k sampling.
+[t16l] armed norms=73 rope=1 linears=144 silu=36 lm_head=1 commit=0  rot=124 lmhead=a15w15 cutlass=True hash=off
+LOCKSTEP-ENVELOPE armed_scan {"norm": {"total": 73, "armed": 73, "gated": true, "classes": {"RMSNorm": [73, 73]}, "unarmed": []}, "rotary": {"total": 1, "armed": 1, "gated": true, "classes": {"RotaryEmbedding": [1, 1]}, "unarmed": []}, "activation": {"total": 36, "armed": 36, "gated": true, "classes": {"SiluAndMul": [36, 36]}, "unarmed": []}, "linear": {"total": 144, "armed": 144, "gated": true, "classes": {"QKVParallelLinear": [36, 36], "RowParallelLinear": [72, 72], "MergedColumnParallelLinear": [36, 36]}, "unarmed": []}, "ok": true}
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 526336}, "qkv": {"fused_two_scale_mismatch": 0, "cut32_mismatch": -1, "cutT_mismatch": -1, "n": 657920}}
+T16L armed_at_load {"norm": 73, "rope": 1, "linear": 144, "silu": 36, "logits": 1, "commit": 0}
+T16M: fused 36 / 36 decoder layers (minrows=17, capture=False, tp=1)
+T16M fused_at_load {"fused_layers": 36}
+INFO 09-09 03:02:06 [gpu_worker.py:538] Available KV cache memory: 39.8 GiB
+INFO 09-09 03:02:06 [kv_cache_utils.py:2146] GPU KV cache size: 1,159,232 tokens
+INFO 09-09 03:02:06 [kv_cache_utils.py:2147] Maximum concurrency for 32,768 tokens per request: 35.38x
+INFO 09-09 03:02:06 [deep_gemm.py:175] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+INFO 09-09 03:02:06 [deep_gemm.py:202] DeepGEMM PDL enabled on vllm.third_party.deep_gemm.
+INFO 09-09 03:02:06 [kernel_warmup.py:170] Using FlashInfer autotune cache file: /root/.cache/vllm/flashinfer_autotune_cache/0.6.13/90a/ed0c2253e894e98a2d8f9c13086da21ef99fc1de099fd12e4cd8d02fa622a9ff/autotune_configs.json
+2026-09-09 03:02:06,789 - INFO - autotuner.py:651 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+LOCKSTEP-T2 ARMED: contract decode (BHI=26, table (13,15), win=1073741824) impl_count_so_far=36 heads=16 kv=2 dh=128
+LOCKSTEP-T15 LSSA-B ARMED: KB=128 BQ=9 so=/workspace/p2/lssa_lssab.so nsh=40 caps=(16384, 32, 256)
+LOCKSTEP-T16f pass-A scratch: rows=16384 of nd=16384 (nblk=256) -> tmx 268 MB + pacc 537 MB
+LOCKSTEP-T15 mu ARMED: MU_MID (36, 2, 128) from /workspace/p2/manifests/rb_qwen25_3b/keq.pt  sha=dd3e7e965765d74adcb83883149d9772ba91853996e9570d716b997ab8a3413d  |mu|max=92.0000
+2026-09-09 03:02:07,075 - INFO - autotuner.py:674 - flashinfer.jit: [Autotuner]: Autotuning process ends
+WARNING 09-09 03:02:07 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.
+INFO 09-09 03:02:07 [cutedsl_warmup.py:97] Skipping CuTeDSL warmup because no compile units were requested.
+LOCKSTEP-T16e LSSA-B8 table: n=7 W_LOC=9 TOP=255 live=1152 len=2176 digest=7a42a785940f557d
+LOCKSTEP-T16e FA3 SEAM armed: fa3=/root/fa3_b9vareng/hopper glue=/workspace/p2/lssa_fa3glue.so ktok=262144 scratch=134 MB caps=(nd=16384 nseq=32 nblk=256)
+LOCKSTEP-T16w LSSA-B9.1 sink: ON (key 0 alone, lssab9_golden)
+LOCKSTEP-T16x LSSA-B9.3 key shift: off
+LOCKSTEP-T16e LSSA-B8 varlen: ON (one launch per wave)
+INFO 09-09 03:02:07 [jit_monitor.py:73] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+INFO 09-09 03:02:07 [core.py:344] init engine (profile, create kv cache, warmup model) took 2.68 s
+T16L exported /workspace/p2/manifests/rb_qwen25_3b/constants.safetensors tensors=763 bytes=4055831140 sha256=58cb9dd630b6caa64442546b284604a81de5b39f20e545034edf1a3a933a9b01 rank=0 meta=/workspace/p2/manifests/rb_qwen25_3b/export_meta.json (9.9s)
+LOCKSTEP-PREPARE exported by worker RPC: ['constants.safetensors'] (10.1s)
+WARNING 09-09 03:02:21 [jit_monitor.py:129] Triton kernel JIT compilation during inference: _topk_log_softmax_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+LOCKSTEP-SELFTEST wrote /workspace/p2/manifests/rb_qwen25_3b/probe.json: 256 ids, 8 generated, model=Qwen/Qwen2.5-3B-Instruct
+LOCKSTEP-PREPARE probe written by lockstep_selftest.write_probe: 16f86912b8c84a3ba6ad57769bca38b10b3a6b75d2a6567e9d368f79f342665c
+LOCKSTEP-PREPARE engine released for the op-gate: {"free_bytes": 79916302336, "total_bytes": 85017493504, "free_frac": 0.9399983349572639}
+LOCKSTEP-PREPARE op-gate: /root/v25/bin/python /workspace/p2/t16l_egates.py (T16M_FUSE=0 PLEN=256 CHK_ROWS=256 CHK_LAYERS=0,18,35 GMU=0.60; log /workspace/p2/manifests/rb_qwen25_3b/op_gate.log)
+LOCKSTEP-PREPARE per-op linear_down_proj           n=12   bad=0        elements=6291456
+LOCKSTEP-PREPARE per-op linear_gate_up_proj        n=12   bad=0        elements=67633152
+LOCKSTEP-PREPARE per-op linear_o_proj              n=12   bad=0        elements=6291456
+LOCKSTEP-PREPARE per-op linear_qkv_proj            n=12   bad=0        elements=7864320
+LOCKSTEP-PREPARE per-op rmsnorm                    n=24   bad=0        elements=12582912
+LOCKSTEP-PREPARE per-op rmsnorm_residual           n=20   bad=0        elements=10485760
+LOCKSTEP-PREPARE per-op rope                       n=60   bad=0        elements=35389440
+LOCKSTEP-PREPARE per-op silu                       n=12   bad=0        elements=33816576
+LOCKSTEP-PREPARE stock check {"status": "PASS", "mean_logprob_lockstep": -10.407011241538852, "mean_logprob_stock": -10.419120687596939, "delta": 0.012109446058087059, "tolerance": 0.25, "n": 255}
+LOCKSTEP-PREPARE kernel gate {"status": "ERROR", "dims": "2048,2560,11008,16,2", "rc": 1}
+LOCKSTEP-PREPARE quality gate {"status": "PASS", "stock": 7.297836392305741, "lockstep": 7.313109686578728, "delta_pct": 0.20928523814387479, "tolerance_pct": 1.0, "windows": 30}
+LOCKSTEP-PREPARE manifest /workspace/p2/manifests/rb_qwen25_3b/lockstep.manifest.json: 763 constants (58cb9dd630b6caa6), keq 297f7e86bf746c97, probe 16f86912b8c84a3b, 167s
+LOCKSTEP-PREPARE PASS /workspace/p2/manifests/rb_qwen25_3b
+LSSAB smem_size=192512 bytes (188 KB)

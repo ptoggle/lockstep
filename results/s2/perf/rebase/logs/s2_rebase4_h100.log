@@ -1,0 +1,96 @@
+K-GATES: 43 PASS / 0 FAIL
+K9: 10 PASS / 0 FAIL
+=== [02:35:15] SETUP_DONE
+stock rc=0
+-rwxr-xr-x 1 root root 7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 5596912 Sep  9 02:34 /root/flash-attention/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root  7716112 Sep  9 02:34 /root/fa3_b8vareng/hopper/flash_attn_3/_C.abi3.so
+-rwxr-xr-x 1 root root 11648832 Sep  9 02:57 /workspace/p2/lssa_lssab.so
+=== RE-BASELINE pass 4 (size sweep) start Wed Sep  9 03:15:24 UTC 2026
+LOAD 03:15 12.03 12.12 12.61 start
+/dev/md0        250G  104G  147G  42% /workspace
+=== prepare rb_qwen25_1p5b: already there
+=== prepare rb_qwen25_3b: already there
+=== download Qwen/Qwen2.5-14B-Instruct
+kspace/hf/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8 
+/dev/md0        250G  104G  147G  42% /workspace
+=== prepare rb_qwen25_14b: --model Qwen/Qwen2.5-14B-Instruct --keq /workspace/p2/keq_qwen25_14b_instruct.pt --max-model-len 32768 --gmu 0.55
+LOAD 03:15 12.03 12.12 12.61 prepare rb_qwen25_14b
+prepare rb_qwen25_14b rc=0
+-rw------- 1 root root 16382578012 Sep  9 03:16 /workspace/p2/manifests/rb_qwen25_14b/constants.safetensors
+LOCKSTEP-PREPARE per-op rmsnorm_residual           n=20   bad=0        elements=26214400
+LOCKSTEP-PREPARE per-op rope                       n=60   bad=0        elements=94371840
+LOCKSTEP-PREPARE per-op silu                       n=12   bad=0        elements=42467328
+LOCKSTEP-PREPARE stock check {"status": "PASS", "mean_logprob_lockstep": -10.390342962975595, "mean_logprob_stock": -10.378023575801475, "delta": -0.012319387174120067, "tolerance": 0.25, "n": 255}
+LOCKSTEP-PREPARE kernel gate {"status": "PASS", "dims": "5120,7168,13824,40,8", "cases": 1186, "bad": 0}
+LOCKSTEP-PREPARE quality gate {"status": "PASS", "stock": 3.499018799120725, "lockstep": 3.51706948411174, "delta_pct": 0.5158784798627192, "tolerance_pct": 1.0, "windows": 30}
+LOCKSTEP-PREPARE manifest /workspace/p2/manifests/rb_qwen25_14b/lockstep.manifest.json: 1015 constants (5ff3cea916340205), keq da8d8e8577a16631, probe 8c837ea9214ce584, 244s
+LOCKSTEP-PREPARE PASS /workspace/p2/manifests/rb_qwen25_14b
+LOAD 03:20 12.28 12.46 12.65 single qwen25_14b stock
+  ttft_p128_b1         stock=   14.87 ms
+  ttft_p128_b8         stock=   48.28 ms
+  ttft_p2048_b1        stock=   95.43 ms
+  ttft_p2048_b8        stock=  727.85 ms
+  ttft_p8192_b1        stock=  413.64 ms
+  ttft_p8192_b8        stock= 3240.45 ms
+  ttft_p8192_b4        stock= 1615.34 ms
+  ttft_p32640_b1       stock= 2289.41 ms
+  prefill_p128_b32     stock=  188.06 ms
+  decode_b1            stock=    83.7 t/s
+  decode_b8            stock=   653.6 t/s
+  decode_b32           stock=  2509.5 t/s
+LOAD 03:22 13.13 13.18 12.93 single qwen25_14b lssab
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "down": {"fused_two_scale_mismatch": 0, "c
+  ttft_p128_b1         lssab=   18.07 ms
+  ttft_p128_b8         lssab=   55.82 ms
+  ttft_p2048_b1        lssab=  102.17 ms
+  ttft_p2048_b8        lssab=  762.92 ms
+  ttft_p8192_b1        lssab=  432.70 ms
+  ttft_p8192_b8        lssab= 3454.91 ms
+  ttft_p8192_b4        lssab= 1725.38 ms
+  ttft_p32640_b1       lssab= 2565.13 ms
+  prefill_p128_b32     lssab=  192.18 ms
+  decode_b1            lssab=    90.1 t/s
+  decode_b8            lssab=   702.1 t/s
+  decode_b32           lssab=  2481.9 t/s
+lssab arm: armed_from_manifest OK
+WROTE /workspace/p2/handover/rebase/single_qwen25_14b.json
+RB_SINGLE_qwen25_14b_DONE
+LOAD 03:24 12.49 13.08 12.94 end
+RB-SINGLE qwen25_14b             ttft_p128_b1         stock     14.87 lssab     18.07 ratio 0.823
+RB-SINGLE qwen25_14b             ttft_p128_b8         stock     48.28 lssab     55.82 ratio 0.865
+RB-SINGLE qwen25_14b             ttft_p2048_b1        stock     95.43 lssab    102.17 ratio 0.934
+RB-SINGLE qwen25_14b             ttft_p2048_b8        stock    727.85 lssab    762.92 ratio 0.954
+RB-SINGLE qwen25_14b             ttft_p8192_b1        stock    413.64 lssab    432.70 ratio 0.956
+RB-SINGLE qwen25_14b             ttft_p8192_b8        stock   3240.45 lssab   3454.91 ratio 0.938
+RB-SINGLE qwen25_14b             ttft_p8192_b4        stock   1615.34 lssab   1725.38 ratio 0.936
+RB-SINGLE qwen25_14b             ttft_p32640_b1       stock   2289.41 lssab   2565.13 ratio 0.893
+RB-SINGLE qwen25_14b             prefill_p128_b32     stock    188.06 lssab    192.18 ratio 0.979
+RB-SINGLE qwen25_14b             decode_b1            stock     83.73 lssab     90.14 ratio 1.077
+RB-SINGLE qwen25_14b             decode_b8            stock    653.62 lssab    702.13 ratio 1.074
+RB-SINGLE qwen25_14b             decode_b32           stock   2509.53 lssab   2481.91 ratio 0.989
+RB-SINGLE qwen25_1p5b            ttft_p128_b1         stock      5.05 lssab      8.41 ratio 0.600
+RB-SINGLE qwen25_1p5b            ttft_p128_b8         stock     10.81 lssab     18.17 ratio 0.595
+RB-SINGLE qwen25_1p5b            ttft_p2048_b1        stock     13.90 lssab     28.31 ratio 0.491
+RB-SINGLE qwen25_1p5b            ttft_p2048_b8        stock     91.24 lssab    186.25 ratio 0.490
+RB-SINGLE qwen25_1p5b            ttft_p8192_b1        stock     54.38 lssab    102.48 ratio 0.531
+RB-SINGLE qwen25_1p5b            ttft_p8192_b8        stock    414.41 lssab    815.81 ratio 0.508
+RB-SINGLE qwen25_1p5b            ttft_p8192_b4        stock    209.66 lssab    407.41 ratio 0.515
+RB-SINGLE qwen25_1p5b            ttft_p32640_b1       stock    365.14 lssab    557.42 ratio 0.655
+RB-SINGLE qwen25_1p5b            prefill_p128_b32     stock     27.22 lssab     51.89 ratio 0.525
+RB-SINGLE qwen25_1p5b            decode_b1            stock    419.92 lssab    212.60 ratio 0.506
+RB-SINGLE qwen25_1p5b            decode_b8            stock   3268.17 lssab   1643.77 ratio 0.503
+RB-SINGLE qwen25_1p5b            decode_b32           stock  12314.94 lssab   5969.32 ratio 0.485
+RB-SINGLE qwen25_3b              ttft_p128_b1         stock      6.23 lssab     10.51 ratio 0.592
+RB-SINGLE qwen25_3b              ttft_p128_b8         stock     14.53 lssab     25.30 ratio 0.574
+RB-SINGLE qwen25_3b              ttft_p2048_b1        stock     24.50 lssab     41.40 ratio 0.592
+RB-SINGLE qwen25_3b              ttft_p2048_b8        stock    179.79 lssab    289.04 ratio 0.622
+RB-SINGLE qwen25_3b              ttft_p8192_b1        stock    107.42 lssab    160.61 ratio 0.669
+RB-SINGLE qwen25_3b              ttft_p8192_b8        stock    794.31 lssab   1281.94 ratio 0.620
+RB-SINGLE qwen25_3b              ttft_p8192_b4        stock    403.90 lssab    639.28 ratio 0.632
+RB-SINGLE qwen25_3b              ttft_p32640_b1       stock    614.60 lssab    897.82 ratio 0.685
+RB-SINGLE qwen25_3b              prefill_p128_b32     stock     48.14 lssab     77.53 ratio 0.621
+RB-SINGLE qwen25_3b              decode_b1            stock    268.12 lssab    164.60 ratio 0.614
+RB-SINGLE qwen25_3b              decode_b8            stock   2092.60 lssab   1280.55 ratio 0.612
+RB-SINGLE qwen25_3b              decode_b32           stock   8052.02 lssab   4681.05 ratio 0.581
+RB4_DONE Wed Sep  9 03:24:36 UTC 2026

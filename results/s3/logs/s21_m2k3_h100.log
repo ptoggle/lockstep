@@ -1,0 +1,21 @@
+L0 rot64 n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 48, "rot": 64, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.11202669143676758, "t_fused_s": 250.54250073432922}
+L0 rot64 n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 1024, "rot": 64, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.12340092658996582, "t_fused_s": 0.5226373672485352}
+L0 rot0 n48 rc=1
+[rank0]: Traceback (most recent call last):
+[rank0]: RuntimeError: t16moe::gate_route rq: H a multiple of blk, at most 8192
+L0 rot0 n1024 rc=1
+[rank0]: Traceback (most recent call last):
+[rank0]: RuntimeError: r4quant_pad needs K % 256 == 0
+L12 rot64 n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 12, "T": 48, "rot": 64, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.10307860374450684, "t_fused_s": 0.7605419158935547}
+L12 rot64 n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 12, "T": 1024, "rot": 64, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.11533498764038086, "t_fused_s": 0.537360429763794}
+L12 rot0 n48 rc=1
+[rank0]: Traceback (most recent call last):
+[rank0]: RuntimeError: t16moe::gate_route rq: H a multiple of blk, at most 8192
+L12 rot0 n1024 rc=1
+[rank0]: Traceback (most recent call last):
+[rank0]: RuntimeError: r4quant_pad needs K % 256 == 0
+M2K3_DONE Thu Sep 10 06:45:15 UTC 2026

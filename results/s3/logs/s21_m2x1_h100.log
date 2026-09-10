@@ -1,0 +1,13 @@
+mx gate rc=0
+mx_gemv E=32 N=5760 K=2880 R=8 bias=0 PASS maxabs=0
+mx_gemv E=32 N=5760 K=2880 R=8 bias=1 PASS maxabs=0
+mx_gemv E=32 N=2880 K=2880 R=8 bias=0 PASS maxabs=0
+mx_gemv E=32 N=2880 K=2880 R=8 bias=1 PASS maxabs=0
+mx_gemv E=32 N=5760 K=2880 R=64 bias=0 PASS maxabs=0
+mx_gemv E=32 N=5760 K=2880 R=64 bias=1 PASS maxabs=0
+mx_gemv E=4 N=256 K=64 R=3 bias=0 PASS maxabs=0
+mx_gemv E=4 N=256 K=64 R=3 bias=1 PASS maxabs=0
+mx_gemv E=8 N=512 K=4096 R=17 bias=0 PASS maxabs=0
+mx_gemv E=8 N=512 K=4096 R=17 bias=1 PASS maxabs=0
+T16MOE_MX_GEMV GATE: 10 PASS / 0 FAIL
+M2X1_DONE Thu Sep 10 07:54:38 UTC 2026

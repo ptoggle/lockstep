@@ -1,0 +1,15 @@
+stock rc=0
+/workspace/p2/t14_res/stock_rep1_w1_rinf.log:Successful requests:                     500       
+/workspace/p2/t14_res/stock_rep1_w1_rinf.log:Request throughput (req/s):              10.66     
+/workspace/p2/t14_res/stock_rep1_w1_rinf.log:Output token throughput (tok/s):         2166.27   
+/workspace/p2/t14_res/stock_rep1_w1_rinf.log:Median TTFT (ms):                        16488.90  
+/workspace/p2/t14_res/stock_rep1_w1_rinf.log:Median TPOT (ms):                        24.00     
+/workspace/p2/t14_res/stock_rep1_w1_rinf.log:P99 TPOT (ms):                           87.83     
+moe rc=0
+/workspace/p2/t14_res/moe_rep1_w1_rinf.log:Successful requests:                     500       
+/workspace/p2/t14_res/moe_rep1_w1_rinf.log:Request throughput (req/s):              10.75     
+/workspace/p2/t14_res/moe_rep1_w1_rinf.log:Output token throughput (tok/s):         2185.08   
+/workspace/p2/t14_res/moe_rep1_w1_rinf.log:Median TTFT (ms):                        16245.58  
+/workspace/p2/t14_res/moe_rep1_w1_rinf.log:Median TPOT (ms):                        23.96     
+/workspace/p2/t14_res/moe_rep1_w1_rinf.log:P99 TPOT (ms):                           117.68    
+M1S1_DONE Thu Sep 10 06:19:46 UTC 2026

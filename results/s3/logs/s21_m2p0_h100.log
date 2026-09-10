@@ -1,0 +1,9 @@
+stock rc=0
+MOE_PPL2 {"model": "openai/gpt-oss-20b", "armed": 0, "rot": 0, "armed_layers": 0, "windows": 30, "wlen": 2048, "tokens": 61410, "ppl": 367.4082065465378, "gen_s": 3.7845630645751953, "moe_calls": 0}
+r0 rc=1
+[rank0]: Traceback (most recent call last):
+[rank0]: TypeError: empty() received an invalid combination of arguments - got (int, device=torch.device, dtype=FloatType), but expected one of:
+r64 rc=1
+[rank0]: Traceback (most recent call last):
+[rank0]: TypeError: empty() received an invalid combination of arguments - got (int, device=torch.device, dtype=FloatType), but expected one of:
+M2P0_DONE Thu Sep 10 06:01:42 UTC 2026

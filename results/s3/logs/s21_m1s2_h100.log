@@ -1,0 +1,9 @@
+moe rc=0
+--- markers
+Successful requests:                     500       
+Request throughput (req/s):              11.06     
+Output token throughput (tok/s):         2248.52   
+Median TTFT (ms):                        15031.81  
+Median TPOT (ms):                        23.89     
+P99 TPOT (ms):                           30.15     
+M1S2_DONE Thu Sep 10 07:04:16 UTC 2026

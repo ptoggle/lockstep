@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "Lockstep: Bit-Exact, Verifiable Transformer Inference at Parity Across Devices, for Dense and Mixture-of-Experts Models"
+message: "If you use this work, cite the manuscript and the release tag."
+type: software
+authors:
+  - family-names: Glavas
+    given-names: Perica
+    email: pg@lambda.so
+  - family-names: Yakovenko
+    given-names: Maksym
+    email: max@lambda.so
+  - family-names: Allen
+    given-names: Logan
+    email: logan@nationalcompute.io
+version: 0.2.0
+date-released: 2026-09-10
+license: Apache-2.0
+repository-code: https://github.com/ptoggle/lockstep
+doi: 10.5281/zenodo.22695303
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22695303
+    description: Zenodo archive of release v0.2.0
+preferred-citation:
+  type: unpublished
+  title: "Lockstep: Bit-Exact, Verifiable Transformer Inference at Parity Across Devices, for Dense and Mixture-of-Experts Models"
+  authors:
+    - family-names: Glavas
+      given-names: Perica
+    - family-names: Yakovenko
+      given-names: Maksym
+    - family-names: Allen
+      given-names: Logan
+  year: 2026
+  notes: "paper/main.pdf in this repository, release v0.2.0"

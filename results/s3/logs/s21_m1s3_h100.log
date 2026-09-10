@@ -1,0 +1,7 @@
+moe rc=0
+--- trace lines in the server log
+LOCKSTEP plugin register() pid=1447705 file=/workspace/p2/lockstep_vllm_plugin.py LOCKSTEP_MOE=None registered=False
+(EngineCore pid=1447919) LOCKSTEP plugin register() pid=1447919 file=/workspace/p2/lockstep_vllm_plugin.py LOCKSTEP_MOE=None registered=False
+--- markers
+--- env seen by t14 (PYTHONPATH)
+M1S3_DONE Thu Sep 10 07:46:01 UTC 2026

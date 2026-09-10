@@ -1,0 +1,13 @@
+=== S1a start Wed Sep  9 03:47:40 UTC 2026
+60bbb6102cafad6af7e28398c49028e3 t16m_kernels.cu
+a35e24365a0f50889ebc6688922cde4f t16m_stack.py
+=== build + gate (t16m_gate kernels)
+gate rc=1
+FAILED: [code=2] t16m_kernels.cuda.o 
+/workspace/p2/t16m_kernels.cu(1320): error: name followed by "::" must be a class or namespace name
+/workspace/p2/t16m_kernels.cu(1320): error: expected a ";"
+/workspace/p2/t16m_kernels.cu(1321): error: identifier "cl" is undefined
+3 errors detected in the compilation of "/workspace/p2/t16m_kernels.cu".
+P2 cases passing: 0
+GATE FAILED - stopping
+S1A_DONE (gate fail) Wed Sep  9 03:50:22 UTC 2026

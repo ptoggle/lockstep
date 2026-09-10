@@ -1,0 +1,12 @@
+name = "lockstep-formal"
+version = "0.1.0"
+defaultTargets = ["Lockstep", "lockstep-formal"]
+
+[[lean_lib]]
+name = "Lockstep"
+srcDir = "formal"
+
+[[lean_exe]]
+name = "lockstep-formal"
+root = "Main"
+srcDir = "formal"

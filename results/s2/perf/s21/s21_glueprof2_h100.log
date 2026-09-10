@@ -1,0 +1,37 @@
+=== glue prof H=1536 I=8960 (1p5b)
+T16M: fused kernels compiled
+Traceback (most recent call last):
+  File "/workspace/p2/t16m_glue_prof.py", line 46, in <module>
+    t["norm_quant(x)"] = kernel_times(lambda: K.norm_quant(x, None, Gi, LUT, s_out, 1, 17, 1))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/p2/t16m_glue_prof.py", line 22, in kernel_times
+    for _ in range(5): fn()
+                       ^^^^
+  File "/workspace/p2/t16m_glue_prof.py", line 46, in <lambda>
+    t["norm_quant(x)"] = kernel_times(lambda: K.norm_quant(x, None, Gi, LUT, s_out, 1, 17, 1))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: norm_quant(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: torch.Tensor, arg1: torch.Tensor | None, arg2: torch.Tensor, arg3: torch.Tensor, arg4: typing.SupportsFloat, arg5: typing.SupportsFloat,
+Invoked with: tensor([[ 0.4258, -0.7500, -1.1875,  ..., -0.3184, -0.0850,  0.4375]],
+       device='cuda:0', dtype=torch.bfloat16), None, tensor([152676, 117170, 139377,  ..., 145007, 132757, 142092], device='cuda:0',
+       dtype=torch.int32), tensor([32768, 32767, 32766,  ..., 16385, 16385, 16384], device='cuda:0',
+       dtype=torch.int32), 0.00029900997836708714, 1, 17, 1
+=== glue prof H=3584 I=18944 (7b)
+T16M: fused kernels compiled
+Traceback (most recent call last):
+  File "/workspace/p2/t16m_glue_prof.py", line 46, in <module>
+    t["norm_quant(x)"] = kernel_times(lambda: K.norm_quant(x, None, Gi, LUT, s_out, 1, 17, 1))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/p2/t16m_glue_prof.py", line 22, in kernel_times
+    for _ in range(5): fn()
+                       ^^^^
+  File "/workspace/p2/t16m_glue_prof.py", line 46, in <lambda>
+    t["norm_quant(x)"] = kernel_times(lambda: K.norm_quant(x, None, Gi, LUT, s_out, 1, 17, 1))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: norm_quant(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: torch.Tensor, arg1: torch.Tensor | None, arg2: torch.Tensor, arg3: torch.Tensor, arg4: typing.SupportsFloat, arg5: typing.SupportsFloat,
+Invoked with: tensor([[ 0.4258, -0.7500, -1.1875,  ...,  1.1953, -0.7383,  0.4668]],
+       device='cuda:0', dtype=torch.bfloat16), None, tensor([152676, 117170, 139377,  ..., 105976, 127098, 163300], device='cuda:0',
+       dtype=torch.int32), tensor([32768, 32767, 32766,  ..., 16385, 16385, 16384], device='cuda:0',
+       dtype=torch.int32), 0.0004567452864714284, 1, 17, 1
+GLUEPROF2_DONE Wed Sep  9 04:15:12 UTC 2026

@@ -1,0 +1,4 @@
+T16M: fused kernels compiled
+built 160s
+rowquant ok 0.037s
+norm_quant ok 0.000s

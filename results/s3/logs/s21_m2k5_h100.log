@@ -1,0 +1,19 @@
+m1 gates rc=0
+T16MOE_ROUTE GATE: 60 PASS / 0 FAIL
+T16MOE_COMBINE GATE: 20 PASS / 0 FAIL
+T16MOE_DISPATCH GATE: 18 PASS / 0 FAIL
+T16M_R4_MR GATE: 60 PASS / 0 FAIL
+T16MOE_GATE_ROUTE GATE: 54 PASS / 0 FAIL
+T16M_DEQ_ROWS_G_VEC GATE: 15 PASS / 0 FAIL
+T16MOE_GMM_DEQ GATE: 8 PASS / 0 FAIL
+T16M_ADDENDUM_EPILOGUE GATE: 8 PASS / 0 FAIL
+T16MOE_ADDENDUM_GATE_R1 GATE: 20 PASS / 0 FAIL
+L0 rot0 n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 48, "rot": 0, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.10699748992919922, "t_fused_s": 1.245678186416626}
+L0 rot0 n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 0, "T": 1024, "rot": 0, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.10941672325134277, "t_fused_s": 0.6370699405670166}
+L12 rot0 n48 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 12, "T": 48, "rot": 0, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.08952522277832031, "t_fused_s": 0.5113930702209473}
+L12 rot0 n1024 rc=0
+MOE_M2F {"model": "openai/gpt-oss-20b", "layer": 12, "T": 1024, "rot": 0, "idx_sets_eq": true, "idx_order_eq": true, "w_eq": true, "y_eq": true, "y_rows_differ": 0, "y_maxabs": 0.0, "t_ref_s": 0.09894752502441406, "t_fused_s": 1.2975494861602783}
+M2K5_DONE Thu Sep 10 07:25:45 UTC 2026

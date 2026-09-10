@@ -1,0 +1,7 @@
+mx prof rc=0
+MXPROF T=   1 R=    4 full 0.3266 ms | gate_route 0.0105 dispatch 0.0053 up(gemv2) 0.0452 act 0.0074 down 0.0309 combine 0.0047 | up alternatives: gemv2=0.0455 gemm16=0.1613 gemm128=0.3119
+MXPROF T=   8 R=   32 full 0.3685 ms | gate_route 0.0107 dispatch 0.0053 up(gemv2) 0.3007 act 0.0074 down 0.1612 combine 0.0048 | up alternatives: gemv2=0.3008 gemm16=0.1824 gemm128=0.9091
+MXPROF T=  32 R=  128 full 0.4699 ms | gate_route 0.0108 dispatch 0.0056 up(gemm2) 0.2668 act 0.0078 down 0.1879 combine 0.0049 | up alternatives: gemv2=0.9780 gemm16=0.2666 gemm128=1.4423
+MXPROF T=  64 R=  256 full 0.5096 ms | gate_route 0.0113 dispatch 0.0059 up(gemm2) 0.2920 act 0.0089 down 0.1894 combine 0.0049 | up alternatives: gemv2=1.7712 gemm16=0.2813 gemm128=1.4826
+MXPROF T= 256 R= 1024 full 2.4561 ms | gate_route 0.0179 dispatch 0.0108 up(gemm2) 1.4994 act 0.0243 down 0.8925 combine 0.0050 | up alternatives: gemv2=6.7052 gemm16=0.6964 gemm128=1.5220
+M2P5_DONE Thu Sep 10 09:59:41 UTC 2026

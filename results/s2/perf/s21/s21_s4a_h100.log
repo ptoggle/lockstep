@@ -1,0 +1,73 @@
+=== PROF=b1_300 NSPLIT=1
+PROF b1_300: nseq=1 Tp=300 prefilled (lattice built)
+PROF b1_300: step ms (rowmap+prep+dec8, incl. sync) median 0.205 min 0.195  ctas=4 segs=4
+PROF_DONE
+=== PROF=b1_300 NSPLIT=4
+PROF b1_300: nseq=1 Tp=300 prefilled (lattice built)
+PROF b1_300: step ms (rowmap+prep+dec8, incl. sync) median 0.206 min 0.194  ctas=4 segs=4
+PROF_DONE
+=== PROF=b1_300 NSPLIT=16
+PROF b1_300: nseq=1 Tp=300 prefilled (lattice built)
+PROF b1_300: step ms (rowmap+prep+dec8, incl. sync) median 0.194 min 0.184  ctas=8 segs=8
+PROF_DONE
+=== PROF=b1_2k NSPLIT=1
+PROF b1_2k: nseq=1 Tp=2048 prefilled (lattice built)
+PROF b1_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.253 min 0.244  ctas=4 segs=4
+PROF_DONE
+=== PROF=b1_2k NSPLIT=4
+PROF b1_2k: nseq=1 Tp=2048 prefilled (lattice built)
+PROF b1_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.231 min 0.223  ctas=12 segs=12
+PROF_DONE
+=== PROF=b1_2k NSPLIT=16
+PROF b1_2k: nseq=1 Tp=2048 prefilled (lattice built)
+PROF b1_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.194 min 0.189  ctas=36 segs=36
+PROF_DONE
+=== PROF=b8_300 NSPLIT=1
+PROF b8_300: nseq=8 Tp=300 prefilled (lattice built)
+PROF b8_300: step ms (rowmap+prep+dec8, incl. sync) median 0.231 min 0.214  ctas=32 segs=32
+PROF_DONE
+=== PROF=b8_300 NSPLIT=4
+PROF b8_300: nseq=8 Tp=300 prefilled (lattice built)
+PROF b8_300: step ms (rowmap+prep+dec8, incl. sync) median 0.218 min 0.202  ctas=32 segs=32
+PROF_DONE
+=== PROF=b8_300 NSPLIT=16
+PROF b8_300: nseq=8 Tp=300 prefilled (lattice built)
+PROF b8_300: step ms (rowmap+prep+dec8, incl. sync) median 0.209 min 0.194  ctas=64 segs=64
+PROF_DONE
+=== PROF=b32_300 NSPLIT=1
+PROF b32_300: nseq=32 Tp=300 prefilled (lattice built)
+PROF b32_300: step ms (rowmap+prep+dec8, incl. sync) median 0.247 min 0.226  ctas=128 segs=128
+PROF_DONE
+=== PROF=b32_300 NSPLIT=4
+PROF b32_300: nseq=32 Tp=300 prefilled (lattice built)
+PROF b32_300: step ms (rowmap+prep+dec8, incl. sync) median 0.252 min 0.229  ctas=128 segs=128
+PROF_DONE
+=== PROF=b32_300 NSPLIT=16
+PROF b32_300: nseq=32 Tp=300 prefilled (lattice built)
+PROF b32_300: step ms (rowmap+prep+dec8, incl. sync) median 0.240 min 0.221  ctas=256 segs=256
+PROF_DONE
+=== PROF=b32_2k NSPLIT=1
+PROF b32_2k: nseq=32 Tp=2048 prefilled (lattice built)
+PROF b32_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.315 min 0.309  ctas=128 segs=128
+PROF_DONE
+=== PROF=b32_2k NSPLIT=4
+PROF b32_2k: nseq=32 Tp=2048 prefilled (lattice built)
+PROF b32_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.318 min 0.314  ctas=384 segs=384
+PROF_DONE
+=== PROF=b32_2k NSPLIT=16
+PROF b32_2k: nseq=32 Tp=2048 prefilled (lattice built)
+PROF b32_2k: step ms (rowmap+prep+dec8, incl. sync) median 0.298 min 0.288  ctas=1152 segs=1152
+PROF_DONE
+=== PROF=b1_32k NSPLIT=1
+PROF b1_32k: nseq=1 Tp=32768 prefilled (lattice built)
+PROF b1_32k: step ms (rowmap+prep+dec8, incl. sync) median 1.246 min 1.231  ctas=4 segs=36
+PROF_DONE
+=== PROF=b1_32k NSPLIT=4
+PROF b1_32k: nseq=1 Tp=32768 prefilled (lattice built)
+PROF b1_32k: step ms (rowmap+prep+dec8, incl. sync) median 0.453 min 0.446  ctas=16 segs=144
+PROF_DONE
+=== PROF=b1_32k NSPLIT=16
+PROF b1_32k: nseq=1 Tp=32768 prefilled (lattice built)
+PROF b1_32k: step ms (rowmap+prep+dec8, incl. sync) median 0.291 min 0.281  ctas=64 segs=576
+PROF_DONE
+S4A_DONE Wed Sep  9 12:48:25 UTC 2026

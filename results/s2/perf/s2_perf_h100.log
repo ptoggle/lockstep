@@ -1,0 +1,58 @@
+calib rc=0
+=== serving, both stacks, same session (v2.5 default)
+=== [20:31:27] SERVING: FULL_AND_PIECEWISE without inductor, both stacks
+RUN w1_rinf: /root/v25/bin/python -m vllm.entrypoints.cli.main bench serve --backend vllm --host 127.0.0.1 --port 8000 --model Qwen/Qwen2.5-7B-Instruct --served-model-name bench --endpoint /v1/complet
+  -> OK rc=0
+RUN w2: /root/v25/bin/python -m vllm.entrypoints.cli.main bench serve --backend vllm --host 127.0.0.1 --port 8000 --model Qwen/Qwen2.5-7B-Instruct --served-model-name bench --endpoint /v1/completions 
+  -> OK rc=0
+RUN w3: /root/v25/bin/python -m vllm.entrypoints.cli.main bench serve --backend vllm --host 127.0.0.1 --port 8000 --model Qwen/Qwen2.5-7B-Instruct --served-model-name bench --endpoint /v1/completions 
+  -> OK rc=0
+RUN w1_rinf: /root/v25/bin/python -m vllm.entrypoints.cli.main bench serve --backend vllm --host 127.0.0.1 --port 8000 --model Qwen/Qwen2.5-7B-Instruct --served-model-name bench --endpoint /v1/complet
+  -> OK rc=0
+RUN w2: /root/v25/bin/python -m vllm.entrypoints.cli.main bench serve --backend vllm --host 127.0.0.1 --port 8000 --model Qwen/Qwen2.5-7B-Instruct --served-model-name bench --endpoint /v1/completions 
+  -> OK rc=0
+RUN w3: /root/v25/bin/python -m vllm.entrypoints.cli.main bench serve --backend vllm --host 127.0.0.1 --port 8000 --model Qwen/Qwen2.5-7B-Instruct --served-model-name bench --endpoint /v1/completions 
+  -> OK rc=0
+=== [20:39:32] BENCH_DONE
+=== single-stream, both arms, one stack per process
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "d
+  ttft_p128_b1         stock=    8.33 ms
+  ttft_p128_b8         stock=   28.90 ms
+  ttft_p2048_b1        stock=   53.42 ms
+  ttft_p2048_b8        stock=  404.28 ms
+  ttft_p8192_b1        stock=  219.14 ms
+  ttft_p8192_b8        stock= 1757.60 ms
+  ttft_p8192_b4        stock=  878.88 ms
+  ttft_p32640_b1       stock= 1162.52 ms
+  decode_b1            stock=   162.4 t/s
+  decode_b8            stock=  1264.4 t/s
+  decode_b32           stock=  4566.0 t/s
+[t16l] cutlass probe: fused=True cut32=False  {"_cut32_error": "AssertionError()", "_cutT_error": "AssertionError()", "d
+  ttft_p128_b1         lssab=   11.13 ms
+  ttft_p128_b8         lssab=   32.34 ms
+  ttft_p2048_b1        lssab=   57.86 ms
+  ttft_p2048_b8        lssab=  419.44 ms
+  ttft_p8192_b1        lssab=  229.87 ms
+  ttft_p8192_b8        lssab= 1837.05 ms
+  ttft_p8192_b4        lssab=  917.55 ms
+  ttft_p32640_b1       lssab= 1266.31 ms
+  decode_b1            lssab=   155.0 t/s
+  decode_b8            lssab=  1201.8 t/s
+  decode_b32           lssab=  4321.0 t/s
+WROTE /workspace/p2/handover/single_v25.json
+S2-PERF w1_rinf  stock 101643.0 lssab 101643.0 ratio 1.000
+S2-PERF w2       stock 131072.0 lssab 131072.0 ratio 1.000
+S2-PERF w3       stock 8192.0 lssab 8192.0 ratio 1.000
+S2-PERF single ttft_p128_b1           stock 8.33 lssab 11.13 ratio 0.749
+S2-PERF single ttft_p128_b8           stock 28.90 lssab 32.34 ratio 0.894
+S2-PERF single ttft_p2048_b1          stock 53.42 lssab 57.86 ratio 0.923
+S2-PERF single ttft_p2048_b8          stock 404.28 lssab 419.44 ratio 0.964
+S2-PERF single ttft_p8192_b1          stock 219.14 lssab 229.87 ratio 0.953
+S2-PERF single ttft_p8192_b8          stock 1757.60 lssab 1837.05 ratio 0.957
+S2-PERF single ttft_p8192_b4          stock 878.88 lssab 917.55 ratio 0.958
+S2-PERF single ttft_p32640_b1         stock 1162.52 lssab 1266.31 ratio 0.918
+S2-PERF single prefill_p128_b32       stock 104.72 lssab 109.27 ratio 0.958
+S2-PERF single decode_b1              stock 162.35 lssab 154.96 ratio 1.048
+S2-PERF single decode_b8              stock 1264.40 lssab 1201.78 ratio 1.052
+S2-PERF single decode_b32             stock 4566.03 lssab 4320.97 ratio 1.057
+S2_PERF_DONE

@@ -1,0 +1,8 @@
+M2E8 start Thu Sep 10 12:22:55 UTC 2026 MXBK=200 MXPF=0
+s21_m2e8_h100.sh: line 7: killgpu: command not found
+bench rc=0
+MOE_ENGINE_RES {"model": "openai/gpt-oss-20b", "armed": 1, "grouped": 1, "eager": 0, "armed_layers": 24, "mode": "bench", "decode_b1_tps": 189.94544106242182, "decode_b8_tps": 437.78348949428846, "dec
+s21_m2e8_h100.sh: line 8: killgpu: command not found
+served moe rc=0
+s21_m2e8_h100.sh: line 9: killgpu: command not found
+M2E8_DONE Thu Sep 10 12:33:58 UTC 2026
