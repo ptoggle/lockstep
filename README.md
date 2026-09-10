@@ -4,7 +4,7 @@
 
 [![verify](https://github.com/ptoggle/lockstep/actions/workflows/verify.yml/badge.svg)](https://github.com/ptoggle/lockstep/actions/workflows/verify.yml)
 [![release](https://img.shields.io/github/v/release/ptoggle/lockstep?display_name=tag)](https://github.com/ptoggle/lockstep/releases)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22695303.svg)](https://doi.org/10.5281/zenodo.22695303)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22695303-1682D4.svg)](https://doi.org/10.5281/zenodo.22695303)
 [![license: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE)
 [![paper: CC BY 4.0](https://img.shields.io/badge/paper-CC%20BY%204.0-lightgrey.svg)](paper/main.pdf)
 [![contract 2.6 / v3](https://img.shields.io/badge/contract-2.6%20%2F%20v3-informational.svg)](docs/contract/)
